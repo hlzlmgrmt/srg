@@ -48,7 +48,7 @@ export class WikiComponent {
   private readonly sanitizer = inject(DomSanitizer);
 
   protected routes = signal<NavigatableRoutesMap | undefined>(undefined);
-  protected selectedRoute = signal<string>('talents/tier_1');
+  protected selectedRoute = signal<string>('home');
 
   protected title = signal<string>('');
   protected content = signal<SafeHtml | undefined>(undefined);
