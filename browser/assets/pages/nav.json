@@ -1,0 +1,193 @@
+{
+  "home": {
+    "display_name": "",
+    "resource": "index.html"
+  },
+  "about": "About",
+  "expanded_core_mechanics": "Expanded Core Mechanics",
+  "character_creation": {
+    "display_name": "Character Creation",
+    "children": {
+      "determine_background": "Step 1: Determine Background",
+      "select_metatype": "Step 2: Select Metatype",
+      "choose_archetype": {
+        "display_name": "Step 3: Choose Archetype",
+        "children": {
+          "merc": "Merc",
+          "decker": "Decker",
+          "face": "Face",
+          "specialist": "Specialist",
+          "rigger": "Rigger"
+        }
+      },
+      "invest_karma": "Step 4: Invest Karma",
+      "determine_derived_attributes": "Step 5: Determine Derived Attributes",
+      "determine_motivation_burdens": "Step 6: Determine Character Motivation And Burdens",
+      "choose_gear": "Step 7: Choose Gear",
+      "determine_appearance": "Step 8: Determine Appearance and Personality"
+    }
+  },
+  "skills": {
+    "display_name": "Skills",
+    "children": {
+      "general_skills": "General Skills",
+      "social_skills": "Social Skills",
+      "knowledge_skills": "Knowledge Skills",
+      "combat_skills": "Combat Skills",
+      "magical_skills": {
+        "display_name": "Magical Skills",
+        "children": {
+          "spellcasting": {
+            "display_name": "Spellcasting",
+            "resource": "skills/skills/spellcasting.html"
+          },
+          "summoning": {
+            "display_name": "Summoning",
+            "resource": "skills/skills/summoning.html"
+          },
+          "qi_magic": {
+            "display_name": "Qi-Magic",
+            "resource": "skills/skills/qi_magic.html"
+          },
+          "mysticism": {
+            "display_name": "Mysticism",
+            "resource": "skills/skills/mysticism.html"
+          },
+          "resonance": {
+            "display_name": "Resonance",
+            "resource": "skills/skills/resonance.html"
+          }
+        }
+      }
+    }
+  },
+  "talents": {
+    "display_name": "Talents",
+    "children": {
+      "tier_1": "Tier I",
+      "tier_2": "Tier II",
+      "tier_3": "Tier III",
+      "tier_4": "Tier IV",
+      "tier_5": "Tier V"
+    }
+  },
+  "equipment": {
+    "display_name": "Equipment",
+    "children": {
+      "qualities": "Item Qualities",
+      "rarity": "Buying, Selling, Rarity & The Black Market",
+      "encumbrance": "Encumbrance & Concealment",
+      "maintenance": "Maintenance & Repairing",
+      "modifications": "Attachments & Modifications",
+      "lists": {
+        "display_name": "List of Equipment",
+        "resource": "equipment/lists.html",
+        "children": {
+          "gear": "Gear",
+          "weapons": {
+            "display_name": "Weapons",
+            "children": {
+              "brawl_weapons": "Brawl Weapons",
+              "melee_weapons": "Melee Weapons",
+              "one_handed_ranged_weapons": "One-Handed Ranged Weapons",
+              "two_handed_ranged_weapons": "Two-Handed Ranged Weapons",
+              "heavy_ranged_weapons": "Heavy Ranged Weapons",
+              "grenades": "Grenades",
+              "attachments": "Weapon Attachments"
+            }
+          },
+          "armor": {
+            "display_name": "Armor",
+            "children": {
+              "attachments": "Armor Attachments"
+            }
+          },
+          "bodytech": {
+            "display_name": "Bodytech",
+            "children": {
+              "lists": {
+                "display_name": "List of Bodytech",
+                "children": {
+                  "limb": {
+                    "display_name": "Limbs",
+                    "children": {
+                      "about": "About Limbs",
+                      "lists": "List of Available Limbs",
+                      "attachments": "Cyberlimb Attachments"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "magical": "Magical Implements",
+          "hacking": {
+            "display_name": "Hacking Gear",
+            "children": {
+              "cyberdecks": "Cyberdecks",
+              "programs": "Cyberprograms",
+              "attachments": "Cyberdeck Modifications"
+            }
+          },
+          "drones": "Drones"
+        }
+      }
+    }
+  },
+  "magic": {
+    "display_name": "Magic",
+    "children": {
+      "spellcasting": {
+        "display_name": "Spellcasting",
+        "children": {
+          "attack": {
+            "display_name": "Attack",
+            "resource": "magic/spellcasting/spells/attack.html"
+          },
+          "augment": {
+            "display_name": "Augment",
+            "resource": "magic/spellcasting/spells/augment.html"
+          },
+          "barrier": {
+            "display_name": "Barrier",
+            "resource": "magic/spellcasting/spells/barrier.html"
+          },
+          "change": {
+            "display_name": "Change",
+            "resource": "magic/spellcasting/spells/change.html"
+          },
+          "curse": {
+            "display_name": "Curse",
+            "resource": "magic/spellcasting/spells/curse.html"
+          },
+          "heal": {
+            "display_name": "Heal",
+            "resource": "magic/spellcasting/spells/heal.html"
+          },
+          "influence": {
+            "display_name": "Influence",
+            "resource": "magic/spellcasting/spells/influence.html"
+          },
+          "misdirect": {
+            "display_name": "Misdirect",
+            "resource": "magic/spellcasting/spells/misdirect.html"
+          },
+          "move": {
+            "display_name": "Move",
+            "resource": "magic/spellcasting/spells/move.html"
+          },
+          "sense": {
+            "display_name": "Sense",
+            "resource": "magic/spellcasting/spells/sense.html"
+          }
+        }
+      },
+      "summoning": "Summoning",
+      "qi": "Qi",
+      "metamagics": "Metamagics"
+    }
+  },
+
+  "matrix": "The Matrix",
+  "adversaries": "Allies & Adversaries"
+}
