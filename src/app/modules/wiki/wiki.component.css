@@ -1,6 +1,6 @@
 :root {
   --navigation-width: 280px;
-  --talent-padding: 0.2rem;
+  --talent-padding: 0.4rem;
   --main-header-height: 3rem;
 }
 
@@ -191,7 +191,9 @@ html, body {
   div.talents-list {
     > div {
       width: calc((100% / 3) - (var(--talent-padding) * 2));
-      padding: var(--talent-padding);
+      padding: calc(var(--talent-padding) / 2);
+      margin: calc(var(--talent-padding) / 2);
+      border: lightgray 1px solid;
     }
   }
 
