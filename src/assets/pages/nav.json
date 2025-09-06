@@ -61,7 +61,16 @@
       }
     }
   },
-  "talents": "Talents",
+  "talents": {
+    "display_name": "Talents",
+    "children": {
+      "tier_1": "Tier I",
+      "tier_2": "Tier II",
+      "tier_3": "Tier III",
+      "tier_4": "Tier IV",
+      "tier_5": "Tier V"
+    }
+  },
   "equipment": {
     "display_name": "Equipment",
     "children": {
