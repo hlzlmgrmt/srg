@@ -54,6 +54,8 @@ export class WikiComponent {
   protected content = signal<SafeHtml | undefined>(undefined);
   private readonly INSERT_SELECTOR: RegExp = /<ins.*id=".+".*>.*<\/ins>/g;
 
+  readonly loading = signal<boolean>(true);
+
   constructor() {
     this.httpClient.get<JSONNavigatableRoutes>('assets/pages/nav.json', {responseType: 'json'}).subscribe(data => {
       this.routes.set(this.parseRoutes(data));
@@ -65,13 +67,14 @@ export class WikiComponent {
 
       untracked(() => {
         firstValueFrom(this.httpClient.get('assets/pages/' + selectedRoute?.resource, {responseType: 'text'})).then(async data => {
+          this.loading.set(true);
           const parsedData = await this.parsePageContent(data, selectedRoute)
-          console.error(parsedData)
           if (!this.navigation.nativeElement.classList.contains('d-none')) {
             this.toggleNavigation();
           }
           this.content.set(this.sanitizer.bypassSecurityTrustHtml(parsedData));
           this.contentWrapper.nativeElement.scrollTop = 0;
+          this.loading.set(false);
         })
       });
     })

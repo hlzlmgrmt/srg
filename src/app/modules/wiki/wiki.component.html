@@ -39,6 +39,7 @@
   <span>&#8801;</span>
 </button>
 
+<div class="loading-spinner" [hidden]="!loading()"></div>
 
 <div #main class="d-flex flex-column main p-4"
      (click)="!navigation.classList.contains('d-none') ? toggleNavigation() : undefined">

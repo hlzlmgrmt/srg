@@ -9,10 +9,12 @@ html, body {
   height: 100%;
   overflow: hidden;
 }
+
 .main {
   height: 100vh;
   overflow: scroll;
 }
+
 @media screen and (max-width: 575px) {
   .main.disabled {
     /* TODO Grey out on disabled */
@@ -30,6 +32,7 @@ html, body {
     margin-left: var(--navigation-width);
   }
 }
+
 @media screen and (max-width: 575px) {
   .main-header {
     h1 {
@@ -37,6 +40,28 @@ html, body {
     }
   }
 }
+
+.loading-spinner {
+  position: fixed;
+  right: 0;
+  top: 0;
+  margin: calc(var(--main-header-height) / 2 + 0.5rem);
+  z-index: 1;
+
+  width: calc(var(--main-header-height) / 2);
+  height: calc(var(--main-header-height) / 2);
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: darkred;
+  border-bottom-color: darkred;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin{
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .content {
   width: calc(100% - var(--navigation-width));
   margin-left: var(--navigation-width);
@@ -223,6 +248,7 @@ html, body {
     }
   }
 }
+
 @media screen and (max-width: 575px) {
   .content {
     margin-left: 0;
@@ -234,7 +260,7 @@ html, body {
   height: 100vh;
   width: var(--navigation-width);
   background: whitesmoke;
-  z-index: 2;
+  z-index: 3;
   position: fixed;
 
   .navigation-header {
@@ -272,9 +298,11 @@ html, body {
         color: darkred;
         text-decoration: none;
         margin-bottom: 0.1rem;
+
         > div > span:first-child {
           width: 100%;
         }
+
         > div > span:not(:first-child) {
           margin-right: 1rem;
           display: inline-flex;
@@ -294,6 +322,7 @@ html, body {
     }
   }
 }
+
 .navigation-toggler {
   position: fixed;
   height: auto;
@@ -304,7 +333,7 @@ html, body {
   padding: 0;
   cursor: pointer;
   outline: inherit;
-  z-index: 1;
+  z-index: 2;
 
   > span {
     font-size: x-large;
