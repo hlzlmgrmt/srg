@@ -108,11 +108,10 @@
               "lists": {
                 "display_name": "List of Bodytech",
                 "children": {
-                  "limb": {
+                  "limbs": {
                     "display_name": "Limbs",
                     "children": {
-                      "about": "About Limbs",
-                      "lists": "List of Available Limbs",
+                      "list": "List of Available Limbs",
                       "attachments": "Cyberlimb Attachments"
                     }
                   }
