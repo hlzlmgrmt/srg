@@ -4,7 +4,6 @@
     "resource": "index.html"
   },
   "about": "About",
-  "expanded_core_mechanics": "Expanded Core Mechanics",
   "character_creation": {
     "display_name": "Character Creation",
     "children": {
