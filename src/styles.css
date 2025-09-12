@@ -1,3 +1,12 @@
+:root {
+  --color-setback-dice: black;
+  --color-boost-dice: cornflowerblue;
+  --color-difficulty-dice: rebeccapurple;
+  --color-ability-dice: forestgreen;
+  --color-challenge-dice: firebrick;
+  --color-proficiency-dice: gold;
+}
+
 @font-face {
   font-family: GenesysGlyphsAndDice;
   src: url('./assets/fonts/genesys_glyphs_and_dice-3.0.ttf')

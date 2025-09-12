@@ -72,22 +72,22 @@ body {
     font-family: GenesysGlyphsAndDice;
 
     &.boost {
-      color: cornflowerblue;
+      color: var(--color-boost-dice);
       -webkit-text-stroke: 1px black;
     }
 
     &.setback {
-      color: black;
+      color: var(--color-setback-dice);
       -webkit-text-stroke: 1px gray;
     }
 
     &.difficulty {
-      color: rebeccapurple;
+      color: var(--color-difficulty-dice);
       -webkit-text-stroke: 1px black;
     }
 
     &.ability {
-      color: forestgreen;
+      color: var(--color-ability-dice);
       -webkit-text-stroke: 1px black;
     }
   }

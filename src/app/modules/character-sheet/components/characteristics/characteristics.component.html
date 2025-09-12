@@ -1,0 +1,8 @@
+<div class="d-flex flex-row flex-fill">
+  @for (characteristic of ['BRAWN', 'REFLEXES', 'INTELLECT', 'CUNNING', 'WILLPOWER', 'PRESENCE']; track $index) {
+    <div class="d-flex flex-column characteristic">
+      <input type="number">
+      <span>{{ characteristic }}</span>
+    </div>
+  }
+</div>

@@ -1,4 +1,11 @@
 import { Component } from '@angular/core';
+import {
+  ArmorEntry, BurdensEntry,
+  CriticalInjuriesEntry,
+  DescriptionEntry,
+  HeadingEntry,
+  WeaponEntry
+} from './components/entry/types';
 
 @Component({
   selector: 'srg-character-sheet',
@@ -7,4 +14,10 @@ import { Component } from '@angular/core';
 })
 export class CharacterSheetComponent {
 
+  protected readonly WeaponsEntry = WeaponEntry;
+  protected readonly DescriptionEntry = DescriptionEntry;
+  protected readonly ArmorEntry = ArmorEntry;
+  protected readonly HeadingEntry = HeadingEntry;
+  protected readonly CriticalInjuriesEntry = CriticalInjuriesEntry;
+  protected readonly BurdensEntry = BurdensEntry;
 }

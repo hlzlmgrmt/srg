@@ -1,0 +1,33 @@
+.line {
+  margin: 0 0.1rem;
+
+  span {
+    height: fit-content;
+    font-size: xx-small;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-right: 1px;
+  }
+
+  input, .condition, .difficulty {
+    flex: 1;
+    display: block;
+    min-width: 1rem;
+    width: 100%;
+  }
+  input {
+    border: none;
+    border-bottom: darkgrey 1px dotted;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+  input[type=number] {
+    max-width: 1.5rem;
+    text-align: center;
+    -moz-appearance: textfield; /* Firefox */
+  }
+
+}

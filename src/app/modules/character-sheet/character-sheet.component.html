@@ -1,1 +1,51 @@
-<p>character-sheet works!</p>
+<div class="container">
+  <div class="row mb-2">
+    <div class="col-sm-8">
+      <srg-entry [entryFormat]="HeadingEntry"></srg-entry>
+    </div>
+    <div class="col-sm-4">
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-8">
+      <srg-section [title]="'Characteristics'">
+        <srg-characteristics/>
+      </srg-section>
+      <srg-section [title]="'Skills'">
+        <srg-skills/>
+      </srg-section>
+      <srg-section [title]="'Weapons'">
+        <srg-entry [entryFormat]="WeaponsEntry"/>
+        <srg-entry [entryFormat]="WeaponsEntry"/>
+        <srg-entry [entryFormat]="WeaponsEntry"/>
+        <srg-entry [entryFormat]="WeaponsEntry"/>
+        <srg-entry [entryFormat]="WeaponsEntry"/>
+      </srg-section>
+      <srg-section [title]="'Armor'">
+        <srg-entry [entryFormat]="ArmorEntry"/>
+        <srg-entry [entryFormat]="ArmorEntry"/>
+      </srg-section>
+    </div>
+    <div class="col-sm-4">
+      <srg-section [title]="'Description'">
+        <srg-entry [entryFormat]="DescriptionEntry"/>
+      </srg-section>
+      <srg-section [title]="'Condition Monitor'">
+
+      </srg-section>
+      <srg-section [title]="'Critical Injuries'">
+        <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
+        <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
+        <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
+        <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
+        <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
+      </srg-section>
+      <srg-section [title]="'Burdens'">
+        <srg-entry [entryFormat]="BurdensEntry"/>
+        <srg-entry [entryFormat]="BurdensEntry"/>
+        <srg-entry [entryFormat]="BurdensEntry"/>
+      </srg-section>
+    </div>
+  </div>
+</div>
