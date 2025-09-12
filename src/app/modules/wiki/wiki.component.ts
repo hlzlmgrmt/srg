@@ -48,13 +48,13 @@ export class WikiComponent {
   private readonly sanitizer = inject(DomSanitizer);
 
   protected routes = signal<NavigatableRoutesMap | undefined>(undefined);
-  protected selectedRoute = signal<string>('home');
+  protected selectedRoute = signal<string>('talents/tier_2');
 
   protected title = signal<string>('');
   protected content = signal<SafeHtml | undefined>(undefined);
   private readonly INSERT_SELECTOR: RegExp = /<ins.*id=".+".*>.*<\/ins>/g;
 
-  readonly loading = signal<boolean>(true);
+  readonly loading = signal<boolean>(false);
 
   constructor() {
     this.httpClient.get<JSONNavigatableRoutes>('assets/pages/nav.json', {responseType: 'json'}).subscribe(data => {
