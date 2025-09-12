@@ -128,7 +128,8 @@
               "attachments": "Cyberdeck Modifications"
             }
           },
-          "drones": "Drones"
+          "drones": "Drones",
+          "vehicles": "Vehicles"
         }
       }
     }
@@ -187,5 +188,12 @@
     }
   },
   "matrix": "The Matrix",
+  "combat": {
+    "display_name": "Enhanced Combat Rules",
+    "children": {
+      "layers": "Three Layers of Conflict",
+      "vehicles": "Vehicle Combat"
+    }
+  },
   "adversaries": "Allies & Adversaries"
 }
