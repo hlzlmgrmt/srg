@@ -9,9 +9,10 @@
     "display_name": "Character Creation",
     "children": {
       "determine_background": "Step 1: Determine Background",
-      "select_metatype": "Step 2: Select Metatype",
+      "determine_motivation_burdens": "Step 2: Determine Character Motivation And Burdens",
+      "select_metatype": "Step 3: Select Metatype",
       "choose_archetype": {
-        "display_name": "Step 3: Choose Archetype",
+        "display_name": "Step 4: Choose Archetype",
         "children": {
           "merc": "Merc",
           "decker": "Decker",
@@ -20,9 +21,8 @@
           "rigger": "Rigger"
         }
       },
-      "invest_karma": "Step 4: Invest Karma",
-      "determine_derived_attributes": "Step 5: Determine Derived Attributes",
-      "determine_motivation_burdens": "Step 6: Determine Character Motivation And Burdens",
+      "invest_karma": "Step 5: Invest Karma",
+      "determine_derived_attributes": "Step 6: Determine Derived Attributes",
       "choose_gear": "Step 7: Choose Gear",
       "determine_appearance": "Step 8: Determine Appearance and Personality"
     }
