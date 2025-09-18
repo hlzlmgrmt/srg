@@ -1,5 +1,5 @@
 .characteristic {
-  margin: 0 0.1rem;
+  margin: 0 0.5rem;
 
   input[type=number] {
     flex: 1;
@@ -21,8 +21,9 @@
 
   span {
     margin-top: 0.25rem;
-    font-size: xx-small;
+    font-size: x-small;
     font-weight: bold;
     text-align: center;
+    color: darkred;
   }
 }

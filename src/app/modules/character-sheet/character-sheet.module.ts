@@ -6,6 +6,10 @@ import {Tracker} from './components/entry/tracker/tracker.component';
 import {SectionComponent} from './components/section/section.component';
 import {CharacteristicsComponent} from './components/characteristics/characteristics.component';
 import {SkillsComponent} from './components/skills/skills.component';
+import { SkillTableComponent } from './components/skills/skill-table/skill-table.component';
+import { GlyphPoolComponent } from './components/glyph-pool/glyph-pool.component';
+import { DiceSymbolsInfoComponent } from './components/dice-symbols-info/dice-symbols-info.component';
+import { MonitorComponent } from './components/monitor/monitor.component';
 
 @NgModule({
   declarations: [
@@ -14,17 +18,23 @@ import {SkillsComponent} from './components/skills/skills.component';
     SectionComponent,
     CharacteristicsComponent,
     SkillsComponent,
+    SkillTableComponent,
+    GlyphPoolComponent,
+    DiceSymbolsInfoComponent,
+    MonitorComponent,
   ],
   exports: [
     EntryComponent,
     SectionComponent,
     SkillsComponent,
+    DiceSymbolsInfoComponent,
+    MonitorComponent,
     CharacteristicsComponent
   ],
   imports: [
     CommonModule,
     CharacterSheetRoutingModule
-  ]
+]
 })
 export class CharacterSheetModule {
 }

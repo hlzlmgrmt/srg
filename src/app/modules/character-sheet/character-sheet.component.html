@@ -1,51 +1,66 @@
-<div class="container">
-  <div class="row mb-2">
-    <div class="col-sm-8">
+@if (page() == 1) {
+  <button (click)="page.set(2)">2</button>
+} @else {
+  <button (click)="page.set(1)">1</button>
+}
+
+<div class="page">
+  <div class="d-flex flex-row mb-3">
+    <div class="d-flex flex-column">
       <srg-entry [entryFormat]="HeadingEntry"></srg-entry>
     </div>
-    <div class="col-sm-4">
-
+    <div class="d-flex flex-row-reverse heading-title">
+      <img src="assets/img/shadowrun-logo.svg" alt=""/>
+      <div class="d-flex flex-column w-100">
+        <h3>Shadowrun</h3>
+        <span>Genesys</span>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-sm-8">
+
+  @if (page() == 1) {
+  <div class="d-flex flex-row">
+    <div class="d-flex flex-column">
       <srg-section [title]="'Characteristics'">
-        <srg-characteristics/>
+        <srg-characteristics />
       </srg-section>
       <srg-section [title]="'Skills'">
-        <srg-skills/>
+        <srg-skills />
       </srg-section>
       <srg-section [title]="'Weapons'">
-        <srg-entry [entryFormat]="WeaponsEntry"/>
-        <srg-entry [entryFormat]="WeaponsEntry"/>
-        <srg-entry [entryFormat]="WeaponsEntry"/>
-        <srg-entry [entryFormat]="WeaponsEntry"/>
-        <srg-entry [entryFormat]="WeaponsEntry"/>
+        <srg-entry [entryFormat]="WeaponsEntry" />
+        <srg-entry [entryFormat]="WeaponsEntry" />
+        <srg-entry [entryFormat]="WeaponsEntry" />
+        <srg-entry [entryFormat]="WeaponsEntry" />
       </srg-section>
       <srg-section [title]="'Armor'">
-        <srg-entry [entryFormat]="ArmorEntry"/>
-        <srg-entry [entryFormat]="ArmorEntry"/>
+        <srg-entry [entryFormat]="ArmorEntry" />
+        <srg-entry [entryFormat]="ArmorEntry" />
       </srg-section>
     </div>
-    <div class="col-sm-4">
+    <div class="d-flex flex-column">
+      <srg-dice-symbols-info class="mb-3"/>
       <srg-section [title]="'Description'">
-        <srg-entry [entryFormat]="DescriptionEntry"/>
+        <srg-entry [entryFormat]="DescriptionEntry" />
       </srg-section>
       <srg-section [title]="'Condition Monitor'">
-
+        <srg-monitor/>
       </srg-section>
       <srg-section [title]="'Critical Injuries'">
-        <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
-        <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
-        <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
-        <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
-        <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
+        <srg-entry [entryFormat]="CriticalInjuriesEntry" />
+        <srg-entry [entryFormat]="CriticalInjuriesEntry" />
+        <srg-entry [entryFormat]="CriticalInjuriesEntry" />
+        <srg-entry [entryFormat]="CriticalInjuriesEntry" />
+        <srg-entry [entryFormat]="CriticalInjuriesEntry" />
       </srg-section>
       <srg-section [title]="'Burdens'">
-        <srg-entry [entryFormat]="BurdensEntry"/>
-        <srg-entry [entryFormat]="BurdensEntry"/>
-        <srg-entry [entryFormat]="BurdensEntry"/>
+        <srg-entry [entryFormat]="BurdensEntry" />
+        <srg-entry [entryFormat]="BurdensEntry" />
+        <srg-entry [entryFormat]="BurdensEntry" />
       </srg-section>
     </div>
   </div>
+  } @else {
+
+  }
 </div>

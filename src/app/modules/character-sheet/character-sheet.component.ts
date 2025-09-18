@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import {
   ArmorEntry, BurdensEntry,
   CriticalInjuriesEntry,
@@ -13,6 +13,7 @@ import {
   styleUrl: './character-sheet.component.css'
 })
 export class CharacterSheetComponent {
+  protected page = signal<number>(1);
 
   protected readonly WeaponsEntry = WeaponEntry;
   protected readonly DescriptionEntry = DescriptionEntry;

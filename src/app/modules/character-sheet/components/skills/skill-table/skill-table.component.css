@@ -1,0 +1,55 @@
+table {
+  font-size: x-small;
+
+  tr {
+    th {
+      text-transform: uppercase;
+      font-size: x-small;
+      color: darkred;
+    }
+
+    th:not(:nth-child(2)) {
+      text-align: center;
+    }
+
+    td:nth-child(2) {
+      span:first-child {
+        text-transform: uppercase;
+        text-wrap: nowrap;
+      }
+
+      .bottom-line {
+        border-bottom: 1px dotted darkgrey;
+      }
+    }
+
+    td:nth-child(3) {
+      text-transform: uppercase;
+    }
+
+    td:nth-child(4) {
+      min-width: 4rem;
+    }
+
+    input[type=checkbox] {
+      width: 7px;
+      aspect-ratio: 1 / 1;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      /* <-- Apparently some margin are still there even though it's hidden */
+    }
+    input[type=number] {
+      font-size: 10pt;
+      max-width: 1.5rem;
+      border: none;
+      border-bottom: 1px dotted darkgrey;
+      text-align: center;
+      -moz-appearance: textfield;
+      /* Firefox */
+    }
+  }
+}

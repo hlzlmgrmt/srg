@@ -1,0 +1,48 @@
+body {
+  background: rgb(204, 204, 204);
+}
+
+.page {
+  background: white;
+  display: block;
+  margin: 2rem auto;
+  padding: 5mm;
+  box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+  width: 210mm;
+  height: 297mm;
+  overflow: hidden;
+
+  div {
+    margin: 0 5px;
+  }
+
+  div>div:first-child {
+    width: 66%;
+  }
+
+  div>div:last-child {
+    width: 33%;
+  }
+}
+
+@media print {
+
+  body,
+  page {
+    background: white;
+    margin: 0;
+    box-shadow: 0;
+  }
+}
+
+.heading-title {
+  img {
+    height: 60px;
+  }
+
+  div > * {
+    margin: 0;
+    color: darkred;
+    text-align: end;
+  }
+}
