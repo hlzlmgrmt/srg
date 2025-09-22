@@ -1,3 +1,7 @@
+div {
+  justify-content: end;
+}
+
 .tracker {
   width: 5px;
   margin: 0 1px 0 1px;
@@ -12,14 +16,23 @@
   user-select: none;            /* Non-prefixed version, currently
                                    supported by Chrome, Edge, Opera and Firefox */
 
-  &.condition {
+  &.condition, &.box {
     border: darkgrey 1px solid;
-    margin-top: 3px;
 
     &.clicked {
       background-color: grey;
       border: black 1px solid;
     }
+  }
+
+  &.box {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 0 3px;
+  }
+
+  &.condition {
+    margin-top: 3px;
   }
 
   &.difficulty {

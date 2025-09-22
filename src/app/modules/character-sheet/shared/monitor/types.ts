@@ -1,12 +1,15 @@
 import {Monitor} from './monitor.component';
 
-export const WoundsMonitor: Monitor = {
+export const ValueMonitor: Monitor = {
+  "value": "Value",
+}
+export const ThresholdMonitor: Monitor = {
   "current": "Current",
   "threshold": "Thresh."
 }
-export const StrainMonitor: Monitor = {
+export const TotalMonitor: Monitor = {
   "current": "Current",
-  "threshold": "Thresh."
+  "total": "Total"
 }
 export const SoakMonitor: Monitor = {
   "base": "Base",
@@ -16,10 +19,7 @@ export const DefenseMonitor: Monitor = {
   "melee": "Melee",
   "ranged": "Ranged"
 }
-export const SystemStrainMonitor: Monitor = {
-  "current": "Current",
-  "threshold": "Thresh."
-}
-export const FirewallMonitor: Monitor = {
-  "value": "Value",
+export const StimpatchMonitor: Monitor = {
+  "used": "Used",
+  "owned": "Owned"
 }

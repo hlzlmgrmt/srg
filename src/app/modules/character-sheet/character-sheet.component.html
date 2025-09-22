@@ -6,81 +6,183 @@
     <div class="d-flex flex-row-reverse heading-title">
       <img src="assets/img/shadowrun-logo.svg" alt=""/>
       <div class="d-flex flex-column w-100">
-        <span>Shadowrun</span>
-        <span>Genesys</span>
+        <span>SHADOWRUN</span>
+        <span>GENESYS</span>
       </div>
     </div>
   </div>
 
-  @if (page() == 1) {
-    <div class="d-flex flex-row">
-      <div class="d-flex flex-column">
-        <srg-section [title]="'Characteristics'">
-          <srg-characteristics/>
-        </srg-section>
-        <srg-section [title]="'Skills'">
-          <srg-skills/>
-        </srg-section>
-        <srg-section [title]="'Weapons'">
+  <div class="d-flex flex-row">
+    <div class="d-flex flex-column">
+      <srg-section [title]="'Characteristics'">
+        <srg-characteristics/>
+      </srg-section>
+      <srg-section [title]="'Skills'">
+        <srg-skills/>
+      </srg-section>
+      <srg-section [title]="'Weapons'">
+        @for(i of Array(4); track $index) {
           <srg-entry [entryFormat]="WeaponsEntry"/>
-          <srg-entry [entryFormat]="WeaponsEntry"/>
-          <srg-entry [entryFormat]="WeaponsEntry"/>
-          <srg-entry [entryFormat]="WeaponsEntry"/>
-        </srg-section>
-        <srg-section [title]="'Armor'">
+        }
+      </srg-section>
+      <srg-section [title]="'Armor'">
+        @for(i of Array(2); track $index) {
           <srg-entry [entryFormat]="ArmorEntry"/>
-          <srg-entry [entryFormat]="ArmorEntry"/>
-        </srg-section>
-      </div>
-      <div class="d-flex flex-column">
-        <srg-dice-symbols-info class="mb-3"/>
-        <srg-portrait class="h-100 mb-3"/>
-        <srg-section [title]="'Description'">
-          <srg-entry [entryFormat]="DescriptionEntry"/>
-        </srg-section>
-        <srg-section [title]="'Condition Monitor'">
-          <div class="d-flex flex-column">
-            <div class="d-flex flex-row w-100">
-              <srg-section class="w-50" [title]="'Wounds'" [depth]="2">
-                <srg-monitor [monitorFormat]="WoundsMonitor"/>
-              </srg-section>
-              <srg-section class="w-50" [title]="'Strain'" [depth]="2">
-                <srg-monitor [monitorFormat]="StrainMonitor"/>
-              </srg-section>
-            </div>
-            <div class="d-flex flex-row w-100">
-              <srg-section class="w-50" [title]="'Soak'" [depth]="2">
-                <srg-monitor [monitorFormat]="SoakMonitor"/>
-              </srg-section>
-              <srg-section class="w-50" [title]="'Defense'" [depth]="2">
-                <srg-monitor [monitorFormat]="DefenseMonitor"/>
-              </srg-section>
-            </div>
-            <div class="d-flex flex-row w-100">
-              <srg-section class="w-50" [title]="'System Strain'" [depth]="2">
-                <srg-monitor [monitorFormat]="SystemStrainMonitor"/>
-              </srg-section>
-              <srg-section class="w-50" [title]="'Firewall'" [depth]="2">
-                <srg-monitor [monitorFormat]="FirewallMonitor"/>
-              </srg-section>
-            </div>
+        }
+      </srg-section>
+    </div>
+    <div class="d-flex flex-column">
+      <srg-dice-symbols-info class="mb-3"/>
+      <srg-portrait class="h-100 mb-3"/>
+      <srg-section [title]="'Description'">
+        <srg-entry [entryFormat]="DescriptionEntry"/>
+      </srg-section>
+      <srg-section [title]="'Condition Monitor'">
+        <div class="d-flex flex-column">
+          <div class="d-flex flex-row m-0 w-100">
+            <srg-section class="w-50" [title]="'Wounds'" [depth]="2">
+              <srg-monitor [monitorFormat]="ThresholdMonitor"/>
+            </srg-section>
+            <srg-section class="w-50" [title]="'Strain'" [depth]="2">
+              <srg-monitor [monitorFormat]="ThresholdMonitor"/>
+            </srg-section>
           </div>
-        </srg-section>
-        <srg-section [title]="'Critical Injuries'">
+          <div class="d-flex flex-row m-0 w-100">
+            <srg-section class="w-50" [title]="'Soak'" [depth]="2">
+              <srg-monitor [monitorFormat]="SoakMonitor"/>
+            </srg-section>
+            <srg-section class="w-50" [title]="'Defense'" [depth]="2">
+              <srg-monitor [monitorFormat]="DefenseMonitor"/>
+            </srg-section>
+          </div>
+          <div class="d-flex flex-row m-0 w-100">
+            <srg-section class="w-50" [title]="'System Strain'" [depth]="2">
+              <srg-monitor [monitorFormat]="ThresholdMonitor"/>
+            </srg-section>
+            <srg-section class="w-50" [title]="'Firewall'" [depth]="2">
+              <srg-monitor [monitorFormat]="ValueMonitor"/>
+            </srg-section>
+          </div>
+        </div>
+      </srg-section>
+      <srg-section [title]="'Critical Injuries'">
+        @for(i of Array(5); track $index) {
           <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
-          <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
-          <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
-          <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
-          <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
-        </srg-section>
-        <srg-section [title]="'Burdens'">
+        }
+      </srg-section>
+      <srg-section [title]="'Burdens'">
+        @for(i of Array(3); track $index) {
           <srg-entry [entryFormat]="BurdensEntry"/>
-          <srg-entry [entryFormat]="BurdensEntry"/>
-          <srg-entry [entryFormat]="BurdensEntry"/>
-        </srg-section>
+        }
+      </srg-section>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="d-flex flex-row mb-3">
+    <div class="d-flex flex-column">
+      <srg-entry [entryFormat]="HeadingEntry"></srg-entry>
+    </div>
+    <div class="d-flex flex-row-reverse heading-title">
+      <img src="assets/img/shadowrun-logo.svg" alt=""/>
+      <div class="d-flex flex-column w-100">
+        <span>SHADOWRUN</span>
+        <span>GENESYS</span>
       </div>
     </div>
-  } @else {
+  </div>
 
-  }
+  <div class="d-flex flex-row">
+    <div class="d-flex flex-column">
+      <srg-section [title]="'Gear'">
+        <div class="d-flex flex-row w-100">
+          <div class="d-flex flex-column m-0 me-2 w-50">
+            <div class="d-flex flex-row m-0 w-100">
+              <srg-section class="w-50" [title]="'Encumbrance'" [depth]="2">
+                <srg-monitor [monitorFormat]="ThresholdMonitor"/>
+              </srg-section>
+              <srg-section class="w-50" [title]="'Stimpatches'" [depth]="2">
+                <srg-monitor [monitorFormat]="StimpatchMonitor"/>
+              </srg-section>
+            </div>
+            @for(i of Array(4); track $index) {
+              <srg-entry [entryFormat]="GearEntryExtended"/>
+            }
+          </div>
+          <div class="d-flex flex-column m-0 w-50">
+            @for(i of Array(12); track $index) {
+              <srg-entry [entryFormat]="GearEntry"/>
+            }
+          </div>
+        </div>
+      </srg-section>
+      <div class="d-flex flex-row m-0 w-100">
+        <srg-section class="w-50 me-2" [title]="'Bodytech'">
+          <div class="d-flex flex-row m-0 w-100">
+            <srg-section class="w-50" [title]="'Essence Loss'" [depth]="2">
+              <srg-monitor [monitorFormat]="ThresholdMonitor"/>
+            </srg-section>
+            <!-- TODO Fill Empty Space -->
+          </div>
+          @for (i of Array(4); track $index) {
+            <srg-entry [entryFormat]="BodyTechEntry"/>
+          }
+        </srg-section>
+        <srg-section class="w-50" [title]="'Matrix'">
+          <srg-section [title]="'Device'" [depth]="2">
+            <srg-entry [entryFormat]="MatrixDeviceEntry"/>
+          </srg-section>
+          <srg-section [title]="'Cyberprograms'" [depth]="2">
+            @for (i of Array(4); track $index) {
+              <srg-entry [entryFormat]="MatrixCyberprogramsEntry"/>
+            }
+          </srg-section>
+        </srg-section>
+      </div>
+      <srg-section [title]="'Magic'">
+        <div class="d-flex flex-row w-100">
+          <div class="d-flex flex-column m-0 me-2 w-50">
+            <srg-section [title]="'Grimoire'" [depth]="2">
+              <srg-entry [entryFormat]="TextFieldEntry(3)"/>
+            </srg-section>
+            <srg-section [title]="'Metamagics'" [depth]="2">
+              <srg-entry [entryFormat]="TextFieldEntry(4)"/>
+            </srg-section>
+          </div>
+          <div class="d-flex flex-column m-0 w-50">
+            <srg-section [title]="'Known Formulae'" [depth]="2">
+              @for (i of Array(4); track $index) {
+                <srg-entry [entryFormat]="MagicFormulaeEntry"/>
+              }
+            </srg-section>
+          </div>
+        </div>
+      </srg-section>
+      <srg-section [title]="'Notes'">
+        <srg-entry [entryFormat]="TextFieldEntry(5)"/>
+      </srg-section>
+    </div>
+    <div class="d-flex flex-column">
+      <srg-section [title]="'Progression'">
+        <div class="d-flex flex-row w-100">
+          <srg-section class="w-50 me-2" [title]="'Karma'" [depth]="2">
+            <srg-monitor [monitorFormat]="TotalMonitor"/>
+          </srg-section>
+          <srg-section class="w-50" [title]="'Money'" [depth]="2">
+            <srg-monitor [monitorFormat]="ValueMonitor"/>
+          </srg-section>
+        </div>
+      </srg-section>
+      <srg-section [title]="'Abilities'">
+        <srg-entry [entryFormat]="TextFieldEntry(7)"/>
+      </srg-section>
+      <srg-section [title]="'Talents'">
+        <srg-talent-pyramid/>
+        @for (i of Array(10); track $index) {
+          <srg-entry [entryFormat]="TalentEntry"/>
+        }
+      </srg-section>
+    </div>
+  </div>
 </div>

@@ -1,12 +1,6 @@
 import {Component, input, output} from '@angular/core';
+import {Entry} from './types';
 
-interface SingleEntry {
-  [key:string]: {
-    caption?: string,
-    type: 'text' | 'multiline-text' | 'number' | 'checkbox' | 'condition' | 'difficulty'
-  }
-}
-export type Entry = SingleEntry[];
 export interface EntryData {
   [key:string]: string | number | boolean;
 }

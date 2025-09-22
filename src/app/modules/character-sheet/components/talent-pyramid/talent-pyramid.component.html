@@ -1,0 +1,12 @@
+<table class="w-100">
+  <tr>
+    <td class="text-center">TIER</td>
+  </tr>
+  @for (text of ['I', 'II', 'III', 'IV', 'V']; track $index; let count = $count) {
+    <tr>
+      <td class="text-center">{{ text }}</td>
+      <td><srg-tracker [type]="'box'"
+                       [steps]="tier5Amount + count - $index - 1"/></td>
+    </tr>
+  }
+</table>

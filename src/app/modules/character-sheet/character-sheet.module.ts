@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {CharacterSheetRoutingModule} from './character-sheet-routing.module';
-import {EntryComponent} from './components/entry/entry.component';
+import {EntryComponent} from './shared/entry/entry.component';
 import {Tracker} from './shared/tracker/tracker.component';
 import {SectionComponent} from './shared/section/section.component';
 import {CharacteristicsComponent} from './components/characteristics/characteristics.component';
@@ -11,6 +11,7 @@ import { GlyphPoolComponent } from './shared/glyph-pool/glyph-pool.component';
 import { DiceSymbolsInfoComponent } from './components/dice-symbols-info/dice-symbols-info.component';
 import { MonitorComponent } from './shared/monitor/monitor.component';
 import { PortraitComponent } from './components/portrait/portrait.component';
+import { TalentPyramidComponent } from './components/talent-pyramid/talent-pyramid.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { PortraitComponent } from './components/portrait/portrait.component';
     DiceSymbolsInfoComponent,
     MonitorComponent,
     PortraitComponent,
+    TalentPyramidComponent,
   ],
   exports: [
     EntryComponent,
@@ -32,7 +34,8 @@ import { PortraitComponent } from './components/portrait/portrait.component';
     DiceSymbolsInfoComponent,
     MonitorComponent,
     CharacteristicsComponent,
-    PortraitComponent
+    PortraitComponent,
+    TalentPyramidComponent
   ],
   imports: [
     CommonModule,

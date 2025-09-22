@@ -1,18 +1,19 @@
-import { Component, signal } from '@angular/core';
+import {Component} from '@angular/core';
 import {
-  ArmorEntry, BurdensEntry,
+  ArmorEntry, BodyTechEntry,
+  BurdensEntry,
   CriticalInjuriesEntry,
-  DescriptionEntry,
-  HeadingEntry,
-  WeaponEntry
-} from './components/entry/types';
+  DescriptionEntry, GearEntry, GearEntryExtended, TextFieldEntry,
+  HeadingEntry, MagicFormulaeEntry, MatrixCyberprogramsEntry, MatrixDeviceEntry,
+  WeaponEntry, TalentEntry
+} from './shared/entry/types';
 import {
   DefenseMonitor,
-  FirewallMonitor,
   SoakMonitor,
-  StrainMonitor,
-  SystemStrainMonitor,
-  WoundsMonitor
+  StimpatchMonitor,
+  ThresholdMonitor,
+  TotalMonitor,
+  ValueMonitor
 } from './shared/monitor/types';
 
 @Component({
@@ -21,19 +22,27 @@ import {
   styleUrl: './character-sheet.component.css'
 })
 export class CharacterSheetComponent {
-  protected page = signal<number>(1);
-
   protected readonly WeaponsEntry = WeaponEntry;
   protected readonly DescriptionEntry = DescriptionEntry;
   protected readonly ArmorEntry = ArmorEntry;
   protected readonly HeadingEntry = HeadingEntry;
   protected readonly CriticalInjuriesEntry = CriticalInjuriesEntry;
   protected readonly BurdensEntry = BurdensEntry;
+  protected readonly GearEntry = GearEntry;
+  protected readonly GearEntryExtended = GearEntryExtended;
+  protected readonly BodyTechEntry = BodyTechEntry;
+  protected readonly MatrixDeviceEntry = MatrixDeviceEntry;
+  protected readonly MatrixCyberprogramsEntry = MatrixCyberprogramsEntry;
+  protected readonly MagicFormulaeEntry = MagicFormulaeEntry;
+  protected readonly TextFieldEntry = TextFieldEntry;
 
-  protected readonly WoundsMonitor = WoundsMonitor;
-  protected readonly StrainMonitor = StrainMonitor;
+
+  protected readonly ValueMonitor = ValueMonitor;
+  protected readonly ThresholdMonitor = ThresholdMonitor;
+  protected readonly TotalMonitor = TotalMonitor;
   protected readonly SoakMonitor = SoakMonitor;
   protected readonly DefenseMonitor = DefenseMonitor;
-  protected readonly SystemStrainMonitor = SystemStrainMonitor;
-  protected readonly FirewallMonitor = FirewallMonitor;
+  protected readonly StimpatchMonitor = StimpatchMonitor;
+  protected readonly Array = Array;
+  protected readonly TalentEntry = TalentEntry;
 }

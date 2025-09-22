@@ -1,0 +1,24 @@
+@for (line of entryFormat(); track line) {
+  <div class="d-flex flex-row flex-fill w-100">
+    @for (key of Object.keys(line); track key) {
+      <div class="d-flex flex-row line"
+           [ngClass]=""
+           [class.flex-grow-1]="line[key].type.includes('text')">
+        @if (line[key].caption; as caption) {
+          <span class="align-self-end">{{ caption }}</span>
+        }
+
+        @if(line[key].type.startsWith('text')) {
+          <input type="text">
+        } @else if (line[key].type.startsWith('number')) {
+          <input type="number">
+        } @else if (line[key].type.startsWith('checkbox')) {
+          <input type="checkbox">
+        } @else if (line[key].type.startsWith('tracker')) {
+          <srg-tracker [type]="line[key].type == 'tracker-condition' ? 'condition' : 'difficulty'"
+                       [steps]="line[key].type == 'tracker-condition' ? 3 : 4"/>
+        }
+      </div>
+    }
+</div>
+}

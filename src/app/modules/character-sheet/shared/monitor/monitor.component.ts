@@ -1,5 +1,4 @@
 import {Component, input} from '@angular/core';
-import {round} from '@popperjs/core/lib/utils/math';
 
 export interface Monitor {
   [key: string]: string;
@@ -14,5 +13,4 @@ export class MonitorComponent {
 
   protected readonly Object = Object;
   protected readonly Math = Math;
-  protected readonly round = round;
 }
