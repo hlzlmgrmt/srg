@@ -1,6 +1,6 @@
 @if (skills(); as skills) {
-<table>
-  <thead>
+  <table>
+    <thead>
     <tr>
       <th></th>
       <th class="w-100">{{ title() }}</th>
@@ -8,25 +8,37 @@
       <th>Cha</th>
       <th>Pool</th>
     </tr>
-  </thead>
-  <tbody>
-    @for (key of Object.keys(skills); track $index) {
+    </thead>
+    <tbody>
+      @for (key of Object.keys(skills); track $index) {
+        <tr>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td colspan="2">
+            <div class="d-flex flex-row">
+              <span class="align-self-end">{{ skills[key].title }}</span>
+              <span class="bottom-line w-100"></span>
+              <input type="number">
+            </div>
+          </td>
+          <td>{{ skills[key].char.substring(0, 3) }}</td>
+          <td>
+            <srg-glyph-pool [glyphPool]="calculateDicePool(key)"/>
+        </tr>
+      }
+    <!-- TODO Custom Skill -->
     <tr>
-      <td>
-          <input type="checkbox">
-      </td>
+      <td><input type="checkbox"></td>
       <td colspan="2">
         <div class="d-flex flex-row">
-          <span class="align-self-end">{{ skills[key].title }}</span>
-          <span class="bottom-line w-100"></span>
+          <input type="text">
           <input type="number">
         </div>
       </td>
-      <td>{{ skills[key].char.substring(0, 3) }}</td>
-      <td>
-        <srg-glyph-pool [glyphPool]="calculateDicePool(key)" />
+      <td><input type="text"></td>
+      <td></td>
     </tr>
-    }
-  </tbody>
-</table>
+    </tbody>
+  </table>
 }

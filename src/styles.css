@@ -12,3 +12,25 @@
   font-family: GenesysGlyphsAndDice;
   src: url('./assets/fonts/genesys_glyphs_and_dice-3.0.ttf')
 }
+@font-face {
+  font-family: 'Friz Quadrata Regular';
+  src: url('./assets/fonts/friz-quadrata-regular-os.ttf');
+}
+@font-face {
+  font-family: 'Papernotes';
+  src: url('./assets/fonts/papernotes.otf');
+}
+
+body, html {
+  font-family: 'Friz Quadrata Regular', sans-serif;
+}
+
+.w-33 {
+  width: 33%;
+}
+.w-20 {
+  width: 20%;
+}
+.w-16 {
+  width: 16%;
+}

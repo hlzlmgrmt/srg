@@ -1,9 +1,3 @@
-@if (page() == 1) {
-  <button (click)="page.set(2)">2</button>
-} @else {
-  <button (click)="page.set(1)">1</button>
-}
-
 <div class="page">
   <div class="d-flex flex-row mb-3">
     <div class="d-flex flex-column">
@@ -12,54 +6,80 @@
     <div class="d-flex flex-row-reverse heading-title">
       <img src="assets/img/shadowrun-logo.svg" alt=""/>
       <div class="d-flex flex-column w-100">
-        <h3>Shadowrun</h3>
+        <span>Shadowrun</span>
         <span>Genesys</span>
       </div>
     </div>
   </div>
 
   @if (page() == 1) {
-  <div class="d-flex flex-row">
-    <div class="d-flex flex-column">
-      <srg-section [title]="'Characteristics'">
-        <srg-characteristics />
-      </srg-section>
-      <srg-section [title]="'Skills'">
-        <srg-skills />
-      </srg-section>
-      <srg-section [title]="'Weapons'">
-        <srg-entry [entryFormat]="WeaponsEntry" />
-        <srg-entry [entryFormat]="WeaponsEntry" />
-        <srg-entry [entryFormat]="WeaponsEntry" />
-        <srg-entry [entryFormat]="WeaponsEntry" />
-      </srg-section>
-      <srg-section [title]="'Armor'">
-        <srg-entry [entryFormat]="ArmorEntry" />
-        <srg-entry [entryFormat]="ArmorEntry" />
-      </srg-section>
+    <div class="d-flex flex-row">
+      <div class="d-flex flex-column">
+        <srg-section [title]="'Characteristics'">
+          <srg-characteristics/>
+        </srg-section>
+        <srg-section [title]="'Skills'">
+          <srg-skills/>
+        </srg-section>
+        <srg-section [title]="'Weapons'">
+          <srg-entry [entryFormat]="WeaponsEntry"/>
+          <srg-entry [entryFormat]="WeaponsEntry"/>
+          <srg-entry [entryFormat]="WeaponsEntry"/>
+          <srg-entry [entryFormat]="WeaponsEntry"/>
+        </srg-section>
+        <srg-section [title]="'Armor'">
+          <srg-entry [entryFormat]="ArmorEntry"/>
+          <srg-entry [entryFormat]="ArmorEntry"/>
+        </srg-section>
+      </div>
+      <div class="d-flex flex-column">
+        <srg-dice-symbols-info class="mb-3"/>
+        <srg-portrait class="h-100 mb-3"/>
+        <srg-section [title]="'Description'">
+          <srg-entry [entryFormat]="DescriptionEntry"/>
+        </srg-section>
+        <srg-section [title]="'Condition Monitor'">
+          <div class="d-flex flex-column">
+            <div class="d-flex flex-row w-100">
+              <srg-section class="w-50" [title]="'Wounds'" [depth]="2">
+                <srg-monitor [monitorFormat]="WoundsMonitor"/>
+              </srg-section>
+              <srg-section class="w-50" [title]="'Strain'" [depth]="2">
+                <srg-monitor [monitorFormat]="StrainMonitor"/>
+              </srg-section>
+            </div>
+            <div class="d-flex flex-row w-100">
+              <srg-section class="w-50" [title]="'Soak'" [depth]="2">
+                <srg-monitor [monitorFormat]="SoakMonitor"/>
+              </srg-section>
+              <srg-section class="w-50" [title]="'Defense'" [depth]="2">
+                <srg-monitor [monitorFormat]="DefenseMonitor"/>
+              </srg-section>
+            </div>
+            <div class="d-flex flex-row w-100">
+              <srg-section class="w-50" [title]="'System Strain'" [depth]="2">
+                <srg-monitor [monitorFormat]="SystemStrainMonitor"/>
+              </srg-section>
+              <srg-section class="w-50" [title]="'Firewall'" [depth]="2">
+                <srg-monitor [monitorFormat]="FirewallMonitor"/>
+              </srg-section>
+            </div>
+          </div>
+        </srg-section>
+        <srg-section [title]="'Critical Injuries'">
+          <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
+          <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
+          <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
+          <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
+          <srg-entry [entryFormat]="CriticalInjuriesEntry"/>
+        </srg-section>
+        <srg-section [title]="'Burdens'">
+          <srg-entry [entryFormat]="BurdensEntry"/>
+          <srg-entry [entryFormat]="BurdensEntry"/>
+          <srg-entry [entryFormat]="BurdensEntry"/>
+        </srg-section>
+      </div>
     </div>
-    <div class="d-flex flex-column">
-      <srg-dice-symbols-info class="mb-3"/>
-      <srg-section [title]="'Description'">
-        <srg-entry [entryFormat]="DescriptionEntry" />
-      </srg-section>
-      <srg-section [title]="'Condition Monitor'">
-        <srg-monitor/>
-      </srg-section>
-      <srg-section [title]="'Critical Injuries'">
-        <srg-entry [entryFormat]="CriticalInjuriesEntry" />
-        <srg-entry [entryFormat]="CriticalInjuriesEntry" />
-        <srg-entry [entryFormat]="CriticalInjuriesEntry" />
-        <srg-entry [entryFormat]="CriticalInjuriesEntry" />
-        <srg-entry [entryFormat]="CriticalInjuriesEntry" />
-      </srg-section>
-      <srg-section [title]="'Burdens'">
-        <srg-entry [entryFormat]="BurdensEntry" />
-        <srg-entry [entryFormat]="BurdensEntry" />
-        <srg-entry [entryFormat]="BurdensEntry" />
-      </srg-section>
-    </div>
-  </div>
   } @else {
 
   }

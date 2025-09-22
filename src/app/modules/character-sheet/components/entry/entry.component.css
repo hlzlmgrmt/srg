@@ -4,7 +4,7 @@
 
   span {
     height: fit-content;
-    font-size: xx-small;
+    font-size: 6pt;
     font-weight: bold;
     text-transform: uppercase;
     margin-right: 1px;
@@ -20,12 +20,11 @@
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
   }
-  input[type=checkbox] {
-    width: 0.6rem;
-  }
   input[type=text], input[type=number] {
     min-width: 1.5rem;
-    font-size: 10pt;
+    font-family: 'Papernotes', sans-serif;
+    font-size: 8pt;
+    height: fit-content;
     border: none;
     border-bottom: darkgrey 1px dotted;
   }

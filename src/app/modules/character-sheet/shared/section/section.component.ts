@@ -6,5 +6,6 @@ import {Component, input} from '@angular/core';
   styleUrl: './section.component.css'
 })
 export class SectionComponent {
-  readonly title = input.required<string>()
+  readonly title = input.required<string>();
+  readonly depth = input<number | undefined>(undefined);
 }

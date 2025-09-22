@@ -31,18 +31,26 @@ body {
   page {
     background: white;
     margin: 0;
-    box-shadow: 0;
+    box-shadow: none;
   }
 }
 
 .heading-title {
   img {
-    height: 60px;
+    height: 44px;
   }
 
-  div > * {
-    margin: 0;
-    color: darkred;
-    text-align: end;
+  div {
+    * {
+      color: darkred;
+      text-align: end;
+    }
+    span:first-child {
+      font-size: 16pt;
+    }
+
+    span:last-child {
+      font-size: 6pt;
+    }
   }
 }

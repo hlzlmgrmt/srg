@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Glyph } from '../glyph-pool/glyph-pool.component';
+import { Glyph } from '../../shared/glyph-pool/glyph-pool.component';
 
 @Component({
   selector: 'srg-dice-symbols-info',

@@ -6,6 +6,14 @@ import {
   HeadingEntry,
   WeaponEntry
 } from './components/entry/types';
+import {
+  DefenseMonitor,
+  FirewallMonitor,
+  SoakMonitor,
+  StrainMonitor,
+  SystemStrainMonitor,
+  WoundsMonitor
+} from './shared/monitor/types';
 
 @Component({
   selector: 'srg-character-sheet',
@@ -21,4 +29,11 @@ export class CharacterSheetComponent {
   protected readonly HeadingEntry = HeadingEntry;
   protected readonly CriticalInjuriesEntry = CriticalInjuriesEntry;
   protected readonly BurdensEntry = BurdensEntry;
+
+  protected readonly WoundsMonitor = WoundsMonitor;
+  protected readonly StrainMonitor = StrainMonitor;
+  protected readonly SoakMonitor = SoakMonitor;
+  protected readonly DefenseMonitor = DefenseMonitor;
+  protected readonly SystemStrainMonitor = SystemStrainMonitor;
+  protected readonly FirewallMonitor = FirewallMonitor;
 }

@@ -1,10 +1,9 @@
 table {
-  font-size: x-small;
+  font-size: 8pt;
 
   tr {
     th {
       text-transform: uppercase;
-      font-size: x-small;
       color: darkred;
     }
 
@@ -34,8 +33,17 @@ table {
     input[type=checkbox] {
       width: 7px;
       aspect-ratio: 1 / 1;
+      margin-right: 0.25rem;
     }
 
+    input[type=number], input[type=text] {
+      font-size: 8pt;
+      font-family: 'Papernotes', sans-serif;
+      border: none;
+      border-bottom: 1px dotted darkgrey;
+      width: calc(100% + 4px);
+      text-transform: uppercase;
+    }
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
       -webkit-appearance: none;
@@ -43,10 +51,7 @@ table {
       /* <-- Apparently some margin are still there even though it's hidden */
     }
     input[type=number] {
-      font-size: 10pt;
       max-width: 1.5rem;
-      border: none;
-      border-bottom: 1px dotted darkgrey;
       text-align: center;
       -moz-appearance: textfield;
       /* Firefox */

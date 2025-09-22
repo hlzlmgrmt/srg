@@ -1,0 +1,20 @@
+div > div {
+  font-size: 6pt;
+  align-items: center;
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+  input[type=number] {
+    font-size: 8pt;
+    font-family: 'Papernotes', sans-serif;
+    height: fit-content;
+    border: none;
+    border-bottom: darkgrey 1px dotted;
+    max-width: 3rem;
+    text-align: center;
+    -moz-appearance: textfield; /* Firefox */
+  }
+}
