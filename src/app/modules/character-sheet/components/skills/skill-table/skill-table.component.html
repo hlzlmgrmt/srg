@@ -13,13 +13,15 @@
       @for (key of Object.keys(skills); track $index) {
         <tr>
           <td>
-            <input type="checkbox">
+            <input type="checkbox" [checked]="skills[key].archetype_skill"
+                   (change)="changeValue(key, $event, 'archetype_skill')">
           </td>
           <td colspan="2">
             <div class="d-flex flex-row">
               <span class="align-self-end">{{ skills[key].title }}</span>
               <span class="bottom-line w-100"></span>
-              <input type="number">
+              <input type="number" [value]="skills[key].value"
+                     (input)="changeValue(key, $event, 'value')">
             </div>
           </td>
           <td>{{ skills[key].char.substring(0, 3) }}</td>

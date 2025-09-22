@@ -6,12 +6,12 @@ import {Tracker} from './shared/tracker/tracker.component';
 import {SectionComponent} from './shared/section/section.component';
 import {CharacteristicsComponent} from './components/characteristics/characteristics.component';
 import {SkillsComponent} from './components/skills/skills.component';
-import { SkillTableComponent } from './components/skills/skill-table/skill-table.component';
-import { GlyphPoolComponent } from './shared/glyph-pool/glyph-pool.component';
-import { DiceSymbolsInfoComponent } from './components/dice-symbols-info/dice-symbols-info.component';
-import { MonitorComponent } from './shared/monitor/monitor.component';
-import { PortraitComponent } from './components/portrait/portrait.component';
-import { TalentPyramidComponent } from './components/talent-pyramid/talent-pyramid.component';
+import {SkillTableComponent} from './components/skills/skill-table/skill-table.component';
+import {GlyphPoolComponent} from './shared/glyph-pool/glyph-pool.component';
+import {DiceSymbolsInfoComponent} from './components/dice-symbols-info/dice-symbols-info.component';
+import {MonitorComponent} from './shared/monitor/monitor.component';
+import {PortraitComponent} from './components/portrait/portrait.component';
+import {TalentPyramidComponent} from './components/talent-pyramid/talent-pyramid.component';
 
 @NgModule({
   declarations: [

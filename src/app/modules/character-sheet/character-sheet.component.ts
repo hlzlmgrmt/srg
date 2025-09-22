@@ -1,11 +1,19 @@
-import {Component} from '@angular/core';
+import {Component, effect, signal} from '@angular/core';
 import {
-  ArmorEntry, BodyTechEntry,
+  ArmorEntry,
+  BodyTechEntry,
   BurdensEntry,
   CriticalInjuriesEntry,
-  DescriptionEntry, GearEntry, GearEntryExtended, TextFieldEntry,
-  HeadingEntry, MagicFormulaeEntry, MatrixCyberprogramsEntry, MatrixDeviceEntry,
-  WeaponEntry, TalentEntry
+  DescriptionEntry,
+  GearEntry,
+  GearEntryExtended,
+  HeadingEntry,
+  MagicFormulaeEntry,
+  MatrixCyberprogramsEntry,
+  MatrixDeviceEntry,
+  TalentEntry,
+  TextFieldEntry,
+  WeaponEntry
 } from './shared/entry/types';
 import {
   DefenseMonitor,
@@ -15,6 +23,7 @@ import {
   TotalMonitor,
   ValueMonitor
 } from './shared/monitor/types';
+import {Character, EMPTY_CHARACTER} from './types';
 
 @Component({
   selector: 'srg-character-sheet',
@@ -22,6 +31,30 @@ import {
   styleUrl: './character-sheet.component.css'
 })
 export class CharacterSheetComponent {
+  private readonly CHARACTER_DATA_SAVE_KEY = 'srg_character_data_b64';
+  readonly character = signal<Character>(EMPTY_CHARACTER);
+
+  constructor() {
+    const savedCharacter = window.localStorage.getItem(this.CHARACTER_DATA_SAVE_KEY);
+    if (savedCharacter) {
+      this.character.set(JSON.parse(atob(savedCharacter)));
+    }
+
+    effect(() => {
+      window.localStorage.setItem(this.CHARACTER_DATA_SAVE_KEY,
+        btoa(JSON.stringify(this.character(), function (k, v) {
+          return v === undefined ? null : v;
+        }))
+      );
+    })
+  }
+
+  setData(key: string, event: [string, any]) {
+    let character = structuredClone(this.character());
+    character[key][event[0]] = event[1];
+    this.character.set(character);
+  }
+
   protected readonly WeaponsEntry = WeaponEntry;
   protected readonly DescriptionEntry = DescriptionEntry;
   protected readonly ArmorEntry = ArmorEntry;
