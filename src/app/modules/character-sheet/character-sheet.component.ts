@@ -34,6 +34,7 @@ export class CharacterSheetComponent {
   protected readonly MatrixDeviceEntry = MatrixDeviceEntry;
   protected readonly MatrixCyberprogramsEntry = MatrixCyberprogramsEntry;
   protected readonly MagicFormulaeEntry = MagicFormulaeEntry;
+  protected readonly TalentEntry = TalentEntry;
   protected readonly TextFieldEntry = TextFieldEntry;
 
 
@@ -43,6 +44,6 @@ export class CharacterSheetComponent {
   protected readonly SoakMonitor = SoakMonitor;
   protected readonly DefenseMonitor = DefenseMonitor;
   protected readonly StimpatchMonitor = StimpatchMonitor;
+
   protected readonly Array = Array;
-  protected readonly TalentEntry = TalentEntry;
 }

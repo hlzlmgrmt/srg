@@ -1,7 +1,13 @@
 :root {
   --color-setback-dice: black;
   --color-boost-dice: cornflowerblue;
-  --color-difficulty-dice: rebeccapurple;
+  /* HSL for conversion to lighter colors in character sheet */
+  --color-difficulty-dice-h: 270;
+  --color-difficulty-dice-s: 50%;
+  --color-difficulty-dice-l: 40%;
+  --color-difficulty-dice: hsl(var(--color-difficulty-dice-h),
+                               var(--color-difficulty-dice-s),
+                               var(--color-difficulty-dice-l));
   --color-ability-dice: forestgreen;
   --color-challenge-dice: firebrick;
   --color-proficiency-dice: gold;
@@ -33,4 +39,11 @@ body, html {
 }
 .w-16 {
   width: 16%;
+}
+
+.flex-grow-2 {
+  flex-grow: 2; !important;
+}
+.flex-grow-3 {
+  flex-grow: 3; !important;
 }

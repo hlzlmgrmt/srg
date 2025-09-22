@@ -142,7 +142,7 @@ export const MatrixCyberprogramsEntry: Entry = [
 ]
 export const MagicFormulaeEntry: Entry = [
   {
-    "name": {type: 'text'},
+    "name": {type: 'text-main'},
     "base": {caption: 'Base', type: 'text'}
   }, {
     "special": {caption: 'Special', type: 'text'},

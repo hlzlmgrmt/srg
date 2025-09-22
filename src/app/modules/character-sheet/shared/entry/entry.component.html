@@ -2,7 +2,6 @@
   <div class="d-flex flex-row flex-fill w-100">
     @for (key of Object.keys(line); track key) {
       <div class="d-flex flex-row line"
-           [ngClass]=""
            [class.flex-grow-1]="line[key].type.includes('text')">
         @if (line[key].caption; as caption) {
           <span class="align-self-end">{{ caption }}</span>

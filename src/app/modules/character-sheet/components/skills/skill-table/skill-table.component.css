@@ -7,7 +7,7 @@ table {
       color: darkred;
     }
 
-    th:not(:nth-child(2)) {
+    th:not(:nth-child(2)), td:not(:nth-child(2)), td:not(:nth-child(2)) > input {
       text-align: center;
     }
 
