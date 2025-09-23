@@ -9,7 +9,7 @@ import {WikiRoutingModule} from './wiki-routing.module';
   ],
   imports: [
     CommonModule,
-    WikiRoutingModule
+    WikiRoutingModule,
   ]
 })
 export class WikiModule { }

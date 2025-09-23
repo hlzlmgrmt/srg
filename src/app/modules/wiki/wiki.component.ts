@@ -12,7 +12,7 @@ import {
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
-import {firstValueFrom} from 'rxjs';
+import {firstValueFrom, NotFoundError, Observable} from 'rxjs';
 import {toObservable} from '@angular/core/rxjs-interop';
 
 interface JSONNavigatableRoutes {
@@ -47,6 +47,9 @@ export class WikiComponent {
   private readonly httpClient = inject(HttpClient);
   private readonly sanitizer = inject(DomSanitizer);
 
+  /**
+   * All potential routes of the wiki component
+   */
   protected routes = signal<NavigatableRoutesMap | undefined>(undefined);
   protected selectedRoute = signal<string>('talents/tier_2');
 
@@ -58,7 +61,8 @@ export class WikiComponent {
 
   constructor() {
     this.httpClient.get<JSONNavigatableRoutes>('assets/pages/nav.json', {responseType: 'json'}).subscribe(data => {
-      this.routes.set(this.parseRoutes(data));
+      const parsedRoutes = this.parseRoutes(data);
+      this.routes.set(parsedRoutes);
     })
 
     effect(() => {
@@ -75,6 +79,15 @@ export class WikiComponent {
           this.content.set(this.sanitizer.bypassSecurityTrustHtml(parsedData));
           this.contentWrapper.nativeElement.scrollTop = 0;
           this.loading.set(false);
+        }).catch(err => {
+          console.error(err)
+          if (err.status === 404) {
+            this.content.set(this.sanitizer.bypassSecurityTrustHtml('<i>Request for HTML file "'
+              + selectedRoute?.resource
+              + '" was received but no asset found. Asset may be missing from build.</i>'))
+          } else {
+            throw err;
+          }
         })
       });
     })
@@ -112,6 +125,7 @@ export class WikiComponent {
     });
     return routes;
   }
+
   private async parsePageContent(data: string, selectedRoute?: NavigatableRoute): Promise<string> {
     let result = (selectedRoute?.display_name && selectedRoute.display_name !== '' ?
       '<h' + (selectedRoute.depth ?? 1) + '>' + selectedRoute?.display_name + '</h' + (selectedRoute.depth ?? 1) + '>\n' : '') + data
@@ -157,6 +171,7 @@ export class WikiComponent {
   selectRoute(route: string) {
     this.selectedRoute.set(route);
   }
+
   openInNewWindow(link: string): void {
     const url = this.router.serializeUrl(
       this.router.createUrlTree([link])

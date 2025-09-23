@@ -4,16 +4,14 @@
   --main-header-height: 3rem;
 }
 
-html,
 body {
   margin: 0;
   height: 100%;
-  overflow: hidden;
 }
 
 .main {
-  height: 100vh;
-  overflow: scroll;
+  height: 100dvh;
+  overflow-y: hidden;
 }
 
 @media screen and (max-width: 575px) {
@@ -57,8 +55,7 @@ body {
   border-bottom-color: darkred;
   animation: spin 1s linear infinite;
 }
-
-@keyframes spin {
+@keyframes spin{
   to {
     transform: rotate(360deg);
   }
@@ -68,7 +65,10 @@ body {
   width: calc(100% - var(--navigation-width));
   margin-left: var(--navigation-width);
   max-height: 100%;
-  overflow: scroll;
+  padding: 1rem;
+
+  overflow-x: hidden;
+  overflow-y: auto;
 
   span.glyph {
     font-family: GenesysGlyphsAndDice;
@@ -221,7 +221,7 @@ body {
   }
 
   div.talents-list {
-    >div {
+    > div {
       width: calc((100% / 3) - (var(--talent-padding) * 2));
       padding: calc(var(--talent-padding) / 2);
       margin: calc(var(--talent-padding) / 2);
@@ -231,26 +231,25 @@ body {
 
   @media screen and (max-width: 768px) {
     div.talents-list {
-      >div {
+      > div {
         width: 100%;
         margin: 0;
         padding: 0;
         border: none;
       }
 
-      >div:not(:first-child) {
+      > div:not(:first-child) {
         margin-top: 1rem;
       }
 
-      >div:not(:last-child) {
+      > div:not(:last-child) {
         border-bottom: var(--bs-border-color) solid 1px;
       }
     }
   }
-
   @media screen and (min-width: 769px) and (max-width: 992px) {
     div.talents-list {
-      >div {
+      > div {
         width: calc((100% / 2) - (var(--talent-padding) * 2));
       }
     }
@@ -291,38 +290,38 @@ body {
 
   .navigation-content {
     height: 100%;
-    overflow: scroll;
+    overflow: hidden;
 
-    >div:first-child {
-      overflow: scroll;
+    > div:first-child {
+      overflow-y: scroll;
     }
 
-    >div:last-child {
+    > div:last-child {
       margin-top: 0.5rem;
     }
 
-    >* {
-      >a {
+    > * {
+      > a {
         color: darkred;
         text-decoration: none;
         margin-bottom: 0.1rem;
 
-        >div>span:first-child {
+        > div > span:first-child {
           width: 100%;
         }
 
-        >div>span:not(:first-child) {
+        > div > span:not(:first-child) {
           margin-right: 1rem;
           display: inline-flex;
           align-items: center;
         }
       }
 
-      >a:not(.selected):hover {
+      > a:not(.selected):hover {
         font-weight: bold;
       }
 
-      >a.selected {
+      > a.selected {
         color: black;
         font-weight: bolder;
         cursor: default;
@@ -343,7 +342,7 @@ body {
   outline: inherit;
   z-index: 3;
 
-  >span {
+  > span {
     font-size: x-large;
   }
 }
