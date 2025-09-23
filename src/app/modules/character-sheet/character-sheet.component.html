@@ -135,7 +135,7 @@
             }
           </div>
           <div class="d-flex flex-column m-0 w-50">
-            @for (i of Array(12); track $index) {
+            @for (i of Array(11); track $index) {
               <srg-entry [data]="character()['gear']"
                          [index]="$index"
                          [entryFormat]="GearEntry"
@@ -220,7 +220,7 @@
       </srg-section>
       <srg-section [title]="'Abilities'">
         <srg-entry [data]="character()['abilities']"
-                   [entryFormat]="TextFieldEntry(7)"
+                   [entryFormat]="TextFieldEntry(6)"
                    (valueChanged)="setData('abilities', $event)"/>
       </srg-section>
       <srg-section [title]="'Talents'">

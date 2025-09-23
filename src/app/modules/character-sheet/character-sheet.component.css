@@ -11,6 +11,8 @@ body {
   width: 210mm;
   height: 297mm;
   overflow: hidden;
+  outline: 1px dotted lightgrey;
+  outline-offset: -5mm;
 
   div {
     margin: 0 5px;
