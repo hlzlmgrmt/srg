@@ -13,8 +13,13 @@
       @for (key of Object.keys(skills); track $index) {
         <tr>
           <td>
-            <input type="checkbox" [checked]="skills[key].archetype_skill"
-                   (change)="changeValue(key, $event, 'archetype_skill')">
+            <label class="checkbox">
+              <input type="checkbox" [checked]="skills[key].archetype_skill"
+                     (change)="changeValue(key, $event, 'archetype_skill')">
+              <span></span>
+            </label>
+
+
           </td>
           <td colspan="2">
             <div class="d-flex flex-row">
@@ -31,7 +36,12 @@
       }
     <!-- TODO Custom Skill -->
     <tr>
-      <td><input type="checkbox"></td>
+      <td>
+        <label class="checkbox">
+          <input type="checkbox">
+          <span></span>
+        </label>
+      </td>
       <td colspan="2">
         <div class="d-flex flex-row">
           <input type="text">

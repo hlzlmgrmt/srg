@@ -12,7 +12,10 @@
         } @else if (line[key].type.startsWith('number')) {
           <input type="number">
         } @else if (line[key].type.startsWith('checkbox')) {
-          <input type="checkbox">
+          <label class="checkbox">
+            <input type="checkbox" (change)="changeValue('', $event, '')">
+            <span></span>
+          </label>
         } @else if (line[key].type.startsWith('tracker')) {
           <srg-tracker [type]="line[key].type == 'tracker-condition' ? 'condition' : 'difficulty'"
                        [steps]="line[key].type == 'tracker-condition' ? 3 : 4"/>

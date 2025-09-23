@@ -30,10 +30,38 @@ table {
       min-width: 4rem;
     }
 
-    input[type=checkbox] {
+    .checkbox {
+      display: flex;
+      position: relative;
+      cursor: pointer;
       width: 7px;
-      aspect-ratio: 1 / 1;
-      margin-right: 0.25rem;
+      margin-right: 3px;
+      margin-bottom: 5px;
+
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      input[type=checkbox] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      input[type=checkbox]:checked ~ span {
+        background-color: lightgrey;
+      }
+
+      span {
+        position: absolute;
+        border: 1px solid darkgrey;
+        border-radius: 100%;
+        background-color: transparent;
+        width: 7px;
+        aspect-ratio: 1 / 1;
+      }
     }
 
     input[type=number], input[type=text] {
