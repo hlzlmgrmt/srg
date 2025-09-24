@@ -12,6 +12,7 @@ import {DiceSymbolsInfoComponent} from './components/dice-symbols-info/dice-symb
 import {MonitorComponent} from './shared/monitor/monitor.component';
 import {PortraitComponent} from './components/portrait/portrait.component';
 import {TalentPyramidComponent} from './components/talent-pyramid/talent-pyramid.component';
+import { PageControlComponent } from './components/page-control/page-control.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {TalentPyramidComponent} from './components/talent-pyramid/talent-pyramid
     MonitorComponent,
     PortraitComponent,
     TalentPyramidComponent,
+    PageControlComponent,
   ],
   exports: [
     EntryComponent,
@@ -35,7 +37,8 @@ import {TalentPyramidComponent} from './components/talent-pyramid/talent-pyramid
     MonitorComponent,
     CharacteristicsComponent,
     PortraitComponent,
-    TalentPyramidComponent
+    TalentPyramidComponent,
+    PageControlComponent
   ],
   imports: [
     CommonModule,

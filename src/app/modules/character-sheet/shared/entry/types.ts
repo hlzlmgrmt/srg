@@ -6,7 +6,6 @@ export type EntryType =
   | 'number'                // Basic numeric input with fixed width.
   | 'number-signed'         // Numeric input allowing signs (+ or -). 0 can be proceeded with '+'.
   | 'number-positive'       // Non-nullable and non-negative numeric input with fixed width.
-  | 'number-double'         // Two basic numeric inputs (armor -> defense as special case)
   | 'checkbox'              // Stylized checkbox
   | 'tracker-condition'     // Condition tracker with three boxes, numerical output
   | 'tracker-difficulty';   // Difficulty tracker with five diamonds, numerical output
@@ -65,7 +64,8 @@ export const ArmorEntry: Entry = [
   {
     "equipped": {type: 'checkbox'},
     "name": {type: 'text-main'},
-    "defense": {caption: 'Defense', type: 'number-double'},
+    /* TODO Special format for number-double */
+    "defense": {caption: 'Defense', type: 'text'},
     "soak": {caption: 'Soak', type: 'number'},
     "encumbrance": {caption: 'Enc', type: 'number'},
     "hard_points": {caption: 'HP', type: 'number'},

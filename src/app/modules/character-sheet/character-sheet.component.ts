@@ -25,6 +25,7 @@ import {
 } from './shared/monitor/types';
 import {Character, EMPTY_CHARACTER} from './types';
 import {EntryData} from './shared/entry/entry.component';
+import {MonitorData} from './shared/monitor/monitor.component';
 
 @Component({
   selector: 'srg-character-sheet',
@@ -50,7 +51,7 @@ export class CharacterSheetComponent {
     })
   }
 
-  getData(key: string, index?: number): EntryData | undefined {
+  getData(key: string, index?: number): EntryData | MonitorData | undefined {
     if (index !== undefined) {
       return this.character()[key] ? this.character()[key][index] : undefined;
     }
@@ -58,8 +59,6 @@ export class CharacterSheetComponent {
   }
 
   setData(key: string, event: [string, any], index?: number) {
-    console.error("event: ", key, JSON.stringify(event), index);
-
     let character = structuredClone(this.character());
     if (character[key] === undefined) {
       character[key] = {}
@@ -73,9 +72,11 @@ export class CharacterSheetComponent {
     } else {
       character[key][event[0]] = event[1];
     }
-
-    console.error("newData: ", JSON.stringify(character[key]))
     this.character.set(character);
+  }
+
+  importCharacterData(characterDataRaw: string) {
+    this.character.set(JSON.parse(atob(characterDataRaw)));
   }
 
   protected readonly WeaponsEntry = WeaponEntry;

@@ -1,3 +1,6 @@
+<srg-page-control [character]="character()"
+                  (rawCharacterDataImported)="importCharacterData($event)"/>
+
 <div class="page">
   <div class="d-flex flex-row mb-3">
     <div class="d-flex flex-column">
@@ -52,26 +55,41 @@
         <div class="d-flex flex-column">
           <div class="d-flex flex-row m-0 w-100">
             <srg-section class="w-50" [title]="'Wounds'" [depth]="2">
-              <srg-monitor [monitorFormat]="ThresholdMonitor"/>
+              <srg-monitor [data]="getData('wounds')"
+                           [monitorFormat]="ThresholdMonitor"
+                           (valueChanged)="setData('wounds', $event)"
+              />
             </srg-section>
             <srg-section class="w-50" [title]="'Strain'" [depth]="2">
-              <srg-monitor [monitorFormat]="ThresholdMonitor"/>
+              <srg-monitor [data]="getData('strain')"
+                           [monitorFormat]="ThresholdMonitor"
+                           (valueChanged)="setData('strain', $event)"/>
             </srg-section>
           </div>
           <div class="d-flex flex-row m-0 w-100">
             <srg-section class="w-50" [title]="'Soak'" [depth]="2">
-              <srg-monitor [monitorFormat]="SoakMonitor"/>
+              <srg-monitor [data]="getData('soak')"
+                           [monitorFormat]="SoakMonitor"
+                           (valueChanged)="setData('soak', $event)"/>
             </srg-section>
             <srg-section class="w-50" [title]="'Defense'" [depth]="2">
-              <srg-monitor [monitorFormat]="DefenseMonitor"/>
+              <srg-monitor [data]="getData('defense')"
+                           [monitorFormat]="DefenseMonitor"
+                           (valueChanged)="setData('defense', $event)"/>
             </srg-section>
           </div>
           <div class="d-flex flex-row m-0 w-100">
             <srg-section class="w-50" [title]="'System Strain'" [depth]="2">
-              <srg-monitor [monitorFormat]="ThresholdMonitor"/>
+              <srg-monitor [data]="getData('system_strain')"
+                           [monitorFormat]="ThresholdMonitor"
+                           (valueChanged)="setData('system_strain', $event)"/>
+
             </srg-section>
             <srg-section class="w-50" [title]="'Firewall'" [depth]="2">
-              <srg-monitor [monitorFormat]="ValueMonitor"/>
+              <srg-monitor [data]="getData('firewall')"
+                           [monitorFormat]="ValueMonitor"
+                           (valueChanged)="setData('firewall', $event)"/>
+
             </srg-section>
           </div>
         </div>
@@ -117,10 +135,16 @@
           <div class="d-flex flex-column m-0 me-2 w-50">
             <div class="d-flex flex-row m-0 w-100">
               <srg-section class="w-50" [title]="'Encumbrance'" [depth]="2">
-                <srg-monitor [monitorFormat]="ThresholdMonitor"/>
+                <srg-monitor [data]="getData('encumbrance')"
+                             [monitorFormat]="ThresholdMonitor"
+                             (valueChanged)="setData('encumbrance', $event)"/>
+
               </srg-section>
               <srg-section class="w-50" [title]="'Stimpatches'" [depth]="2">
-                <srg-monitor [monitorFormat]="StimpatchMonitor"/>
+                <srg-monitor [data]="getData('stimpatches')"
+                             [monitorFormat]="StimpatchMonitor"
+                             (valueChanged)="setData('stimpatches', $event)"/>
+
               </srg-section>
             </div>
             @for (i of Array(4); track $index) {
@@ -142,7 +166,10 @@
         <srg-section class="w-50 me-2" [title]="'Bodytech'">
           <div class="d-flex flex-row m-0 w-100">
             <srg-section class="w-50" [title]="'Essence Loss'" [depth]="2">
-              <srg-monitor [monitorFormat]="ThresholdMonitor"/>
+              <srg-monitor [data]="getData('essence_loss')"
+                           [monitorFormat]="ThresholdMonitor"
+                           (valueChanged)="setData('essence_loss', $event)"/>
+
             </srg-section>
             <!-- TODO Fill Empty Space -->
           </div>
@@ -202,10 +229,15 @@
       <srg-section [title]="'Progression'">
         <div class="d-flex flex-row w-100">
           <srg-section class="w-50 me-2" [title]="'Karma'" [depth]="2">
-            <srg-monitor [monitorFormat]="TotalMonitor"/>
+            <srg-monitor [data]="getData('karma')"
+                         [monitorFormat]="TotalMonitor"
+                         (valueChanged)="setData('karma', $event)"/>
+
           </srg-section>
           <srg-section class="w-50" [title]="'Money'" [depth]="2">
-            <srg-monitor [monitorFormat]="ValueMonitor"/>
+            <srg-monitor [data]="getData('money')"
+                         [monitorFormat]="ValueMonitor"
+                         (valueChanged)="setData('value', $event)"/>
           </srg-section>
         </div>
       </srg-section>
