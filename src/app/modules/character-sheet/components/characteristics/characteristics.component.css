@@ -1,0 +1,30 @@
+.characteristic {
+  margin: 0 0.5rem;
+
+  input[type=number] {
+    flex: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border: 1px darkgrey solid;
+    border-radius: 100%;
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Papernotes', sans-serif;
+    -moz-appearance: textfield;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+
+  span {
+    margin-top: 0.25rem;
+    font-size: x-small;
+    font-weight: bold;
+    text-align: center;
+    color: darkred;
+  }
+}

@@ -1,0 +1,88 @@
+table {
+  font-size: 8pt;
+
+  tr {
+    th {
+      text-transform: uppercase;
+      color: darkred;
+    }
+
+    th:not(:nth-child(2)), td:not(:nth-child(2)), td:not(:nth-child(2)) > input {
+      text-align: center;
+    }
+
+    td:nth-child(2) {
+      span:first-child {
+        text-transform: uppercase;
+        text-wrap: nowrap;
+      }
+
+      .bottom-line {
+        border-bottom: 1px dotted darkgrey;
+      }
+    }
+
+    td:nth-child(3) {
+      text-transform: uppercase;
+    }
+
+    td:nth-child(4) {
+      min-width: 4rem;
+    }
+
+    .checkbox {
+      display: flex;
+      position: relative;
+      cursor: pointer;
+      width: 7px;
+      margin-right: 3px;
+      margin-bottom: 5px;
+
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
+      input[type=checkbox] {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+      }
+      input[type=checkbox]:checked ~ span {
+        background-color: lightgrey;
+      }
+
+      span {
+        position: absolute;
+        border: 1px solid darkgrey;
+        border-radius: 100%;
+        background-color: transparent;
+        width: 7px;
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    input[type=number], input[type=text] {
+      font-size: 8pt;
+      font-family: 'Papernotes', sans-serif;
+      border: none;
+      border-bottom: 1px dotted darkgrey;
+      width: calc(100% + 4px);
+      text-transform: uppercase;
+    }
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+      /* <-- Apparently some margin are still there even though it's hidden */
+    }
+    input[type=number] {
+      max-width: 1.5rem;
+      text-align: center;
+      -moz-appearance: textfield;
+      /* Firefox */
+    }
+  }
+}

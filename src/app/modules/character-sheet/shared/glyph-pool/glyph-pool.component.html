@@ -1,0 +1,36 @@
+@if (glyphPool(); as glyphs) {
+<div class="d-flex flex-row flex-fill w-100 justify-content-center">
+  @for (glyph of glyphs; track $index) {
+    <span [ngClass]="glyph">
+      @if (['boost', 'setback'].includes(glyph)) {
+        j
+      } @else if (['ability', 'difficulty'].includes(glyph)) {
+        k
+      } @else if (['proficiency', 'challenge', 'power'].includes(glyph)){
+        l
+      } @else {
+          @switch (glyph) {
+            @case ('success') {
+              s
+            }
+            @case ('advantage') {
+              a
+            }
+            @case ('triumph') {
+              t
+            }
+            @case ('failure') {
+              f
+            }
+            @case ('threat') {
+              h
+            }
+            @case ('despair') {
+              d
+            }
+          }
+      }
+    </span>
+  }
+</div>
+}

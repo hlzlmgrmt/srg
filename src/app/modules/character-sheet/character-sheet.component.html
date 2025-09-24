@@ -1,1 +1,261 @@
-<p>character-sheet works!</p>
+<srg-page-control [character]="character()"
+                  (rawCharacterDataImported)="importCharacterData($event)"/>
+
+<div class="page">
+  <div class="d-flex flex-row mb-3">
+    <div class="d-flex flex-column">
+      <srg-entry [data]="getData('heading')"
+                 [entryFormat]="HeadingEntry"
+                 (valueChanged)="setData('heading', $event)"/>
+    </div>
+    <div class="d-flex flex-row-reverse heading-title">
+      <img src="assets/img/shadowrun-logo.svg" alt=""/>
+      <div class="d-flex flex-column w-100">
+        <span>SHADOWRUN</span>
+        <span>GENESYS</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex flex-row">
+    <div class="d-flex flex-column">
+      <srg-section [title]="'Characteristics'">
+        <srg-characteristics [characteristics]="character().characteristics"
+                             (valueChanged)="setData('characteristics', $event)"/>
+      </srg-section>
+      <srg-section [title]="'Skills'">
+        <srg-skills [skills]="character().skills"
+                    [characteristics]="character().characteristics"
+                    (valueChanged)="setData('skills', $event)"/>
+      </srg-section>
+      <srg-section [title]="'Weapons'">
+        @for (i of Array(4); track $index) {
+          <srg-entry [data]="getData('weapons', $index)"
+                     [entryFormat]="WeaponsEntry"
+                     (valueChanged)="setData('weapons', $event, $index)"/>
+        }
+      </srg-section>
+      <srg-section [title]="'Armor'">
+        @for (i of Array(2); track $index) {
+          <srg-entry [data]="getData('armor', $index)"
+                     [entryFormat]="ArmorEntry"
+                     (valueChanged)="setData('armor', $event, $index)"/>
+        }
+      </srg-section>
+    </div>
+    <div class="d-flex flex-column">
+      <srg-dice-symbols-info class="mb-3"/>
+      <srg-portrait class="h-100 mb-3"/>
+      <srg-section [title]="'Description'">
+        <srg-entry [data]="getData('description')"
+                   [entryFormat]="DescriptionEntry"
+                   (valueChanged)="setData('description', $event)"/>
+      </srg-section>
+      <srg-section [title]="'Condition Monitor'">
+        <div class="d-flex flex-column">
+          <div class="d-flex flex-row m-0 w-100">
+            <srg-section class="w-50" [title]="'Wounds'" [depth]="2">
+              <srg-monitor [data]="getData('wounds')"
+                           [monitorFormat]="ThresholdMonitor"
+                           (valueChanged)="setData('wounds', $event)"
+              />
+            </srg-section>
+            <srg-section class="w-50" [title]="'Strain'" [depth]="2">
+              <srg-monitor [data]="getData('strain')"
+                           [monitorFormat]="ThresholdMonitor"
+                           (valueChanged)="setData('strain', $event)"/>
+            </srg-section>
+          </div>
+          <div class="d-flex flex-row m-0 w-100">
+            <srg-section class="w-50" [title]="'Soak'" [depth]="2">
+              <srg-monitor [data]="getData('soak')"
+                           [monitorFormat]="SoakMonitor"
+                           (valueChanged)="setData('soak', $event)"/>
+            </srg-section>
+            <srg-section class="w-50" [title]="'Defense'" [depth]="2">
+              <srg-monitor [data]="getData('defense')"
+                           [monitorFormat]="DefenseMonitor"
+                           (valueChanged)="setData('defense', $event)"/>
+            </srg-section>
+          </div>
+          <div class="d-flex flex-row m-0 w-100">
+            <srg-section class="w-50" [title]="'System Strain'" [depth]="2">
+              <srg-monitor [data]="getData('system_strain')"
+                           [monitorFormat]="ThresholdMonitor"
+                           (valueChanged)="setData('system_strain', $event)"/>
+
+            </srg-section>
+            <srg-section class="w-50" [title]="'Firewall'" [depth]="2">
+              <srg-monitor [data]="getData('firewall')"
+                           [monitorFormat]="ValueMonitor"
+                           (valueChanged)="setData('firewall', $event)"/>
+
+            </srg-section>
+          </div>
+        </div>
+      </srg-section>
+      <srg-section [title]="'Critical Injuries'">
+        @for (i of Array(5); track $index) {
+          <srg-entry [data]="getData('critical_injuries', $index)"
+                     [entryFormat]="CriticalInjuriesEntry"
+                     (valueChanged)="setData('critical_injuries', $event, $index)"/>
+        }
+      </srg-section>
+      <srg-section [title]="'Burdens'">
+        @for (i of Array(3); track $index) {
+          <srg-entry [data]="getData('burdens', $index)"
+                     [entryFormat]="BurdensEntry"
+                     (valueChanged)="setData('burdens', $event, $index)"/>
+        }
+      </srg-section>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="d-flex flex-row mb-3">
+    <div class="d-flex flex-column">
+      <srg-entry [data]="getData('heading')"
+                 [entryFormat]="HeadingEntry"
+                 (valueChanged)="setData('heading', $event)"/>
+    </div>
+    <div class="d-flex flex-row-reverse heading-title">
+      <img src="assets/img/shadowrun-logo.svg" alt=""/>
+      <div class="d-flex flex-column w-100">
+        <span>SHADOWRUN</span>
+        <span>GENESYS</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="d-flex flex-row">
+    <div class="d-flex flex-column">
+      <srg-section [title]="'Gear'">
+        <div class="d-flex flex-row w-100">
+          <div class="d-flex flex-column m-0 me-2 w-50">
+            <div class="d-flex flex-row m-0 w-100">
+              <srg-section class="w-50" [title]="'Encumbrance'" [depth]="2">
+                <srg-monitor [data]="getData('encumbrance')"
+                             [monitorFormat]="ThresholdMonitor"
+                             (valueChanged)="setData('encumbrance', $event)"/>
+
+              </srg-section>
+              <srg-section class="w-50" [title]="'Stimpatches'" [depth]="2">
+                <srg-monitor [data]="getData('stimpatches')"
+                             [monitorFormat]="StimpatchMonitor"
+                             (valueChanged)="setData('stimpatches', $event)"/>
+
+              </srg-section>
+            </div>
+            @for (i of Array(4); track $index) {
+              <srg-entry [data]="getData('gear_extended', $index)"
+                         [entryFormat]="GearEntryExtended"
+                         (valueChanged)="setData('gear_extended', $event, $index)"/>
+            }
+          </div>
+          <div class="d-flex flex-column m-0 w-50">
+            @for (i of Array(11); track $index) {
+              <srg-entry [data]="getData('gear', $index)"
+                         [entryFormat]="GearEntry"
+                         (valueChanged)="setData('gear', $event, $index)"/>
+            }
+          </div>
+        </div>
+      </srg-section>
+      <div class="d-flex flex-row m-0 w-100">
+        <srg-section class="w-50 me-2" [title]="'Bodytech'">
+          <div class="d-flex flex-row m-0 w-100">
+            <srg-section class="w-50" [title]="'Essence Loss'" [depth]="2">
+              <srg-monitor [data]="getData('essence_loss')"
+                           [monitorFormat]="ThresholdMonitor"
+                           (valueChanged)="setData('essence_loss', $event)"/>
+
+            </srg-section>
+            <!-- TODO Fill Empty Space -->
+          </div>
+          @for (i of Array(4); track $index) {
+            <srg-entry [data]="getData('bodytech', $index)"
+                       [entryFormat]="BodyTechEntry"
+                       (valueChanged)="setData('bodytech', $event, $index)"/>
+          }
+        </srg-section>
+        <srg-section class="w-50" [title]="'Matrix'">
+          <srg-section [title]="'Device'" [depth]="2">
+            <srg-entry [data]="getData('matrix_device')"
+                       [entryFormat]="MatrixDeviceEntry"
+                       (valueChanged)="setData('matrix_device', $event)"/>
+          </srg-section>
+          <srg-section [title]="'Cyberprograms'" [depth]="2">
+            @for (i of Array(4); track $index) {
+              <srg-entry [data]="getData('matrix_cyberprograms', $index)"
+                         [entryFormat]="MatrixCyberprogramsEntry"
+                         (valueChanged)="setData('matrix_cyberprograms', $event, $index)"/>
+            }
+          </srg-section>
+        </srg-section>
+      </div>
+      <srg-section [title]="'Magic'">
+        <div class="d-flex flex-row w-100">
+          <div class="d-flex flex-column m-0 me-2 w-50">
+            <srg-section [title]="'Grimoire'" [depth]="2">
+              <srg-entry [data]="getData('magic_grimoire')"
+                         [entryFormat]="TextFieldEntry(3)"
+                         (valueChanged)="setData('magic_grimoire', $event)"/>
+            </srg-section>
+            <srg-section [title]="'Metamagics'" [depth]="2">
+              <srg-entry [data]="getData('magic_metamagics')"
+                         [entryFormat]="TextFieldEntry(4)"
+                         (valueChanged)="setData('magic_metamagics', $event)"/>
+            </srg-section>
+          </div>
+          <div class="d-flex flex-column m-0 w-50">
+            <srg-section [title]="'Known Formulae'" [depth]="2">
+              @for (i of Array(4); track $index) {
+                <srg-entry [data]="getData('magic_formulae', $index)"
+                           [entryFormat]="MagicFormulaeEntry"
+                           (valueChanged)="setData('magic_formulae', $event, $index)"/>
+              }
+            </srg-section>
+          </div>
+        </div>
+      </srg-section>
+      <srg-section [title]="'Notes'">
+        <srg-entry [data]="getData('notes')"
+                   [entryFormat]="TextFieldEntry(5)"
+                   (valueChanged)="setData('notes', $event)"/>
+      </srg-section>
+    </div>
+    <div class="d-flex flex-column">
+      <srg-section [title]="'Progression'">
+        <div class="d-flex flex-row w-100">
+          <srg-section class="w-50 me-2" [title]="'Karma'" [depth]="2">
+            <srg-monitor [data]="getData('karma')"
+                         [monitorFormat]="TotalMonitor"
+                         (valueChanged)="setData('karma', $event)"/>
+
+          </srg-section>
+          <srg-section class="w-50" [title]="'Money'" [depth]="2">
+            <srg-monitor [data]="getData('money')"
+                         [monitorFormat]="ValueMonitor"
+                         (valueChanged)="setData('value', $event)"/>
+          </srg-section>
+        </div>
+      </srg-section>
+      <srg-section [title]="'Abilities'">
+        <srg-entry [data]="getData('abilities')"
+                   [entryFormat]="TextFieldEntry(6)"
+                   (valueChanged)="setData('abilities', $event)"/>
+      </srg-section>
+      <srg-section [title]="'Talents'">
+        <srg-talent-pyramid [talentPyramidData]="character().talent_pyramid"
+                            (valueChanged)="setData('talent_pyramid', $event)"
+                            class="mb-2"/>
+        @for (i of Array(10); track $index) {
+          <srg-entry [data]="getData('talents', $index)"
+                     [entryFormat]="TalentEntry"
+                     (valueChanged)="setData('talents', $event, $index)"/>
+        }
+      </srg-section>
+    </div>
+  </div>
+</div>

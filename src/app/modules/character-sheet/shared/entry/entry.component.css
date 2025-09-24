@@ -1,0 +1,68 @@
+.line {
+  width: fit-content;
+
+  span {
+    height: fit-content;
+    font-size: 6pt;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 8px;
+    margin-right: 1px;
+  }
+
+  input, .condition, .difficulty {
+    flex: 1;
+    display: block;
+    width: 100%;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+  input[type=text], input[type=number] {
+    min-width: 1.5rem;
+    font-family: 'Papernotes', sans-serif;
+    font-size: 8pt;
+    height: fit-content;
+    border: none;
+    border-bottom: darkgrey 1px dotted;
+  }
+  input[type=number] {
+    max-width: 1.5rem;
+    text-align: center;
+    -moz-appearance: textfield; /* Firefox */
+  }
+
+  .checkbox {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    width: 10px;
+    margin: 0 1px;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    input[type=checkbox] {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+    }
+    input[type=checkbox]:checked ~ span {
+      background-color: lightgrey;
+    }
+
+    span {
+      position: absolute;
+      border: 1px solid darkgrey;
+      background-color: transparent;
+      width: 10px;
+      aspect-ratio: 1 / 1;
+    }
+  }
+}

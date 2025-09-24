@@ -1,0 +1,6 @@
+<div class="d-flex flex-column w-100"
+     [class.pe-1]="depth() !== undefined && depth()! > 1"
+     [ngClass]="'mb-' + (4 - (depth() ?? 1))">
+  <span [ngClass]="'heading-' + (depth() ?? '1')"> {{ title() }} </span>
+  <ng-content></ng-content>
+</div>
