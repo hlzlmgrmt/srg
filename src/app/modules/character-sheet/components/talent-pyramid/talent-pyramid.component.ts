@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, input, output} from '@angular/core';
+import {TalentPyramidData, TalentTier} from './types';
+
 
 @Component({
   selector: 'srg-talent-pyramid',
@@ -6,7 +8,16 @@ import { Component } from '@angular/core';
   styleUrl: './talent-pyramid.component.css'
 })
 export class TalentPyramidComponent {
-  protected readonly tier5Amount: number = 10;
+  readonly talentPyramidData = input.required<TalentPyramidData>();
+  protected readonly valueChanged = output<[string, number]>();
+  /**
+   * How many steps are selectable in the 5th tier
+   */
+  protected readonly finalTierAmount: number = 10;
+
+  getValue(index: number): number | undefined {
+    return this.talentPyramidData()[(index + 1) as TalentTier];
+  }
 
   protected readonly Array = Array;
 }

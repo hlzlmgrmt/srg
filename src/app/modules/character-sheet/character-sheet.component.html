@@ -1,7 +1,7 @@
 <div class="page">
   <div class="d-flex flex-row mb-3">
     <div class="d-flex flex-column">
-      <srg-entry [data]="character()['heading']"
+      <srg-entry [data]="getData('heading')"
                  [entryFormat]="HeadingEntry"
                  (valueChanged)="setData('heading', $event)"/>
     </div>
@@ -27,18 +27,16 @@
       </srg-section>
       <srg-section [title]="'Weapons'">
         @for (i of Array(4); track $index) {
-          <srg-entry [data]="character()['weapons']"
-                     [index]="$index"
+          <srg-entry [data]="getData('weapons', $index)"
                      [entryFormat]="WeaponsEntry"
-                     (valueChanged)="setData('weapons', $event)"/>
+                     (valueChanged)="setData('weapons', $event, $index)"/>
         }
       </srg-section>
       <srg-section [title]="'Armor'">
         @for (i of Array(2); track $index) {
-          <srg-entry [data]="character()['armor']"
-                     [index]="$index"
+          <srg-entry [data]="getData('armor', $index)"
                      [entryFormat]="ArmorEntry"
-                     (valueChanged)="setData('armor', $event)"/>
+                     (valueChanged)="setData('armor', $event, $index)"/>
         }
       </srg-section>
     </div>
@@ -46,7 +44,7 @@
       <srg-dice-symbols-info class="mb-3"/>
       <srg-portrait class="h-100 mb-3"/>
       <srg-section [title]="'Description'">
-        <srg-entry [data]="character()['description']"
+        <srg-entry [data]="getData('description')"
                    [entryFormat]="DescriptionEntry"
                    (valueChanged)="setData('description', $event)"/>
       </srg-section>
@@ -80,18 +78,16 @@
       </srg-section>
       <srg-section [title]="'Critical Injuries'">
         @for (i of Array(5); track $index) {
-          <srg-entry [data]="character()['critical_injuries']"
-                     [index]="$index"
+          <srg-entry [data]="getData('critical_injuries', $index)"
                      [entryFormat]="CriticalInjuriesEntry"
-                     (valueChanged)="setData('critical_injuries', $event)"/>
+                     (valueChanged)="setData('critical_injuries', $event, $index)"/>
         }
       </srg-section>
       <srg-section [title]="'Burdens'">
         @for (i of Array(3); track $index) {
-          <srg-entry [data]="character()['burdens']"
-                     [index]="$index"
+          <srg-entry [data]="getData('burdens', $index)"
                      [entryFormat]="BurdensEntry"
-                     (valueChanged)="setData('burdens', $event)"/>
+                     (valueChanged)="setData('burdens', $event, $index)"/>
         }
       </srg-section>
     </div>
@@ -101,7 +97,7 @@
 <div class="page">
   <div class="d-flex flex-row mb-3">
     <div class="d-flex flex-column">
-      <srg-entry [data]="character()['heading']"
+      <srg-entry [data]="getData('heading')"
                  [entryFormat]="HeadingEntry"
                  (valueChanged)="setData('heading', $event)"/>
     </div>
@@ -128,18 +124,16 @@
               </srg-section>
             </div>
             @for (i of Array(4); track $index) {
-              <srg-entry [data]="character()['gear-extended']"
-                         [index]="$index"
+              <srg-entry [data]="getData('gear_extended', $index)"
                          [entryFormat]="GearEntryExtended"
-                         (valueChanged)="setData('gear-extended', $event)"/>
+                         (valueChanged)="setData('gear_extended', $event, $index)"/>
             }
           </div>
           <div class="d-flex flex-column m-0 w-50">
             @for (i of Array(11); track $index) {
-              <srg-entry [data]="character()['gear']"
-                         [index]="$index"
+              <srg-entry [data]="getData('gear', $index)"
                          [entryFormat]="GearEntry"
-                         (valueChanged)="setData('gear', $event)"/>
+                         (valueChanged)="setData('gear', $event, $index)"/>
             }
           </div>
         </div>
@@ -153,24 +147,22 @@
             <!-- TODO Fill Empty Space -->
           </div>
           @for (i of Array(4); track $index) {
-            <srg-entry [data]="character()['bodytech']"
-                       [index]="$index"
+            <srg-entry [data]="getData('bodytech', $index)"
                        [entryFormat]="BodyTechEntry"
-                       (valueChanged)="setData('bodytech', $event)"/>
+                       (valueChanged)="setData('bodytech', $event, $index)"/>
           }
         </srg-section>
         <srg-section class="w-50" [title]="'Matrix'">
           <srg-section [title]="'Device'" [depth]="2">
-            <srg-entry [data]="character()['matrix-device']"
+            <srg-entry [data]="getData('matrix_device')"
                        [entryFormat]="MatrixDeviceEntry"
-                       (valueChanged)="setData('matrix-device', $event)"/>
+                       (valueChanged)="setData('matrix_device', $event)"/>
           </srg-section>
           <srg-section [title]="'Cyberprograms'" [depth]="2">
             @for (i of Array(4); track $index) {
-              <srg-entry [data]="character()['matrix-cyberprograms']"
-                         [index]="$index"
+              <srg-entry [data]="getData('matrix_cyberprograms', $index)"
                          [entryFormat]="MatrixCyberprogramsEntry"
-                         (valueChanged)="setData('matrix-cyberprograms', $event)"/>
+                         (valueChanged)="setData('matrix_cyberprograms', $event, $index)"/>
             }
           </srg-section>
         </srg-section>
@@ -179,30 +171,29 @@
         <div class="d-flex flex-row w-100">
           <div class="d-flex flex-column m-0 me-2 w-50">
             <srg-section [title]="'Grimoire'" [depth]="2">
-              <srg-entry [data]="character()['magic-grimoire']"
+              <srg-entry [data]="getData('magic_grimoire')"
                          [entryFormat]="TextFieldEntry(3)"
-                         (valueChanged)="setData('magic-grimoire', $event)"/>
+                         (valueChanged)="setData('magic_grimoire', $event)"/>
             </srg-section>
             <srg-section [title]="'Metamagics'" [depth]="2">
-              <srg-entry [data]="character()['magic-metamagics']"
+              <srg-entry [data]="getData('magic_metamagics')"
                          [entryFormat]="TextFieldEntry(4)"
-                         (valueChanged)="setData('magic-metamagics', $event)"/>
+                         (valueChanged)="setData('magic_metamagics', $event)"/>
             </srg-section>
           </div>
           <div class="d-flex flex-column m-0 w-50">
             <srg-section [title]="'Known Formulae'" [depth]="2">
               @for (i of Array(4); track $index) {
-                <srg-entry [data]="character()['magic-formulae']"
-                           [index]="$index"
+                <srg-entry [data]="getData('magic_formulae', $index)"
                            [entryFormat]="MagicFormulaeEntry"
-                           (valueChanged)="setData('magic-formulae', $event)"/>
+                           (valueChanged)="setData('magic_formulae', $event, $index)"/>
               }
             </srg-section>
           </div>
         </div>
       </srg-section>
       <srg-section [title]="'Notes'">
-        <srg-entry [data]="character()['notes']"
+        <srg-entry [data]="getData('notes')"
                    [entryFormat]="TextFieldEntry(5)"
                    (valueChanged)="setData('notes', $event)"/>
       </srg-section>
@@ -219,17 +210,18 @@
         </div>
       </srg-section>
       <srg-section [title]="'Abilities'">
-        <srg-entry [data]="character()['abilities']"
+        <srg-entry [data]="getData('abilities')"
                    [entryFormat]="TextFieldEntry(6)"
                    (valueChanged)="setData('abilities', $event)"/>
       </srg-section>
       <srg-section [title]="'Talents'">
-        <srg-talent-pyramid class="mb-2"/>
+        <srg-talent-pyramid [talentPyramidData]="character().talent_pyramid"
+                            (valueChanged)="setData('talent_pyramid', $event)"
+                            class="mb-2"/>
         @for (i of Array(10); track $index) {
-          <srg-entry [data]="character()['talents']"
-                     [index]="$index"
+          <srg-entry [data]="getData('talents', $index)"
                      [entryFormat]="TalentEntry"
-                     (valueChanged)="setData('talents', $event)"/>
+                     (valueChanged)="setData('talents', $event, $index)"/>
         }
       </srg-section>
     </div>

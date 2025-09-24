@@ -1,4 +1,4 @@
-import {Component, effect, input, output} from '@angular/core';
+import {Component, input, output} from '@angular/core';
 import {Glyph} from '../../../shared/glyph-pool/glyph-pool.component';
 import {Characteristics} from '../../characteristics/types';
 import {Skills, SkillsData} from '../types';
@@ -34,7 +34,7 @@ export class SkillTableComponent {
   changeValue(key: string, event: any, field: 'archetype_skill' | 'value') {
     if (event.target) {
       let skill = structuredClone(this.skills()[key]);
-      skill[field] =  field === 'archetype_skill' ? event.target.checked : event.target.value;
+      skill[field] = field === 'archetype_skill' ? event.target.checked : event.target.value;
       this.valueChanged.emit([key, skill]);
     }
   }

@@ -1,4 +1,4 @@
-import {Component, input, output, signal} from '@angular/core';
+import {Component, effect, input, output, signal, untracked} from '@angular/core';
 
 @Component({
   selector: 'srg-tracker',
@@ -8,10 +8,19 @@ import {Component, input, output, signal} from '@angular/core';
 export class Tracker {
   readonly type = input.required<'condition' | 'difficulty' | 'box'>()
   readonly steps  = input.required<number>();
-  readonly data = input<number | undefined>(undefined);
+  readonly value = input<number | undefined>(undefined);
 
   readonly trackedValue = signal<number>(0);
   readonly valueChanged = output<number>();
+
+  constructor() {
+    effect(() => {
+      const value = this.value();
+      untracked(() => {
+        this.trackedValue.set(value ?? 0);
+      })
+    })
+  }
 
   setTrackedValue(newValue: number) {
     if (newValue == this.trackedValue()) {

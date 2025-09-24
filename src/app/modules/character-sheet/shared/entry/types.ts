@@ -1,7 +1,8 @@
 export type EntryType =
   'text'                    // Basic text, spaced equally (between all texts in a line)
   | 'text-main'             // Main text of a line, takes at least 1/3 of available space.
-  | 'text-multiline'        // Text spanning across multiple lines, that must be defined in each new line (without a caption)
+  | 'text-multiline'        // Text spanning across multiple lines, that must be defined in each new line
+                            // (without a caption)
   | 'number'                // Basic numeric input with fixed width.
   | 'number-signed'         // Numeric input allowing signs (+ or -). 0 can be proceeded with '+'.
   | 'number-positive'       // Non-nullable and non-negative numeric input with fixed width.

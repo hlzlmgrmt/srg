@@ -1,26 +1,40 @@
-@for (line of entryFormat(); track line) {
+@for (line of entryFormat(); track $index; let i = $index) {
   <div class="d-flex flex-row flex-fill w-100">
-    @for (key of Object.keys(line); track key) {
+    @for (key of Object.keys(line); track $index) {
       <div class="d-flex flex-row line"
            [class.flex-grow-1]="line[key].type.includes('text')">
         @if (line[key].caption; as caption) {
           <span class="align-self-end">{{ caption }}</span>
         }
 
-        @if(line[key].type.startsWith('text')) {
-          <input type="text">
+        @if (line[key].type.startsWith('text')) {
+          @if (line[key].type === 'text-multiline') {
+            <input type="text"
+                   [value]="getMultilineData(key, i) ?? ''"
+                   (change)="changeValue(key, $event, line[key].type, i)">
+          } @else {
+            <input type="text"
+                   [value]="data() ? data()![key] ?? '' : ''"
+                   (change)="changeValue(key, $event, line[key].type)">
+          }
         } @else if (line[key].type.startsWith('number')) {
-          <input type="number">
+          <input type="number"
+                 [value]="data() ? data()![key] ?? '' : ''"
+                 (change)="changeValue(key, $event, line[key].type)">
         } @else if (line[key].type.startsWith('checkbox')) {
           <label class="checkbox">
-            <input type="checkbox" (change)="changeValue('', $event, '')">
+            <input type="checkbox"
+                   [checked]="data() ? data()![key] ?? false : false"
+                   (change)="changeValue(key, $event, line[key].type)">
             <span></span>
           </label>
         } @else if (line[key].type.startsWith('tracker')) {
           <srg-tracker [type]="line[key].type == 'tracker-condition' ? 'condition' : 'difficulty'"
-                       [steps]="line[key].type == 'tracker-condition' ? 3 : 4"/>
+                       [steps]="line[key].type == 'tracker-condition' ? 3 : 4"
+                       [value]="toTrackerValue(key)"
+                       (valueChanged)="changeValue(key, $event, line[key].type)"/>
         }
       </div>
     }
-</div>
+  </div>
 }

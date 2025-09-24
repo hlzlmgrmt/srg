@@ -24,6 +24,7 @@ import {
   ValueMonitor
 } from './shared/monitor/types';
 import {Character, EMPTY_CHARACTER} from './types';
+import {EntryData} from './shared/entry/entry.component';
 
 @Component({
   selector: 'srg-character-sheet',
@@ -49,9 +50,31 @@ export class CharacterSheetComponent {
     })
   }
 
-  setData(key: string, event: [string, any]) {
+  getData(key: string, index?: number): EntryData | undefined {
+    if (index !== undefined) {
+      return this.character()[key] ? this.character()[key][index] : undefined;
+    }
+    return this.character()[key];
+  }
+
+  setData(key: string, event: [string, any], index?: number) {
+    console.error("event: ", key, JSON.stringify(event), index);
+
     let character = structuredClone(this.character());
-    character[key][event[0]] = event[1];
+    if (character[key] === undefined) {
+      character[key] = {}
+    }
+
+    if (index !== undefined) {
+      if (character[key][String(index)] === undefined) {
+        character[key][String(index)] = {};
+      }
+      character[key][String(index)][event[0]] = event[1]
+    } else {
+      character[key][event[0]] = event[1];
+    }
+
+    console.error("newData: ", JSON.stringify(character[key]))
     this.character.set(character);
   }
 
