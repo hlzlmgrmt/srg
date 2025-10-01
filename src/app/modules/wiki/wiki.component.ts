@@ -172,11 +172,7 @@ export class WikiComponent {
     this.selectedRoute.set(route);
   }
 
-  openInNewWindow(link: string): void {
-    const url = this.router.serializeUrl(
-      this.router.createUrlTree([link])
-    );
-
+  openInNewWindow(url: string): void {
     window.open(url, '_blank');
   }
 
