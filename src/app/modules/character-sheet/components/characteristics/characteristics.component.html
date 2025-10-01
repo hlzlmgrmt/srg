@@ -1,0 +1,8 @@
+<div class="d-flex flex-row flex-fill">
+  @for (key of Object.keys(characteristics()); track $index) {
+    <div class="d-flex flex-column characteristic">
+      <input type="number" [value]="getValue(key)" (input)="changeValue(key, $event)">
+      <span>{{ key | uppercase }}</span>
+    </div>
+  }
+</div>

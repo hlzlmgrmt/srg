@@ -1,0 +1,56 @@
+@if (skills(); as skills) {
+  <table>
+    <thead>
+    <tr>
+      <th></th>
+      <th class="w-100">{{ title() }}</th>
+      <th>Rank</th>
+      <th>Cha</th>
+      <th>Pool</th>
+    </tr>
+    </thead>
+    <tbody>
+      @for (key of Object.keys(skills); track $index) {
+        <tr>
+          <td>
+            <label class="checkbox">
+              <input type="checkbox" [checked]="skills[key].archetype_skill"
+                     (change)="changeValue(key, $event, 'archetype_skill')">
+              <span></span>
+            </label>
+
+
+          </td>
+          <td colspan="2">
+            <div class="d-flex flex-row">
+              <span class="align-self-end">{{ skills[key].title }}</span>
+              <span class="bottom-line w-100"></span>
+              <input type="number" [value]="skills[key].value"
+                     (input)="changeValue(key, $event, 'value')">
+            </div>
+          </td>
+          <td>{{ skills[key].char.substring(0, 3) }}</td>
+          <td>
+            <srg-glyph-pool [glyphPool]="calculateDicePool(key)"/>
+        </tr>
+      }
+    <!-- TODO Custom Skill -->
+    <tr>
+      <td>
+        <label class="checkbox">
+          <input type="checkbox">
+          <span></span>
+        </label>
+      </td>
+      <td colspan="2">
+        <div class="d-flex flex-row">
+          <input type="text">
+          <input type="number">
+        </div>
+      </td>
+      <td><input type="text"></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+}

@@ -9,7 +9,8 @@ import {GmToolsModule} from './modules/gm-tools/gm-tools.module';
 import {CharacterSheetComponent} from './modules/character-sheet/character-sheet.component';
 import {GmToolsComponent} from './modules/gm-tools/gm-tools.component';
 import {FormsModule} from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import {APP_BASE_HREF} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -30,4 +31,5 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

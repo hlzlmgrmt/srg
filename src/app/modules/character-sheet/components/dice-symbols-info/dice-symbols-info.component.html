@@ -1,0 +1,35 @@
+<div class="d-flex flex-row dice-info">
+  <div class="d-flex flex-column w-50">
+    <div class="d-flex flex-row w-100">
+      <div class="d-flex flex-column w-50 me-1">
+        @for (diceSymbol of ['proficiency', 'ability', 'boost', 'success', 'advantage', 'triumph']; track $index) {
+        <div class="d-flex flex-row justify-content-end w-100">
+          <span class="me-1">{{ diceSymbol | uppercase }}</span>
+          <srg-glyph-pool [glyphPool]="[asDiceSymbol(diceSymbol)]" />
+        </div>
+        }
+      </div>
+
+      <div class="d-flex flex-column w-50">
+        @for (dice of ['challenge', 'difficulty', 'setback', 'failure', 'threat', 'despair']; track $index) {
+        <div class="d-flex flex-row-reverse justify-content-end w-100">
+          <span class="ms-1">{{ dice | uppercase }}</span>
+          <srg-glyph-pool [glyphPool]="[asDiceSymbol(dice)]" />
+        </div>
+        }
+      </div>
+    </div>
+  </div>
+  <div class="d-flex flex-column w-50">
+      @for (difficulty of ['simple', 'easy', 'average', 'hard', 'daunting', 'formidable']; track $index) {
+        <div class="d-flex flex-row w-100 flex-fill">
+          <span class="w-100">{{ difficulty | uppercase }}</span>
+          @if ($index == 0) {
+            <span>-</span>
+          } @else {
+            <srg-glyph-pool [glyphPool]="Array($index).fill('difficulty')"/>
+          }
+        </div>
+      }
+  </div>
+</div>

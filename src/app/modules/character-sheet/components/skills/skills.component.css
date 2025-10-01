@@ -1,0 +1,7 @@
+.skills {
+  div:last-child {
+    > * {
+      margin-bottom: 0.9rem;
+    }
+  }
+}

@@ -1,0 +1,52 @@
+div {
+  justify-content: end;
+}
+
+.tracker {
+  width: 5px;
+  margin: 0 1px 0 0;
+  min-width: 0.6rem;
+
+  /* Disable highlighting */
+  -webkit-touch-callout: none;  /* iOS Safari */
+  -webkit-user-select: none;    /* Safari */
+  -khtml-user-select: none;     /* Konqueror HTML */
+  -moz-user-select: none;       /* Old versions of Firefox */
+  -ms-user-select: none;        /* Internet Explorer/Edge */
+  user-select: none;            /* Non-prefixed version, currently
+                                   supported by Chrome, Edge, Opera and Firefox */
+
+  &.condition, &.box {
+    border: darkgrey 1px solid;
+
+    &.clicked {
+      background-color: lightgrey;
+    }
+  }
+
+  &.box {
+    height: auto;
+    aspect-ratio: 1 / 1;
+    margin: 0 3px;
+  }
+
+  &.condition {
+    margin-top: 3px;
+  }
+
+  &.difficulty {
+    font-family: GenesysGlyphsAndDice;
+    color: white;
+    -webkit-text-stroke: 1px darkgrey;
+
+    &.clicked {
+      color: hsl(var(--color-difficulty-dice-h),
+                 var(--color-difficulty-dice-s),
+                 calc(var(--color-difficulty-dice-l) + 40%));
+    }
+  }
+}
+
+.tracker:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,11 @@
+<div class="d-flex flex-row">
+  @for (key of Object.keys(monitorFormat()); track $index; let count = $count) {
+    <div class="d-flex flex-column"
+         [class.me-1]="$index + 1 < $count"
+         [ngClass]="'w-' + (Math.floor(100 / count)) ">
+      <span class="text-center">{{ monitorFormat()[key] | uppercase }}</span>
+      <input type="number" [value]="data() ? data()![key] : ''"
+                           (change)="changeValue(key, $event)">
+    </div>
+  }
+</div>
