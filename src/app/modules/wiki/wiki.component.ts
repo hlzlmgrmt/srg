@@ -51,7 +51,7 @@ export class WikiComponent {
    * All potential routes of the wiki component
    */
   protected routes = signal<NavigatableRoutesMap | undefined>(undefined);
-  protected selectedRoute = signal<string>('talents/tier_2');
+  protected selectedRoute = signal<string>('home');
 
   protected title = signal<string>('');
   protected content = signal<SafeHtml | undefined>(undefined);

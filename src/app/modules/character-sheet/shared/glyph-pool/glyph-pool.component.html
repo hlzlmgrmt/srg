@@ -1,7 +1,7 @@
 @if (glyphPool(); as glyphs) {
 <div class="d-flex flex-row flex-fill w-100 justify-content-center">
   @for (glyph of glyphs; track $index) {
-    <span [ngClass]="glyph">
+    <span class="glyph" [ngClass]="glyph">
       @if (['boost', 'setback'].includes(glyph)) {
         j
       } @else if (['ability', 'difficulty'].includes(glyph)) {

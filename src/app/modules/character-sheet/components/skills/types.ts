@@ -185,8 +185,8 @@ export const EMPTY_SKILLS: Skills = {
     "char": 'intellect',
     "group": 'combat'
   },
-  "mysticism": {
-    "title": "Mysticism",
+  "astral": {
+    "title": "Astral",
     "char": 'willpower',
     "group": 'magical'
   },
