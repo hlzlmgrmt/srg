@@ -48,9 +48,9 @@
             "display_name": "Qi-Magic",
             "resource": "skills/skills/qi_magic.html"
           },
-          "mysticism": {
-            "display_name": "Mysticism",
-            "resource": "skills/skills/mysticism.html"
+          "astral": {
+            "display_name": "Astral",
+            "resource": "skills/skills/astral.html"
           },
           "resonance": {
             "display_name": "Resonance",
