@@ -60,7 +60,7 @@ export class WikiComponent {
   readonly loading = signal<boolean>(true);
 
   constructor() {
-    this.httpClient.get<JSONNavigatableRoutes>('assets/pages/nav.json', {responseType: 'json'}).subscribe(data => {
+    this.httpClient.get<JSONNavigatableRoutes>('assets/pages/pages.json', {responseType: 'json'}).subscribe(data => {
       const parsedRoutes = this.parseRoutes(data);
       this.routes.set(parsedRoutes);
     })
