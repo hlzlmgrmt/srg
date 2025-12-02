@@ -57,7 +57,7 @@ export class WikiComponent {
   protected content = signal<SafeHtml | undefined>(undefined);
   private readonly INSERT_SELECTOR: RegExp = /<ins.*id=".+".*>.*<\/ins>/g;
 
-  readonly loading = signal<boolean>(true);
+  readonly loading = signal<boolean>(false);
 
   constructor() {
     this.httpClient.get<JSONNavigatableRoutes>('assets/pages/pages.json', {responseType: 'json'}).subscribe(data => {
