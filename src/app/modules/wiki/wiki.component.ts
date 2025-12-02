@@ -43,7 +43,6 @@ export class WikiComponent {
   @ViewChild('main') main!: ElementRef<HTMLDivElement>;
   @ViewChild('contentWrapper') contentWrapper!: ElementRef<HTMLDivElement>;
 
-  private readonly router = inject(Router);
   private readonly httpClient = inject(HttpClient);
   private readonly sanitizer = inject(DomSanitizer);
 

@@ -34,8 +34,14 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "src/assets",
-                "output": "/assets/"
+                "input": "src/assets/",
+                "output": "/assets/",
+                "ignore": ["**/*.html"]
+              },
+              {
+                "glob": "**/*",
+                "input": "target/assets/pages",
+                "output": "/assets/pages"
               }
             ],
             "styles": [

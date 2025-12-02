@@ -8,6 +8,10 @@ console.info('Running page content pre-parser');
 
 const fs = require('fs');
 const path = require('path');
+
+const srcDir  = __dirname + '/src/assets/pages'
+const targetDir = __dirname + '/target/assets/pages';
+
 const walk = function(dir, done) {
   let results = [];
   fs.readdir(dir, function(err, list) {
@@ -23,7 +27,13 @@ const walk = function(dir, done) {
             if (!--pending) done(null, results);
           });
         } else {
-          results.push(file);
+          if (file.endsWith('.html')) {
+            parse(file, function(err, result) {
+              if (err) throw err;
+              console.log('Successfully parsed ' + result);
+            });
+            results.push(file);
+          }
           if (!--pending) done(null, results);
         }
       });
@@ -31,13 +41,26 @@ const walk = function(dir, done) {
   });
 };
 
-const destDir = './target/assets/pages';
-const createdDir = fs.mkdirSync(destDir, {recursive: true});
-createdDir && console.log('Created dir', createdDir);
+const parse = function(dir, done) {
+  const relative = dir.substring(srcDir.length + 1, dir.length);
+  console.log('Parsing file ' + dir);
 
-walk(__dirname + '/src/assets/pages', function (err, results) {
+  fs.readFile(dir, 'utf-8', (err, data) => {
+    if (err) throw err;
+    const dstPath = targetDir + '/' + relative;
+
+    fs.promises.mkdir(path.dirname(dstPath), {recursive: true}).then(() => {
+      fs.promises.writeFile(dstPath, data, (err) => {
+        if (err) return done(err);
+      });
+      done(null, dir);
+    });
+  })
+}
+
+walk(srcDir, function (err, results) {
   if (err) throw err;
-  console.log('Found ' + results.length + ' pages:', results);
+  console.log('Successfully parsed ' + results.length + ' files')
 });
 
 console.info('Successfully parsed page content');
