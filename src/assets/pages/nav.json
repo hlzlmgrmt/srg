@@ -82,7 +82,6 @@
         "display_name": "List of Equipment",
         "resource": "equipment/lists.html",
         "children": {
-          "gear": "Gear",
           "weapons": {
             "display_name": "Weapons",
             "children": {
@@ -102,19 +101,24 @@
               "attachments": "Armor Attachments"
             }
           },
+          "gear": {
+            "display_name": "Gear",
+            "children": {
+              "utility": "Utility",
+              "survival": "Survival",
+              "surveillance": "Detection & Surveillance",
+              "security": "Security",
+              "medical": "Medical",
+              "drugs": "Drugs & Toxins"
+            }
+          },
           "bodytech": {
             "display_name": "Bodytech",
             "children": {
-              "lists": {
-                "display_name": "List of Bodytech",
+              "limbs": {
+                "display_name": "Limbs",
                 "children": {
-                  "limbs": {
-                    "display_name": "Limbs",
-                    "children": {
-                      "list": "List of Available Limbs",
-                      "attachments": "Cyberlimb Attachments"
-                    }
-                  }
+                  "attachments": "Cyberlimb Attachments"
                 }
               }
             }
@@ -124,8 +128,14 @@
             "display_name": "Hacking Gear",
             "children": {
               "cyberdecks": "Cyberdecks",
-              "programs": "Cyberprograms",
-              "attachments": "Cyberdeck Modifications"
+              "cyberdeck_attachments": "Cyberdeck Modifications",
+              "programs": {
+                "display_name": "Cyberprograms",
+                "children": {
+                  "legal": "Legal Cyberprograms",
+                  "hacking": "Hacking Software"
+                }
+              }
             }
           },
           "drones": "Drones",
