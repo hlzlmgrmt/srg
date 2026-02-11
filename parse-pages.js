@@ -8,26 +8,26 @@ console.info('Running page content parser');
 const fs = require('fs');
 const path = require('path');
 
-const srcDir  = __dirname + '/src/assets/pages'
+const srcDir = __dirname + '/src/assets/pages'
 const targetDir = __dirname + '/target/assets/pages';
 
-const walk = function(dir, done) {
+const walk = function (dir, done) {
   let results = new Map();
-  fs.readdir(dir, function(err, list) {
+  fs.readdir(dir, function (err, list) {
     if (err) return done(err);
     let pending = list.length;
     if (!pending) return done(null, results);
-    list.forEach(function(file) {
+    list.forEach(function (file) {
       file = path.resolve(dir, file);
-      fs.stat(file, function(err, stat) {
+      fs.stat(file, function (err, stat) {
         if (stat && stat.isDirectory()) {
-          walk(file, function(err, res) {
+          walk(file, function (err, res) {
             results = new Map([...results].concat([...res]));
             if (!--pending) done(null, results);
           });
         } else {
           if (file.endsWith('.html')) {
-            results.set(file, null);
+            results.set(file.substring(srcDir.length + 1, file.length), fs.readFileSync(file, {encoding: 'utf-8'}));
           }
           if (!--pending) done(null, results);
         }
@@ -35,30 +35,26 @@ const walk = function(dir, done) {
     });
   });
 };
-
-const parse = function(dir, content, done) {
+const write = function (dir, content, done) {
   console.log('Parsing file ' + dir);
-  const relative = dir.substring(srcDir.length + 1, dir.length);
+  const dstPath = targetDir + '/' + dir;
 
-  fs.readFile(dir, 'utf-8', (err, data) => {
-    if (err) throw err;
-    const dstPath = targetDir + '/' + relative;
-
-    fs.promises.mkdir(path.dirname(dstPath), {recursive: true}).then(() => {
-      fs.promises.writeFile(dstPath, data, (err) => {
-        if (err) return done(err);
-      });
-      done(null, dir);
+  fs.promises.mkdir(path.dirname(dstPath), {recursive: true}).then(() => {
+    fs.promises.writeFile(dstPath, content, (err) => {
+      if (err) return done(err);
     });
-  })
+    done(null, dstPath);
+  });
 }
+
+// --------------------------------------------------
 
 walk(srcDir, function (err, results) {
   if (err) throw err
   results.forEach((value, key) => {
-    parse(key, value, function(err, done) {
+    write(key, value, function (err, done) {
       if (err) throw err;
-      console.log('Successfully parsed ' + done);
+      console.log('Successfully written ' + done);
     });
   })
 });
