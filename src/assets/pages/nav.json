@@ -10,7 +10,7 @@
       "determine_background": "Step 1: Determine Background",
       "determine_motivation_burdens": "Step 2: Determine Character Motivation And Burdens",
       "select_metatype": "Step 3: Select Metatype",
-      "choose_archetype": {
+      "archetype": {
         "display_name": "Step 4: Choose Archetype",
         "children": {
           "merc": "Merc",
