@@ -36,7 +36,7 @@ const walk = function (dir, done) {
   });
 };
 const write = function (dir, content, done) {
-  console.log('Parsing file ' + dir);
+  console.log('Writing file ' + dir);
   const dstPath = targetDir + '/' + dir;
 
   fs.promises.mkdir(path.dirname(dstPath), {recursive: true}).then(() => {
