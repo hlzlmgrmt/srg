@@ -23,7 +23,8 @@
       "invest_karma": "Step 5: Invest Karma",
       "determine_derived_attributes": "Step 6: Determine Derived Attributes",
       "choose_gear": "Step 7: Choose Gear",
-      "determine_appearance": "Step 8: Determine Appearance and Personality"
+      "determine_appearance": "Step 8: Determine Appearance and Personality",
+      "select_vehicle": "Step 9: Select a Vehicle"
     }
   },
   "skills": {
@@ -197,7 +198,14 @@
       "metamagics": "Metamagics"
     }
   },
-  "matrix": "The Matrix",
+  "matrix": {
+    "display_name": "The Matrix",
+    "children": {
+      "hosts": "Hosts",
+      "programs": "Cyberprograms",
+      "technomancers": "Technomancers"
+    }
+  },
   "combat": {
     "display_name": "Enhanced Combat Rules",
     "children": {
