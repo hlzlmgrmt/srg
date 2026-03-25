@@ -12,8 +12,7 @@ import {
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
-import {firstValueFrom, NotFoundError, Observable} from 'rxjs';
-import {toObservable} from '@angular/core/rxjs-interop';
+import {firstValueFrom} from 'rxjs';
 
 interface JSONNavigatableRoutes {
   [key: string]: string | NavigatableRoute
