@@ -286,7 +286,7 @@ body {
       margin-top: 0.5rem;
     }
 
-    > * {
+    > *, * > * {
       > a {
         color: darkred;
         text-decoration: none;
@@ -301,6 +301,10 @@ body {
           display: inline-flex;
           align-items: center;
         }
+      }
+
+      > a:last-child {
+        margin-right: 1rem;
       }
 
       > a:not(.selected):hover {

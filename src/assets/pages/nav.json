@@ -207,7 +207,7 @@
     }
   },
   "combat": {
-    "display_name": "Enhanced Combat Rules",
+    "display_name": "Extended Combat Rules",
     "children": {
       "layers": "Three Layers of Conflict",
       "vehicles": "Vehicle Combat"

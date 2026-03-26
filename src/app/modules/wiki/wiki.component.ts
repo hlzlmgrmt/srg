@@ -9,7 +9,6 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import {firstValueFrom} from 'rxjs';
@@ -42,7 +41,6 @@ export class WikiComponent {
   @ViewChild('main') main!: ElementRef<HTMLDivElement>;
   @ViewChild('contentWrapper') contentWrapper!: ElementRef<HTMLDivElement>;
 
-  private readonly router = inject(Router);
   private readonly httpClient = inject(HttpClient);
   private readonly sanitizer = inject(DomSanitizer);
 
@@ -50,13 +48,17 @@ export class WikiComponent {
    * All potential routes of the wiki component
    */
   protected routes = signal<NavigatableRoutesMap | undefined>(undefined);
+  /**
+   * List of routes() signal keys that can be viewed on navigation
+   */
+  protected viewableRoutes = signal<string[]|undefined>(undefined);
   protected selectedRoute = signal<string>('home');
 
   protected title = signal<string>('');
   protected content = signal<SafeHtml | undefined>(undefined);
   private readonly INSERT_SELECTOR: RegExp = /<ins.*id=".+".*>.*<\/ins>/g;
 
-  readonly loading = signal<boolean>(false);
+  readonly contentLoading = signal<boolean>(false);
 
   constructor() {
     this.httpClient.get<JSONNavigatableRoutes>('assets/pages/nav.json', {responseType: 'json'}).subscribe(data => {
@@ -66,23 +68,29 @@ export class WikiComponent {
 
     effect(() => {
       const routes = this.routes();
-      const selectedRoute = routes ? routes[this.selectedRoute()] : undefined;
+      const selectedRoute = this.selectedRoute();
 
       untracked(() => {
-        firstValueFrom(this.httpClient.get('assets/pages/' + selectedRoute?.resource, {responseType: 'text'})).then(async data => {
-          this.loading.set(true);
-          const parsedData = await this.parsePageContent(data, selectedRoute)
+        const currentRoute = routes ? routes[this.selectedRoute()] : undefined;
+
+        if (routes) {
+          this.expandNavigation(routes, selectedRoute)
+        }
+
+        firstValueFrom(this.httpClient.get('assets/pages/' + currentRoute?.resource, {responseType: 'text'})).then(async data => {
+          this.contentLoading.set(true);
+          const parsedData = await this.parsePageContent(data, currentRoute)
           if (!this.navigation.nativeElement.classList.contains('d-none')) {
             this.toggleNavigation();
           }
           this.content.set(this.sanitizer.bypassSecurityTrustHtml(parsedData));
           this.contentWrapper.nativeElement.scrollTop = 0;
-          this.loading.set(false);
+          this.contentLoading.set(false);
         }).catch(err => {
           console.error(err)
           if (err.status === 404) {
             this.content.set(this.sanitizer.bypassSecurityTrustHtml('<i>Request for HTML file "'
-              + selectedRoute?.resource
+              + currentRoute?.resource
               + '" was received but no asset found. Asset may be missing from build.</i>'))
           } else {
             throw err;
@@ -158,6 +166,37 @@ export class WikiComponent {
       });
     }
     return result;
+  }
+
+  expandNavigation(routes: NavigatableRoutesMap, route: string) {
+    const viewableRoutes: string[] = [];
+    const currentRoute: NavigatableRoute = routes[route];
+
+    Object.keys(routes).filter(key => {
+      const selectedRouteKey = currentRoute?.resource?.substring(0, currentRoute?.resource?.indexOf('.'));
+      let selectableRoutes: string[] = [];
+
+      if (selectedRouteKey) {
+        selectableRoutes = [...selectedRouteKey!.matchAll(/\//g)]
+          .map(match => match.index)
+          .map(index => selectedRouteKey.substring(0, index));
+        selectableRoutes = [selectedRouteKey, ...selectableRoutes]
+      }
+
+      let matcher: RegExpMatchArray | null;
+      if (selectableRoutes.length == 0) {
+        matcher = key.match('^[^/]+$');
+      } else {
+        const regexp = '^([^/]+|'
+          + (selectableRoutes.length == 1
+            ? selectableRoutes[0] + '/(.[^/]+)'
+            : '(' + selectableRoutes.map(route => route + '/(.[^/]+)').join('|') + ')')
+          + ')$';
+        matcher = key.match(regexp);
+      }
+      return matcher != null;
+    }).forEach(key => viewableRoutes.push(key));
+    this.viewableRoutes.set(viewableRoutes);
   }
 
   toggleNavigation() {
