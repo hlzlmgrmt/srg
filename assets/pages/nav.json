@@ -7,9 +7,19 @@
   "character_creation": {
     "display_name": "Character Creation",
     "children": {
-      "determine_background": "Step 1: Determine Background",
-      "determine_motivation_burdens": "Step 2: Determine Character Motivation And Burdens",
-      "select_metatype": "Step 3: Select Metatype",
+      "background": "Step 1: Determine Background",
+      "motivation_and_burdens": "Step 2: Determine Character Motivation And Burdens",
+      "metatype": {
+        "display_name": "Step 3: Select Metatype",
+        "children": {
+          "humans": "Humans",
+          "elves": "Elves",
+          "orks": "Orks",
+          "dwarfs": "Dwarfs",
+          "trolls": "Trolls",
+          "pixies": "Pixies"
+        }
+      },
       "archetype": {
         "display_name": "Step 4: Choose Archetype",
         "children": {
@@ -21,10 +31,10 @@
         }
       },
       "invest_karma": "Step 5: Invest Karma",
-      "determine_derived_attributes": "Step 6: Determine Derived Attributes",
-      "choose_gear": "Step 7: Choose Gear",
-      "determine_appearance": "Step 8: Determine Appearance and Personality",
-      "select_vehicle": "Step 9: Select a Vehicle"
+      "derived_attributes": "Step 6: Determine Derived Attributes",
+      "gear": "Step 7: Choose Gear",
+      "appearance": "Step 8: Determine Appearance and Personality",
+      "vehicle": "Step 9: Select a Vehicle"
     }
   },
   "skills": {
@@ -207,7 +217,7 @@
     }
   },
   "combat": {
-    "display_name": "Enhanced Combat Rules",
+    "display_name": "Extended Combat Rules",
     "children": {
       "layers": "Three Layers of Conflict",
       "vehicles": "Vehicle Combat"
