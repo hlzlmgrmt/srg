@@ -12,7 +12,7 @@ import {
 import {HttpClient} from '@angular/common/http';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import {firstValueFrom} from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 interface JSONNavigatableRoutes {
   [key: string]: string | NavigatableRoute
@@ -42,6 +42,7 @@ export class WikiComponent {
   @ViewChild('main') main!: ElementRef<HTMLDivElement>;
   @ViewChild('contentWrapper') contentWrapper!: ElementRef<HTMLDivElement>;
 
+  public readonly router = inject(Router);
   private readonly activatedRoute = inject(ActivatedRoute);
   private readonly httpClient = inject(HttpClient);
   private readonly sanitizer = inject(DomSanitizer);
@@ -70,10 +71,9 @@ export class WikiComponent {
   readonly contentLoading = signal<boolean>(false);
 
   constructor() {
-    this.activatedRoute.params.subscribe((params) => {
-      console.log('route:', params['route']);
-      this.selectedRoute.set(params['route'] ?? 'home')
-    });
+    this.activatedRoute.params.subscribe(params => {
+      this.selectedRoute.set(params['route']);
+    })
 
     this.httpClient.get<JSONNavigatableRoutes>('assets/pages/nav.json', {responseType: 'json'}).subscribe(data => {
       const parsedRoutes = this.parseRoutes(data);

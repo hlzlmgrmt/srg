@@ -267,6 +267,11 @@ body {
     h5 {
       color: darkred;
       -webkit-text-stroke: 0.4px black;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
     }
   }
 

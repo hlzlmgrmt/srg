@@ -1,9 +1,7 @@
 <div #navigation class="d-none d-sm-flex flex-column p-2 border navigation">
-  <div class="d-flex flex-column mb-3 navigation-header">
-       <a [routerLink]="''">
+  <div class="d-flex flex-column mb-3 navigation-header" (click)="router.navigate(['home'])">
     <img src="assets/img/shadowrun-logo.svg" alt=""/>
     <h5>Shadowrun Genesys</h5>
-    </a>
   </div>
   <div class="d-flex flex-column justify-content-between navigation-content">
     <div class="d-flex flex-column">
@@ -12,7 +10,8 @@
           @if (routes[key]; as route) {
             @if (route.display_name !== '' && viewableRoutes()?.includes(key)) {
               <div class="d-flex flex-row justify-content-between">
-                <a [routerLink]="selectedRoute() !== key ? '/' + key : undefined"
+                <a href="javascript:void(0)"
+                   (click)="selectedRoute() !== key ? router.navigate(['/', key]) : undefined"
                    class="w-100" [class.selected]="selectedRoute() == key"
                    [style]="route.depth !== undefined && route.depth > 1 ?
                     'margin-left: ' + ((route.depth - 1) * 0.5) + 'rem; '
