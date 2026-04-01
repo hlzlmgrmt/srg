@@ -10,7 +10,7 @@
       "determine_background": "Step 1: Determine Background",
       "determine_motivation_burdens": "Step 2: Determine Character Motivation And Burdens",
       "select_metatype": "Step 3: Select Metatype",
-      "choose_archetype": {
+      "archetype": {
         "display_name": "Step 4: Choose Archetype",
         "children": {
           "merc": "Merc",
@@ -23,7 +23,8 @@
       "invest_karma": "Step 5: Invest Karma",
       "determine_derived_attributes": "Step 6: Determine Derived Attributes",
       "choose_gear": "Step 7: Choose Gear",
-      "determine_appearance": "Step 8: Determine Appearance and Personality"
+      "determine_appearance": "Step 8: Determine Appearance and Personality",
+      "select_vehicle": "Step 9: Select a Vehicle"
     }
   },
   "skills": {
@@ -82,7 +83,6 @@
         "display_name": "List of Equipment",
         "resource": "equipment/lists.html",
         "children": {
-          "gear": "Gear",
           "weapons": {
             "display_name": "Weapons",
             "children": {
@@ -92,6 +92,7 @@
               "two_handed_ranged_weapons": "Two-Handed Ranged Weapons",
               "heavy_ranged_weapons": "Heavy Ranged Weapons",
               "grenades": "Grenades",
+              "launchers": "Launchers",
               "attachments": "Weapon Attachments"
             }
           },
@@ -101,19 +102,24 @@
               "attachments": "Armor Attachments"
             }
           },
+          "gear": {
+            "display_name": "Gear",
+            "children": {
+              "utility": "Utility",
+              "survival": "Survival",
+              "surveillance": "Detection & Surveillance",
+              "security": "Security",
+              "medical": "Medical",
+              "drugs": "Drugs & Toxins"
+            }
+          },
           "bodytech": {
             "display_name": "Bodytech",
             "children": {
-              "lists": {
-                "display_name": "List of Bodytech",
+              "limbs": {
+                "display_name": "Limbs",
                 "children": {
-                  "limbs": {
-                    "display_name": "Limbs",
-                    "children": {
-                      "list": "List of Available Limbs",
-                      "attachments": "Cyberlimb Attachments"
-                    }
-                  }
+                  "attachments": "Cyberlimb Attachments"
                 }
               }
             }
@@ -123,8 +129,14 @@
             "display_name": "Hacking Gear",
             "children": {
               "cyberdecks": "Cyberdecks",
-              "programs": "Cyberprograms",
-              "attachments": "Cyberdeck Modifications"
+              "cyberdeck_attachments": "Cyberdeck Modifications",
+              "programs": {
+                "display_name": "Cyberprograms",
+                "children": {
+                  "legal": "Legal Cyberprograms",
+                  "hacking": "Hacking Software"
+                }
+              }
             }
           },
           "drones": "Drones",
@@ -186,7 +198,14 @@
       "metamagics": "Metamagics"
     }
   },
-  "matrix": "The Matrix",
+  "matrix": {
+    "display_name": "The Matrix",
+    "children": {
+      "hosts": "Hosts",
+      "programs": "Cyberprograms",
+      "technomancers": "Technomancers"
+    }
+  },
   "combat": {
     "display_name": "Enhanced Combat Rules",
     "children": {
