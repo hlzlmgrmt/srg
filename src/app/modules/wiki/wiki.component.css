@@ -250,7 +250,7 @@ body {
 }
 
 .navigation {
-  height: 100vh;
+  height: 100dvh;
   width: var(--navigation-width);
   background: whitesmoke;
   z-index: 4;
@@ -315,6 +315,10 @@ body {
         color: black;
         font-weight: bolder;
         cursor: default;
+      }
+
+      > a.expanded {
+        transform: rotate(90deg);
       }
     }
   }

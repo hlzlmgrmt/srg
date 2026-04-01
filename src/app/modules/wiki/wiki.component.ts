@@ -52,6 +52,13 @@ export class WikiComponent {
    * List of routes() signal keys that can be viewed on navigation
    */
   protected viewableRoutes = signal<string[]|undefined>(undefined);
+  /**
+   * List of expanded parents for arrow rotation
+   */
+  protected expandedParents = signal<string[]|undefined>(undefined);
+  /**
+   * Currently selected route to show content for
+   */
   protected selectedRoute = signal<string>('home');
 
   protected title = signal<string>('');
@@ -73,15 +80,13 @@ export class WikiComponent {
       untracked(() => {
         const currentRoute = routes ? routes[this.selectedRoute()] : undefined;
 
-        if (routes) {
-          this.expandNavigation(routes, selectedRoute)
-        }
+        this.expandNavigation(selectedRoute)
 
         firstValueFrom(this.httpClient.get('assets/pages/' + currentRoute?.resource, {responseType: 'text'})).then(async data => {
           this.contentLoading.set(true);
           const parsedData = await this.parsePageContent(data, currentRoute)
           if (!this.navigation.nativeElement.classList.contains('d-none')) {
-            this.toggleNavigation();
+            this.toggleNavbar();
           }
           this.content.set(this.sanitizer.bypassSecurityTrustHtml(parsedData));
           this.contentWrapper.nativeElement.scrollTop = 0;
@@ -168,8 +173,9 @@ export class WikiComponent {
     return result;
   }
 
-  expandNavigation(routes: NavigatableRoutesMap, route: string) {
+  expandNavigation(route: string) {
     const viewableRoutes: string[] = [];
+    const routes = this.routes() ?? {};
     const currentRoute: NavigatableRoute = routes[route];
 
     Object.keys(routes).filter(key => {
@@ -182,6 +188,7 @@ export class WikiComponent {
           .map(index => selectedRouteKey.substring(0, index));
         selectableRoutes = [selectedRouteKey, ...selectableRoutes]
       }
+      this.expandedParents.set(selectableRoutes);
 
       let matcher: RegExpMatchArray | null;
       if (selectableRoutes.length == 0) {
@@ -196,10 +203,19 @@ export class WikiComponent {
       }
       return matcher != null;
     }).forEach(key => viewableRoutes.push(key));
+    
     this.viewableRoutes.set(viewableRoutes);
   }
 
-  toggleNavigation() {
+  retractNavigation(route: string) {
+    const viewableRoutes = this.viewableRoutes();
+    const expandedParents = this.expandedParents();
+    
+    this.viewableRoutes.set(viewableRoutes?.filter(key => !key.startsWith(route + '/')));
+    this.expandedParents.set(expandedParents?.filter(key => key != route));
+  }
+
+  toggleNavbar() {
     this.navigation.nativeElement.classList.toggle('d-none');
     this.navigation.nativeElement.classList.toggle('d-flex');
     this.toggler.nativeElement.classList.toggle('d-block');

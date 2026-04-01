@@ -11,18 +11,20 @@
           @if (routes[key]; as route) {
             @if (route.display_name !== '' && viewableRoutes()?.includes(key)) {
               <div class="d-flex flex-row justify-content-between">
-                <a href="javascript:void(0)" [class.selected]="selectedRoute() == key"
-                   [style]="route.depth !== undefined && route.depth > 1 ?
-                        'margin-left: ' + ((route.depth - 1) * 0.5) + 'rem; '
-                        + 'padding-left: ' + (0.5 + 'rem;') : ''">
+                <a href="javascript:void(0)" 
+                    class="w-100" [class.selected]="selectedRoute() == key"
+                    [style]="route.depth !== undefined && route.depth > 1 ?
+                      'margin-left: ' + ((route.depth - 1) * 0.5) + 'rem; '
+                      + 'padding-left: ' + (0.5 + 'rem;') : ''">
                   <div class="d-flex flex-row justify-content-between">
                     <span
                       (click)="selectedRoute() !== key ? selectRoute(key) : undefined">{{ routes[key].display_name }}</span>
                   </div>
                 </a>
                 @if (route.children) {
-                  <a href="javascript:void(0)"
-                     (click)="expandNavigation(routes, key)">&#10095;</a>
+                  <a href="javascript:void(0)" 
+                    [class.expanded]="expandedParents()?.includes(key)"
+                    (click)="!expandedParents()?.includes(key) ? expandNavigation(key) : retractNavigation(key)">&#10095;</a>
                 }
               </div>
             }
@@ -39,14 +41,14 @@
   </div>
 </div>
 <button #navigationToggler class="d-block d-sm-none p-4 navigation-toggler text-start"
-        (click)="toggleNavigation()">
+        (click)="toggleNavbar()">
   <span>&#8801;</span>
 </button>
 
 <div class="loading-spinner" [hidden]="!contentLoading()"></div>
 
 <div #main class="d-flex flex-column main p-4"
-     (click)="!navigation.classList.contains('d-none') ? toggleNavigation() : undefined">
+     (click)="!navigation.classList.contains('d-none') ? toggleNavbar() : undefined">
   <div class="d-flex flex-row main-header">
     <h1>{{ title() }}</h1>
   </div>
