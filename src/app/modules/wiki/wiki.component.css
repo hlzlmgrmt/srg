@@ -250,7 +250,7 @@ body {
 }
 
 .navigation {
-  height: 100vh;
+  height: 100dvh;
   width: var(--navigation-width);
   background: whitesmoke;
   z-index: 4;
@@ -267,6 +267,11 @@ body {
     h5 {
       color: darkred;
       -webkit-text-stroke: 0.4px black;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+
     }
   }
 
@@ -286,7 +291,7 @@ body {
       margin-top: 0.5rem;
     }
 
-    > * {
+    > *, * > * {
       > a {
         color: darkred;
         text-decoration: none;
@@ -303,6 +308,10 @@ body {
         }
       }
 
+      > a:last-child {
+        margin-right: 1rem;
+      }
+
       > a:not(.selected):hover {
         font-weight: bold;
       }
@@ -311,6 +320,10 @@ body {
         color: black;
         font-weight: bolder;
         cursor: default;
+      }
+
+      > a.expanded {
+        transform: rotate(90deg);
       }
     }
   }
