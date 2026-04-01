@@ -203,7 +203,51 @@
           }
         }
       },
-      "summoning": "Summoning",
+      "summoning": {
+        "display_name": "Summoning",
+        "children": {
+          "dead": {
+            "display_name": "Spirits of the Dead",
+            "resource": "magic/summoning/spirits/dead.html"
+          },
+          "guardian": {
+            "display_name": "Guardian Spirits",
+            "resource": "magic/summoning/spirits/guardian.html"
+          },
+          "guadance": {
+            "display_name": "Guidance Spirits",
+            "resource": "magic/summoning/spirits/guidance.html"
+          },
+          "labor": {
+            "display_name": "Spirits of Labor",
+            "resource": "magic/summoning/spirits/labor.html"
+          },
+          "man": {
+            "display_name": "Spirits of Man",
+            "resource": "magic/summoning/spirits/man.html"
+          },
+          "mystics": {
+            "display_name": "Spirits of Mystics",
+            "resource": "magic/summoning/spirits/mystics.html"
+          },
+          "rage": {
+            "display_name": "Spirits of Rage",
+            "resource": "magic/summoning/spirits/rage.html"
+          },
+          "trickster": {
+            "display_name": "Trickster Spirits",
+            "resource": "magic/summoning/spirits/trickster.html"
+          },
+          "vengeance": {
+            "display_name": "Spirits of Vengeance",
+            "resource": "magic/summoning/spirits/vengeance.html"
+          },
+          "wild": {
+            "display_name": "Wild Spirits",
+            "resource": "magic/summoning/spirits/wild.html"
+          }
+        }
+      },
       "qi": "Qi",
       "metamagics": "Metamagics"
     }
