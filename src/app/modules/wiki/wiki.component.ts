@@ -9,10 +9,10 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import {firstValueFrom} from 'rxjs';
+import {ActivatedRoute, Router} from '@angular/router';
 
 interface JSONNavigatableRoutes {
   [key: string]: string | NavigatableRoute
@@ -42,7 +42,8 @@ export class WikiComponent {
   @ViewChild('main') main!: ElementRef<HTMLDivElement>;
   @ViewChild('contentWrapper') contentWrapper!: ElementRef<HTMLDivElement>;
 
-  private readonly router = inject(Router);
+  public readonly router = inject(Router);
+  private readonly activatedRoute = inject(ActivatedRoute);
   private readonly httpClient = inject(HttpClient);
   private readonly sanitizer = inject(DomSanitizer);
 
@@ -50,15 +51,30 @@ export class WikiComponent {
    * All potential routes of the wiki component
    */
   protected routes = signal<NavigatableRoutesMap | undefined>(undefined);
+  /**
+   * List of routes() signal keys that can be viewed on navigation
+   */
+  protected viewableRoutes = signal<string[]|undefined>(undefined);
+  /**
+   * List of expanded parents for arrow rotation
+   */
+  protected expandedParents = signal<string[]|undefined>(undefined);
+  /**
+   * Currently selected route to show content for
+   */
   protected selectedRoute = signal<string>('home');
 
   protected title = signal<string>('');
   protected content = signal<SafeHtml | undefined>(undefined);
   private readonly INSERT_SELECTOR: RegExp = /<ins.*id=".+".*>.*<\/ins>/g;
 
-  readonly loading = signal<boolean>(false);
+  readonly contentLoading = signal<boolean>(false);
 
   constructor() {
+    this.activatedRoute.params.subscribe(params => {
+      this.selectedRoute.set(params['route']);
+    })
+
     this.httpClient.get<JSONNavigatableRoutes>('assets/pages/nav.json', {responseType: 'json'}).subscribe(data => {
       const parsedRoutes = this.parseRoutes(data);
       this.routes.set(parsedRoutes);
@@ -66,23 +82,27 @@ export class WikiComponent {
 
     effect(() => {
       const routes = this.routes();
-      const selectedRoute = routes ? routes[this.selectedRoute()] : undefined;
+      const selectedRoute = this.selectedRoute();
 
       untracked(() => {
-        firstValueFrom(this.httpClient.get('assets/pages/' + selectedRoute?.resource, {responseType: 'text'})).then(async data => {
-          this.loading.set(true);
-          const parsedData = await this.parsePageContent(data, selectedRoute)
+        const currentRoute = routes ? routes[this.selectedRoute()] : undefined;
+
+        this.expandNavigation(selectedRoute)
+
+        firstValueFrom(this.httpClient.get('assets/pages/' + currentRoute?.resource, {responseType: 'text'})).then(async data => {
+          this.contentLoading.set(true);
+          const parsedData = await this.parsePageContent(data, currentRoute)
           if (!this.navigation.nativeElement.classList.contains('d-none')) {
-            this.toggleNavigation();
+            this.toggleNavbar();
           }
           this.content.set(this.sanitizer.bypassSecurityTrustHtml(parsedData));
           this.contentWrapper.nativeElement.scrollTop = 0;
-          this.loading.set(false);
+          this.contentLoading.set(false);
         }).catch(err => {
           console.error(err)
           if (err.status === 404) {
             this.content.set(this.sanitizer.bypassSecurityTrustHtml('<i>Request for HTML file "'
-              + selectedRoute?.resource
+              + currentRoute?.resource
               + '" was received but no asset found. Asset may be missing from build.</i>'))
           } else {
             throw err;
@@ -160,15 +180,53 @@ export class WikiComponent {
     return result;
   }
 
-  toggleNavigation() {
+  expandNavigation(route: string) {
+    const viewableRoutes: string[] = [];
+    const routes = this.routes() ?? {};
+    const currentRoute: NavigatableRoute = routes[route];
+
+    Object.keys(routes).filter(key => {
+      const selectedRouteKey = currentRoute?.resource?.substring(0, currentRoute?.resource?.indexOf('.'));
+      let selectableRoutes: string[] = [];
+
+      if (selectedRouteKey) {
+        selectableRoutes = [...selectedRouteKey!.matchAll(/\//g)]
+          .map(match => match.index)
+          .map(index => selectedRouteKey.substring(0, index));
+        selectableRoutes = [selectedRouteKey, ...selectableRoutes]
+      }
+      this.expandedParents.set(selectableRoutes);
+
+      let matcher: RegExpMatchArray | null;
+      if (selectableRoutes.length == 0) {
+        matcher = key.match('^[^/]+$');
+      } else {
+        const regexp = '^([^/]+|'
+          + (selectableRoutes.length == 1
+            ? selectableRoutes[0] + '/(.[^/]+)'
+            : '(' + selectableRoutes.map(route => route + '/(.[^/]+)').join('|') + ')')
+          + ')$';
+        matcher = key.match(regexp);
+      }
+      return matcher != null;
+    }).forEach(key => viewableRoutes.push(key));
+    
+    this.viewableRoutes.set(viewableRoutes);
+  }
+
+  retractNavigation(route: string) {
+    const viewableRoutes = this.viewableRoutes();
+    const expandedParents = this.expandedParents();
+    
+    this.viewableRoutes.set(viewableRoutes?.filter(key => !key.startsWith(route + '/')));
+    this.expandedParents.set(expandedParents?.filter(key => key != route));
+  }
+
+  toggleNavbar() {
     this.navigation.nativeElement.classList.toggle('d-none');
     this.navigation.nativeElement.classList.toggle('d-flex');
     this.toggler.nativeElement.classList.toggle('d-block');
     this.main.nativeElement.classList.toggle('disabled');
-  }
-
-  selectRoute(route: string) {
-    this.selectedRoute.set(route);
   }
 
   openInNewWindow(url: string): void {
