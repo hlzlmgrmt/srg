@@ -1,8 +1,9 @@
 <div #navigation class="d-none d-sm-flex flex-column p-2 border navigation">
-  <div class="d-flex flex-column mb-3 navigation-header"
-       (click)="selectRoute('home')">
+  <div class="d-flex flex-column mb-3 navigation-header">
+       <a [routerLink]="''">
     <img src="assets/img/shadowrun-logo.svg" alt=""/>
     <h5>Shadowrun Genesys</h5>
+    </a>
   </div>
   <div class="d-flex flex-column justify-content-between navigation-content">
     <div class="d-flex flex-column">
@@ -11,16 +12,11 @@
           @if (routes[key]; as route) {
             @if (route.display_name !== '' && viewableRoutes()?.includes(key)) {
               <div class="d-flex flex-row justify-content-between">
-                <a href="javascript:void(0)" 
-                    class="w-100" [class.selected]="selectedRoute() == key"
-                    [style]="route.depth !== undefined && route.depth > 1 ?
-                      'margin-left: ' + ((route.depth - 1) * 0.5) + 'rem; '
-                      + 'padding-left: ' + (0.5 + 'rem;') : ''">
-                  <div class="d-flex flex-row justify-content-between">
-                    <span
-                      (click)="selectedRoute() !== key ? selectRoute(key) : undefined">{{ routes[key].display_name }}</span>
-                  </div>
-                </a>
+                <a [routerLink]="selectedRoute() !== key ? '/' + key : undefined"
+                   class="w-100" [class.selected]="selectedRoute() == key"
+                   [style]="route.depth !== undefined && route.depth > 1 ?
+                    'margin-left: ' + ((route.depth - 1) * 0.5) + 'rem; '
+                    + 'padding-left: ' + (0.5 + 'rem;') : ''">{{ routes[key].display_name }}</a>
                 @if (route.children) {
                   <a href="javascript:void(0)" 
                     [class.expanded]="expandedParents()?.includes(key)"

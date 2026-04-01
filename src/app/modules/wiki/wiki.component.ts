@@ -12,6 +12,7 @@ import {
 import {HttpClient} from '@angular/common/http';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import {firstValueFrom} from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 interface JSONNavigatableRoutes {
   [key: string]: string | NavigatableRoute
@@ -41,6 +42,7 @@ export class WikiComponent {
   @ViewChild('main') main!: ElementRef<HTMLDivElement>;
   @ViewChild('contentWrapper') contentWrapper!: ElementRef<HTMLDivElement>;
 
+  private readonly activatedRoute = inject(ActivatedRoute);
   private readonly httpClient = inject(HttpClient);
   private readonly sanitizer = inject(DomSanitizer);
 
@@ -68,6 +70,11 @@ export class WikiComponent {
   readonly contentLoading = signal<boolean>(false);
 
   constructor() {
+    this.activatedRoute.params.subscribe((params) => {
+      console.log('route:', params['route']);
+      this.selectedRoute.set(params['route'] ?? 'home')
+    });
+
     this.httpClient.get<JSONNavigatableRoutes>('assets/pages/nav.json', {responseType: 'json'}).subscribe(data => {
       const parsedRoutes = this.parseRoutes(data);
       this.routes.set(parsedRoutes);
@@ -220,10 +227,6 @@ export class WikiComponent {
     this.navigation.nativeElement.classList.toggle('d-flex');
     this.toggler.nativeElement.classList.toggle('d-block');
     this.main.nativeElement.classList.toggle('disabled');
-  }
-
-  selectRoute(route: string) {
-    this.selectedRoute.set(route);
   }
 
   openInNewWindow(url: string): void {
