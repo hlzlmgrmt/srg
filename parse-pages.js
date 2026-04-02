@@ -1,0 +1,114 @@
+/**
+ * Pre-parses page content. This script is intended to be part of the build process, to be run before ng build.
+ * The assets themselves are to be included in the angular.json. This mainly avoids the loading of each page
+ * individually at runtime.
+ */
+console.info('Running page content parser');
+
+const fs = require('fs');
+const path = require('path');
+
+const srcDir = __dirname + '/src/assets/pages'
+const targetDir = __dirname + '/target/assets/pages';
+
+// Regex for determining content <ins></ins>-Tags
+const insSelector = /<ins.*id=".+".*>.*<\/ins>/g;
+
+/**
+ * Recursively iterates through all files from the source directory
+ *
+ * @param dir   input directory
+ * @param done  callback function (error, result (map of file paths and their content))
+ */
+const walk = function (dir, done) {
+  let results = new Map();
+  fs.readdir(dir, function (err, list) {
+    if (err) return done(err);
+    let pending = list.length;
+    if (!pending) return done(null, results);
+    list.forEach(function (file) {
+      file = path.resolve(dir, file);
+      fs.stat(file, function (err, stat) {
+        if (stat && stat.isDirectory()) {
+          walk(file, function (err, res) {
+            results = new Map([...results].concat([...res]));
+            if (!--pending) done(null, results);
+          });
+        } else {
+          if (file.endsWith('.html')) {
+            results.set(file.substring(srcDir.length + 1, file.length), fs.readFileSync(file, {encoding: 'utf-8'}));
+          }
+          if (!--pending) done(null, results);
+        }
+      });
+    });
+  });
+};
+
+/**
+ * Recursively parses the content of a file
+ * 
+ * @param content content map to be consumed (key = path, value = content)
+ * @param done    callback function (error, result content maP)
+ */
+const parse = function (content, done) {
+  let result = new Map([...content].filter(([k, v]) => !v.match(insSelector)));
+  console.log("Parsing", content.size, "pages")
+
+  let remaining = content.size - result.size;
+  while (remaining > 0) {
+    let remainingContent = new Map([...content].filter(([k, v]) => !Array.from(result.keys()).includes(k)));
+    console.log("Remaining content:", remainingContent.size, Array.from(remainingContent.keys()))
+
+    new Map([...remainingContent].filter(([key, value]) => {
+      const insertPaths = value.match(insSelector).map((ins) => 
+        ins.match(/id="[^"]+"/).map((match) => 
+          match.substring('id=\"'.length, match.length - 1))).flat();
+
+      return insertPaths.every(key => Array.from(result.keys()).includes(key));
+    })).forEach(function(value, key) {
+      value.match(insSelector).forEach((ins) => {
+        const insKey = ins.match(/id="[^"]+"/)?.map(match =>
+          match.substring('id=\"'.length, match.length - 1))[0] ?? '';
+        const insHeading = ins.match(/>.+<\/ins>/)?.map(match =>
+          match.substring(match.indexOf('>') + 1, match.indexOf('<')))[0] ?? '';
+        const insDepth = ins.match(/data-depth="[0-9]+"/)?.map(match =>
+          Number.parseInt(match.substring('data-depth=\"'.length, match.length - 1)))[0] ?? (insKey.match(/\//g) || []).length + 1
+
+        const insData = '<h' + insDepth + ' id=' + insKey + '>' + insHeading + '</h' + insDepth + '>\n' + result.get(insKey);
+        value = value.replace(ins, insData ?? '');
+      });
+      result.set(key, value);
+      remaining--;
+    })
+  }   
+
+  done(null, result);
+}
+
+
+
+const write = function (dir, content, done) {
+  const dstPath = targetDir + '/' + dir;
+
+  fs.promises.mkdir(path.dirname(dstPath), {recursive: true}).then(() => {
+    fs.promises.writeFile(dstPath, content, (err) => {
+      if (err) return done(err);
+    });
+    done(null, dstPath);
+  });
+}
+
+// --------------------------------------------------
+
+walk(srcDir, function (err, results) {
+  if (err) throw err
+  parse(results, function (err, results) {
+    if (err) throw err
+    results.forEach((value, key) => {
+      write(key, value, function (err, done) {
+        if (err) throw err;
+      });
+    })
+  })
+});
