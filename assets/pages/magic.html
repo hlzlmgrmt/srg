@@ -36,8 +36,737 @@
   <i>never</i> be given the opportunity to break these laws, simply because the funding, research and resources needed
   to even attempt this far exceeds the capacity of even the most legendary Shadowrunner.</p>
 
-<ins id="magic/tables/threat-despair-table.html"></ins>
-<ins id="magic/spellcasting.html">Spellcasting</ins>
-<ins id="magic/summoning.html">Summoning</ins>
-<ins id="magic/qi.html">Qi</ins>
-<ins id="magic/metamagics.html">Metamagics</ins>
+<h3 id=magic/tables/threat-despair-table.html></h3>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <caption>Using <span class="glyph">h</span> / <span class="glyph">d</span> on Magic checks.</caption>
+    <thead>
+    <tr>
+      <th>Cost</th>
+      <th>Effect</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th><span class="glyph">h</span>/<span class="glyph">d</span></th>
+      <td><p>
+        <span><b>Draining: </b>You suffer an additional strain. (This may be taken multiple times)</span><br/>
+        <span><b>Magical Blockade: </b>Add <span class="glyph setback">j</span> to all magical skill checks until the
+          end of your next turn.</span>
+      </p></td>
+    </tr>
+    <tr>
+      <th><span class="glyph">hh</span>/<span class="glyph">d</span></th>
+      <td><p>
+          <span><b>Failed Timing: </b>Your spell or conjuration goes into effect either at the start of the next round,
+            or one minute later.</span><br/>
+        <span><b>Magical Maelstrom: </b>until the end of the next round, adversarial spellcasters and spirits add
+            <span class="glyph boost">j</span> to all Magical skill checks against your character.</span>
+      </p></td>
+    </tr>
+    <tr>
+      <th><span class="glyph">hhh</span>/<span class="glyph">d</span></th>
+      <td><p>
+        <span><b>Physical Drain: </b>You suffer a Critical Injury.</span><br/>
+        <span><b>Strain Implement: </b>A magical implement you were using for the skill check gets damaged by one
+          step.</span><br/>
+        <span><b>Obvious Magic: </b>Your attempt at using magic becomes spectacular, making everyone around you aware
+          of your attempt to use magic.</span><br/>
+        <span><b>Displeased Spirit: </b>Your spirit appears unhappy to be summoned by your character, and only does
+          your bidding because it is bound to do so. Downgrade the ability of all checks your spirit makes. At the
+          Gamemasters discretion, an exceptionally unhappy spirit will do their tasks according to the letter, and
+          either do the bare minimum of the task, or tries to actively get its master into trouble.</span>
+      </p></td>
+    </tr>
+    <tr>
+      <th><span class="glyph">d</span></th>
+      <td><p>
+        <span><b>Stunted Magic: </b>Until the end of the encounter or scene, count your Essence Loss as one higher than
+          it actually is. If this would cause you to burn out, you instead take a Critical Injury and are unable to use
+          magic until the end of the encounter or scene.</span><br/>
+        <span><b>Angered Spirit: </b>Your spirit is exceptionally angry that you have conjured it, let alone that you
+          dare to command it like some lowly servant. You suffer a Critical Injury, and then must immediately succeed a
+          contested Disciple vs. Discipline check against the spirit in order to remain in control of is actions, after
+          which this effect is treated like the <i>Displeased Spirit</i> effect. If you fail, your conjured spirit
+          immediately becomes hostile, and is added as a new separate adversary that only targets the conjurer. If the
+          spirit is destroyed or banished, the conjurer permanently upgrades all checks attempting to summon that type
+          of spirit again until they have made amends with it. (At the Gamemasters discretion)</span>
+      </p></td>
+    </tr>
+    <tr>
+      <th><span class="glyph">dd</span></th>
+      <td><p>
+        <span><b>Overexert Essence: </b>You suffer a Daunting(<span class="glyph difficulty">kkkkk</span>) Critical Injury
+          that inflicts one Essence Loss until healed. If this Essence Loss would cause your character to burn out, they
+          burn out, even if they afterwards manage to heal the injury.</span><br/>
+        <span><b>Overfocus: </b>A magical Implement you were using is completely destroyed.</span>
+      </p></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id=magic/spellcasting.html>Spellcasting</h2>
+<h3>Basics of Spellcasting</h3>
+
+<p>While each tradition has their own sets of believes, rituals and specifics about each and every spell, Unified
+  Magical Theory has summarized most of the tried-and-tested spells into ten distinct spells:</p>
+<p><b>Attack spells</b> encompass spells that directly harm a target, such as Fireballs, Magic Missiles, and
+  Stunbolts.</p>
+<p><b>Augment spells</b> embolden a target with magical energies, improving them or their gear physically and
+  mentally.</p>
+<p><b>Barriers</b> conjure forth magical force fields and armor that keep harm from their targets, or serve as makeshift
+  prisons.</p>
+<p><b>Change spells</b> manipulate living and unliving matter into new forms, allowing a spellcaster to bend solid
+  stone,
+  metal, and even their own bodies into new shapes and forms.</p>
+<p><b>Curses</b> inflict pain, afflictions, diseases and other deliberating effects to their unfortunate victims.</p>
+<p><b>Heal spells</b> encompass spells that can close wounds, alleviate diseases and allergies, and can even bring back
+  the near-dead.</p>
+<p><b>Influence spells</b> invade the body and mind of their unfortunate victims, allowing a magician to control their
+  actions, thoughts and behaviors.</p>
+<p><b>Misdirect spells</b> conjure forth multi-sensorial mirages that can entertain or fool anyone perceiving the
+  illusion.</p>
+<p><b>Move spells</b> allow a magician to move and hurl objects and people, and allow the magician and their allies to
+  levitate.</p>
+<p><b>Sense spells</b> allow a spellcaster to attune their senses to supernatural heights, gaining the ability to
+  perceive distant places, read minds and gain glimpses into the near-future.</p>
+
+<p>A spellcaster must learn every spell individually by spending Karma; either by taking a rank in the Expanded
+  Grimoire talent, or by increasing their Spellcasting skill.</p>
+
+<h3>List of Spells</h3>
+
+<p>Each spell entry consists of six entries:</p>
+<p><b>Name: </b>The distinctive category of a spell.</p>
+
+<p><b>Description: </b>Each spell contains a short description, giving the magician some information about the general
+  use cases of a spell, as well as limitations the spell has that perhaps other spells could accomplish instead. When
+  using a spell to accomplish specific tasks, Players and Gamemasters should keep the intention of the spell in
+  mind.</p>
+
+<p><b>Sustained: </b>Some spells need to be sustained by the spellcaster as an upkeep for their prolonged effects. In
+  practice, this means that for as long as the caster and it's target are within the same scene, the caster commits
+  <span class="glyph proficiency">l</span> from their Spellcasting dice pool for each sustained spell. Each committed
+  die removes a <span class="glyph proficiency">l</span> from any magical skill check dice pool. If no
+  <span class="glyph proficiency">l</span> can be removed, the caster decreases the ability of the check once. A
+  spellcaster can only sustain a number of spells equal to the total amount of <span class="glyph proficiency">l</span>
+  in their Spellcasting dice pool.<br/>
+  Only one of each spell can be sustained at the same time. For example, if a spellcaster wishes to cast <i>Augment</i>
+  on multiple targets, they cannot sustain two <i>Augment</i> spells; instead, they can increase the difficulty of a
+  single spell by adding the <i>Additional Targets</i> additional effect.<br/>
+  At the Gamemasters discretion, when a spellcaster is forced to maintain concentration, for example while suffering a
+  Critical Injury, suddenly falling, experiencing mortal fear or similar trauma, they must succeed a Discipline check
+  with a difficulty equal to the amount of spells they are sustaining, plus one.</p>
+
+<p><b>Base Spell and Difficulty: </b>The description and difficulty of the basic spell, before adding any additional
+  effects.</p>
+
+<p><b>Additional Effects: </b>Each spell includes a table of optional additional effects, consisting of an
+  <b><i>Effect</i></b> and a <b><i>Difficulty Modifier</i></b>. Before casting a spell, a character may add additional
+  effects to the spell, which add their described effect and difficulty to the base spell effect and difficulty. If an
+  effect is not compatible with other effects, or if an effect may be taken multiple times (with multiple difficulty
+  increases) depends on the additional effect in question. The difficulty of the spell and it's additional effects,
+  before considering any reductions of difficulty (such as talents, formulae or foci) cannot exceed Formidable
+  (<span class="glyph difficulty">kkkkk</span>).</p>
+
+<h4 id=magic/spellcasting/spells/attack.html>Attack</h4>
+<p>Attack spells encompass all forms of direct magical combat, like shooting lightning, throwing a fireball or causing
+  necrosis on a targets body.</p>
+<p><b>Sustained: </b>No</p>
+<p><b>Base Spell: </b>You attack a single target within short range with a beam of magical energy, dealing damage equal
+  to your Willpower. Treat the spell like a ranged attack, applying ranged defenses, soak and environmental modifiers as
+  usual. The attack has no Critical rating, and can only inflict a Critical Injury by spending
+  <span class="glyph">t</span>.
+</p>
+<p><b>Base Difficulty: </b>Easy(<span class="glyph difficulty">k</span>)</p>
+<p><b>Additional Effects: </b></p>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Effect</th>
+      <th>Diff. Mod.</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><p>
+        <b>Blast: </b>The attack gains the Blast quality with a rating equal to your character's ranks in Spellcasting.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Burning: </b>The attack gains the Burn quality with a rating equal to your character's ranks in Spellcasting.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Close Combat: </b>You may select a target engaged with your character.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Deadly: </b>The attack gains a Critical rating of 2. Additionally, the attack gains the Vicious quality with
+        a rating to your character's ranks in Spellcasting.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Freezing: </b>The attack gains the Ensnare quality with a rating equal to the character's ranks in
+        Spellcasting.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Impact: </b>The attack gains the Knockdown quality. The attack also gains the Disorient quality with a rating
+        equal to the character's ranks in Spellcasting.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Lightning: </b>The attack gains the Stun quality with a rating equal to the character's ranks in
+        Spellcasting. The attack also gains the Full Auto quality. (You must increase the difficulty by one to use the
+        Full Auto quality as normal)
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Moving: </b>If the attack hits, you may spend <span class="glyph">a</span> to move the target up to one range
+        band in any direction.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Non-Lethal: </b>Your attack gains the Non-Lethal quality.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
+        the range by one range band each time (to a maximum range of Long range).
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Destructive: </b>The attack gains the Sunder quality. The attack also gains the Pierce quality with a rating
+        equal to the character's ranks in Spellcasting.
+      </p></td>
+      <td>+<span class="glyph difficulty">kk</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Direct: </b>The attack ignores all non-magical sources of defense and soak, but it's damage becomes 0, plus
+        any uncancelled <span class="glyph">s</span>.
+      </p></td>
+      <td>+<span class="glyph difficulty">kk</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Empowered: </b>The attack deals additional damage equal to your ranks in Spellcasting. Additionally, if the
+        spell triggers the Blast quality, it affects all targets within short range, instead of engaged.
+      </p></td>
+      <td>+<span class="glyph difficulty">kk</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Toxic: </b>If the attack deals damage, the target must immediately make a
+        Hard(<span class="glyph difficulty">kkk</span>) Resilience check or suffer wounds and strain equal to the
+        character's ranks in Spellcasting. This counts as poison.
+      </p></td>
+      <td>+<span class="glyph difficulty">kk</span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4 id=magic/spellcasting/spells/augment.html>Augment</h4>
+<p>Augment spells magically enhance characters or objects, imbuing swords with magical power or enhancing a characters
+  reflexes. Augment spells generally only work on voluntary targets, and cannot be in detriment to the target. Objects
+  augmented through magical means are usually simple objects, such as swords, or simple metal alloys; enhancing a gun or
+  drone often proves much more difficult.</p>
+<p><b>Sustained: </b>Yes</p>
+<p><b>Base Spell: </b>You select a skill using the Brawn or Reflexes characteristic, and a voluntary target engaged with
+  you. If successful, as long as the spell is sustained, the target increases the ability of all skill checks made with
+  the chosen skill once (in effect, this means they add one <span class="glyph ability">k</span> to their checks). A
+  character cannot be the target of multiple Augment spells at the same time.</p>
+<p><b>Base Difficulty: </b>Average(<span class="glyph ability">kk</span>)</p>
+<p><b>Additional Effects: </b></p>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Effect</th>
+      <th>Diff. Mod.</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><p>
+        <b>Additional Target: </b> The spell affects one additional target within range of the spell. In addition, after
+        casting the spell, you may spend <span class="glyph">a</span> to affect oe additional target within range of the
+        spell (and may trigger this multiple times, spending <span class="glyph">a</span> each time).
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Enchant: </b> The spell affects a Melee weapon a character within the range of the spell is holding. While
+        the spell is sustained, in addition to other effects, the weapon increases their damage by one, and reduces their
+        Critical rating by one, to a minimum of 2. The augmented weapon becomes magical, and may ignore an adversaries
+        immunity to non-magical attacks.</p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Mental: </b> You may augment any non-magical skill of a target.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
+        the range by one range band each time (to a maximum of Long range).
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Swift: </b>Targets affected by the spell ignore the effects of difficult terrain, and they cannot be
+        Immobilized.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Empower: </b>
+      </p></td>
+      <td>+<span class="glyph difficulty">kk</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Haste: </b>Targets affected by the spell can perform a second maneuver without spending strain (they may
+        still perform only two maneuvers per turn). The caster can increase the difficulty of the spell an additional
+        time; instead of a maneuver, targets affected by the spell can perform a second action at the end of a round.
+      </p></td>
+      <td>+<span class="glyph difficulty">kk</span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4 id=magic/spellcasting/spells/barrier.html>Barrier</h4>
+
+<h4 id=magic/spellcasting/spells/change.html>Change</h4>
+
+<h4 id=magic/spellcasting/spells/curse.html>Curse</h4>
+<p>Curses inflict negative afflictions and effects to targets without causing direct harm, whether through direct
+  penalties to checks made by the cursed target, sicknesses that ravage their bodies or the illusion of excruciating
+  pain. In combat, most curses are simple debuffs that hinder adversaries in their ability to do things. Outside of
+  combat, curses can be longer lasting and more deliberate; someone could be forced to vomit, for example.</p>
+<p><b>Sustained: </b>Yes</p>
+<p><b>Base Spell: </b>You weaken a target within short range with a hex. If successful, as long as the spell is
+  sustained, the target decreases the ability of all skill checks they make by one (in effect, this means they remove
+  one <span class="glyph ability">k</span> from their checks). Once per turn, as a maneuver, or once per minute, the
+  target of a curse can attempt to break the spell by succeeding a Resilience skill check as a Contested check against
+  your Spellcasting skill.</p>
+<p><b>Base Difficulty: </b>Average(<span class="glyph difficulty">kk</span>)</p>
+<p><b>Additional Effects: </b></p>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Effect</th>
+      <th>Diff. Mod.</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <tr>
+      <td><p>
+        <b>Sickened: </b>[...]. When you use this effect, the base difficulty of the spell is the targets Resilience
+        skill.
+      </p></td>
+      <td>+var</td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Enervate: </b>If a target suffers wounds or strain for any reason, they suffer one additional strain.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Misfortune: </b>After the target makes a check, you may change one <span class="glyph boost">j</span> to a
+        face displaying <span class="glyph">f</span>.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
+        the range by one range band each time (to a maximum of Long range).
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
+        casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of
+        the spell (and may trigger this multiple times, spending <span class="glyph">a</span> each time).
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Agonizing: </b>The target's strain and wound thresholds are reduced by an amount equal to the character's
+        ranks in Spellcasting. If this would cause the target to be incapacitated, they fall unconscious until the end
+        of the encounter, even if you stop sustaining the spell.
+      </p></td>
+      <td>+<span class="glyph difficulty">kk</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Empowered: </b>The target downgrades any skill check they make before they decrease their ability. If they
+        cannot downgrade their dice pool, they instead decrease their ability twice instead on once.
+      </p></td>
+      <td>+<span class="glyph difficulty">kk</span></td>
+    </tr>
+
+    <tr>
+      <td><p>
+        <b>Paralyzing: </b>As long as you are sustaining the spell, the target is staggered
+      </p></td>
+      <td>+<span class="glyph difficulty">kk</span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4 id=magic/spellcasting/spells/heal.html>Heal</h4>
+<p>Healing can remove damage or strain from a character, cure toxins and diseases, or allow to shut deaths door for
+  anyone seeing the light. Additionally, healing spells can temporarily relieve the negative effects af allergies and
+  addictions. Typically, healing spells are more difficult to cast than similat Medicine skill checks, but are often
+  more versatile and quicker in their use. Generally, boosts and setbacks that apply to Medicine skill checks also apply
+  for Healing spells.</p>
+<p><b>Sustained: </b>No</p>
+<p><b>Base Spell: </b>You choose one target that is Engaged with you and who is not incapacitated. Upon a success of the
+  Spellcasting check, the target heals 1 wound per uncancelled <span class="glyph">s</span> and 1 strain per uncanceled
+  <span class="glyph">a</span>.</p>
+<p><b>Base Difficulty: </b>Easy(<span class="glyph difficulty">k</span>) + <span class="glyph setback">j</span> for
+  every 2 points of Essence Loss in the target.</p>
+<p><b>Additional Effects: </b></p>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Effect</th>
+      <th>Diff. Mod.</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><p>
+        <b>Heal Critical: </b>Select one Critical Injury the target is suffering. If the spell is successful, the
+        Critical Injury is also healed. This effect sets the base difficulty of the Spellcasting check to the severity
+        of the selected Critical Injury.
+      </p></td>
+      <td>+var</td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
+        casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of
+        the spell (and may trigger this multiple times, spending <span class="glyph">a</span> each time).
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Sterilize: </b>If the spell is successful, any following Medicine check on the target adds <span
+        class="glyph boost">j</span> (This may be taken multiple times).
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
+        the range by one range band each time (to a maximum range of Long range).
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Restoration: </b>Select one ongoing status effect the target is suffering. The status effect immediately
+        ends. At the Gamemasters discretion, the difficulty of the effect may be further increases if the source of the
+        effect is more difficult to cure, such as for particularly potent drugs and toxins.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Empowered: </b>The character may sustain the spell for an amount of turns qual to their ranks in
+        Spellcasting. At the beginning if the targets turn, the target heals an additional wound.
+      </p></td>
+      <td>+<span class="glyph difficulty">kk</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Stabilize: </b>The character may select targets who are incapacitated. If the spell is successful, they are
+        able to act at the end of the casters next turn.
+      </p></td>
+      <td>+<span class="glyph difficulty">kk</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Resurrect: </b>The character may select a target who has dies during this encounter. If successful, the
+        target is resorted to life, suffering wounds equal to their wound threshold. If the check fails, it is too late
+        for the target, and no other characters may attempt to resurrect the target again.
+      </p></td>
+      <td>+<span class="glyph difficulty">kkkk</span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4 id=magic/spellcasting/spells/influence.html>Influence</h4>
+
+<h4 id=magic/spellcasting/spells/misdirect.html>Misdirect</h4>
+
+<h4 id=magic/spellcasting/spells/move.html>Move</h4>
+
+<h4 id=magic/spellcasting/spells/sense.html>Sense</h4>
+<p>A magician casting a Sense spell gains the ability to perceive their surrounding by supernatural means. This includes
+  the simple sharpening of ones own senses, and extends to perceiving invisible things, seeing through illusions and
+  solid objects, and even into reading minds. Some exceptionally powerful practitioners of Sensing magic are even said
+  to be able to see glimpses of the future.</p>
+<p><b>Sustained: </b>Yes</p>
+<p><b>Base Spell: </b>You enhance your own senses. If successful, you upgrade the ability of all Perception checks you
+  make once.</p>
+<p><b>Base Difficulty: </b>Easy(<span class="glyph difficulty">k</span>)</p>
+<p><b>Additional Effects: </b></p>
+
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Effect</th>
+      <th>Diff. Mod.</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td><p>
+        <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
+        casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of
+        the spell (and may trigger this multiple times, spending <span class="glyph">a</span> each time).
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Analyze: </b>While affected by the spell, <span class="glyph">aa</span> generated on Perception check may be
+        spend to reveal the purpose of a perceived object or device. <span class="glyph">t</span> generated on the check
+        may be spend to reveal the inner workings of the objects or device similar to a blueprint.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Clairvoyance: </b>The character can declare a location within short range to perceive their surroundings as
+        if physically there. The caster must see the location while casting the spell, but can leave afterwards. While
+        the caster is sustaining this spell, they perceive both their targeted and physical location, but suffer
+        <span class="glyph setback">jj</span> on all Perception and Vigilance checks for their physical location.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Link: </b> The caster touches a voluntary ally while casting the spell. As long as the ally is within the
+        same scene as the character, they share their senses and thoughts and can aid each other in Perception checks.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Range: </b> Increase the range of the spell by one range band. This may be added multiple times, increasing
+        the range by one range band each time (to a maximum of Long range). Additionally, the spell can affect another
+        voluntary subject instead of the caster.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Understand: </b> Sense affects Vigilance checks when interacting with other people Additionally, the
+        character can understand the spoken language of the target without the aid of translator programs, even though
+        they cannot speak it themselves.
+      </p></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Detect: </b> When casting the spell, the character must choose a trigger, such as aggression, danger, magic
+        or the presence of certain objects, critters or known individuals. When the character is within the same scene
+        as their chosen trigger, they get informed about their presence.
+      </p></td>
+      <td>+<span class="glyph difficulty">kk</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Empowered: </b> The caster can remove <span class="glyph setback">j</span> equal to their ranks in
+        Spellcasting to all Perception check they make. (This includes seeing in total darkness or perceiving
+        invisible creatures). Additionally, all opposed checks made against the casters Perception or Vigilance
+        checks add <span class="glyph setback">j</span> up to the casters ranks in Spellcasting.
+      </p></td>
+      <td>+<span class="glyph difficulty">kk</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Probe: </b>The caster can telepathically probe the mind of a target within range of the spell. The target is
+        aware of the probing, though they may not know the source of the spell. On a success, the caster may read the
+        targets’ surface thoughts, and aa generated on the check may reveal additional information. The caster can
+        increase
+        the difficulty of this effect: When increased once, the caster can read the targets recent memories and known
+        knowledge of the target, and if increased twice twice the character might even gain information only
+        subconsciously
+        known by the target, such as deep fears or suppressed memories.
+      </p></td>
+      <td>+<span class="glyph difficulty">kk</span></td>
+    </tr>
+    <tr>
+      <td><p>
+        <b>Sharpshooter: </b>When the target of the spell uses the Aim maneuver with a Ranged (Light) or Ranged (Heavy)
+        weapon, Sense affects the next Ranged (Light) or Ranged (Heavy) combat check.
+      </p></td>
+      <td>+<span class="glyph difficulty">kk</span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+
+<h2 id=magic/summoning.html>Summoning</h2>
+<h3>Basics of Summoning</h3>
+<p>[...]:</p>
+
+<h3>List of Spirits</h3>
+
+<h4 id=magic/summoning/spirits/dead.html>Spirits of the Dead</h4>
+
+<h4 id=magic/summoning/spirits/guardian.html>Guardian Spirits</h4>
+
+<h4 id=magic/summoning/spirits/guidance.html>Guidance Spirits</h4>
+
+<h4 id=magic/summoning/spirits/labor.html>Spirits of Labor</h4>
+
+<h4 id=magic/summoning/spirits/man.html>Spirits of Man</h4>
+
+<h4 id=magic/summoning/spirits/mystics.html>Spirits of Mystics</h4>
+
+<h4 id=magic/summoning/spirits/rage.html>Spirits of Rage</h4>
+
+<h4 id=magic/summoning/spirits/trickster.html>Trickster Spirits</h4>
+
+<h4 id=magic/summoning/spirits/vengeance.html>Spirits of Vengeance</h4>
+
+<h4 id=magic/summoning/spirits/wild.html>Wild Spirits</h4>
+
+
+<h2 id=magic/qi.html>Qi</h2>
+<p>Qi is [...].</p>
+
+<p><b>Tap into Qi: </b>As a maneuver, an adept can commit one <span class="glyph proficiency">l</span> from their
+  Qi-Magic dice pool and choose a non-combat skill with the Brawn or Agility characteristic. While they commit this die,
+  they add <span class="glyph power">l</span> to the chosen skill. <span class="glyph dot-light"></span> generated on
+  skill checks may be spend to add <span class="glyph">s</span> or <span class="glyph">a</span> to the result of the
+  check. <span class="glyph dot-dark"></span> generated on the check may be used to suffer one strain, and then add
+  <span class="glyph">s</span> or <span class="glyph">a</span> to the result of the check. Uncancelled
+  <span class="glyph">h</span> or <span class="glyph">t</span> from checks boosted by <span class="glyph power">l</span>
+  can be used to trigger effects from the table "Using <span class="glyph">h</span> / <span class="glyph">d</span> on
+  Magic skill checks.". Unless otherwise specified, only a single <span class="glyph proficiency">l</span> can be
+  committed per skill, but multiple <span class="glyph proficiency">l</span> can be committed to different skills
+  simultaneously.</p>
+<p><b>Use Adept Power: </b>Adepts have access to unique, supernatural talents, called Adept Powers. These powers usually
+  require the adept to commit <span class="glyph proficiency">l</span> to use them. Adept powers count towards the
+  talent pyramid; additionally to the usual restrictions on talents, adepts must at least possess a Qi-Magic rating
+  equal to the desired talent.</p>
+
+<h3>Adept Powers</h3>
+<p>[...]</p>
+
+<h4 id=magic/qi/powers/tier_1.html>Tier I</h4>
+<p>tier i works!</p>
+
+<h4 id=magic/qi/powers/tier_2.html>Tier II</h4>
+<p>tier ii works!</p>
+
+<h4 id=magic/qi/powers/tier_3.html>Tier III</h4>
+<p>tier iii works!</p>
+
+<h4 id=magic/qi/powers/tier_4.html>Tier IV</h4>
+<p>tier iv works!</p>
+
+<h4 id=magic/qi/powers/tier_5.html>Tier V</h4>
+<p>tier v works!</p>
+
+
+<h2 id=magic/metamagics.html>Metamagics</h2>
+<p>The term "Metamagic" describes a technique utilized by Awakened magicians, summoners and adepts which have
+  attained a higher understanding of magic through initiation. Metamagics allow an Awakened to manipulate and utilize
+  their magical powers in more powerful ways unmatched by their lesser peers.</p>
+<p>In order ot gain a Metamagic, a character must gain a rank in the <i>Magic Initiate</i> talent; since the talent is a
+  Tier 2 talent, and no ranked talent may be taken higher than 5, any magician can only gain a total of four different
+  metamagics without the aid of specialized equipment, such as metamagic foci; an Awakened therefore should choose
+  carefully which Metamagic suits their needs best. Almost all Metamagics utilize the Awakened character's ranks in
+  Magic Initiate in some form, making already mastered metamagics stronger with each metamagic gained.</p>
+
+<div class="info-container">
+  <div class="d-flex flex-row justify-content-between">
+    <h6>Isn't a metamagic just a talent?</h6>
+    <span class="me-1">🛈</span>
+  </div>
+  <p>Yes but shut</p>
+</div>
+
+<h3>List of Metamagics</h3>
+<p>The following contains a list of the most common metamagics that the average player character or adversary can have
+  access to.</p>
+
+<h4>Anchoring</h4>
+
+<h4>Banishing</h4>
+<p>As an action, you can attempt to banish a conjured spirit into the </p>
+
+<h4>Binding</h4>
+<h4>Centering</h4>
+<p>As a maneuver you can make an obviously magical activity appropriate to your tradition - such as chanting, dancing,
+  or praying - and suffer strain up to their ranks in Magical Initiate to to add an equal amount of
+  <span class="glyph">a</span> to their next Magical skill check. (You can spend these to recover from the strain
+  suffered by the Centering metamagic)</p>
+
+<h4>Counterspell</h4>
+<p>As an Out-Of-Turn incidental, if you or an ally engaged with you is targeted by a spell, you can suffer strain up to
+  your ranks in Magic Initiate to add an equal amount of <span class="glyph setback">j</span> to their dice pool.
+  Additionally, for each rank of Magic Initiate beyond the first, you can increase the range at which you can use
+  Counterspell for your allies by one range band.</p>
+
+<h4>Fixiate</h4>
+<h4>Sacrifice</h4>
+<h4>Shaping</h4>
+<h4>Shielding</h4>
+<h4>Quickening</h4>
+

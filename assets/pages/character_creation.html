@@ -1,11 +1,595 @@
 <p>This is a test paragraph!</p>
 
-<ins id="character_creation/background.html">Step 1: Determine Background</ins>
-<ins id="character_creation/motivation_and_burdens.html">Step 2: Determine Character Motivation And Burdens</ins>
-<ins id="character_creation/metatype.html">Step 3: Select Metatype</ins>
-<ins id="character_creation/archetype.html">Step 4: Choose Archetype</ins>
-<ins id="character_creation/invest_karma.html">Step 5: Invest Karma</ins>
-<ins id="character_creation/derived_attributes.html">Step 6: Determine Derived Attributes</ins>
-<ins id="character_creation/gear.html">Step 7: Choose Gear</ins>
-<ins id="character_creation/appearance.html">Step 8: Determine Appearance and Personality</ins>
-<ins id="character_creation/vehicle.html">Step 9: Select a Vehicle</ins>
+<h2 id=character_creation/background.html>Step 1: Determine Background</h2>
+<p>determine_background works!</p>
+
+<h2 id=character_creation/motivation_and_burdens.html>Step 2: Determine Character Motivation And Burdens</h2>
+<p>Burdens represent the debts a Player Character owes. Defined simply, they are among the main reasons a Player
+  Character is a Shadowrunner in the first place. These debts may include money owed, binding contracts,
+  responsibilities, addictions or similar that the character holds in high regard. A character's actions can often be
+  guided by his Burdens and can have very tangible effects in their development.</p>
+<p>Over the course of a campaign, unresolved burdens can put pressure on characters. Additional burdens may be given out
+  by the Gamemaster, awarding them goods and services that would normally be out of reach for them. This provides
+  players with a choice; do they resolve their burdens as quickly as possible, do they maintain their current burdens,
+  or do they take on even more in the hopes that the risks will pay off in the future? Additionally, Gamemasters can
+  hand out burdens as consequences for bad choices, or just plain bad luck; maybe a Player Character gets blackmailed by
+  a rival runner for a job gone bad, or they suffer an addition due to prolonged substance abuse.</p>
+
+<h3>Starting Burdens</h3>
+<p>Each Player Character starts with at least one Burden. Each player should work together with their Gamemaster in
+  incorporating these Burdens into the character's backstory and the setting itself. Burdens be as elaborate part or the
+  character's main Motivations - such as a detailed relocation of how the character was an involuntary test subject who
+  escaped a secret corporate laboratory and is actively hunted by said corporation - or quite vague - such as simply
+  having kids - as long as these Burdens can be used to add personal stakes to a Player Characters life in the
+  shadows.</p>
+<p>Each Burden consists of two parts:</p>
+<ul>
+  <li><b>A title: </b>This does not have any direct rules effects, but is intended to offer an explanation that allows
+    the player to work the Obligation into their character's story.
+  </li>
+  <li><b>A size </b> This is the Burden's size, and determines the mechanical effects of a Burden. The size of each
+    players starting Burdens is based on the starting number if players, as determined in the table below:
+  </li>
+</ul>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <caption>Starting Burdens</caption>
+    <thead>
+    <tr>
+      <th># of PCs in the Team</th>
+      <th>Recommended Default Starting burdens per player</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>2</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>4-5</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <td>6+</td>
+      <td>5</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>In addition, players may choose to increase the size or their characters' starting Burden when they choose them, in
+  order to either gain additional starting karma, or additional money to purchase starting gear. However, doing so
+  puts greater responsibilities on the individual character (and therefore the runner team as a whole).</p>
+<p>Players can purchase additional burdens according to the table below. There are two limitations to this however; each
+  player can only choose each option once, and Player Characters cannot gain more additional Burdens than their original
+  starting value.</p>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <caption>Additional Burdens</caption>
+    <thead>
+    <tr>
+      <th>Additional Bonus</th>
+      <th>Cost</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>+5 starting karma</td>
+      <td>+5 Burden</td>
+    </tr>
+    <tr>
+      <td>+10 starting karma</td>
+      <td>+10 Burden</td>
+    </tr>
+
+    <tr>
+      <td>+1.000 starting nuyen</td>
+      <td>+5 Burden</td>
+    </tr>
+    <tr>
+      <td>+2.500 starting nuyen</td>
+      <td>+10 Burden</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id=character_creation/metatype.html>Step 3: Select Metatype</h2>
+<h3 id=character_creation/metatype/humans.html>Humans</h3>
+<div class="characteristics">
+  <div>
+    <span>2</span>
+    <span>2</span>
+    <span>2</span>
+    <span>2</span>
+    <span>2</span>
+    <span>2</span>
+  </div>
+  <div>
+    <span>Brawn</span>
+    <span>Reflexes</span>
+    <span>Intellect</span>
+    <span>Cunning</span>
+    <span>Willpower</span>
+    <span>Presence</span>
+  </div>
+</div>
+<p>
+  <b>Starting Wound Threshold:</b> 10 + Brawn<br/>
+  <b>Starting Strain Threshold:</b> 10 + Willpower<br/>
+  <b>Starting Karma:</b> 110
+</p>
+<p><b>Starting Skills:</b> Humans start with one rank in each of two different non-archetype skills at character
+  creation. They obtain this rank before spending Karma, and these skills may not be increased higher than rank 2 during
+  character creation.</p>
+<p><b>Lucky:</b> At the beginning of the session, each Human character turns one Story Point into an Edge. Once per
+  session, a human adversaries with the Adversary talent may use one Story Point without awarding the Player Group an
+  Edge.</p>
+
+<h3 id=character_creation/metatype/elves.html>Elves</h3>
+<div class="characteristics">
+  <div>
+    <span>1</span>
+    <span>2</span>
+    <span>2</span>
+    <span>2</span>
+    <span>2</span>
+    <span>3</span>
+  </div>
+  <div>
+    <span>Brawn</span>
+    <span>Reflexes</span>
+    <span>Intellect</span>
+    <span>Cunning</span>
+    <span>Willpower</span>
+    <span>Presence</span>
+  </div>
+</div>
+<p>
+  <b>Starting Wound Threshold:</b> 10 + Brawn<br/>
+  <b>Starting Strain Threshold:</b> 10 + Willpower<br/>
+  <b>Starting Karma:</b> 100
+</p>
+<p><b>Starting Skills:</b> Elves start with one rank in either Coordination or Cool, which they gain before spending any
+  Karma and which cannot be raised higher than rank 2 during character creation.</p>
+<p><b>Low-Light Vision:</b> Elves can remove <span class="glyph setback">j</span> from any check due to dim light.</p>
+
+<h3 id=character_creation/metatype/orks.html>Orks</h3>
+<div class="characteristics">
+  <div>
+    <span>3</span>
+    <span>2</span>
+    <span>2</span>
+    <span>2</span>
+    <span>1</span>
+    <span>2</span>
+  </div>
+  <div>
+    <span>Brawn</span>
+    <span>Reflexes</span>
+    <span>Intellect</span>
+    <span>Cunning</span>
+    <span>Willpower</span>
+    <span>Presence</span>
+  </div>
+</div>
+<p>
+  <b>Starting Wound Threshold:</b> 12 + Brawn<br/>
+  <b>Starting Strain Threshold:</b> 9 + Willpower<br/>
+  <b>Starting Karma:</b> 100
+</p>
+<p><b>Starting Skills:</b> Orks start with one rank in either Athletics or Survival, which they gain before spending any
+  Karma and which cannot be raised higher than rank 2 during character creation.</p>
+<p><b>Low-Light Vision:</b> Orks can remove <span class="glyph setback">j</span> from any check due to dim light.</p>
+<p><b>Trog:</b> When interacting with civilians, Orks add <span class="glyph setback">j</span> to all Charm, Deception,
+  Leadership, and Negotiation checks, but add <span class="glyph boost">j</span> to all Coercion checks they make. This
+  does not apply when interacting with other orks, trolls or members of the dubious circles of society.</p>
+
+<h3 id=character_creation/metatype/dwarfs.html>Dwarfs</h3>
+<div class="characteristics">
+  <div>
+    <span>2</span>
+    <span>1</span>
+    <span>2</span>
+    <span>2</span>
+    <span>3</span>
+    <span>2</span>
+  </div>
+  <div>
+    <span>Brawn</span>
+    <span>Reflexes</span>
+    <span>Intellect</span>
+    <span>Cunning</span>
+    <span>Willpower</span>
+    <span>Presence</span>
+  </div>
+</div>
+<p>
+  <b>Starting Wound Threshold:</b> 12 + Brawn<br/>
+  <b>Starting Strain Threshold:</b> 11 + Willpower<br/>
+  <b>Starting Karma:</b> 95
+</p>
+<p><b>Starting Skills:</b> Dwarfs start with one rank in either Resilience or Discipline, which they gain before
+  spending
+  any Karma and which cannot be raised higher than rank 2 during character creation.</p>
+<p><b>Therm-Optic Vision:</b> Dwarfs can remove <span class="glyph setback">jj</span> from any check due to dim light
+  and
+  total darkness, but suffer <span class="glyph setback">j</span> to any check made in hot environments.</p>
+<p><b>Pathological Resistance:</b> Dwarfs gain an additional <span class="glyph boost">j</span> to resist or recovery
+  from poisons, toxins, venoms and diseases.</p>
+<p><b>Stumpy:</b> Dwarfs must take an additional maneuver when moving between Short and Medium range bands. They also
+  receive <span class="glyph setback">j</span> to all checks when using equipment not adjusted to their statue.</p>
+<p><sub>Note: Usually, weapons, armor, vehicles or other equipment are tailored and adjusted for dwarven characters when
+  bought on the open market, and with a little bit of time, adjustments are easily made to accommodate them.
+  However, equipment looted from other sources, like stolen weapons or vehicles, usually aren’t.</sub></p>
+
+<h3 id=character_creation/metatype/trolls.html>Trolls</h3>
+<div class="characteristics">
+  <div>
+    <span>4</span>
+    <span>2</span>
+    <span>1</span>
+    <span>2</span>
+    <span>2</span>
+    <span>1</span>
+  </div>
+  <div>
+    <span>Brawn</span>
+    <span>Reflexes</span>
+    <span>Intellect</span>
+    <span>Cunning</span>
+    <span>Willpower</span>
+    <span>Presence</span>
+  </div>
+</div>
+<p>
+  <b>Starting Wound Threshold:</b> 14 + Brawn<br/>
+  <b>Starting Strain Threshold:</b> 10 + Willpower<br/>
+  <b>Starting Karma:</b> 65
+</p>
+<p><b>Starting Skills:</b> Trolls start with one rank in Coercion, which they gain before spending any karma and which
+  cannot be raised higher than rank 2 during character creation.</p>
+<p><b>Therm-Optic Vision:</b> Trolls can remove <span class="glyph setback">jj</span> from any check due to dim light
+  and
+  total darkness, but suffer <span class="glyph setback">j</span> to any check made in hot environments.</p>
+<p><b>Thick Skin:</b> Trolls gain an additional point of Soak.</p>
+<p><b>Trog:</b> When interacting with civilians, Trolls add <span class="glyph setback">j</span> to all Charm,
+  Deception,
+  Leadership, and Negotiation checks, but add <span class="glyph boost">j</span> to all Coercion checks they make. This
+  does not apply when interacting with other orks, trolls or members of the dubious circles of society.</p>
+<p><b>Bulky:</b> Due to their large statue, Trolls have a silhouette rating of 2. They decrease the Cumbersome rating of
+  any weapon the wield by one. They also
+  receive <span class="glyph setback">j</span> to all checks when using equipment not adjusted to their statue.</p>
+<p><sub>Note: Usually, weapons, armor, vehicles or other equipment are tailored and adjusted for trollish characters
+  when bought on the open market, and with a little bit of time, adjustments are easily made to accommodate them.
+  However, equipment looted from other sources, like stolen weapons or vehicles, usually aren’t.</sub></p>
+
+<h3 id=character_creation/metatype/pixies.html>Pixies</h3>
+<div class="characteristics">
+  <div>
+    <span>1</span>
+    <span>2</span>
+    <span>2</span>
+    <span>3</span>
+    <span>2</span>
+    <span>2</span>
+  </div>
+  <div>
+    <span>Brawn</span>
+    <span>Reflexes</span>
+    <span>Intellect</span>
+    <span>Cunning</span>
+    <span>Willpower</span>
+    <span>Presence</span>
+  </div>
+</div>
+<p>
+  <b>Starting Wound Threshold:</b> 4 + Brawn<br/>
+  <b>Starting Strain Threshold:</b> 8 + Willpower<br/>
+  <b>Starting Karma:</b> <br/>
+</p>
+<p><b>Starting Skills:</b> Pixies start with one rank in Stealth and Spellcasting, which they gain before spending
+  any Karma and which cannot be raised higher than rank 2 during character creation. Pixies gain the Awakened trait.</p>
+<p><b>Flight:</b> As part of their first rank in Spellcasting, Pixies gain the Move spell. When a pixie casts the Move
+  spell on themselves in order to fly around, they reduce the difficulty of the spell by two, to a minimum of Simple (-).</p>
+<p><b>Vanishing:</b> Pixies gain one rank of the Expanded Grimoire talent, which they must spend to gain the Misdirect
+  spell. If a pixie casts a Misdirect spell at themselves that makes them harder to notice or spot, they reduce the
+  difficulty of the spell by two, to a minimum of Simple (-).</p>
+<p><b>Small:</b> Pixies have a silhouette rating of 0. Due to their small size, Pixies cannot use any equipment not
+  explicitly tailored to their statue. Additionally, Pixies can never raise their Brawn rating beyond 1 without
+  magical means.</p>
+
+
+<h2 id=character_creation/archetype.html>Step 4: Choose Archetype</h2>
+<p>Before spending any Karma during character creation, a character may choose five of their archetype skills and gain
+  one rank in each of them. The rank of there skills cannot be raised above 2 at character creation. Archetype skills
+  can be noted with a small
+  <b style="font-size: x-large; margin: 0 0.25rem; color: darkgrey; -webkit-text-stroke: 0.4px black;">•</b> next to the
+  skill.</p>
+
+<h3>List of Archetypes</h3>
+
+<h3 id=character_creation/archetype/merc.html>Merc</h3>
+<p>The Mercs' base archetype skills are <b>Athletics</b>, <b>Medicine</b>, <b>Pilot</b>, <b>Resilience</b>,
+  <b>Vigilance</b> and <b>Ranged (Heavy)</b>.</p>
+
+<h5>Brawler</h5>
+<p>Brawlers add <b>Brawl</b>, <b>Knowledge (Street)</b>, <b>Melee</b> and <b>Qi-Magic</b> to their list of archetype
+  skills. Additionally, they must spend an additional <b>15 Karma</b> before spending it on any other skills or talents.
+</p>
+
+<h5>Cyberadept</h5>
+<p>Cyberadepts add <b>Discipline</b>, <b>Knowledge (Society)</b>, <b>Ranged (Light)</b> and <b>Resonance</b> to their
+  list of archetype skills. Additionally, they must spend an additional <b>15 Karma</b> before spending it on any other
+  skills or talents.</p>
+
+<h5>Enforcer</h5>
+<p>Enforcers add <b>Brawl</b>, <b>Coercion</b>, <b>Knowledge(Street)</b> and <b>Streetwise</b> to their list of
+  archetype skills.</p>
+
+<h5>Gunner</h5>
+<p>Gunners add <b>Coordination</b>, <b>Gunnery</b>, <b>Leadership</b> and <b>Mechanics</b> to their list of archetype
+  skills.</p>
+
+<h5>Spellslinger</h5>
+<p>Spellslingers add <b>Brawl</b>, <b>Coercion</b>, <b>Knowledge (Street)</b> and <b>Spellcasting</b> to their list of
+  archetype skills. Additionally, they must spend an additional <b>15 Karma</b> before spending it on any other skills
+  or talents.</p>
+
+<h5>Street Samurai</h5>
+<p>Street Samurais add <b>Discipline</b>, <b>Melee</b>, <b>Knowledge (Street)</b> and <b>Ranged (Light)</b> to their
+  list of archetype skills.
+</p>
+
+<h3 id=character_creation/archetype/decker.html>Decker</h3>
+<p>The Deckers' base archetype skills are <b>Computers</b>, <b>Hacking</b>, <b>Knowledge (Society)</b>, <b>Mechanics</b>,
+  <b>Operating</b> and <b>Perception</b>.</p>
+
+<h5>Datathief</h5>
+<p>Datathieves add <b>Knowledge (Corporate)</b>, <b>Ranged (Light)</b>, <b>Skulduggery</b> and <b>Streetwise</b> to
+  their list of archetype skills.</p>
+
+<h5>Hacktivist</h5>
+<p>Hacktivists add <b>Knowledge (Corporate)</b>, <b>Knowledge (Street)</b>, <b>Leadership</b>, and <b>Streetwise</b> to
+  their list of archetype skills.</p>
+
+<h5>Hammerhead</h5>
+<p>Hammerheads add <b>Athletics</b>, <b>Melee</b>, <b>Ranged (Heavy)</b> and <b>Resilience</b> to their list of
+  archetype skills.</p>
+
+<h5>Investigative Journalist</h5>
+<p>Investigative Journalists add <b>Deception</b>, <b>Knowledge (Corporate)</b>, <b>Knowledge (History)</b> and <b>Resilience</b>
+  to their list of archetype skills.</p>
+
+<h3 id=character_creation/archetype/face.html>Face</h3>
+<p>The Faces' base archetype skills are <b>Charm</b>, <b>Deception</b>, <b>Knowledge (Society)</b>, <b>Leadership</b>,
+  <b>Negotiation</b> and <b>Vigilance</b>.</p>
+
+<h5>Broker</h5>
+<p>Brokers add <b>Computers</b>, <b>Knowledge (Corporate)</b>, <b>Knowledge (Street)</b> and <b>Streetwise</b> to theis
+  list of archetype skills.</p>
+
+<h5>Exec</h5>
+<p>Execs add <b>Coercion</b>, <b>Discipline</b>, <b>Ranged (Light)</b> and <b>Knowledge (Corporate</b> to their list
+  of archetype skills.</p>
+
+<h5>Punk</h5>
+<p>Punks add <b>Coercion</b>, <b>Cool</b>, <b>Melee</b> and <b>Ranged (Heavy)</b> to their list of archetype skills.</p>
+
+<h5>Smuggler</h5>
+<p>Smugglers add <b>Knowledge (Corporate)</b>, <b>Ranged (Light)</b>, <b>Pilot</b> and <b>Survival</b> to their list of
+  archetype skills.</p>
+
+<h3 id=character_creation/archetype/specialist.html>Specialist</h3>
+<p>The specialists' base archetype skills are <b>Computers</b>, <b>Knowledge (Education)</b>, <b>Knowledge
+  (Corporate)</b>, <b>Discipline</b>, <b>Negotiation</b> and <b>Vigilance</b>.</p>
+
+<h5>Arcane Investigator</h5>
+<p>Arcane Investigators add <b>Astral</b>, <b>Deception</b>, <b>Knowledge (Magic)</b> and <b>Spellcasting</b> to
+  their list of archetype skills. Additionally, they must spend an additional <b>30 Karma</b> before spending it on any
+  other skills or talents.</p>
+
+<h5>Agent</h5>
+<p>Agents add <b>Deception</b>, <b>Ranged (Light)</b>, <b>Skulduggery</b> and <b>Stealth</b> to their list of archetype
+  skills.</p>
+
+<h5>Corporate Liquidators</h5>
+<p>Corporate Liquidators add <b>Cool</b>, <b>Coordination</b>, <b>Ranged (Heavy)</b> and <b>Stealth</b> to their list of
+  archetype skills.</p>
+
+<h5>Netshaman</h5>
+<p>Netshamans add <b>Discipline</b>, <b>Knowledge (Society)</b>, <b>Mechanics</b>, and <b>Resonance</b> to their list of
+  archetype skills.</p>
+
+<h5>Scientist</h5>
+<p>Scientists add <b>Knowledge (History)</b>, <b>Knowledge (Magic)</b>, <b>Leadership</b> and <b>Perception</b> to their
+  list of archetype skills.</p>
+
+<h5>Survivalist</h5>
+<p>Survivalists add <b>Knowledge (Magic)</b>, <b>Navigation</b>, <b>Ranged (Heavy)</b> and <b>Survival</b> to their list
+  of archetype skills.</p>
+
+<h3 id=character_creation/archetype/rigger.html>Rigger</h3>
+<p>The riggers' base archetype skills are <b>Coordination</b>, <b>Gunnery</b>, <b>Mechanics</b>, <b>Navigation</b>, <b>Operating</b>
+  and <b>Vigilance</b></p>
+
+<h5>Drone Rigger</h5>
+<p>Drone Riggers add <b>Computers</b>, <b>Knowledge (Corporate)</b>, <b>Knowledge (Education)</b> and <b>Streetwise</b>
+  to their list of archetype skills.</p>
+
+<h5>Saboteur</h5>
+<p>Saboteurs add <b>Hacking</b>, <b>Knowledge (Corporate)</b>, <b>Ranged (Heavy)</b> and <b>Resilience</b> to their list
+  of archetype skills.</p>
+
+<h5>Security Spider</h5>
+<p>Security Spiders add <b>Discipline</b>, <b>Hacking</b>, <b>Leadership</b> and <b>Perception</b> to their list of
+  archetype skills.</p>
+
+<h5>Street Racer</h5>
+<p>Street Racers add <b>Cool</b>, <b>Knowledge (Society)</b>, <b>Knowledge (Street)</b> and <b>Pilot</b> to their list
+  of archetype skills.</p>
+
+
+<h3>Rules for Creating Custom Archetypes</h3>
+<p>When creating an archetype, each character gains ten archetype skills. These skills are associated with your
+  characters general career, and taking ranks in these are generally cheaper than taking ranks in non-archetype
+  skills.</p>
+<p>When creating a custom Archetype for your character, choose 6 general skills that define the general archetype of the
+  character. Then, choose 4 more skills, and you...
+</p>
+<ul>
+  <li>...must have at least 1 social or combat skill,</li>
+  <li>...must have at least 1 knowledge skill,</li>
+  <li>...can’t have more than 3 combat skills (Hacking, Spellcasting, Summoning and Resonance all count as a combat
+    skill),
+  </li>
+  <li>...can’t have more than 3 social skills,</li>
+  <li>...can’t have more than 4 knowledge skills,</li>
+  <li>...can’t have more than 2 additional general skills</li>
+</ul>
+<p>
+  These skills broadly represent a specialization of your character within its base archetype.
+</p>
+<p>Magical skills have some further restrictions: When taking a magical skill as an archetype skill, you must pay 15
+  Karma for each skill, and you cannot take Resonance as a magical archetype skill if you have taken any other magical
+  archetype skill. Additionally, when gaining any Magical skill except Resonance, your character gains the Awakened
+  trait, or the Emergent trait if Resonance was taken as an archetype skill.</p>
+
+<h2 id=character_creation/invest_karma.html>Step 5: Invest Karma</h2>
+<p>Depending on your chosen metatype in Step 2, your character got a budget of experience points (called <b>Karma</b>).
+</p>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <caption>Spending Starting Karma</caption>
+    <thead>
+    <tr>
+      <th>Option</th>
+      <th>Karma Cost</th>
+      <th>Limit at Character Creation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Increase a characteristic<br/>
+        <i>Character creation is the only time players can directly increase characteristics with Karma.)</i>
+      </td>
+      <td>Ten times the purchased rating</td>
+      <td>May not raise any characteristic above rank 5 during character creation.</td>
+    </tr>
+    <tr>
+      <td>Purchase ranks in skills</td>
+      <td>Five times the purchased rank, plus 5 additional Karma if the skill is </td>
+      <td>May not raise a skill above rank 2 during character creation.</td>
+    </tr>
+    <tr>
+      <td>Purchase talents</td>
+      <td>Five times the purchased talent's tier.</td>
+      <td>No special limits at character creation-</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2 id=character_creation/derived_attributes.html>Step 6: Determine Derived Attributes</h2>
+<p>Once you've spent your character's starting Karma, the next step is to determine your character's derived
+  attributes:</p>
+
+<p><b>Wound Threshold: </b>Your character's wound threshold represents how much physical damage they are able to
+  withstand before becoming incapacitated. Your character's starting wound threshold is determined by adding their
+  metatypes base wound threshold to their Brawn rating. After you determine this initial value, further increases of
+  your Brawn do not increase your wound threshold.<br/></p>
+
+<p><b>Strain Threshold: </b>Your character's strain threshold how much mental stress your character can withstand before
+  becoming stunned, dazed or otherwise incapacitated. Your character's strain threshold is determined by adding their
+  metatypes base strain threshold to their Willpower rating. After you determine this initial value, further increases
+  of your Willpower do not increase your strain threshold.</p>
+
+<p><b>Soak: </b>Your character's soak value determines how much damage they can shrug off every time they're hit. When
+  your character suffers damage - usually by getting hit by an attack - you subtract your character's soak value from
+  the damage inflicted, before applying the remaining damage against your wound or strain threshold.</p>
+<p>Your character's base soak value is equal to their Brawn rating. After you determine this initial value, further
+  increases to your character's Brawn rating <i>do</i> increase their soak value. Further increases in your character's
+  soak limit are often applied by gear, most commonly by bodytech and armor, and talents. Usually, multiple sources of
+  armor are not cumulative, unless specifically specified.</p>
+
+<p><b>Defense: </b>Your character's defense represents their extra levels in protection that makes them harder to hit in
+  combat. Defense is divided into <i>melee defense</i> and <i>ranged defense</i>. Your character's starting defense is
+  0, and typically raised through equipment and talents.</p>
+<p>Each point of defense adds <span class="glyph setback">j</span> to all attacks coming towards your character; melee
+  defense thereby protects your character against swords and punches, while ranged defense protects your character from
+  gunfire, thrown knifes and most ranged spells. Unless otherwise specified, defense from different sources do not stack
+  - for example, a Barrier spell granting your character one point of defense does not add to the point of defense
+  already gained through a worn Armor Jacket - but effects that explicitly add to your defenses - such as the Defensive
+  and Deflective item qualities - do stack with your inherit defense. Additionally, the maximum amount of defense a
+  character can have is 4.</p>
+
+<p><b>System Strain: </b>Your character's system strain represents how much damage your persona - your digital
+  manifestation in the Matrix - can receive before shattering. A shattered persona renders you offline and unable to
+  interact with the Matrix in any way, until your persona is repaired. Usually, your system strain threshold is 8, and
+  can be increases with enhancements to your commlink, cyberdeck or RCC.</p>
+<p>However, if your character is <i>Emergent</i> - for example by having Resonance as an archetype skill at character
+  creation - you do not have a system strain threshold; instead, your strain threshold becomes your system strain
+  threshold.</p>
+
+<p><b>Firewall: </b>Firewall determines how well your persona is protected from hacking and tempering. Your character's
+  firewall behaves as equal part Soak and Defense against hacking attempts against you. Firewall is most commonly gaines
+  through gear and talents, and usually starts at 0.</p>
+
+<p><b>Essence: </b>Essence is the colloquial term for a measurement of the physical and spiritual integrity of a living
+  being. Sometimes referred to as the soul, the ka or the chi of a being, the holisticity of one's essence determines
+  their humanity - the ability to relate and empathize others and oneself - as well as the connection to the mana
+  surrounding them. Heavy surgical work, such as implanted bodytech, substance abuse, life-changing traumatic
+  experiences and attacks by essence-stealing critters such as vampires can cause irreversible Essence loss, and thereby
+  disrupt a beings connection to Magic, and others.</p>
+<p>By default, every living being has an Essence loss threshold of 7; if the character's essence loss reaches this
+  threshold, the character dies. Essence loss has two consequences: For one, since the character has literally lost part
+  of their humanity, every non-hostile social skill check they make adds <span class="glyph setback">j</span> for every
+  two points of Essence loss a character suffers from. Additionally, every point of Essence loss upgrades the difficulty
+  of any Magical skill check a character makes, and if the Essence loss is ever higher than a magically active
+  character's Willpower characteristic, they burn out, losing access to any and all magical skills and powers, forever.
+</p>
+<p>Essence loss is usually irreversible, with the only known exception being an unfathomably expensive and decades-long
+  recovery therapy, which requires the removal of all cybernetic enhancements in a persons' body. If a character decides
+  to remove a piece of bodytech, or if a point of essence loss is caused by something other than bodytech, a character
+  does not heal Essence loss, but they gain an Essence hole, which can be filled by cybernetic augmentations before
+  suffering any further Essence loss.</p>
+
+<h2 id=character_creation/gear.html>Step 7: Choose Gear</h2>
+<p>At this point, the players should have taken care of most of the mechanical details of their characters. Now, it is
+  time to determine the gear your character uses in order to use their skills and abilities in their shady day-to-day
+  dealings. For this, each character starts with a budget of ¥500, as well as a set of basic everyday clothing, a
+  standard commlink, and some gear that allows then to interact with the Matrix wirelessly; remember that this budget
+  can be increased by taking an additional Burden. Before their characters begin the game, players may spend this money
+  to purchase items as they please. However, they may not purchase Restricted (R) items unless specifically given
+  approval from the Gamemaster.</p>
+<p>Characters keep any unspent money when they start the game. In addition, once a player has finished spending their
+  starting cash, they roll 1d100; this counts as the character's "pocket money", and cannot be spent during character
+  creation.</p>
+
+<h2 id=character_creation/appearance.html>Step 8: Determine Appearance and Personality</h2>
+[...]
+<p>Simple cybernetic implants, such as small, implated datajacks, simple, color-changing cybereyes, LED tattoos or
+  similar cosmetic enhancements can be acquired for almost no cost involved, either in money or in essence. Of course,
+  most Awakened (and Emergent) metahumans are extremely cautious about their spiritual holisticity when deciding to
+  install cybernetics, so purists tend to go without chrome; instead, most magicians will use old-school devices to
+  interact with the Matrix (and look really stupid doing so). Rule of thumb regarding purely cosmetic cybernetics is: If
+  it is all looks without grander function, and if it does not outlandishly alter the character's appearance too much,
+  it does not require money or Essence loss.</p>
+[...]
+
+<h2 id=character_creation/vehicle.html>Step 9: Select a Vehicle</h2>
+<p>select vehicle works!</p>
+<!-- TODO -->
+<h3>Tuner Car</h3>
+<p></p>
+
+<h3>Family Vehicle</h3>
+<p></p>
+
+<h3>Small Van</h3>
+<p></p>
+
