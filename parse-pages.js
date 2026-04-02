@@ -11,6 +11,9 @@ const path = require('path');
 const srcDir = __dirname + '/src/assets/pages'
 const targetDir = __dirname + '/target/assets/pages';
 
+// Regex for determining content <ins></ins>-Tags
+const insSelector = /<ins.*id=".+".*>.*<\/ins>/g;
+
 /**
  * Recursively iterates through all files from the source directory
  *
@@ -43,26 +46,49 @@ const walk = function (dir, done) {
 };
 
 /**
- * Parses the content of a file
- *
- * @param content content map to be consumed (path, content)
+ * Recursively parses the content of a file
+ * 
+ * @param content content map to be consumed (key = path, value = content)
  * @param done    callback function (error, result content maP)
  */
 const parse = function (content, done) {
-  let results = new Map();
-  content.forEach((value, key) => {
-    // TODO Ins-Tags
-    // TODO Dice Parser
-    results.set(key, value)
-  })
+  let result = new Map([...content].filter(([k, v]) => !v.match(insSelector)));
+  console.log("Parsing", content.size, "pages")
 
-  done(null, results);
+  let remaining = content.size - result.size;
+  while (remaining > 0) {
+    let remainingContent = new Map([...content].filter(([k, v]) => !Array.from(result.keys()).includes(k)));
+    console.log("Remaining content:", remainingContent.size, Array.from(remainingContent.keys()))
+
+    new Map([...remainingContent].filter(([key, value]) => {
+      const insertPaths = value.match(insSelector).map((ins) => 
+        ins.match(/id="[^"]+"/).map((match) => 
+          match.substring('id=\"'.length, match.length - 1))).flat();
+
+      return insertPaths.every(key => Array.from(result.keys()).includes(key));
+    })).forEach(function(value, key) {
+      value.match(insSelector).forEach((ins) => {
+        const insKey = ins.match(/id="[^"]+"/)?.map(match =>
+          match.substring('id=\"'.length, match.length - 1))[0] ?? '';
+        const insHeading = ins.match(/>.+<\/ins>/)?.map(match =>
+          match.substring(match.indexOf('>') + 1, match.indexOf('<')))[0] ?? '';
+        const insDepth = ins.match(/data-depth="[0-9]+"/)?.map(match =>
+          Number.parseInt(match.substring('data-depth=\"'.length, match.length - 1)))[0] ?? (insKey.match(/\//g) || []).length + 1
+
+        const insData = '<h' + insDepth + ' id=' + insKey + '>' + insHeading + '</h' + insDepth + '>\n' + result.get(insKey);
+        value = value.replace(ins, insData ?? '');
+      });
+      result.set(key, value);
+      remaining--;
+    })
+  }   
+
+  done(null, result);
 }
 
 
 
 const write = function (dir, content, done) {
-  console.log('Writing file ' + dir);
   const dstPath = targetDir + '/' + dir;
 
   fs.promises.mkdir(path.dirname(dstPath), {recursive: true}).then(() => {
@@ -82,7 +108,6 @@ walk(srcDir, function (err, results) {
     results.forEach((value, key) => {
       write(key, value, function (err, done) {
         if (err) throw err;
-        console.log('Successfully written ' + done);
       });
     })
   })
