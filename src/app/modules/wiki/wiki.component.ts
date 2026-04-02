@@ -70,16 +70,11 @@ export class WikiComponent {
 
   protected title = signal<string>('');
   protected content = signal<SafeHtml | undefined>(undefined);
-
-  private readonly INSERT_SELECTOR: RegExp = /<ins.*id=".+".*>.*<\/ins>/g;
   
   readonly contentLoading = signal<boolean>(false);
 
   constructor() {
-    this.activatedRoute.params.subscribe(params => {
-      console.log(params)
-      this.selectedRoute.set(params['route']);
-    })
+    this.activatedRoute.params.subscribe(params => this.selectedRoute.set(params['route']))
 
     this.httpClient.get<JSONNavigatableRoutes>('assets/pages/nav.json', {responseType: 'json'}).subscribe(data => {
       const parsedRoutes = this.parseRoutes(data);
@@ -97,7 +92,9 @@ export class WikiComponent {
 
         firstValueFrom(this.httpClient.get('assets/pages/' + currentRoute?.resource, {responseType: 'text'})).then(async data => {
           this.contentLoading.set(true);
-          const parsedData = await this.parsePageContent(data, currentRoute)
+          const parsedData = (currentRoute?.display_name && currentRoute.display_name !== '' ?
+            '<h' + (currentRoute.depth ?? 1) + '>' + currentRoute?.display_name + '</h' + (currentRoute.depth ?? 1) + '>\n' : '') + data
+          
           if (!this.navigation.nativeElement.classList.contains('d-none')) {
             this.toggleNavbar();
           }
@@ -149,41 +146,6 @@ export class WikiComponent {
       }
     });
     return routes;
-  }
-
-  private async parsePageContent(data: string, selectedRoute?: NavigatableRoute): Promise<string> {
-    let result = (selectedRoute?.display_name && selectedRoute.display_name !== '' ?
-      '<h' + (selectedRoute.depth ?? 1) + '>' + selectedRoute?.display_name + '</h' + (selectedRoute.depth ?? 1) + '>\n' : '') + data
-
-    const insMatches = result.match(this.INSERT_SELECTOR);
-    if (insMatches !== null) {
-      await insMatches.reduce(async (promise, ins) => {
-        await promise;
-        const insPath = ins.match(/id="[^"]+"/)?.map(match =>
-          match.substring('id=\"'.length, match.length - 1))[0] ?? '';
-        const insContent = ins.match(/>.+<\/ins>/)?.map(match =>
-          match.substring(match.indexOf('>') + 1, match.indexOf('<')))[0] ?? '';
-        const insDepth: number = ins.match(/data-depth="[0-9]+"/)?.map(match =>
-          Number.parseInt(match.substring('data-depth=\"'.length, match.length - 1)))[0] ?? (selectedRoute?.depth ?? 1) + 1
-
-        await firstValueFrom(this.httpClient.get('assets/pages/' + insPath, {responseType: 'text'})).then(insData => {
-          insData = (insContent !== '') ?
-            '<h' + insDepth + '>' + insContent + '</h' + insDepth + '>\n' + insData : insData;
-
-          result = result.replace(ins, insData ?? '');
-        });
-
-      }, Promise.resolve())
-    }
-
-    if (result.match(this.INSERT_SELECTOR)) {
-      return this.parsePageContent(result, {
-        ...selectedRoute,
-        display_name: '',
-        depth: (selectedRoute?.depth ?? 1) + 1
-      });
-    }
-    return result;
   }
 
   expandNavigation(route: string) {
