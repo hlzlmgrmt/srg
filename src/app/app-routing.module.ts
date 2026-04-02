@@ -7,10 +7,11 @@ const routes: Routes = [
       import('./modules/character-sheet/character-sheet.module').then(m => m.CharacterSheetModule)},
   { path: 'gm-tools', loadChildren:() =>
       import('./modules/gm-tools/gm-tools.module').then(m => m.GmToolsModule)},
-  { path: ':route', loadChildren: () =>
-      import('./modules/wiki/wiki.module').then(m => m.WikiModule)},
-  { path: '**', loadChildren: () =>
-      import('./modules/wiki/wiki.module').then(m => m.WikiModule)},
+  { path: '', children: [
+    { path: '', loadChildren: () =>  
+        import('./modules/wiki/wiki.module').then(m => m.WikiModule)}
+    ]
+  }
 ];
 
 @NgModule({
