@@ -4,9 +4,10 @@ import {Characteristics} from '../../characteristics/types';
 import {Skills, SkillsData} from '../types';
 
 @Component({
-  selector: 'srg-skill-table',
-  templateUrl: './skill-table.component.html',
-  styleUrl: './skill-table.component.css'
+    selector: 'srg-skill-table',
+    templateUrl: './skill-table.component.html',
+    styleUrl: './skill-table.component.css',
+    standalone: false
 })
 export class SkillTableComponent {
   readonly title = input<string | undefined>(undefined);

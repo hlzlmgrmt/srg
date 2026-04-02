@@ -28,9 +28,10 @@ import {EntryData} from './shared/entry/entry.component';
 import {MonitorData} from './shared/monitor/monitor.component';
 
 @Component({
-  selector: 'srg-character-sheet',
-  templateUrl: './character-sheet.component.html',
-  styleUrl: './character-sheet.component.css'
+    selector: 'srg-character-sheet',
+    templateUrl: './character-sheet.component.html',
+    styleUrl: './character-sheet.component.css',
+    standalone: false
 })
 export class CharacterSheetComponent {
   private readonly CHARACTER_DATA_SAVE_KEY = 'srg_character_data_b64';

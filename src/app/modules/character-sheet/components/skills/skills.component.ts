@@ -3,9 +3,10 @@ import {SkillGroup, Skills, SkillsData} from './types';
 import {Characteristics} from '../characteristics/types';
 
 @Component({
-  selector: 'srg-skills',
-  templateUrl: './skills.component.html',
-  styleUrl: './skills.component.css'
+    selector: 'srg-skills',
+    templateUrl: './skills.component.html',
+    styleUrl: './skills.component.css',
+    standalone: false
 })
 export class SkillsComponent {
   readonly skills = input.required<Skills>()

@@ -8,9 +8,10 @@ export type Monitor = {
   [key: string]: string;
 }
 @Component({
-  selector: 'srg-monitor',
-  templateUrl: './monitor.component.html',
-  styleUrl: './monitor.component.css'
+    selector: 'srg-monitor',
+    templateUrl: './monitor.component.html',
+    styleUrl: './monitor.component.css',
+    standalone: false
 })
 export class MonitorComponent {
   readonly data = input<MonitorData>();

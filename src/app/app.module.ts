@@ -10,7 +10,6 @@ import {CharacterSheetComponent} from './modules/character-sheet/character-sheet
 import {GmToolsComponent} from './modules/gm-tools/gm-tools.component';
 import {FormsModule} from '@angular/forms';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {APP_BASE_HREF} from '@angular/common';
 
 @NgModule({
   declarations: [

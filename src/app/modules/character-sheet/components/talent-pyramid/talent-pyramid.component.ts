@@ -3,9 +3,10 @@ import {TalentPyramidData, TalentTier} from './types';
 
 
 @Component({
-  selector: 'srg-talent-pyramid',
-  templateUrl: './talent-pyramid.component.html',
-  styleUrl: './talent-pyramid.component.css'
+    selector: 'srg-talent-pyramid',
+    templateUrl: './talent-pyramid.component.html',
+    styleUrl: './talent-pyramid.component.css',
+    standalone: false
 })
 export class TalentPyramidComponent {
   readonly talentPyramidData = input.required<TalentPyramidData>();

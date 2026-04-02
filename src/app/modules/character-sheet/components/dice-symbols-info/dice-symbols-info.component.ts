@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { Glyph } from '../../shared/glyph-pool/glyph-pool.component';
 
 @Component({
-  selector: 'srg-dice-symbols-info',
-  templateUrl: './dice-symbols-info.component.html',
-  styleUrl: './dice-symbols-info.component.css'
+    selector: 'srg-dice-symbols-info',
+    templateUrl: './dice-symbols-info.component.html',
+    styleUrl: './dice-symbols-info.component.css',
+    standalone: false
 })
 export class DiceSymbolsInfoComponent {
 

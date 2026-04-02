@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'srg-portrait',
-  templateUrl: './portrait.component.html',
-  styleUrl: './portrait.component.css'
+    selector: 'srg-portrait',
+    templateUrl: './portrait.component.html',
+    styleUrl: './portrait.component.css',
+    standalone: false
 })
 export class PortraitComponent {
 

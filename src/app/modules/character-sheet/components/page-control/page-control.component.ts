@@ -2,9 +2,10 @@ import {Component, input, output} from '@angular/core';
 import {Character} from '../../types';
 
 @Component({
-  selector: 'srg-page-control',
-  templateUrl: './page-control.component.html',
-  styleUrl: './page-control.component.css'
+    selector: 'srg-page-control',
+    templateUrl: './page-control.component.html',
+    styleUrl: './page-control.component.css',
+    standalone: false
 })
 export class PageControlComponent {
   readonly character = input<Character>();
