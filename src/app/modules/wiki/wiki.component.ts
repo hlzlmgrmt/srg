@@ -43,6 +43,8 @@ export class WikiComponent {
   @ViewChild('main') main!: ElementRef<HTMLDivElement>;
   @ViewChild('contentWrapper') contentWrapper!: ElementRef<HTMLDivElement>;
 
+  private readonly DEFAULT_ROUTE: string = 'home'
+
   public readonly router = inject(Router);
   private readonly activatedRoute = inject(ActivatedRoute);
   private readonly httpClient = inject(HttpClient);
@@ -60,19 +62,22 @@ export class WikiComponent {
    * List of expanded parents for arrow rotation
    */
   protected expandedParents = signal<string[]|undefined>(undefined);
+  
   /**
    * Currently selected route to show content for
    */
-  protected selectedRoute = signal<string>('home');
+  protected selectedRoute = signal<string>(this.DEFAULT_ROUTE);
 
   protected title = signal<string>('');
   protected content = signal<SafeHtml | undefined>(undefined);
-  private readonly INSERT_SELECTOR: RegExp = /<ins.*id=".+".*>.*<\/ins>/g;
 
+  private readonly INSERT_SELECTOR: RegExp = /<ins.*id=".+".*>.*<\/ins>/g;
+  
   readonly contentLoading = signal<boolean>(false);
 
   constructor() {
     this.activatedRoute.params.subscribe(params => {
+      console.log(params)
       this.selectedRoute.set(params['route']);
     })
 
@@ -83,10 +88,10 @@ export class WikiComponent {
 
     effect(() => {
       const routes = this.routes();
-      const selectedRoute = this.selectedRoute();
+      const selectedRoute = this.selectedRoute() ?? this.DEFAULT_ROUTE;
 
       untracked(() => {
-        const currentRoute = routes ? routes[this.selectedRoute()] : undefined;
+        const currentRoute = routes ? routes[selectedRoute] : undefined;
 
         this.expandNavigation(selectedRoute)
 
