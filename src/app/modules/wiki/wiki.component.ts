@@ -30,11 +30,12 @@ interface NavigatableRoute {
 }
 
 @Component({
-  selector: 'srg-wiki',
-  templateUrl: './wiki.component.html',
-  styleUrl: './wiki.component.css',
-  changeDetection: ChangeDetectionStrategy.OnPush,
-  encapsulation: ViewEncapsulation.None
+    selector: 'srg-wiki',
+    templateUrl: './wiki.component.html',
+    styleUrl: './wiki.component.css',
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    encapsulation: ViewEncapsulation.None,
+    standalone: false
 })
 export class WikiComponent {
   @ViewChild('navigation') navigation!: ElementRef<HTMLDivElement>;

@@ -1,9 +1,10 @@
 import {Component, effect, input, output, signal, untracked} from '@angular/core';
 
 @Component({
-  selector: 'srg-tracker',
-  templateUrl: './tracker.component.html',
-  styleUrl: './tracker.component.css'
+    selector: 'srg-tracker',
+    templateUrl: './tracker.component.html',
+    styleUrl: './tracker.component.css',
+    standalone: false
 })
 export class Tracker {
   readonly type = input.required<'condition' | 'difficulty' | 'box'>()

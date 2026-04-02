@@ -6,9 +6,10 @@ export interface EntryData {
 }
 
 @Component({
-  selector: 'srg-entry',
-  templateUrl: './entry.component.html',
-  styleUrl: './entry.component.css'
+    selector: 'srg-entry',
+    templateUrl: './entry.component.html',
+    styleUrl: './entry.component.css',
+    standalone: false
 })
 /**
  * Generic component for single entries (such as a single weapon entry, a single critical injury etc.)

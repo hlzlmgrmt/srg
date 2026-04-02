@@ -2,9 +2,10 @@ import {Component, input, output} from '@angular/core';
 import {Characteristic, Characteristics} from './types';
 
 @Component({
-  selector: 'srg-characteristics',
-  templateUrl: './characteristics.component.html',
-  styleUrl: './characteristics.component.css'
+    selector: 'srg-characteristics',
+    templateUrl: './characteristics.component.html',
+    styleUrl: './characteristics.component.css',
+    standalone: false
 })
 export class CharacteristicsComponent {
   readonly characteristics = input.required<Characteristics>();
