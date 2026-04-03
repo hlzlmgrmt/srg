@@ -9,10 +9,10 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
-import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
-import {firstValueFrom} from 'rxjs';
-import {ActivatedRoute} from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { firstValueFrom } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 interface JSONNavigatableRoutes {
   [key: string]: string | NavigatableRoute
@@ -30,12 +30,12 @@ interface NavigatableRoute {
 }
 
 @Component({
-    selector: 'srg-wiki',
-    templateUrl: './wiki.component.html',
-    styleUrl: './wiki.component.css',
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    encapsulation: ViewEncapsulation.None,
-    standalone: false
+  selector: 'srg-wiki',
+  templateUrl: './wiki.component.html',
+  styleUrl: './wiki.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
+  standalone: false
 })
 export class WikiComponent {
   @ViewChild('navigation') navigation!: ElementRef<HTMLDivElement>;
@@ -56,12 +56,12 @@ export class WikiComponent {
   /**
    * List of routes() signal keys that can be viewed on navigation
    */
-  protected viewableRoutes = signal<string[]|undefined>(undefined);
+  protected viewableRoutes = signal<string[] | undefined>(undefined);
   /**
    * List of expanded parents for arrow rotation
    */
-  protected expandedParents = signal<string[]|undefined>(undefined);
-  
+  protected expandedParents = signal<string[] | undefined>(undefined);
+
   /**
    * Currently selected route to show content for
    */
@@ -70,18 +70,18 @@ export class WikiComponent {
   /**
    * Currently selected uri fragment
    */
-  protected selectedFragment = signal<string|undefined>(undefined);
+  protected selectedFragment = signal<string | undefined>(undefined);
 
   protected title = signal<string>('');
   protected content = signal<SafeHtml | undefined>(undefined);
-  
+
   readonly contentLoading = signal<boolean>(false);
 
   constructor() {
     this.activatedRoute.params.subscribe(params => this.selectedRoute.set(params['route']))
     this.activatedRoute.fragment.subscribe(fragment => this.selectedFragment.set(fragment ?? undefined))
 
-    this.httpClient.get<JSONNavigatableRoutes>('assets/pages/nav.json', {responseType: 'json'}).subscribe(data => {
+    this.httpClient.get<JSONNavigatableRoutes>('assets/pages/nav.json', { responseType: 'json' }).subscribe(data => {
       const parsedRoutes = this.parseRoutes(data);
       this.routes.set(parsedRoutes);
     })
@@ -96,23 +96,24 @@ export class WikiComponent {
 
         this.expandNavigation(selectedFragment ?? selectedRoute)
 
-        firstValueFrom(this.httpClient.get('assets/pages/' + currentRoute?.resource, {responseType: 'text'})).then(async data => {
+        firstValueFrom(this.httpClient.get('assets/pages/' + currentRoute?.resource, { responseType: 'text' })).then(async data => {
           this.contentLoading.set(true);
           const parsedData = (currentRoute?.display_name && currentRoute.display_name !== '' ?
             '<h' + (currentRoute.depth ?? 1) + '>' + currentRoute?.display_name + '</h' + (currentRoute.depth ?? 1) + '>\n' : '') + data
-          
+
           if (!this.navigation.nativeElement.classList.contains('d-none')) {
             this.toggleNavbar();
           }
           this.content.set(this.sanitizer.bypassSecurityTrustHtml(parsedData));
-          
+
           if (selectedFragment == undefined) {
-            this.contentWrapper.nativeElement.scrollTo({top: 0, behavior: 'smooth'});
+            this.contentWrapper.nativeElement.scrollTo({ top: 0, behavior: 'smooth' });
           } else {
-            const elementTop = document.getElementById(selectedFragment)?.getBoundingClientRect().top;
+            const fragResource = routes ? routes[selectedFragment].resource : undefined;
+            const elementTop = document.getElementById(fragResource?.substring(0, fragResource.length - '.html'.length) ?? selectedFragment)?.getBoundingClientRect().top;
             if (elementTop) {
-              const positionY = elementTop - - this.contentWrapper.nativeElement.scrollTop -this.contentWrapper.nativeElement.getBoundingClientRect().top
-              this.contentWrapper.nativeElement.scrollTo({top: positionY, behavior: 'smooth'})
+              const positionY = elementTop - - this.contentWrapper.nativeElement.scrollTop - this.contentWrapper.nativeElement.getBoundingClientRect().top
+              this.contentWrapper.nativeElement.scrollTo({ top: positionY, behavior: 'smooth' })
             }
           }
           this.contentLoading.set(false);
@@ -131,16 +132,11 @@ export class WikiComponent {
   }
 
   private parseRoutes(data: JSONNavigatableRoutes, routes?: NavigatableRoutesMap, parentKey?: string, depth?: number): NavigatableRoutesMap {
-    if (!routes) {
-      routes = {}
-    }
-    if (!depth) {
-      depth = 1;
-    }
+    routes = routes ?? {}
+    depth = depth ?? 1;
 
     Object.keys(data).forEach(key => {
       let newKey = parentKey ? parentKey + '/' + key : key;
-
       if (typeof data[key] !== 'string') {
         routes[newKey] = {
           ...data[key],
@@ -161,6 +157,18 @@ export class WikiComponent {
       }
     });
     return routes;
+  }
+
+  getRouterLink(key: string): string | undefined {
+    return this.selectedFragment() == undefined
+      ? this.selectedRoute() == key
+        ? undefined
+        : '/' + (key.includes('/') ? key.substring(0, key.indexOf('/')) : key)
+      : '/' + (key.includes('/') ? key.substring(0, key.indexOf('/')) : key)
+  }
+
+  getFragment(key: string): string | undefined {
+    return key.includes('/') ? key : undefined;
   }
 
   expandNavigation(route: string) {
@@ -193,14 +201,14 @@ export class WikiComponent {
       }
       return matcher != null;
     }).forEach(key => viewableRoutes.push(key));
-    
+
     this.viewableRoutes.set(viewableRoutes);
   }
 
   retractNavigation(route: string) {
     const viewableRoutes = this.viewableRoutes();
     const expandedParents = this.expandedParents();
-    
+
     this.viewableRoutes.set(viewableRoutes?.filter(key => !key.startsWith(route + '/')));
     this.expandedParents.set(expandedParents?.filter(key => key != route));
   }
