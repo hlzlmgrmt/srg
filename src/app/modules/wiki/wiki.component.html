@@ -1,5 +1,5 @@
 <div #navigation class="d-none d-sm-flex flex-column p-2 border navigation">
-  <div class="d-flex flex-column mb-3 navigation-header" (click)="router.navigate([''])">
+  <div class="d-flex flex-column mb-3 navigation-header" [routerLink]="'/'">
     <img src="assets/img/shadowrun-logo.svg" alt=""/>
     <h5>Shadowrun Genesys</h5>
   </div>
@@ -11,9 +11,14 @@
             @if (route.display_name !== '' && viewableRoutes()?.includes(key)) {
               <div class="d-flex flex-row justify-content-between">
                 <a href="javascript:void(0)"
-                   (click)="selectedRoute() !== key ? router.navigate(['/', key]) : undefined"
-                   class="w-100" [class.selected]="selectedRoute() == key"
-                   [style]="route.depth !== undefined && route.depth > 1 ?
+                  [routerLink]="selectedFragment() == undefined 
+                    ? selectedRoute() == key 
+                      ? undefined 
+                      : '/' + (key.includes('/') ? key.substring(0, key.indexOf('/')) : key) 
+                    : '/' + (key.includes('/') ? key.substring(0, key.indexOf('/')) : key) "
+                  [fragment]="key.includes('/') ? key : undefined"
+                  class="w-100" [class.selected]="selectedFragment() == undefined ? selectedRoute() == key : selectedFragment() == key"
+                  [style]="route.depth !== undefined && route.depth > 1 ?
                     'margin-left: ' + ((route.depth - 1) * 0.5) + 'rem; '
                     + 'padding-left: ' + (0.5 + 'rem;') : ''">{{ routes[key].display_name }}</a>
                 @if (route.children) {

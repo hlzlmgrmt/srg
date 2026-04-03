@@ -12,7 +12,7 @@ import {
 import {HttpClient} from '@angular/common/http';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import {firstValueFrom} from 'rxjs';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 interface JSONNavigatableRoutes {
   [key: string]: string | NavigatableRoute
@@ -45,7 +45,6 @@ export class WikiComponent {
 
   private readonly DEFAULT_ROUTE: string = 'home'
 
-  public readonly router = inject(Router);
   private readonly activatedRoute = inject(ActivatedRoute);
   private readonly httpClient = inject(HttpClient);
   private readonly sanitizer = inject(DomSanitizer);
@@ -68,6 +67,11 @@ export class WikiComponent {
    */
   protected selectedRoute = signal<string>(this.DEFAULT_ROUTE);
 
+  /**
+   * Currently selected uri fragment
+   */
+  protected selectedFragment = signal<string|undefined>(undefined);
+
   protected title = signal<string>('');
   protected content = signal<SafeHtml | undefined>(undefined);
   
@@ -75,6 +79,7 @@ export class WikiComponent {
 
   constructor() {
     this.activatedRoute.params.subscribe(params => this.selectedRoute.set(params['route']))
+    this.activatedRoute.fragment.subscribe(fragment => this.selectedFragment.set(fragment ?? undefined))
 
     this.httpClient.get<JSONNavigatableRoutes>('assets/pages/nav.json', {responseType: 'json'}).subscribe(data => {
       const parsedRoutes = this.parseRoutes(data);
@@ -84,11 +89,12 @@ export class WikiComponent {
     effect(() => {
       const routes = this.routes();
       const selectedRoute = this.selectedRoute() ?? this.DEFAULT_ROUTE;
+      const selectedFragment = this.selectedFragment();
 
       untracked(() => {
         const currentRoute = routes ? routes[selectedRoute] : undefined;
 
-        this.expandNavigation(selectedRoute)
+        this.expandNavigation(selectedFragment ?? selectedRoute)
 
         firstValueFrom(this.httpClient.get('assets/pages/' + currentRoute?.resource, {responseType: 'text'})).then(async data => {
           this.contentLoading.set(true);
@@ -99,7 +105,16 @@ export class WikiComponent {
             this.toggleNavbar();
           }
           this.content.set(this.sanitizer.bypassSecurityTrustHtml(parsedData));
-          this.contentWrapper.nativeElement.scrollTop = 0;
+          
+          if (selectedFragment == undefined) {
+            this.contentWrapper.nativeElement.scrollTo({top: 0, behavior: 'smooth'});
+          } else {
+            const elementTop = document.getElementById(selectedFragment)?.getBoundingClientRect().top;
+            if (elementTop) {
+              const positionY = elementTop - - this.contentWrapper.nativeElement.scrollTop -this.contentWrapper.nativeElement.getBoundingClientRect().top
+              this.contentWrapper.nativeElement.scrollTo({top: positionY, behavior: 'smooth'})
+            }
+          }
           this.contentLoading.set(false);
         }).catch(err => {
           console.error(err)
