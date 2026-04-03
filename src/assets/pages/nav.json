@@ -189,9 +189,9 @@
             "display_name": "Influence",
             "resource": "magic/spellcasting/spells/influence.html"
           },
-          "misdirect": {
-            "display_name": "Misdirect",
-            "resource": "magic/spellcasting/spells/misdirect.html"
+          "mask": {
+            "display_name": "Mask",
+            "resource": "magic/spellcasting/spells/mask.html"
           },
           "move": {
             "display_name": "Move",
