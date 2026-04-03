@@ -12,7 +12,7 @@ import {
 import {HttpClient} from '@angular/common/http';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 import {firstValueFrom} from 'rxjs';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 
 interface JSONNavigatableRoutes {
   [key: string]: string | NavigatableRoute
@@ -45,7 +45,6 @@ export class WikiComponent {
 
   private readonly DEFAULT_ROUTE: string = 'home'
 
-  public readonly router = inject(Router);
   private readonly activatedRoute = inject(ActivatedRoute);
   private readonly httpClient = inject(HttpClient);
   private readonly sanitizer = inject(DomSanitizer);
