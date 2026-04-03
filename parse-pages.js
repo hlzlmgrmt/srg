@@ -36,7 +36,7 @@ const walk = function (dir, done) {
           });
         } else {
           if (file.endsWith('.html')) {
-            results.set(file.substring(srcDir.length + 1, file.length), fs.readFileSync(file, {encoding: 'utf-8'}));
+            results.set(file.substring(srcDir.length + 1, file.length), fs.readFileSync(file, { encoding: 'utf-8' }));
           }
           if (!--pending) done(null, results);
         }
@@ -61,12 +61,12 @@ const parse = function (content, done) {
     console.log("Remaining content:", remainingContent.size, Array.from(remainingContent.keys()))
 
     new Map([...remainingContent].filter(([key, value]) => {
-      const insertPaths = value.match(insSelector).map((ins) => 
-        ins.match(/id="[^"]+"/).map((match) => 
+      const insertPaths = value.match(insSelector).map((ins) =>
+        ins.match(/id="[^"]+"/).map((match) =>
           match.substring('id=\"'.length, match.length - 1))).flat();
 
       return insertPaths.every(key => Array.from(result.keys()).includes(key));
-    })).forEach(function(value, key) {
+    })).forEach(function (value, key) {
       value.match(insSelector).forEach((ins) => {
         const insKey = ins.match(/id="[^"]+"/)?.map(match =>
           match.substring('id=\"'.length, match.length - 1))[0] ?? '';
@@ -75,13 +75,13 @@ const parse = function (content, done) {
         const insDepth = ins.match(/data-depth="[0-9]+"/)?.map(match =>
           Number.parseInt(match.substring('data-depth=\"'.length, match.length - 1)))[0] ?? (insKey.match(/\//g) || []).length + 1
 
-        const insData = '<h' + insDepth + ' id=' + insKey + '>' + insHeading + '</h' + insDepth + '>\n' + result.get(insKey);
+        const insData = '<h' + insDepth + ' id=' + insKey.substring(0, insKey.length - '.html'.length) + '>' + insHeading + '</h' + insDepth + '>\n' + result.get(insKey);
         value = value.replace(ins, insData ?? '');
       });
       result.set(key, value);
       remaining--;
     })
-  }   
+  }
 
   done(null, result);
 }
@@ -91,12 +91,15 @@ const parse = function (content, done) {
 const write = function (dir, content, done) {
   const dstPath = targetDir + '/' + dir;
 
-  fs.promises.mkdir(path.dirname(dstPath), {recursive: true}).then(() => {
-    fs.promises.writeFile(dstPath, content, (err) => {
-      if (err) return done(err);
+  // Only write main paths
+  if (!dir.includes('/')) {
+    fs.promises.mkdir(path.dirname(dstPath), { recursive: true }).then(() => {
+      fs.promises.writeFile(dstPath, content, (err) => {
+        if (err) return done(err);
+      });
+      done(null, dstPath);
     });
-    done(null, dstPath);
-  });
+  }
 }
 
 // --------------------------------------------------
