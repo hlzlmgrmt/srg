@@ -14,6 +14,41 @@ const targetDir = __dirname + '/target/assets/pages';
 // Regex for determining content <ins></ins>-Tags
 const insSelector = /<ins.*id=".+".*>.*<\/ins>/g;
 
+// Content map for parsing dice symbols
+const diceSymbolsMap = new Map([
+  ['p', '<span class="glyph proficiency">l</span>'],
+  ['a', '<span class="glyph ability">k</span>'],
+  ['b', '<span class="glyph boost">j</span>'],
+  ['w', '<span class="glyph power">l</span>'],
+  ['c', '<span class="glyph challenge">l</span>'],
+  ['d', '<span class="glyph difficulty">k</span>'],
+  ['s', '<span class="glyph setback">j</span>']
+]);
+const diceSymbolsSelector = '\[('
+  + Array.from(diceSymbolsMap.keys()).join('|')
+  + ')+]';
+
+// Content map for parsing dice face symbols
+const faceSymbolsMap = new Map([
+  ['s', '<span class="glyph">s</span>'],
+  ['a', '<span class="glyph">a</span>'],
+  ['t', '<span class="glyph">t</span>'],
+  ['f', '<span class="glyph">f</span>'],
+  ['h', '<span class="glyph">h</span>'],
+  ['d', '<span class="glyph">d</span>'],
+  ['w', '<span class="glyph dot-light"></span>'],
+  ['b', '<span class="glyph dot-black"></span>']
+]);
+const faceSymbolsSelector = '\{('
+  + Array.from(faceSymbolsMap.keys()).join('|')
+  + ')+}';
+
+// Selector for glyph (dice symbols and dice faces) parsers
+const glyphSelector = '\[('
+  + diceSymbolsSelector + '|' + faceSymbolsSelector
+  + ')]'
+console.log(glyphSelector);
+
 /**
  * Recursively iterates through all files from the source directory
  *
@@ -47,7 +82,7 @@ const walk = function (dir, done) {
 
 /**
  * Recursively parses the content of a file
- * 
+ *
  * @param content content map to be consumed (key = path, value = content)
  * @param done    callback function (error, result content maP)
  */
@@ -58,7 +93,7 @@ const parse = function (content, done) {
   let remaining = content.size - result.size;
   while (remaining > 0) {
     let remainingContent = new Map([...content].filter(([k, v]) => !Array.from(result.keys()).includes(k)));
-    console.log("Remaining content:", remainingContent.size, Array.from(remainingContent.keys()))
+    // console.log("Remaining content:", remainingContent.size, Array.from(remainingContent.keys()))
 
     new Map([...remainingContent].filter(([key, value]) => {
       const insertPaths = value.match(insSelector).map((ins) =>
