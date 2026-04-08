@@ -88,7 +88,37 @@ const walk = function (dir, done) {
 const parse = function (content, done) {
   let result = new Map();
   console.log("Parsing", content.size, "pages")
-  return done(null, content);
+
+  new Map([...content]).forEach(function(value, key) {
+    const glyphMatches = value.match(new RegExp(glyphSelector, 'g'));
+    if (glyphMatches) {
+      glyphMatches.forEach((glyphMatch) => {
+        let replace = glyphMatch.toString().substring(1, glyphMatch.toString().length - 1);
+        const diceMatches = replace.match(new RegExp(diceSymbolsSelector, 'g'));
+        if (diceMatches) {
+          diceMatches.forEach((diceMatch) => {
+            let innerReplace = diceMatch.toString().substring(1, diceMatch.toString().length - 1);
+            innerReplace = innerReplace.split('').map((char) => diceSymbolsMap.get(char)).join('');
+            replace = replace.replace(diceMatch, innerReplace);
+          })
+        }
+
+        const faceMatches = replace.match(new RegExp(faceSymbolsSelector, 'g'));
+        if (faceMatches) {
+          faceMatches.forEach((faceMatch) => {
+            let innerReplace = faceMatch.toString().substring(1, faceMatch.toString().length - 1);
+            innerReplace = innerReplace.split('').map((char) => faceSymbolsMap.get(char)).join('');
+            replace = replace.replace(faceMatch, innerReplace);
+          })
+        }
+
+        value = value.replace(glyphMatch, replace);
+      })
+    }
+    result.set(key, value);
+  });
+
+  return done(null, result);
 }
 
 /**
@@ -105,7 +135,7 @@ const insertPages = function (content, done) {
   let remaining = content.size - result.size;
   while (remaining > 0) {
     let remainingContent = new Map([...content].filter(([k, v]) => !Array.from(result.keys()).includes(k)));
-    console.log("Remaining content:", remainingContent.size, Array.from(remainingContent.keys()))
+    // console.log("Remaining content:", remainingContent.size, Array.from(remainingContent.keys()))
 
     new Map([...remainingContent].filter(([key, value]) => {
       const insertPaths = value.match(new RegExp(insSelector, 'g')).map((ins) =>
