@@ -84,7 +84,40 @@
   "equipment": {
     "display_name": "Equipment",
     "children": {
-      "qualities": "Item Qualities",
+      "qualities": {
+        "display_name": "Item Qualities",
+        "children": {
+          "accurate": "Accurate",
+          "blast": "Blast",
+          "breach": "Breach",
+          "burn": "Burn",
+          "concealable": "Concealable",
+          "concussive": "Concussive",
+          "cumbersome": "Cumbersome",
+          "defensive": "Defensive",
+          "deflective": "Deflective",
+          "disorient": "Disorient",
+          "ensnare": "Ensnare",
+          "full_auto": "Full-Auto",
+          "guided": "Guided",
+          "hardened": "Hardened",
+          "inaccurate": "Inaccurate",
+          "inferior": "Inferior",
+          "ion": "Ion",
+          "knockdown": "Knockdown",
+          "limited_ammo": "Limited Ammo",
+          "linked": "Linked",
+          "nonlethal": "Nonlethal",
+          "pierce": "Pierce",
+          "prepare": "Prepare",
+          "slow_firing": "Slow-Firing",
+          "stun": "Stun",
+          "sunder": "Sunder",
+          "superior": "Superior",
+          "throwable": "Throwable",
+          "unwieldy": "Unwieldy"
+        }
+      },
       "rarity": "Buying, Selling, Rarity & The Black Market",
       "encumbrance": "Encumbrance & Concealment",
       "maintenance": "Maintenance & Repairing",
@@ -189,9 +222,9 @@
             "display_name": "Influence",
             "resource": "magic/spellcasting/spells/influence.html"
           },
-          "misdirect": {
-            "display_name": "Misdirect",
-            "resource": "magic/spellcasting/spells/misdirect.html"
+          "mask": {
+            "display_name": "Mask",
+            "resource": "magic/spellcasting/spells/mask.html"
           },
           "move": {
             "display_name": "Move",
