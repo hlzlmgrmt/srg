@@ -16,13 +16,13 @@ const insSelector = '<ins.*id=".+".*>.*</ins>';
 
 // Content map for parsing dice symbols
 const diceSymbolsMap = new Map([
-  ['p', '<span class="glyph proficiency">l</span>'],
-  ['a', '<span class="glyph ability">k</span>'],
-  ['b', '<span class="glyph boost">j</span>'],
-  ['w', '<span class="glyph power">l</span>'],
-  ['c', '<span class="glyph challenge">l</span>'],
-  ['d', '<span class="glyph difficulty">k</span>'],
-  ['s', '<span class="glyph setback">j</span>']
+  ['p', '<span class="glyph proficiency" title="Proficiency">l</span>'],
+  ['a', '<span class="glyph ability" title="Ability">k</span>'],
+  ['b', '<span class="glyph boost" title="Boost">j</span>'],
+  ['w', '<span class="glyph power" title="Power">l</span>'],
+  ['c', '<span class="glyph challenge" title="Challenge">l</span>'],
+  ['d', '<span class="glyph difficulty" title="Difficulty">k</span>'],
+  ['s', '<span class="glyph setback" title="Setback">j</span>']
 ]);
 const diceSymbolsSelector = '\\[('
   + Array.from(diceSymbolsMap.keys()).join('|')
@@ -30,14 +30,14 @@ const diceSymbolsSelector = '\\[('
 
 // Content map for parsing dice face symbols
 const faceSymbolsMap = new Map([
-  ['s', '<span class="glyph">s</span>'],
-  ['a', '<span class="glyph">a</span>'],
-  ['t', '<span class="glyph">t</span>'],
-  ['f', '<span class="glyph">f</span>'],
-  ['h', '<span class="glyph">h</span>'],
-  ['d', '<span class="glyph">d</span>'],
-  ['w', '<span class="glyph dot-light"></span>'],
-  ['b', '<span class="glyph dot-dark"></span>']
+  ['s', '<span class="glyph" title="Success">s</span>'],
+  ['a', '<span class="glyph" title="Advantage">a</span>'],
+  ['t', '<span class="glyph" title="Triumph">t</span>'],
+  ['f', '<span class="glyph" title="Failure">f</span>'],
+  ['h', '<span class="glyph" title="Threat">h</span>'],
+  ['d', '<span class="glyph" title="Despair">d</span>'],
+  ['w', '<span class="glyph dot-light" title="Light Point"></span>'],
+  ['b', '<span class="glyph dot-dark" title="Dark Point"></span>']
 ]);
 const faceSymbolsSelector = '\\(('
   + Array.from(faceSymbolsMap.keys()).join('|')
