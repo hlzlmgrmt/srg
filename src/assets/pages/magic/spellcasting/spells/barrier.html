@@ -5,10 +5,11 @@
   bubble under the ocean so they can travel underwater, a barrier that shields them from flames as they walk through a
   burning building, or even a barrier that deflects an onrushing avalanche.</p>
 <p><b>Sustained: </b>Yes</p>
-<p><b>Base Spell: </b>You create a protective barrier around yourself or a willing target engaged with yourself. If
-  applying soak.
+<p><b>Base Spell: </b>You create a protective barrier around yourself or a willing target engaged with yourself. While
+  the spell is sustained, the targets soak is increased by one. This counts as magical soak, and is therefore not effected
+  by magical effects that ignore non-magical sources of soak.
 </p>
-<p><b>Base Difficulty: </b>Easy([[d]])</p>
+<p><b>Base Difficulty: </b>Easy ([[d]])</p>
 <p><b>Additional Effects: </b></p>
 
 <div class="table-responsive">
@@ -20,92 +21,65 @@
       </tr>
     </thead>
     <tbody>
+      <ins id="magic/tables/universal-additional-effects.html"></ins>
       <tr>
         <td>
-          <p>
-            <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition,
-            after casting the spell, you may spend [(a)] to affect oe additional target within
-            range of the spell affects one additional target within range of the spell. In addition, after casting the
-            spell, you may spend [(a)] to affect oe additional target within range of the
-            spell (and may trigger this multiple times, spending [(a)] each time).
-          </p>
-        </td>
-        <td>+[[d]]</td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times,
-            increasing the range by one range band each time, to a maximum of Long range.
-          </p>
-        </td>
-        <td>+[[d]]</td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <b>Sanctuary: </b> The spell becomes an unmovable bubble of protective energy around the caster. The range
-            of the spell determines the radius of the sphere (and therefore the amount of targets covered by the spell).
-            Any attack into or out of the barrier are affedted by the spells effects. Anyone traying to enter or exit
-            the barrier must succees an Athetics check with a difficulty equal to the spellcasters ranks in
-            Spellcasting. Once per turn, the spellcaster may spend a maneuver to create an opening in the barrier until
-            the beginning of their next turn. When casting the spell, the spellcaster may choose to increase the
-            difficulty of this additional effect by an additional [[d]] to make the barrier mobile; the spellcaster always 
-            stays at the center of the barrier while they sustain a mobile barrier.
-          </p>
+          <b>Sanctuary: </b> The spell becomes an unmovable bubble of protective energy around the caster. The range
+          of the spell determines the radius of the sphere (and therefore the amount of targets covered by the spell).
+          Any attack into or out of the barrier are affected by the spells effects. Anyone trying to enter or exit
+          the barrier must succeed an Athletics skill check with a difficulty equal to the spellcasters ranks in
+          Spellcasting. Once per turn, the spellcaster may spend a maneuver to create an opening in the barrier until
+          the beginning of their next turn. When casting the spell, the spellcaster may choose to increase the
+          difficulty of this additional effect by an additional [[d]] to make the barrier mobile; the spellcaster always
+          stays at the center of the barrier while they sustain a mobile barrier.
         </td>
         <td>+[[d]] / [[dd]]</td>
       </tr>
       <tr>
         <td>
-          <p>
-            <b>Shielding: </b> The spellcaster chooses an environmental hazard, such as toxig gases, extreme
-            temperatures, radiation or extreme pressure. Targets affected by the spell add [[b]] to all checks 
-            made to resist the effects of the chosen hazard. [(aa)] or [(t)] generated on the check can be used 
-            to add an additional [[b]] to the aforementioned checks. (This can be taken multiple times). [[b]]
-            added to a dice pool by this spell are cumulative with other sources of resistance, but still may not 
-            go beyond [[bbbb]].
-          </p>
+          <b>Shielding: </b> The spellcaster chooses an environmental hazard, such as toxic gases, extreme
+          temperatures, radiation or extreme pressure. Targets affected by the spell add [[b]] to all checks
+          made to resist the effects of the chosen hazard. [(aa)] or [(t)] generated on the check can be used
+          to add an additional [[b]] to the aforementioned checks. (This can be taken multiple times). [[b]]
+          added to a dice pool by this spell are cumulative with other sources of resistance, but still may not
+          go beyond [[bbbb]].
         </td>
         <td>+[[d]]</td>
       </tr>
       <tr>
         <td>
-          <p>
-            <b>Water Breathing: </b> Targets affected by the spell are protected by an air bubble, which provides them
-            with fresh air for an amount of hours equal to the character’s ranks in Spellcasting. Targets of the spell
-            are temporarily immune to effects like drowning or suffocation, as long as they are able to breathe freely
-            through their mouths and noses.
-          </p>
+          <b>Water Breathing: </b> Targets affected by the spell are protected by an air bubble, which provides them
+          with fresh air for an amount of hours equal to the character’s ranks in Spellcasting. Targets of the spell
+          are temporarily immune to effects like drowning or suffocation, as long as they are able to breathe freely
+          through their mouths and noses.
         </td>
         <td>+[[d]]</td>
       </tr>
       <tr>
         <td>
-          <p>
-            <b>Defensive: </b> Each affected target gains one point of defense. This can be taken multiple times, to a
-            maximum amount of the character’s ranks in Spellcasting. Defense gained by this spell is cumulative with
-            other sources of defense, but still may not go beyond [[ssss]].
-          </p>
+          <b>Defensive: </b> Each affected target gains one point of defense. This can be taken multiple times, to a
+          maximum amount of the character’s ranks in Spellcasting. Defense gained by this spell is cumulative with
+          other sources of defense, but still may not go beyond [[ssss]].
         </td>
         <td>+[[dd]]</td>
       </tr>
       <tr>
         <td>
-          <p>
-            <b>Empowered: </b>The caster may spend [(ss)] to reduce the damage the target(s) suffer by an additional point.
-          </p>
+          <b>Empowered: </b>The target of the spell increases their soak by an additional point. Additionally, the
+          barrier gains the Hardened quality, making all targets affected by the barrier immune to effects of the Pierce
+          and Breach quality. The spellcaster may spend [(ss)] generated on the Spellcasting skill check to increase the
+          soak gained by the spell by an additional point. Alternatively, when the spell contains an additional effect
+          that increases a targets defense, or that adds [[b]], [[s]], [(a)] or [(h)] to a check, the caster may spend
+          [(ss)] add an additional point, die or symbol (and may trigger this multiple times, spending [(ss)] each time).
         </td>
         <td>+[[dd]]</td>
       </tr>
       <tr>
         <td>
-          <p>
-            <b>Ward: </b>If an adversary makes a magical attack (including attacks made by magically enhanced objects,
-            such as weapon foci), they suffer an automatic [(h)] on the check. This may be taken
-            multiple times, to a maximum amount equal to the character’s ranks in Spellcasting, adding an additional
-            [(h)] each time.
-          </p>
+          <b>Ward: </b>If an adversary makes a magical attack (including attacks made by magically enhanced objects,
+          such as weapon foci), they suffer an automatic [(h)] on the check. This may be taken
+          multiple times, to a maximum amount equal to the character’s ranks in Spellcasting, adding an additional
+          [(h)] each time.
         </td>
         <td>+[[dd]]</td>
       </tr>
