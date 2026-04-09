@@ -282,7 +282,31 @@
           }
         }
       },
-      "qi": "Qi",
+      "qi": {
+        "display_name": "Qi",
+        "children": {
+          "tier_1": {
+            "display_name": "Tier I",
+            "resource": "magic/qi/powers/tier_1.html"
+          },
+          "tier_2": {
+            "display_name": "Tier II",
+            "resource": "magic/qi/powers/tier_2.html"
+          },
+          "tier_3": {
+            "display_name": "Tier III",
+            "resource": "magic/qi/powers/tier_3.html"
+          },
+          "tier_4": {
+            "display_name": "Tier IV",
+            "resource": "magic/qi/powers/tier_4.html"
+          },
+          "tier_5": {
+            "display_name": "Tier V",
+            "resource": "magic/qi/powers/tier_5.html"
+          }
+        }
+      },
       "metamagics": "Metamagics"
     }
   },
