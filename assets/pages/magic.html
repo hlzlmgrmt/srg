@@ -145,30 +145,84 @@
   using a spell to accomplish specific tasks, Players and Gamemasters should keep the intention of the spell in
   mind.</p>
 
-<p><b>Sustained: </b>Some spells need to be sustained by the spellcaster as an upkeep for their prolonged effects. In
-  practice, this means that for as long as the caster and it's target are within the same scene, the caster commits
-  <span class="glyph proficiency">l</span> from their Spellcasting dice pool for each sustained spell. Each committed
-  die removes a <span class="glyph proficiency">l</span> from any magical skill check dice pool. If no
-  <span class="glyph proficiency">l</span> can be removed, the caster decreases the ability of the check once. A
-  spellcaster can only sustain a number of spells equal to the total amount of <span class="glyph proficiency">l</span>
-  in their Spellcasting dice pool.<br/>
-  Only one of each spell can be sustained at the same time. For example, if a spellcaster wishes to cast <i>Augment</i>
-  on multiple targets, they cannot sustain two <i>Augment</i> spells; instead, they can increase the difficulty of a
-  single spell by adding the <i>Additional Targets</i> additional effect.<br/>
-  At the Gamemasters discretion, when a spellcaster is forced to maintain concentration, for example while suffering a
-  Critical Injury, suddenly falling, experiencing mortal fear or similar trauma, they must succeed a Discipline check
-  with a difficulty equal to the amount of spells they are sustaining, plus one.</p>
+<div>
+  <p><b>Sustained: </b>Some spells need to be sustained by the spellcaster as an upkeep for their prolonged effects. In
+    practice, this means that for as long as the caster and it's target are within the same scene, the caster commits
+    <span class="glyph proficiency">l</span> from their Spellcasting dice pool for each sustained spell. Each committed
+    die removes a <span class="glyph proficiency">l</span> from any magical skill check dice pool. If no
+    <span class="glyph proficiency">l</span> can be removed, the caster decreases the ability of the check once. A
+    spellcaster can only sustain a number of spells equal to the total amount of <span class="glyph proficiency">l</span>
+    in their Spellcasting dice pool.<br/>
+    Only one of each spell can be sustained at the same time. For example, if a spellcaster wishes to cast
+    <i>Augment</i>
+    on multiple targets, they cannot sustain two <i>Augment</i> spells; instead, they can increase the difficulty of a
+    single spell by adding the <i>Additional Targets</i> additional effect.<br/>
+    At the Gamemasters discretion, when a spellcaster is forced to maintain concentration, for example while suffering a
+    Critical Injury, suddenly falling, experiencing mortal fear or similar trauma, they must succeed a Discipline check
+    with a difficulty equal to the amount of spells they are sustaining, plus one.</p>
+
+  <div class="info-container">
+    <div class="d-flex flex-row justify-content-between">
+      <h6>Resisting sustained spells</h6>
+      <span class="me-1">&#128712;</span>
+    </div>
+    <p>In structured encounters, every time an unwilling target of a sustained spell starts their turn, as a maneuver,
+      they can try to resist the spell. In order to do this, they must succeed an opposed Resilience, Discipline or
+      Vigilance check (depending on the spell, at the Gamemasters discretion) skill check against the spellcasters
+      Spellcasting dice pool. On a success, the target of the spell is freed of the spells effects.</p>
+    <p></p>
+  </div>
+</div>
 
 <p><b>Base Spell and Difficulty: </b>The description and difficulty of the basic spell, before adding any additional
   effects.</p>
 
-<p><b>Additional Effects: </b>Each spell includes a table of optional additional effects, consisting of an
+<p class="mb-0"><b>Additional Effects: </b>Each spell includes a table of optional additional effects, consisting of an
   <b><i>Effect</i></b> and a <b><i>Difficulty Modifier</i></b>. Before casting a spell, a character may add additional
   effects to the spell, which add their described effect and difficulty to the base spell effect and difficulty. If an
   effect is not compatible with other effects, or if an effect may be taken multiple times (with multiple difficulty
   increases) depends on the additional effect in question. The difficulty of the spell and it's additional effects,
   before considering any reductions of difficulty (such as talents, formulae or foci) cannot exceed Formidable
-  (<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span><span class="glyph difficulty">k</span><span class="glyph difficulty">k</span><span class="glyph difficulty">k</span>).</p>
+  (<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span><span class="glyph difficulty">k</span><span class="glyph difficulty">k</span><span class="glyph difficulty">k</span>).<br/>
+  For the sake of consistency, all spells have the following universal additional effects:</p>
+<div class="table-responsive mb-1">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Effect</th>
+      <th>Diff. Mod.</th>
+    </tr>
+    </thead>
+    <tbody>
+    <h3 id=magic/tables/universal-additional-effects></h3>
+<tr>
+  <td>
+    <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
+    casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of the spell (and may trigger
+    this multiple times, spending <span class="glyph">a</span> each time).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+<tr>
+  <td>
+    <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
+    the range by one range band each time (to a maximum range of Long range).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+
+    <tr>
+      <td>
+        <b>Empowered:</b> All spells have an effect that significally increases the power of the base spell and other
+        additional effects. The effect of this additional effect depends on the spell, but it often includes a numeric
+        increase of one or more aspects of the spell, based on either the Spellcasting skill rating of the spellcaster,
+        or on uncancelled <span class="glyph">s</span> generated on the spell.
+      </td>
+      <td><b>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></b></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
 
 <h4 id=magic/spellcasting/spells/attack>Attack</h4>
 <p>Attack spells encompass all forms of direct magical combat, like shooting lightning, throwing a fireball or causing
@@ -178,7 +232,7 @@
   to your Willpower. Treat the spell like a ranged attack, applying ranged defenses, soak and environmental modifiers as
   usual. The attack has no Critical rating, and can only inflict a Critical Injury by spending <span class="glyph">t</span>.
 </p>
-<p><b>Base Difficulty: </b>Easy(<span class="glyph difficulty">k</span>)</p>
+<p><b>Base Difficulty: </b>Easy (<span class="glyph difficulty">k</span>)</p>
 <p><b>Additional Effects: </b></p>
 
 <div class="table-responsive">
@@ -190,100 +244,110 @@
     </tr>
     </thead>
     <tbody>
+    <h3 id=magic/tables/universal-additional-effects></h3>
+<tr>
+  <td>
+    <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
+    casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of the spell (and may trigger
+    this multiple times, spending <span class="glyph">a</span> each time).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+<tr>
+  <td>
+    <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
+    the range by one range band each time (to a maximum range of Long range).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+
     <tr>
-      <td><p>
+      <td>
         <b>Blast: </b>The attack gains the Blast quality with a rating equal to your character's ranks in Spellcasting.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Burning: </b>The attack gains the Burn quality with a rating equal to your character's ranks in Spellcasting.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Close Combat: </b>You may select a target engaged with your character.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Deadly: </b>The attack gains a Critical rating of 2. Additionally, the attack gains the Vicious quality with
         a rating to your character's ranks in Spellcasting.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Freezing: </b>The attack gains the Ensnare quality with a rating equal to the character's ranks in
         Spellcasting.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Impact: </b>The attack gains the Knockdown quality. The attack also gains the Disorient quality with a rating
         equal to the character's ranks in Spellcasting.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Lightning: </b>The attack gains the Stun quality with a rating equal to the character's ranks in
         Spellcasting. The attack also gains the Full Auto quality. (You must increase the difficulty by one to use the
         Full Auto quality as normal)
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Moving: </b>If the attack hits, you may spend <span class="glyph">a</span> to move the target up to one range
         band in any direction.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Non-Lethal: </b>Your attack gains the Non-Lethal quality.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
-        <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
-        the range by one range band each time (to a maximum range of Long range).
-      </p></td>
-      <td>+<span class="glyph difficulty">k</span></td>
-    </tr>
-    <tr>
-      <td><p>
+      <td>
         <b>Destructive: </b>The attack gains the Sunder quality. The attack also gains the Pierce quality with a rating
         equal to the character's ranks in Spellcasting.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Direct: </b>The attack ignores all non-magical sources of defense and soak, but it's damage becomes 0, plus
         any uncancelled <span class="glyph">s</span>.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Empowered: </b>The attack deals additional damage equal to your ranks in Spellcasting. Additionally, if the
         spell triggers the Blast quality, it affects all targets within short range, instead of engaged.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Toxic: </b>If the attack deals damage, the target must immediately make a
         Hard(<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span><span class="glyph difficulty">k</span>) Resilience check or suffer wounds and strain equal to the
         character's ranks in Spellcasting. This counts as poison.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
     </tr>
     </tbody>
@@ -297,10 +361,9 @@
   drone often proves much more difficult.</p>
 <p><b>Sustained: </b>Yes</p>
 <p><b>Base Spell: </b>You select a skill using the Brawn or Reflexes characteristic, and a voluntary target engaged with
-  you. If successful, as long as the spell is sustained, the target increases the ability of all skill checks made with
-  the chosen skill once (in effect, this means they add one <span class="glyph ability">k</span> to their checks). A
-  character cannot be the target of multiple Augment spells at the same time.</p>
-<p><b>Base Difficulty: </b>Average(<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span>)</p>
+  you. If successful, as long as the spell is sustained, the target adds <span class="glyph boost">j</span> to all checks made with the chosen skill.
+  Only a single Augment spell can be cast on a target at the same time.</p>
+<p><b>Base Difficulty: </b>Easy (<span class="glyph difficulty">k</span>)</p>
 <p><b>Additional Effects: </b></p>
 
 <div class="table-responsive">
@@ -312,54 +375,63 @@
     </tr>
     </thead>
     <tbody>
+    <h3 id=magic/tables/universal-additional-effects></h3>
+<tr>
+  <td>
+    <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
+    casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of the spell (and may trigger
+    this multiple times, spending <span class="glyph">a</span> each time).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+<tr>
+  <td>
+    <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
+    the range by one range band each time (to a maximum range of Long range).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+
     <tr>
-      <td><p>
-        <b>Additional Target: </b> The spell affects one additional target within range of the spell. In addition, after
-        casting the spell, you may spend <span class="glyph">a</span> to affect oe additional target within range of the
-        spell (and may trigger this multiple times, spending <span class="glyph">a</span> each time).
-      </p></td>
-      <td>+<span class="glyph difficulty">k</span></td>
-    </tr>
-    <tr>
-      <td><p>
+      <td>
         <b>Enchant: </b> The spell affects a Melee weapon a character within the range of the spell is holding. While
-        the spell is sustained, in addition to other effects, the weapon increases their damage by one, and reduces their
-        Critical rating by one, to a minimum of 2. The augmented weapon becomes magical, and may ignore an adversaries
-        immunity to non-magical attacks.</p></td>
+        the spell is sustained, in addition to other effects, the weapon increases their damage by one, and reduces
+        their Critical rating by one, to a minimum of 2. The augmented weapon becomes magical, and may ignore an
+        adversaries immunity to non-magical attacks.
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
-        <b>Mental: </b> You may augment any non-magical skill of a target.
-      </p></td>
+      <td>
+        <b>Mental: </b> The spell can effect any non-magical skill.
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
-        <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
-        the range by one range band each time (to a maximum of Long range).
-      </p></td>
-      <td>+<span class="glyph difficulty">k</span></td>
-    </tr>
-    <tr>
-      <td><p>
+      <td>
         <b>Swift: </b>Targets affected by the spell ignore the effects of difficult terrain, and they cannot be
-        Immobilized.
-      </p></td>
+        Immobilized while the spell is sustained.
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
-        <b>Empower: </b>
-      </p></td>
+      <td>
+        <b>Empower: </b> The target of the spell can add an additional <span class="glyph boost">j</span> to all skill checks with the chosen skill.
+        Additionally, the spellcaster may spend <span class="glyph">s</span><span class="glyph">s</span> generated on the check to increase the <span class="glyph boost">j</span> added to the
+        selected an additional time (this can be taken multiple times, requiring <span class="glyph">s</span><span class="glyph">s</span> each time). This effect is
+        still not cumulative with other sources of <span class="glyph boost">j</span>, and may still not exceed <span class="glyph boost">j</span><span class="glyph boost">j</span><span class="glyph boost">j</span><span class="glyph boost">j</span>. Alternatively, if the
+        Enchant additional effect is a part of the spell, instead of spending <span class="glyph">s</span><span class="glyph">s</span> to add additional <span class="glyph boost">j</span> to checks
+        made with the augmented weapon, you instead can increase its damage and reduce its Critical rating by another
+        point (to a minimum of 2).
+      </td>
       <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Haste: </b>Targets affected by the spell can perform a second maneuver without spending strain (they may
         still perform only two maneuvers per turn). The caster can increase the difficulty of the spell an additional
         time; instead of a maneuver, targets affected by the spell can perform a second action at the end of a round.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
     </tr>
     </tbody>
@@ -374,10 +446,11 @@
   bubble under the ocean so they can travel underwater, a barrier that shields them from flames as they walk through a
   burning building, or even a barrier that deflects an onrushing avalanche.</p>
 <p><b>Sustained: </b>Yes</p>
-<p><b>Base Spell: </b>You create a protective barrier around yourself or a willing target engaged with yourself. If
-  applying soak.
+<p><b>Base Spell: </b>You create a protective barrier around yourself or a willing target engaged with yourself. While
+  the spell is sustained, the targets soak is increased by one. This counts as magical soak, and is therefore not effected
+  by magical effects that ignore non-magical sources of soak.
 </p>
-<p><b>Base Difficulty: </b>Easy(<span class="glyph difficulty">k</span>)</p>
+<p><b>Base Difficulty: </b>Easy (<span class="glyph difficulty">k</span>)</p>
 <p><b>Additional Effects: </b></p>
 
 <div class="table-responsive">
@@ -389,98 +462,88 @@
       </tr>
     </thead>
     <tbody>
+      <h3 id=magic/tables/universal-additional-effects></h3>
+<tr>
+  <td>
+    <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
+    casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of the spell (and may trigger
+    this multiple times, spending <span class="glyph">a</span> each time).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+<tr>
+  <td>
+    <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
+    the range by one range band each time (to a maximum range of Long range).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+
       <tr>
         <td>
-          <p>
-            <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition,
-            after casting the spell, you may spend <span class="glyph">a</span> to affect oe additional target within
-            range of the spell affects one additional target within range of the spell. In addition, after casting the
-            spell, you may spend <span class="glyph">a</span> to affect oe additional target within range of the
-            spell (and may trigger this multiple times, spending <span class="glyph">a</span> each time).
-          </p>
-        </td>
-        <td>+<span class="glyph difficulty">k</span></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times,
-            increasing the range by one range band each time, to a maximum of Long range.
-          </p>
-        </td>
-        <td>+<span class="glyph difficulty">k</span></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <b>Sanctuary: </b> The spell becomes an unmovable bubble of protective energy around the caster. The range
-            of the spell determines the radius of the sphere (and therefore the amount of targets covered by the spell).
-            Any attack into or out of the barrier are affedted by the spells effects. Anyone traying to enter or exit
-            the barrier must succees an Athetics check with a difficulty equal to the spellcasters ranks in
-            Spellcasting. Once per turn, the spellcaster may spend a maneuver to create an opening in the barrier until
-            the beginning of their next turn. When casting the spell, the spellcaster may choose to increase the
-            difficulty of this additional effect by an additional <span class="glyph difficulty">k</span> to make the barrier mobile; the spellcaster always 
-            stays at the center of the barrier while they sustain a mobile barrier.
-          </p>
+          <b>Sanctuary: </b> The spell becomes an unmovable bubble of protective energy around the caster. The range
+          of the spell determines the radius of the sphere (and therefore the amount of targets covered by the spell).
+          Any attack into or out of the barrier are affected by the spells effects. Anyone trying to enter or exit
+          the barrier must succeed an Athletics skill check with a difficulty equal to the spellcasters ranks in
+          Spellcasting. Once per turn, the spellcaster may spend a maneuver to create an opening in the barrier until
+          the beginning of their next turn. When casting the spell, the spellcaster may choose to increase the
+          difficulty of this additional effect by an additional <span class="glyph difficulty">k</span> to make the barrier mobile; the spellcaster always
+          stays at the center of the barrier while they sustain a mobile barrier.
         </td>
         <td>+<span class="glyph difficulty">k</span> / <span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
       </tr>
       <tr>
         <td>
-          <p>
-            <b>Shielding: </b> The spellcaster chooses an environmental hazard, such as toxig gases, extreme
-            temperatures, radiation or extreme pressure. Targets affected by the spell add <span class="glyph boost">j</span> to all checks 
-            made to resist the effects of the chosen hazard. <span class="glyph">a</span><span class="glyph">a</span> or <span class="glyph">t</span> generated on the check can be used 
-            to add an additional <span class="glyph boost">j</span> to the aforementioned checks. (This can be taken multiple times). <span class="glyph boost">j</span>
-            added to a dice pool by this spell are cumulative with other sources of resistance, but still may not 
-            go beyond <span class="glyph boost">j</span><span class="glyph boost">j</span><span class="glyph boost">j</span><span class="glyph boost">j</span>.
-          </p>
+          <b>Shielding: </b> The spellcaster chooses an environmental hazard, such as toxic gases, extreme
+          temperatures, radiation or extreme pressure. Targets affected by the spell add <span class="glyph boost">j</span> to all checks
+          made to resist the effects of the chosen hazard. <span class="glyph">a</span><span class="glyph">a</span> or <span class="glyph">t</span> generated on the check can be used
+          to add an additional <span class="glyph boost">j</span> to the aforementioned checks. (This can be taken multiple times). <span class="glyph boost">j</span>
+          added to a dice pool by this spell are cumulative with other sources of resistance, but still may not
+          go beyond <span class="glyph boost">j</span><span class="glyph boost">j</span><span class="glyph boost">j</span><span class="glyph boost">j</span>.
         </td>
         <td>+<span class="glyph difficulty">k</span></td>
       </tr>
       <tr>
         <td>
-          <p>
-            <b>Water Breathing: </b> Targets affected by the spell are protected by an air bubble, which provides them
-            with fresh air for an amount of hours equal to the character’s ranks in Spellcasting. Targets of the spell
-            are temporarily immune to effects like drowning or suffocation, as long as they are able to breathe freely
-            through their mouths and noses.
-          </p>
+          <b>Water Breathing: </b> Targets affected by the spell are protected by an air bubble, which provides them
+          with fresh air for an amount of hours equal to the character’s ranks in Spellcasting. Targets of the spell
+          are temporarily immune to effects like drowning or suffocation, as long as they are able to breathe freely
+          through their mouths and noses.
         </td>
         <td>+<span class="glyph difficulty">k</span></td>
       </tr>
       <tr>
         <td>
-          <p>
-            <b>Defensive: </b> Each affected target gains one point of defense. This can be taken multiple times, to a
-            maximum amount of the character’s ranks in Spellcasting. Defense gained by this spell is cumulative with
-            other sources of defense, but still may not go beyond <span class="glyph setback">j</span><span class="glyph setback">j</span><span class="glyph setback">j</span><span class="glyph setback">j</span>.
-          </p>
+          <b>Defensive: </b> Each affected target gains one point of defense. This can be taken multiple times, to a
+          maximum amount of the character’s ranks in Spellcasting. Defense gained by this spell is cumulative with
+          other sources of defense, but still may not go beyond <span class="glyph setback">j</span><span class="glyph setback">j</span><span class="glyph setback">j</span><span class="glyph setback">j</span>.
         </td>
         <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
       </tr>
       <tr>
         <td>
-          <p>
-            <b>Empowered: </b>The caster may spend <span class="glyph">s</span><span class="glyph">s</span> to reduce the damage the target(s) suffer by an additional point.
-          </p>
+          <b>Empowered: </b>The target of the spell increases their soak by an additional point. Additionally, the
+          barrier gains the Hardened quality, making all targets affected by the barrier immune to effects of the Pierce
+          and Breach quality. The spellcaster may spend <span class="glyph">s</span><span class="glyph">s</span> generated on the Spellcasting skill check to increase the
+          soak gained by the spell by an additional point. Alternatively, when the spell contains an additional effect
+          that increases a targets defense, or that adds <span class="glyph boost">j</span>, <span class="glyph setback">j</span>, <span class="glyph">a</span> or <span class="glyph">h</span> to a check, the caster may spend
+          <span class="glyph">s</span><span class="glyph">s</span> add an additional point, die or symbol (and may trigger this multiple times, spending <span class="glyph">s</span><span class="glyph">s</span> each time).
         </td>
         <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
       </tr>
       <tr>
         <td>
-          <p>
-            <b>Ward: </b>If an adversary makes a magical attack (including attacks made by magically enhanced objects,
-            such as weapon foci), they suffer an automatic <span class="glyph">h</span> on the check. This may be taken
-            multiple times, to a maximum amount equal to the character’s ranks in Spellcasting, adding an additional
-            <span class="glyph">h</span> each time.
-          </p>
+          <b>Ward: </b>If an adversary makes a magical attack (including attacks made by magically enhanced objects,
+          such as weapon foci), they suffer an automatic <span class="glyph">h</span> on the check. This may be taken
+          multiple times, to a maximum amount equal to the character’s ranks in Spellcasting, adding an additional
+          <span class="glyph">h</span> each time.
         </td>
         <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
       </tr>
     </tbody>
   </table>
 </div>
+
 <h4 id=magic/spellcasting/spells/change>Change</h4>
 <p></p>
 <p>
@@ -499,20 +562,36 @@
       </tr>
     </thead>
     <tbody>
+      <h3 id=magic/tables/universal-additional-effects></h3>
+<tr>
+  <td>
+    <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
+    casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of the spell (and may trigger
+    this multiple times, spending <span class="glyph">a</span> each time).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+<tr>
+  <td>
+    <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
+    the range by one range band each time (to a maximum range of Long range).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+
     </tbody>
   </table>
 </div>
+
 <h4 id=magic/spellcasting/spells/curse>Curse</h4>
 <p>Curses inflict negative afflictions and effects to targets without causing direct harm, whether through direct
   penalties to checks made by the cursed target, sicknesses that ravage their bodies or the illusion of excruciating
   pain. In combat, most curses are simple debuffs that hinder adversaries in their ability to do things. Outside of
   combat, curses can be longer lasting and more deliberate; someone could be forced to vomit, for example.</p>
 <p><b>Sustained: </b>Yes</p>
-<p><b>Base Spell: </b>You weaken a target within short range with a hex. If successful, as long as the spell is
-  sustained, the target decreases the ability of all skill checks they make by one (in effect, this means they remove
-  one <span class="glyph ability">k</span> from their checks). Once per turn, as a maneuver, or once per minute, the target of a curse can attempt to
-  break the spell by succeeding a Resilience skill check as a Contested check against your Spellcasting skill.</p>
-<p><b>Base Difficulty: </b>Average(<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span>)</p>
+<p><b>Base Spell: </b>You weaken a target within Short range with a hex. If the spell is successful, as long as it is
+  sustained, the target adds <span class="glyph setback">j</span> to all skill checks they make.</p>
+<p><b>Base Difficulty: </b>Easy (<span class="glyph difficulty">k</span>)</p>
 <p><b>Additional Effects: </b></p>
 
 <div class="table-responsive">
@@ -524,61 +603,60 @@
     </tr>
     </thead>
     <tbody>
+    <h3 id=magic/tables/universal-additional-effects></h3>
+<tr>
+  <td>
+    <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
+    casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of the spell (and may trigger
+    this multiple times, spending <span class="glyph">a</span> each time).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+<tr>
+  <td>
+    <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
+    the range by one range band each time (to a maximum range of Long range).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+
     <tr>
-    <tr>
-      <td><p>
+      <td>
         <b>Sickened: </b>[...]. When you use this effect, the base difficulty of the spell is the targets Resilience
         skill.
-      </p></td>
+      </td>
       <td>+var</td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Enervate: </b>If a target suffers wounds or strain for any reason, they suffer one additional strain.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Misfortune: </b>After the target makes a check, you may change one <span class="glyph boost">j</span> to a
         face displaying <span class="glyph">f</span>.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
-        <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
-        the range by one range band each time (to a maximum of Long range).
-      </p></td>
-      <td>+<span class="glyph difficulty">k</span></td>
-    </tr>
-    <tr>
-      <td><p>
-        <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
-        casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of
-        the spell (and may trigger this multiple times, spending <span class="glyph">a</span> each time).
-      </p></td>
-      <td>+<span class="glyph difficulty">k</span></td>
-    </tr>
-    <tr>
-      <td><p>
+      <td>
         <b>Agonizing: </b>The target's strain and wound thresholds are reduced by an amount equal to the character's
         ranks in Spellcasting. If this would cause the target to be incapacitated, they fall unconscious until the end
         of the encounter, even if you stop sustaining the spell.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
-        <b>Empowered: </b>The target downgrades any skill check they make before they decrease their ability. If they
-        cannot downgrade their dice pool, they instead decrease their ability twice instead on once.
-      </p></td>
+      <td>
+        <b>Empowered: </b></td>
       <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Paralyzing: </b>As long as you are sustaining the spell, the target is staggered
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
     </tr>
     </tbody>
@@ -601,157 +679,278 @@
 <div class="table-responsive">
   <table class="table table-hover">
     <thead>
-      <tr>
-        <th>Effect</th>
-        <th>Diff. Mod.</th>
-      </tr>
+    <tr>
+      <th>Effect</th>
+      <th>Diff. Mod.</th>
+    </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>
-          <p>
-            <b>Heal Critical: </b>Select one Critical Injury the target is suffering. If the spell is successful, the
-            Critical Injury is also healed. This effect sets the base difficulty of the Spellcasting check to the
-            severity of the selected Critical Injury.
-          </p>
-        </td>
-        <td>+ var</td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition,
-            after casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of the spell 
-            (and may trigger this multiple times, spending <span class="glyph">a</span> each time).
-          </p>
-        </td>
-        <td>+<span class="glyph difficulty">k</span></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <b>Sterilize: </b>If the spell is successful, any following Medicine check on the target adds <span
-              class="glyph boost">j</span> (This may be taken multiple times).
-          </p>
-        </td>
-        <td>+<span class="glyph difficulty">k</span></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times,
-            increasing
-            the range by one range band each time (to a maximum range of Long range).
-          </p>
-        </td>
-        <td>+<span class="glyph difficulty">k</span></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <b>Restoration: </b>Select one ongoing status effect the target is suffering. The status effect immediately
-            ends. At the Gamemasters discretion, the difficulty of the effect may be further increases if the source of
-            the
-            effect is more difficult to cure, such as for particularly potent drugs and toxins.
-          </p>
-        </td>
-        <td>+<span class="glyph difficulty">k</span></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <b>Empowered: </b>The character may sustain the spell for an amount of turns qual to their ranks in
-            Spellcasting. At the beginning if the targets turn, the target heals an additional wound.
-          </p>
-        </td>
-        <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span>/td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <b>Stabilize: </b>The character may select targets who are incapacitated. If the spell is successful, they
-            are
-            able to act at the end of the casters next turn.
-          </p>
-        </td>
-        <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
-      </tr>
-      <tr>
-        <td>
-          <p>
-            <b>Resurrect: </b>The character may select a target who has dies during this encounter. If successful, the
-            target is resorted to life, suffering wounds equal to their wound threshold. If the check fails, it is too
-            late for the target, and no other characters may attempt to resurrect the target again.
-          </p>
-        </td>
-        <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span><span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
-      </tr>
+    <h3 id=magic/tables/universal-additional-effects></h3>
+<tr>
+  <td>
+    <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
+    casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of the spell (and may trigger
+    this multiple times, spending <span class="glyph">a</span> each time).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+<tr>
+  <td>
+    <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
+    the range by one range band each time (to a maximum range of Long range).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+
+    <tr>
+      <td>
+        <b>Heal Critical: </b>Select one Critical Injury the target is suffering. If the spell is successful, the
+        Critical Injury is also healed. This effect sets the base difficulty of the Spellcasting check to the
+        severity of the selected Critical Injury.
+      </td>
+      <td>+ var</td>
+    </tr>
+    <tr>
+      <td>
+        <b>Sterilize: </b>If the spell is successful, any following Medicine check on the target adds <span
+        class="glyph boost">j</span> (This may be taken multiple times).
+      </td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td>
+        <b>Restoration: </b>Select one ongoing status effect the target is suffering. The status effect immediately
+        ends. At the Gamemasters discretion, the difficulty of the effect may be further increases if the source of
+        the effect is more difficult to cure, such as for particularly potent drugs and toxins.
+      </td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td>
+        <b>Empowered: </b>The character may commit <span class="glyph proficiency">l</span> and sustain the spell for an amount of turns qual to their
+        ranks in Spellcasting. At the beginning if the targets turn, the target heals an additional wound.
+      </td>
+      <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td>
+        <b>Stabilize: </b>The character may select targets who are incapacitated. If the spell is successful, they
+        are able to act at the end of the casters next turn.
+      </td>
+      <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td>
+        <b>Resurrect: </b>The character may select a target who has dies during this encounter. If successful, the
+        target is resorted to life, suffering wounds equal to their wound threshold. If the check fails, it is too
+        late for the target, and no other characters may attempt to resurrect the target again.
+      </td>
+      <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span><span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
+    </tr>
     </tbody>
   </table>
 </div>
+
 <h4 id=magic/spellcasting/spells/influence>Influence</h4>
 <p>Some spellcasters have learned to use their magic to influence the minds, emotions and even the body of other people.
   These spells are one of the main reasons for the mayor distrust many mages face in society, as the masters of mind
   altering magicks are able to force their victims to act against their own will. While some magicians favor to
   influence their victims through their magic in order to avoid conflict, the news are filled with countless atrocities
-  committed by the vicims of mind-contol magic. Some use of Influence can even be so subtile, that a victim does not
+  committed by the vicims of mind-control magic. Some use of Influence can even be so subtile, that a victim does not
   even recognize being manipulated at all, adding up to the paranoia.</p>
 <p>
 <p><b>Sustained: </b>Yes</p>
-<p><b>Base Spell: </b></p>
+<p><b>Base Spell: </b>You influence the mind of a target that is engaged with you, making it easier for them to agree
+  with you. If the spell is successful, while you sustain the spell, you add <span class="glyph setback">j</span> to all opposed dice pools of Social
+  skill checks you make against your spells' target. The effects of the spell end when you stop sustaining the spell,
+  and while your target does not necessarily knows that they have been hexed, they feel like they have been fed honeyed
+  words.</p>
 <p><b>Base Difficulty: </b>Easy(<span class="glyph difficulty">k</span>)</p>
 <p><b>Additional Effects: </b></p>
 
 <div class="table-responsive">
   <table class="table table-hover">
     <thead>
-      <tr>
-        <th>Effect</th>
-        <th>Diff. Mod.</th>
-      </tr>
+    <tr>
+      <th>Effect</th>
+      <th>Diff. Mod.</th>
+    </tr>
     </thead>
     <tbody>
+    <h3 id=magic/tables/universal-additional-effects></h3>
+<tr>
+  <td>
+    <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
+    casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of the spell (and may trigger
+    this multiple times, spending <span class="glyph">a</span> each time).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+<tr>
+  <td>
+    <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
+    the range by one range band each time (to a maximum range of Long range).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+
+    <tr>
+      <td><b>Empowered:</b> </td>
+      <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><b>Lasting:</b> </td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><b>Control:</b> </td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><b>Amnesia:</b> </td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
     </tbody>
   </table>
 </div>
+
 <h4 id=magic/spellcasting/spells/mask>Mask</h4>
+<p>Masks are illusions that some more tricky practitioners of magic use to enhance or obfuscate the real world. Trideo
+  and theater production studios often employ some magicians versed in illusory magicks.</p>
 <p><p><b>Sustained: </b>Yes</p>
-<p><b>Base Spell: </b>
-</p>
-<p><b>Base Difficulty: </b>Easy(<span class="glyph difficulty">k</span>)</p>
+<p><b>Base Spell: </b> You create a small illusion into your hand. While the illusion is not necessarily obviously
+  illusory in nature, any observer is immediately aware of it's magical nature.</p>
+<p><b>Base Difficulty: </b>Simple (-)</p>
 <p><b>Additional Effects: </b></p>
 
 <div class="table-responsive">
   <table class="table table-hover">
     <thead>
-      <tr>
-        <th>Effect</th>
-        <th>Diff. Mod.</th>
-      </tr>
+    <tr>
+      <th>Effect</th>
+      <th>Diff. Mod.</th>
+    </tr>
     </thead>
     <tbody>
+    <h3 id=magic/tables/universal-additional-effects></h3>
+<tr>
+  <td>
+    <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
+    casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of the spell (and may trigger
+    this multiple times, spending <span class="glyph">a</span> each time).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+<tr>
+  <td>
+    <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
+    the range by one range band each time (to a maximum range of Long range).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+
+    <tr>
+      <td><b>Empowered: </b></td>
+      <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><b>Invisible: </b></td>
+      <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><b>Fool Sensors: </b></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><b>Size: </b></td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><b>Realistic: </b>This effect cannot be taken together with the Chaotic additional effect.</td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><b>Chaotic: </b>This effect cannot be taken together with the Realistic additional effect.</td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><b>Multisensorial: </b>When you increase the difficulty of the spell by <span class="glyph difficulty">k</span>, the illusion produced by the
+        spell can be heard and smelled. When you increase the difficulty by an additional <span class="glyph difficulty">k</span>, the illusion can be
+        tasted, touched, and even emits heat.
+      </td>
+      <td>+<span class="glyph difficulty">k</span> / <span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
+    </tr>
     </tbody>
   </table>
 </div>
+
 <h4 id=magic/spellcasting/spells/move>Move</h4>
 <p><p><b>Sustained: </b>Yes</p>
-<p><b>Base Spell: </b>
-</p>
-<p><b>Base Difficulty: </b>Easy(<span class="glyph difficulty">k</span>)</p>
+<p><b>Base Spell: </b>You can target a non-living target with an Encumbrance equal or lower than your ranks in
+  Spellcasting within short range. If the spell is successful, you can move the target by one range band in any
+  direction (This counts as one maneuver worth of movement). While you are sustaining the spell, you can spend a
+  maneuver to move the target by one range band in any direction up to medium range, or two maneuvers to move the target
+  from medium to long range or reversed. While affected by the spell, the target is rolling or sliding in the
+  chosen direction, and is slow enough to be caught while moving.</p>
+<p><b>Base Difficulty: </b>Simple (-)</p>
 <p><b>Additional Effects: </b></p>
 
 <div class="table-responsive">
   <table class="table table-hover">
     <thead>
-      <tr>
-        <th>Effect</th>
-        <th>Diff. Mod.</th>
-      </tr>
+    <tr>
+      <th>Effect</th>
+      <th>Diff. Mod.</th>
+    </tr>
     </thead>
     <tbody>
+    <h3 id=magic/tables/universal-additional-effects></h3>
+<tr>
+  <td>
+    <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
+    casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of the spell (and may trigger
+    this multiple times, spending <span class="glyph">a</span> each time).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+<tr>
+  <td>
+    <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
+    the range by one range band each time (to a maximum range of Long range).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+
+    <tr>
+      <td><b>Fling:</b> </td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><b>Strength:</b> The spell can target an object with a silhouette of 1, or an encumbrance of 10. You can take
+        this effect multiple times, increasing the maximum silhouette of the target by an additional point - or its
+        encumbrance by ten points - per additional difficulty increase taken..
+      </td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><b>Living Target:</b> The spell can target a living creature (or yourself) with a silhouette of 0.</td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><b>Levitate:</b> The target of your spell levitates, and can be moved vertically.</td>
+      <td>+<span class="glyph difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td><b>Empowered:</b> Once per turn, you can move the target by an additional maneuver worth of range bands without
+        spending additional maneuvers. Additionally, if your target is within Long range of you, you can use two
+        maneuvers in order to move your target into Extreme range, after which the spell ends.
+      </td>
+      <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
+    </tr>
     </tbody>
   </table>
 </div>
+
 <h4 id=magic/spellcasting/spells/sense>Sense</h4>
 <p>A magician casting a Sense spell gains the ability to perceive their surrounding by supernatural means. This includes
   the simple sharpening of ones own senses, and extends to perceiving invisible things, seeing through illusions and
@@ -772,73 +971,74 @@
     </tr>
     </thead>
     <tbody>
+    <h3 id=magic/tables/universal-additional-effects></h3>
+<tr>
+  <td>
+    <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
+    casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of the spell (and may trigger
+    this multiple times, spending <span class="glyph">a</span> each time).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+<tr>
+  <td>
+    <b>Range: </b>Increase the range of the spell by one range band. This may be added multiple times, increasing
+    the range by one range band each time (to a maximum range of Long range).
+  </td>
+  <td>+<span class="glyph difficulty">k</span></td>
+</tr>
+
     <tr>
-      <td><p>
-        <b>Additional Target: </b>The spell affects one additional target within range of the spell. In addition, after
-        casting the spell, you may spend <span class="glyph">a</span> to affect one additional target within range of
-        the spell (and may trigger this multiple times, spending <span class="glyph">a</span> each time).
-      </p></td>
-      <td>+<span class="glyph difficulty">k</span></td>
-    </tr>
-    <tr>
-      <td><p>
+      <td>
         <b>Analyze: </b>While affected by the spell, <span class="glyph">a</span><span class="glyph">a</span> generated on Perception check may be
         spend to reveal the purpose of a perceived object or device. <span class="glyph">t</span> generated on the check
         may be spend to reveal the inner workings of the objects or device similar to a blueprint.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Clairvoyance: </b>The character can declare a location within short range to perceive their surroundings as
         if physically there. The caster must see the location while casting the spell, but can leave afterwards. While
         the caster is sustaining this spell, they perceive both their targeted and physical location, but suffer
         <span class="glyph setback">j</span><span class="glyph setback">j</span> on all Perception and Vigilance checks for their physical location.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Link: </b> The caster touches a voluntary ally while casting the spell. As long as the ally is within the
         same scene as the character, they share their senses and thoughts and can aid each other in Perception checks.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
-        <b>Range: </b> Increase the range of the spell by one range band. This may be added multiple times, increasing
-        the range by one range band each time (to a maximum of Long range). Additionally, the spell can affect another
-        voluntary subject instead of the caster.
-      </p></td>
-      <td>+<span class="glyph difficulty">k</span></td>
-    </tr>
-    <tr>
-      <td><p>
+      <td>
         <b>Understand: </b> Sense affects Vigilance checks when interacting with other people Additionally, the
         character can understand the spoken language of the target without the aid of translator programs, even though
         they cannot speak it themselves.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Detect: </b> When casting the spell, the character must choose a trigger, such as aggression, danger, magic
         or the presence of certain objects, critters or known individuals. When the character is within the same scene
         as their chosen trigger, they get informed about their presence.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Empowered: </b> The caster can remove <span class="glyph setback">j</span> equal to their ranks in
         Spellcasting to all Perception check they make. (This includes seeing in total darkness or perceiving
         invisible creatures). Additionally, all opposed checks made against the casters Perception or Vigilance
         checks add <span class="glyph setback">j</span> up to the casters ranks in Spellcasting.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Probe: </b>The caster can telepathically probe the mind of a target within range of the spell. The target is
         aware of the probing, though they may not know the source of the spell. On a success, the caster may read the
         targets’ surface thoughts, and aa generated on the check may reveal additional information. The caster can
@@ -847,14 +1047,14 @@
         knowledge of the target, and if increased twice twice the character might even gain information only
         subconsciously
         known by the target, such as deep fears or suppressed memories.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
     </tr>
     <tr>
-      <td><p>
+      <td>
         <b>Sharpshooter: </b>When the target of the spell uses the Aim maneuver with a Ranged (Light) or Ranged (Heavy)
         weapon, Sense affects the next Ranged (Light) or Ranged (Heavy) combat check.
-      </p></td>
+      </td>
       <td>+<span class="glyph difficulty">k</span><span class="glyph difficulty">k</span></td>
     </tr>
     </tbody>
@@ -935,7 +1135,7 @@
 <div class="info-container">
   <div class="d-flex flex-row justify-content-between">
     <h6>Isn't a metamagic just a talent?</h6>
-    <span class="me-1">🛈</span>
+    <span class="me-1">&#128712;</span>
   </div>
   <p>Yes but shut</p>
 </div>
