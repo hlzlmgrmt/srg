@@ -11,7 +11,7 @@
   --color-ability-dice: forestgreen;
   --color-challenge-dice: firebrick;
   --color-proficiency-dice: gold;
-  --color-power-dice: whitesmoke;
+  --color-power-dice: whitesmoke
 }
 
 @font-face {
@@ -91,15 +91,23 @@ span.glyph {
   }
 
   &.dot-light {
-    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 0.6em;
     aspect-ratio: 1 / 1;
+    border-radius: 100%;
     border: 1px solid black;
     background-color: whitesmoke;
   }
 
   &.dot-dark {
-    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 0.6em;
     aspect-ratio: 1 / 1;
+    border-radius: 100%;
     border: 1px solid grey;
     background-color: black;
   }

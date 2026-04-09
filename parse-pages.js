@@ -37,7 +37,7 @@ const faceSymbolsMap = new Map([
   ['h', '<span class="glyph">h</span>'],
   ['d', '<span class="glyph">d</span>'],
   ['w', '<span class="glyph dot-light"></span>'],
-  ['b', '<span class="glyph dot-black"></span>']
+  ['b', '<span class="glyph dot-dark"></span>']
 ]);
 const faceSymbolsSelector = '\\(('
   + Array.from(faceSymbolsMap.keys()).join('|')
