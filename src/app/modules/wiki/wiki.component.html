@@ -11,12 +11,8 @@
             @if (route.display_name !== '' && viewableRoutes()?.includes(key)) {
               <div class="d-flex flex-row justify-content-between">
                 <a href="javascript:void(0)"
-                  [routerLink]="selectedFragment() == undefined 
-                    ? selectedRoute() == key 
-                      ? undefined 
-                      : '/' + (key.includes('/') ? key.substring(0, key.indexOf('/')) : key) 
-                    : '/' + (key.includes('/') ? key.substring(0, key.indexOf('/')) : key) "
-                  [fragment]="key.includes('/') ? key : undefined"
+                  [routerLink]="getRouterLink(key)"
+                  [fragment]="getFragment(key)"
                   class="w-100" [class.selected]="selectedFragment() == undefined ? selectedRoute() == key : selectedFragment() == key"
                   [style]="route.depth !== undefined && route.depth > 1 ?
                     'margin-left: ' + ((route.depth - 1) * 0.5) + 'rem; '

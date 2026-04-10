@@ -84,7 +84,41 @@
   "equipment": {
     "display_name": "Equipment",
     "children": {
-      "qualities": "Item Qualities",
+      "qualities": {
+        "display_name": "Item Qualities",
+        "children": {
+          "accurate": "Accurate",
+          "blast": "Blast",
+          "breach": "Breach",
+          "burn": "Burn",
+          "concealable": "Concealable",
+          "concussive": "Concussive",
+          "cumbersome": "Cumbersome",
+          "defensive": "Defensive",
+          "deflective": "Deflective",
+          "disorient": "Disorient",
+          "ensnare": "Ensnare",
+          "full_auto": "Full-Auto",
+          "guided": "Guided",
+          "hardened": "Hardened",
+          "inaccurate": "Inaccurate",
+          "inferior": "Inferior",
+          "ion": "Ion",
+          "knockdown": "Knockdown",
+          "limited_ammo": "Limited Ammo",
+          "linked": "Linked",
+          "nonlethal": "Nonlethal",
+          "pierce": "Pierce",
+          "prepare": "Prepare",
+          "slow_firing": "Slow-Firing",
+          "stun": "Stun",
+          "sunder": "Sunder",
+          "superior": "Superior",
+          "throwable": "Throwable",
+          "unwieldy": "Unwieldy",
+          "vicious": "Vicious"
+        }
+      },
       "rarity": "Buying, Selling, Rarity & The Black Market",
       "encumbrance": "Encumbrance & Concealment",
       "maintenance": "Maintenance & Repairing",
@@ -189,9 +223,9 @@
             "display_name": "Influence",
             "resource": "magic/spellcasting/spells/influence.html"
           },
-          "misdirect": {
-            "display_name": "Misdirect",
-            "resource": "magic/spellcasting/spells/misdirect.html"
+          "mask": {
+            "display_name": "Mask",
+            "resource": "magic/spellcasting/spells/mask.html"
           },
           "move": {
             "display_name": "Move",
@@ -248,7 +282,31 @@
           }
         }
       },
-      "qi": "Qi",
+      "qi": {
+        "display_name": "Qi",
+        "children": {
+          "tier_1": {
+            "display_name": "Tier I",
+            "resource": "magic/qi/powers/tier_1.html"
+          },
+          "tier_2": {
+            "display_name": "Tier II",
+            "resource": "magic/qi/powers/tier_2.html"
+          },
+          "tier_3": {
+            "display_name": "Tier III",
+            "resource": "magic/qi/powers/tier_3.html"
+          },
+          "tier_4": {
+            "display_name": "Tier IV",
+            "resource": "magic/qi/powers/tier_4.html"
+          },
+          "tier_5": {
+            "display_name": "Tier V",
+            "resource": "magic/qi/powers/tier_5.html"
+          }
+        }
+      },
       "metamagics": "Metamagics"
     }
   },
