@@ -1,4 +1,11 @@
 <div class="d-flex flex-column page-control">
+  <input type="file" #fileUpload style="display:none;"
+         accept=".srg" (change)="onFileSelected($event)">
+
+  <button class="btn btn-primary"
+    [title]="'Upload Raw Character Data'"
+    (click)="fileUpload.click()">
+    &#10514;</button>
   <button class="btn btn-primary"
           [title]="'Download Raw Character Data'"
           (click)="downloadRawCharacterData()">
