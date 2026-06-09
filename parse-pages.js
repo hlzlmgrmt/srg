@@ -8,6 +8,10 @@ console.info('Running page content parser');
 const fs = require('fs');
 const path = require('path');
 
+const { platform } = process;
+const locale = path[platform == 'win32' ? 'win32' : 'posix']
+
+console.log(platform, path.sep, locale.sep);
 const srcDir = __dirname + '/src/assets/pages'
 const targetDir = __dirname + '/target/assets/pages';
 
@@ -135,14 +139,14 @@ const insertPages = function (content, done) {
   let remaining = content.size - result.size;
   while (remaining > 0) {
     let remainingContent = new Map([...content].filter(([k, v]) => !Array.from(result.keys()).includes(k)));
-    // console.log("Remaining content:", remainingContent.size, Array.from(remainingContent.keys()))
+    console.log("Remaining content:", remainingContent.size);
 
     new Map([...remainingContent].filter(([key, value]) => {
       const insertPaths = value.match(new RegExp(insSelector, 'g')).map((ins) =>
         ins.match(/id="[^"]+"/).map((match) =>
           match.substring('id=\"'.length, match.length - 1))).flat();
-
-      return insertPaths.every(key => Array.from(result.keys()).includes(key));
+      
+      return insertPaths.every(key => Array.from(result.keys()).includes(key.replaceAll('/', locale.sep)));
     })).forEach(function (value, key) {
       value.match(new RegExp(insSelector, 'g')).forEach((ins) => {
         const insKey = ins.match(/id="[^"]+"/)?.map(match =>
@@ -165,10 +169,10 @@ const insertPages = function (content, done) {
 
 
 const write = function (dir, content, done) {
-  const dstPath = targetDir + '/' + dir;
+  const dstPath = targetDir + locale.sep + dir;
 
   // Only write main paths
-  if (!dir.includes('/')) {
+  if (!dir.includes(locale.sep)) {
     fs.promises.mkdir(path.dirname(dstPath), {recursive: true}).then(() => {
       fs.promises.writeFile(dstPath, content, (err) => {
         if (err) return done(err);
@@ -179,7 +183,6 @@ const write = function (dir, content, done) {
 }
 
 // --------------------------------------------------
-
 walk(srcDir, function (err, results) {
   if (err) throw err;
   parse(results, function (err, results) {
