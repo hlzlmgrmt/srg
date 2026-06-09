@@ -146,7 +146,7 @@ const insertPages = function (content, done) {
         ins.match(/id="[^"]+"/).map((match) =>
           match.substring('id=\"'.length, match.length - 1))).flat();
       
-      return insertPaths.every(key => Array.from(result.keys()).includes(key.replaceAll('/', locale.sep)));
+      return insertPaths.every(key => Array.from(result.keys()));
     })).forEach(function (value, key) {
       value.match(new RegExp(insSelector, 'g')).forEach((ins) => {
         const insKey = ins.match(/id="[^"]+"/)?.map(match =>
