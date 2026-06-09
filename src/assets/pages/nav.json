@@ -168,7 +168,13 @@
               }
             }
           },
-          "magical": "Magical Implements",
+          "magical": {
+            "display_name": "Magical Implements",
+            "children": {
+              "list": "List of Magical Implements",
+              "foci": "Foci"
+            }
+          },
           "hacking": {
             "display_name": "Hacking Gear",
             "children": {
@@ -307,7 +313,21 @@
           }
         }
       },
-      "metamagics": "Metamagics"
+      "traditions_metamagics": {
+        "display_name": "Traditions & Metamagics",
+        "children": {
+          "anchoring": "Anchoring",
+          "banishing": "Banishing",
+          "binding": "Binding",
+          "centering": "Centering",
+          "counterspell": "Counterspell",
+          "fixiate": "Fixiate",
+          "quickening": "Quickening",
+          "sacrifice": "Sacrifice",
+          "shaping": "Shaping",
+          "shielding": "Shielding"
+        }
+      }
     }
   },
   "matrix": {
