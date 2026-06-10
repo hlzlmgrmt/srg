@@ -246,17 +246,17 @@
       "summoning": {
         "display_name": "Summoning",
         "children": {
-          "dead": {
-            "display_name": "Spirits of the Dead",
-            "resource": "magic/summoning/spirits/dead.html"
-          },
           "guardian": {
             "display_name": "Guardian Spirits",
             "resource": "magic/summoning/spirits/guardian.html"
           },
-          "guadance": {
+          "guidance": {
             "display_name": "Guidance Spirits",
             "resource": "magic/summoning/spirits/guidance.html"
+          },
+          "justice": {
+            "display_name": "Spirits of Justice",
+            "resource": "magic/summoning/spirits/justice.html"
           },
           "labor": {
             "display_name": "Spirits of Labor",
@@ -277,10 +277,6 @@
           "trickster": {
             "display_name": "Trickster Spirits",
             "resource": "magic/summoning/spirits/trickster.html"
-          },
-          "vengeance": {
-            "display_name": "Spirits of Vengeance",
-            "resource": "magic/summoning/spirits/vengeance.html"
           },
           "wild": {
             "display_name": "Wild Spirits",
@@ -322,6 +318,7 @@
           "centering": "Centering",
           "counterspell": "Counterspell",
           "fixiate": "Fixiate",
+          "posession": "Posession",
           "quickening": "Quickening",
           "sacrifice": "Sacrifice",
           "shaping": "Shaping",
