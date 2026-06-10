@@ -8,7 +8,7 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "parse-pages": "node ./parse-pages.js",
-    "github-build": "yarpm run parse-pages && ng build --configuration production --base-href 'https://hlzlmgrmt.github.io/srg/'",
+    "github-build": "yarpm run parse-pages && ng build --configuration production --base-href https://hlzlmgrmt.github.io/srg/ --deploy-url=https://hlzlmgrmt.github.io/srg/",
     "github-deploy": "npx angular-cli-ghpages --dir=dist/srg/browser --no-silent"
   },
   "private": true,
