@@ -4,11 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "npm run build && ng serve",
-    "build": "node $npm_execpath run parse-pages && ng build",
+    "build": "yarpm run parse-pages && ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "parse-pages": "node ./parse-pages.js",
-    "github-build": "node $npm_execpath run parse-pages && ng build --configuration production --base-href 'https://hlzlmgrmt.github.io/srg/'",
+    "github-build": "yarpm run parse-pages && ng build --configuration production --base-href 'https://hlzlmgrmt.github.io/srg/'",
     "github-deploy": "npx angular-cli-ghpages --dir=dist/srg/browser --no-silent"
   },
   "private": true,
@@ -40,6 +40,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.9.3"
+    "typescript": "~5.9.3",
+    "yarpm": "^1.2.0"
   }
 }
