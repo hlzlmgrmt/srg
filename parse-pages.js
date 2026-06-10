@@ -11,7 +11,7 @@ const path = require('path');
 const { platform } = process;
 const locale = path[platform == 'win32' ? 'win32' : 'posix']
 
-console.log(platform, path.sep, locale.sep);
+console.log('Detected platform', platform);
 const srcDir = __dirname + '/src/assets/pages'
 const targetDir = __dirname + '/target/assets/pages';
 
@@ -133,20 +133,35 @@ const parse = function (content, done) {
  * @param done    callback function (error, result content map)
  */
 const insertPages = function (content, done) {
-  let result = new Map([...content].filter(([k, v]) => !v.match(new RegExp(insSelector, 'g'))));
-  console.log("Inserting", content.size, "pages")
+  console.log("Inserting", content.size, "pages");
+
+  // Init result map with content that does not have insert tags
+  let result = new Map();
+  new Map([...content]).forEach(function (v, k) {
+    if (!v.match(new RegExp(insSelector, 'g'))) {
+      result.set(k.replaceAll(locale.sep, '/'), v);
+    }
+  })
 
   let remaining = content.size - result.size;
   while (remaining > 0) {
-    let remainingContent = new Map([...content].filter(([k, v]) => !Array.from(result.keys()).includes(k)));
-    console.log("Remaining content:", remainingContent.size);
 
+    let remainingContent = new Map();
+    new Map([...content]).forEach(function (v, k) {
+      if (!Array.from(result.keys()).includes(k.replaceAll(locale.sep, '/'))) {
+        remainingContent.set(k.replaceAll(locale.sep, '/'), v);
+      }
+    });
+    console.log("Remaining content:", remainingContent.size, remaining);
+    new Promise(resolve => setTimeout(resolve, 1000));
+
+    // Filter all remaining content with ins tags tat are already in result map
     new Map([...remainingContent].filter(([key, value]) => {
       const insertPaths = value.match(new RegExp(insSelector, 'g')).map((ins) =>
         ins.match(/id="[^"]+"/).map((match) =>
           match.substring('id=\"'.length, match.length - 1))).flat();
       
-      return insertPaths.every(key => Array.from(result.keys()));
+      return insertPaths.every(key => Array.from(result.keys()).includes(key));
     })).forEach(function (value, key) {
       value.match(new RegExp(insSelector, 'g')).forEach((ins) => {
         const insKey = ins.match(/id="[^"]+"/)?.map(match =>
@@ -154,12 +169,12 @@ const insertPages = function (content, done) {
         const insHeading = ins.match(/>.+<\/ins>/)?.map(match =>
           match.substring(match.indexOf('>') + 1, match.indexOf('<')))[0] ?? '';
         const insDepth = ins.match(/data-depth="[0-9]+"/)?.map(match =>
-          Number.parseInt(match.substring('data-depth=\"'.length, match.length - 1)))[0] ?? (insKey.match(/\//g) || []).length + 1
+          Number.parseInt(match.substring('data-depth=\"'.length, match.length - 1)))[0] ?? (insKey.match(new RegExp('\\' + locale.sep, 'g')) || []).length + 1
 
         const insData = '<h' + insDepth + ' id=' + insKey.substring(0, insKey.length - '.html'.length) + '>' + insHeading + '</h' + insDepth + '>\n' + result.get(insKey);
         value = value.replace(ins, insData ?? '');
       });
-      result.set(key, value);
+      result.set(key.replaceAll(locale.sep, '/'), value);
       remaining--;
     })
   }
@@ -172,7 +187,7 @@ const write = function (dir, content, done) {
   const dstPath = targetDir + locale.sep + dir;
 
   // Only write main paths
-  if (!dir.includes(locale.sep)) {
+  if (!dir.includes('/')) {
     fs.promises.mkdir(path.dirname(dstPath), {recursive: true}).then(() => {
       fs.promises.writeFile(dstPath, content, (err) => {
         if (err) return done(err);
