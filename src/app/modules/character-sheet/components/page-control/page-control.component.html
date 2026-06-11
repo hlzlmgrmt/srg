@@ -3,11 +3,13 @@
          accept=".srg" (change)="onFileSelected($event)">
 
   <button class="btn btn-primary"
-    [title]="'Upload Raw Character Data'"
-    (click)="fileUpload.click()">
-    &#10514;</button>
+          [title]="'Upload Raw Character Data'"
+          (click)="fileUpload.click()">
+    <span class="mr-2">&#10514;</span>Upload Raw Character Data
+  </button>
   <button class="btn btn-primary"
           [title]="'Download Raw Character Data'"
           (click)="downloadRawCharacterData()">
-    &#10515;</button>
+    <span class="mr-2">&#10515;</span>Download Raw Character Data
+  </button>
 </div>
