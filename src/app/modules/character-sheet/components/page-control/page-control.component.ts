@@ -11,6 +11,24 @@ export class PageControlComponent {
   readonly character = input<Character>();
   readonly rawCharacterDataImported = output<string>();
 
+
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+      const fileReader = new FileReader();
+      fileReader.onload = (e) => {
+        const result = fileReader.result;
+
+        if (result instanceof ArrayBuffer) {
+          this.rawCharacterDataImported.emit(String.fromCharCode.apply(result));
+        } else {
+          this.rawCharacterDataImported.emit(result == null ? '' : result);
+        }
+      }
+      fileReader.readAsText(file);
+    }
+  }
+
   downloadRawCharacterData(): void {
     let element = document.createElement('a');
 
@@ -21,11 +39,11 @@ export class PageControlComponent {
       this.character()!['heading'] ?
         this.character()!['heading']['alias'] ?
           (this.character()!['heading']['alias'] as string).toLowerCase()
-            .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g,'\u005f')
+            .replace(/[&\/\\#,+()$~%.'":*?<>{}]/g, '\u005f')
           : 'shadowrunner'
         : 'shadowrunner'
       : 'shadowrunner';
-    element.setAttribute('download', fileName + '.txt');
+    element.setAttribute('download', fileName + '.srg');
     console.error(fileName);
 
     element.style.display = 'none';
