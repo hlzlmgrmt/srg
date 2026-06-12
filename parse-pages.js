@@ -169,7 +169,7 @@ const insertPages = function (content, done) {
         const insHeading = ins.match(/>.+<\/ins>/)?.map(match =>
           match.substring(match.indexOf('>') + 1, match.indexOf('<')))[0] ?? '';
         const insDepth = ins.match(/data-depth="[0-9]+"/)?.map(match =>
-          Number.parseInt(match.substring('data-depth=\"'.length, match.length - 1)))[0] ?? (insKey.match(new RegExp(locale.sep, 'g')) || []).length + 1
+          Number.parseInt(match.substring('data-depth=\"'.length, match.length - 1)))[0] ?? (insKey.match(new RegExp('/', 'g')) || []).length + 1
 
         const insData = '<h' + insDepth + ' id=' + insKey.substring(0, insKey.length - '.html'.length) + '>' + insHeading + '</h' + insDepth + '>\n' + result.get(insKey);
         value = value.replace(ins, insData ?? '');
