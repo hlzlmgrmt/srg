@@ -78,8 +78,10 @@ export class WikiComponent {
   readonly contentLoading = signal<boolean>(false);
 
   constructor() {
-    this.activatedRoute.params.subscribe(params => this.selectedRoute.set(params['route']))
-    this.activatedRoute.fragment.subscribe(fragment => this.selectedFragment.set(fragment ?? undefined))
+    this.activatedRoute.params.subscribe(params =>
+      this.selectedRoute.set(params['route'] ?? this.DEFAULT_ROUTE))
+    this.activatedRoute.fragment.subscribe(fragment =>
+      this.selectedFragment.set(fragment ?? undefined))
 
     this.httpClient.get<JSONNavigatableRoutes>('assets/pages/nav.json', { responseType: 'json' }).subscribe(data => {
       const parsedRoutes = this.parseRoutes(data);
@@ -88,7 +90,7 @@ export class WikiComponent {
 
     effect(() => {
       const routes = this.routes();
-      const selectedRoute = this.selectedRoute() ?? this.DEFAULT_ROUTE;
+      const selectedRoute = this.selectedRoute();
       const selectedFragment = this.selectedFragment();
 
       untracked(() => {
