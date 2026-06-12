@@ -152,7 +152,7 @@ const insertPages = function (content, done) {
         remainingContent.set(k.replaceAll(locale.sep, '/'), v);
       }
     });
-    console.log("Remaining content:", remainingContent.size, remaining);
+    console.log("Inserting pages:", content.size - remainingContent.size, ' / ', content.size);
     new Promise(resolve => setTimeout(resolve, 1000));
 
     // Filter all remaining content with ins tags tat are already in result map
@@ -160,7 +160,7 @@ const insertPages = function (content, done) {
       const insertPaths = value.match(new RegExp(insSelector, 'g')).map((ins) =>
         ins.match(/id="[^"]+"/).map((match) =>
           match.substring('id=\"'.length, match.length - 1))).flat();
-      
+
       return insertPaths.every(key => Array.from(result.keys()).includes(key));
     })).forEach(function (value, key) {
       value.match(new RegExp(insSelector, 'g')).forEach((ins) => {
@@ -169,7 +169,7 @@ const insertPages = function (content, done) {
         const insHeading = ins.match(/>.+<\/ins>/)?.map(match =>
           match.substring(match.indexOf('>') + 1, match.indexOf('<')))[0] ?? '';
         const insDepth = ins.match(/data-depth="[0-9]+"/)?.map(match =>
-          Number.parseInt(match.substring('data-depth=\"'.length, match.length - 1)))[0] ?? (insKey.match(new RegExp('\\' + locale.sep, 'g')) || []).length + 1
+          Number.parseInt(match.substring('data-depth=\"'.length, match.length - 1)))[0] ?? (insKey.match(new RegExp('/', 'g')) || []).length + 1
 
         const insData = '<h' + insDepth + ' id=' + insKey.substring(0, insKey.length - '.html'.length) + '>' + insHeading + '</h' + insDepth + '>\n' + result.get(insKey);
         value = value.replace(ins, insData ?? '');
