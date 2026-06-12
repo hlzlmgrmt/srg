@@ -15,8 +15,10 @@ console.log('Detected platform', platform);
 const srcDir = __dirname + '/src/assets/pages'
 const targetDir = __dirname + '/target/assets/pages';
 
+const navFile = "nav.json"
+const toParseFileSelector = '^(?!.*' + navFile + ').*(\.html|\.json)';
 // Regex for determining content <ins></ins>-Tags
-const insSelector = '<ins.*id=".+".*>.*</ins>';
+const insSelector = '<ins.*id="' + toParseFileSelector + '".*>.*<\/ins>';
 
 // Content map for parsing dice symbols
 const diceSymbolsMap = new Map([
@@ -73,7 +75,7 @@ const walk = function (dir, done) {
             if (!--pending) done(null, results);
           });
         } else {
-          if (file.endsWith('.html')) {
+          if (file.substring(srcDir.length + 1, file.length).match(new RegExp(toParseFileSelector, 'g'))) {
             results.set(file.substring(srcDir.length + 1, file.length), fs.readFileSync(file, {encoding: 'utf-8'}));
           }
           if (!--pending) done(null, results);
@@ -82,6 +84,22 @@ const walk = function (dir, done) {
     });
   });
 };
+
+const buildTemplates = function (content, done) {
+  let result = new Map([...content]);
+
+  new Map([...content].filter(([k,v]) => k.match(new RegExp('.*.json', 'g')))).forEach(function (value, key) {
+    const json = JSON.parse(value);
+    let template = new DOMParser().parseFromString(json.template, "text/html");
+    console.log(templateInsert);
+
+    Array.from(json.data).forEach(data => {
+
+    })
+  })
+
+  return done(null, content);
+}
 
 /**
  * Recursively parses a file
@@ -155,12 +173,12 @@ const insertPages = function (content, done) {
     console.log("Remaining content:", remainingContent.size, remaining);
     new Promise(resolve => setTimeout(resolve, 1000));
 
-    // Filter all remaining content with ins tags tat are already in result map
+    // Filter all remaining content with ins tags that are already in result map
     new Map([...remainingContent].filter(([key, value]) => {
       const insertPaths = value.match(new RegExp(insSelector, 'g')).map((ins) =>
         ins.match(/id="[^"]+"/).map((match) =>
           match.substring('id=\"'.length, match.length - 1))).flat();
-      
+
       return insertPaths.every(key => Array.from(result.keys()).includes(key));
     })).forEach(function (value, key) {
       value.match(new RegExp(insSelector, 'g')).forEach((ins) => {
@@ -200,14 +218,17 @@ const write = function (dir, content, done) {
 // --------------------------------------------------
 walk(srcDir, function (err, results) {
   if (err) throw err;
-  parse(results, function (err, results) {
+  buildTemplates(results, function (err, results) {
     if (err) throw err;
-    insertPages(results, function (err, results) {
+    parse(results, function (err, results) {
       if (err) throw err;
-      results.forEach((value, key) => {
-        write(key, value, function (err, done) {
-          if (err) throw err;
-        });
+      insertPages(results, function (err, results) {
+        if (err) throw err;
+        results.forEach((value, key) => {
+          write(key, value, function (err, done) {
+            if (err) throw err;
+          });
+        })
       })
     })
   })

@@ -1,0 +1,25 @@
+{
+  "template": "<div class=\"d-flex flex-wrap talents-list\"><template data-sortkey=\"name\"><div><h5>${{name}}</h5><p><b>Tier:&nbsp;</b>3<br/><b>Activation:&nbsp;</b>${{activation}}<br/><b>Ranked:&nbsp;</b>${{ranked}}<br data-noshowonnullkey=\"prereq\"/><i data-noshowonnullkey=\"prereq\"><b>Prerequisites:&nbsp;</b>${{prereq}}</i></p><p>${{desc}}</p></div></template></div>",
+  "data": [
+    {
+      "name": "Magic Tradition (Improved)",
+      "activation": "Passive",
+      "ranked": "No",
+      "prereq": "Magic Tradition talent",
+      "desc": "When you choose this talent, choose a non-combat and non-magical skill that has a characteristic that matches the characteristic you chose for the Magical Tradition talent. When you build your dice pool with your chosen characteristic, and choose an additional effect that adds your ranks in a magical skill to a resulting effect, you may use your ranks of your chosen skill instead, and if you do, you may add your ranks of your chosen characteristic."
+    },
+    {
+      "name": "Mentor Spirit",
+      "activation": "Passive",
+      "ranked": "No",
+      "prereq": "Awakened trait",
+      "desc": "TBD"
+    },
+    {
+      "name": "More Machine Than Man",
+      "activation": "Passive",
+      "ranked": "Yes",
+      "desc": "Increase your characters Essence loss threshold by 1 for each rank in More Machine Than Man."
+    }
+  ]
+}
