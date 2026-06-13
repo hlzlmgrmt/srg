@@ -4,7 +4,7 @@ import {WikiComponent} from './wiki.component';
 
 const routes: Routes = [
   {path: ':route', component: WikiComponent},
-  {path: '', component: WikiComponent}
+  {path: '**', redirectTo: '/wiki'}
 ];
 
 @NgModule({
