@@ -1,7 +1,7 @@
 {
-  "home": {
+  "index": {
     "display_name": "",
-    "resource": "home.html"
+    "resource": "index.html"
   },
   "about": "About",
   "character_creation": {
