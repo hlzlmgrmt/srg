@@ -16,42 +16,109 @@
 <p>When interacting with the Matrix, a hacker must keep two concepts in mind: <b>Personas</b> and <b>Interaction
   Modes</b></p>.
 
-<h2>Personas</h2>
+<h2 id=matrix/basics>Terms and Basics</h2>
+<h3 id=matrix/basics/personas>Personas</h3>
 <p>A persona is the embodiment of a person, inside of the Matrix. Even when a person does not have any devices on
   themselves, they still weirdly enough have a persona (probably due to nanites in the air or something). The persona
   provides the main access of a person to the Matrix, while their commlink (or any similar device) provides an interface
-  to direct that persona. Each persona has a <b>System Strain</b> threshold. If that threshold is reached or exceeded,
-  the persona is destroyed, and the personas’ owner loses access to the Matrix, being considered <i>offline</i>. While
-  offline, they are unable to interact with anything on the net, and even having difficulty using their own gear,
-  weapons and even bodytech. A destroyed persona has to be repaired, and simply switching out a commlink doesn’t work.
-</p>
+  to direct that persona.</p>
 <p>Usually, the location of a persona overlaps with the physical location of a person in Realspace. Therefore, when
   attempting to interact with another persona in Realspace, two people need to see each other. Deckers trying to hack
   another persona or any device in Realspace therefore must have a Line of Sight to their target, which is limited to
   Long range.</p>
 
-<h2>AR and VR</h2>
+<h4>Damaging and Repairing a Persona</h4>
+<p>Each persona has a <b>System Strain</b> threshold. If that threshold is reached or exceeded, the persona is
+  destroyed, and the personas’ owner loses access to the Matrix, being considered <i>offline</i>. Additionally, the
+  device that the personas' owner used to interface with the Matrix is damaged by one step.
+</p>
+<p>Repairing a damaged persona takes time and little bit of Mechanical knowledge. When you attempt to repair a Persona,
+  make a Mechanics skill check, with a difficulty according to the table below:</p>
+<div class="table-responsive">
+  <table class="table table-responsive">
+    <thead>
+    <tr>
+      <th>State of Persona</th>
+      <th>Difficulty</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>System Strain below or equal to half threshhold</td>
+      <td><span class="glyph difficulty" title="Difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td>System Strain above half threshhold</td>
+      <td><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span></td>
+    </tr>
+    <tr>
+      <td>System Strain at threshhold</td>
+      <td><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<p>Each <span class="glyph" title="Success">s</span> generated on the check repairs one point of System Strain. <span class="glyph" title="Triumph">t</span> generated on the check can be used to
+  repair the connected device by one step, without needing to spend money. <span class="glyph" title="Threat">h</span><span class="glyph" title="Threat">h</span> on the check can inflict an additional
+  System Strain on the device, <span class="glyph" title="Despair">d</span> can further damage the connected device, and <span class="glyph" title="Despair">d</span><span class="glyph" title="Despair">d</span> generated on the check can
+  outright destroy it irreparably.</p>
+
+<h4>Being Offline</h4>
+<p>Due to the general omnipresence of the Matrix, most modern devices cannot really handle any offline capacity. If a
+  device is able to function correctly without a Matrix connection is up to the Gamemasters discretion, but almost
+  always includes out-of-the-box firearms, vehicles, drones, most gear and almost certainly bodytech. If such a device
+  loses it's access to the net, one of two things happen. Either if becomes straight-up unusable, like a commlink, or it
+  becomes rather risky to use due to malfunctioning software; guns misfire, medkits violently hack into people, and cars
+  become uncontrollable without a physical steering wheel (yuck). If this happens, a person attempting to use such a
+  device upgrades all checks made with the offline device twice.</p>
+
+
+<h3 id=matrix/basics/ar_vr>AR and VR</h3>
 <p>Since everyone nowadays is equipped with technology that allows them to interact with the Matrix without touching any
   physical device, everyone is able to enter Virtual Reality at any time they want. When someone enters VR, they leave
   their unconscious bodies behind and become one with their personas, allowing someone in VR to move their virtual
   bodies around independently from their physical bodies, as long as they are aware of their digital surroundings.
   Switching interaction modes always takes a maneuver.</p>
 
-<h2>Hacking Basics</h2>
-<p>A decker uses the Hacking skill to hack a device. Hacking counts as a combat skill, and encompasses all actions that
-  utilize methods of breaking and subverting established Matrix security protocols. It differentiates itself from the
-  Computers skill, which mostly encapsulates more legal and generalized ways of using the Matrix, like information
-  gathering or writing programs.</p>
-<p>Deckers usually employ cyberdecks, but can use commlinks to archive similar results, albeit with small setbacks;
-  Hacking skill checks using a commlink add <span class="glyph setback" title="Setback">j</span> to their dice pool.</p>
-<p>When hacking a target, two things are important: The relative distance between a hackers persona and a target, which
-  determines the base difficulty of the Hacking skill check equal to normal combat checks, and the targets Firewall
-  rating, which serves as Soak and Defense against hacking attempts.</p>
+<h4>Advantages of VR</h4>
 
-<h3 id=matrix/tables/table-hacking-difficulty-setback></h3>
+<h4>Risks of VR</h4>
+<p>Using VR comes with a few risks. The first and most immediate risk is that a decker entering VR leave their physical
+  bodies behind, leaving them unprotected and vulnerable. This can range from a minor inconvenience when they do so from
+  the security of your own home, to borderline suicidal if you do this while in an active firefight. In practice, this
+  means that all attacks against your physical body are upgraded twice. Additionally, all effects that effect an area,
+  such as the <i>Blast</i> quality, automatically hit you once, even if the <span class="glyph" title="Advantage">a</span> required to trigger the effect are not
+  generated. Its best to have a strong back or strong walls to rely to.</p>
+<p>The second risk of using VR is Biofeedback. If a persona of a person in VR suffers system strain from any source,
+  they suffer an equivalent amount of wounds as well. If a persona is destroyed by the resulting System Strain, the
+  decker suffers a Jackout.</p>
+<p>Which leads to the third risk: Jackouts. While most devices can be interacted with from afar, some targets,
+  specifically hosts, require the decker to physically wire their brains to a device connected to a to the target. When
+  this connection is involuntarily cut for whatever reason, the decker immediately and violently snaps back to the real
+  world, suffers eight system strain and wounds, which cannot be reduced by their firewall or soak, and receives a
+  Critical Injury, adding 50 to the result of the roll. If this doesn't incapacitate them, they are immobilized and
+  staggered until the end of the encounter (or at least the next two minutes).</p>
+
+<h3 id=matrix/basics/grids>Grids</h3>
+
+<h3 id=matrix/basics/hosts>Hosts</h3>
+
+
+
+<h2 id=matrix/using>(Ab)using the Matrix</h2>
+<p>People interact with the Matrix through their personas, which they control using a device. While a true decker
+  prefers to use a cyberdeck, the unfortunate truth (or fortunate, whoever it is who you are asking) is, that a commlink
+  is all it takes to wreak havoc in the Matrix; cyberdecks are just better at that.</p>
+<p>Generally speaking, interacting with the Matrix uses one of two skills: Computers and Hacking. Computers is used to
+  use the Matrix in a safe and legal way: Writing to a blog, searching for information online, writing software and
+  similar. Hacking on the other end is used to <i>break stuff</i>. Using it counts as the digital equivalent of shooting
+  a gun, and encompasses various methods of breaking and subverting established Matrix security protocols. It's also
+  used by the <i>Good Guys With A Deck</i> to protect systems against adversarial deckers.</p>
+
+<h3>Matrix Actions</h3>
+<h4 id=matrix/tables/table-hacking-difficulty-setback>Difficulty of Matrix Actions</h4>
 <div class="table-responsive">
   <table class="table table-hover">
-    <caption>Difficulty of Hacking</caption>
     <thead>
     <tr>
       <th>Situation</th>
@@ -94,86 +161,243 @@
   </table>
 </div>
 
-<h3 id=matrix/tables/table-hacking-actions-maneuvers></h3>
+<p>When hacking a target, two things are important: The relative distance between a hackers persona and a target, which
+  determines the base difficulty of the Hacking skill check equal to normal combat checks, and the targets Firewall
+  rating, which serves as Soak and Defense against hacking attempts.</p>
+<h3 id=matrix/tables/table-hacking-spending-advantages-triumphs></h3>
 <div class="table-responsive">
   <table class="table table-hover">
-    <caption>Maneuvers in the Matrix</caption>
+    <caption>Spending <span class="glyph" title="Advantage">a</span> / <span class="glyph" title="Triumph">t</span> on Matrix skill checks</caption>
+    <thead>
+    <tr>
+      <th>Cost</th>
+      <th>Effect</th>
+    </tr>
+    </thead>
     <tbody>
     <tr>
-      <th>Maneuvers</th>
+      <th><span class="glyph" title="Advantage">a</span> / <span class="glyph" title="Triumph">t</span></th>
+      <td></td>
     </tr>
     <tr>
-      <td><b>Switch Interface Mode: </b>Your character changes from AR to VR or vice versa.</td>
-    </tr>
-    <tr>
-      <td><b>Slot/Unslot/Change Cyberprogram: </b>You can slot, change or unslot a cyberprogram to or from your
-        Cyberdeck or RCC.
+      <th><span class="glyph" title="Advantage">a</span><span class="glyph" title="Advantage">a</span> / <span class="glyph" title="Triumph">t</span></th>
+      <td>
+        <p>
+          <b>Damage Target: </b>Your target gets damaged by one step (this can be taken multiple times, spending
+            <span class="glyph" title="Advantage">a</span><span class="glyph" title="Advantage">a</span> each time).
+        </p>
       </td>
     </tr>
     <tr>
-      <td><b>Mark: </b>Until the end of the round, your next Hacking skill check adds <span class="glyph boost" title="Boost">j</span>.
-        You can use this maneuver multiple times per round, adding <span class="glyph boost" title="Boost">j</span> each time.
+      <th><span class="glyph" title="Advantage">a</span><span class="glyph" title="Advantage">a</span><span class="glyph" title="Advantage">a</span> / <span class="glyph" title="Triumph">t</span></th>
+      <td>
+        <p>
+          <b>Find Location: </b>You are immediately aware of your targets current position in realspace.
+        </p>
       </td>
     </tr>
     <tr>
-      <td><b>Issue Command: </b>You issue command to a drone, vehicle or program that you control. At the Gamemasters
-        discretion, more complex commands may require a separate Operating check. If you hijack a device for more than
-        one turn.
+      <th><span class="glyph" title="Advantage">a</span><span class="glyph" title="Advantage">a</span><span class="glyph" title="Advantage">a</span><span class="glyph" title="Advantage">a</span> / <span class="glyph" title="Triumph">t</span></th>
+      <td></td>
+    </tr>
+    <tr>
+      <th><span class="glyph" title="Triumph">t</span></th>
+      <td></td>
+    </tr>
+    <tr>
+      <th><span class="glyph" title="Triumph">t</span><span class="glyph" title="Triumph">t</span></th>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<h3 id=matrix/tables/table-hacking-spending-threats-despair></h3>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <caption>Spending <span class="glyph" title="Threat">h</span> / <span class="glyph" title="Despair">d</span> on Matrix skill checks</caption>
+    <thead>
+    <tr>
+      <th>Cost</th>
+      <th>Effect</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th><span class="glyph" title="Threat">h</span> / <span class="glyph" title="Despair">d</span></th>
+      <td></td>
+    </tr>
+    <tr>
+      <th><span class="glyph" title="Threat">h</span><span class="glyph" title="Threat">h</span> / <span class="glyph" title="Despair">d</span></th>
+      <td><b>Rebound: </b>You suffer one point of System Strain (this can be taken multiple times, spending <span class="glyph" title="Threat">h</span><span class="glyph" title="Threat">h</span> each
+        time).
       </td>
     </tr>
     <tr>
-      <td><b>Zoom To Target (only in VR): </b>Your character moves their persona to a target within Long range, reducing
-        the range between them to Short range.
+      <th><span class="glyph" title="Threat">h</span><span class="glyph" title="Threat">h</span><span class="glyph" title="Threat">h</span> / <span class="glyph" title="Despair">d</span></th>
+      <td></td>
+    </tr>
+    <tr>
+      <th><span class="glyph" title="Threat">h</span><span class="glyph" title="Threat">h</span><span class="glyph" title="Threat">h</span><span class="glyph" title="Threat">h</span> / <span class="glyph" title="Despair">d</span></th>
+      <td></td>
+    </tr>
+    <tr>
+      <th><span class="glyph" title="Despair">d</span></th>
+      <td>
+        <b>Alert: </b>Regardless of any precautions, you immediately get spotted by local Matrix security, and they are
+        immediately aware of your current physical location.
       </td>
     </tr>
     <tr>
-      <th>Actions</th>
-    </tr>
-    <tr>
-      <td><b>Data Spike: </b>Your character attacks a persona, icon or device with malicious code. On a successful
-        Hacking combat check, the target suffers an amount of System Strain equal to your character's Intellect rating,
-        plus any uncancelled <span class="glyph" title="Success">s</span>. If the target does not nave a System Strain monitor, it
-        instead gets damaged by one step, plus an additional step for every uncancelled <span class="glyph" title="Success">s</span><span class="glyph" title="Success">s</span>,
-        which can potentially break a device in one go.
-      </td>
-    </tr>
-    <tr>
-      <td><b>Take Over: </b>Your character hijacks a device. On a success, until the end the turn, you can use
-        the device as if you were its' owner, plus an additional turn for each uncanceled <span class="glyph" title="Success">s</span>.
-        As part of the hack, you can issue a simple command; your target acts immediately after your turn.
-      </td>
-    </tr>
-    <tr>
-      <td><b>Jam Device: </b>You cut off all direct communication from a device or persona. On a success, until the end
-        of the turn, the target cannot send or receive any messages through the Matrix, plus an additional turn for each
-        <span class="glyph" title="Success">s</span> generated on the hack.
-      </td>
-    </tr>
-    <tr>
-      <td><b>Trace: </b>You attempt to find hidden icons and personal. Make a Computers check. On a success, you find
-        and trace a single icon or persona you were looking for, or the most dangerous or interesting icon or persona in
-        the designated area.
-      </td>
-    </tr>
-    <tr>
-      <td><b>Hide: </b>Your character tries to hide icons or their persona from Matrix perception. Make an opposed
-        Hacking vs. Computers skill check. On a success, your adversary loses track of your persona or your icons, and
-        must spend an opposed Trace action against your Hacking skill to find you again. When you use any Hacking action
-        while hiding, an actively searching adversary immediately spots you.
+      <th><span class="glyph" title="Despair">d</span><span class="glyph" title="Despair">d</span></th>
+      <td><b>Divine Intervention: </b>Additionally to the effects of <i>Alert</i>, your matrix interface device
+        gets destroyed, and you suffer system strain up to your system strain threshold. Not only is local Matrix
+        security alerted by you, but GOD has taken an interest in you as well.
       </td>
     </tr>
     </tbody>
   </table>
 </div>
 
-<h3 id=matrix/tables/table-hacking-spending-advantages-triumphs></h3>
-<p>table works!</p>
 
+<h4>List of Matrix Maneuvers</h4>
+<p>Like normal Maneuvers in meatspace, these maneuvers typically do not require dice rolls to use.</p>
+<h5>Issue Command</h5>
+<p>You issue a simple command to a device you own. At the Gamemasters discretion, more complex commands - i.e. those
+  that require a skill check - may require an Operating skill check.</p>
 
-<h2 id=matrix/hosts>Hosts</h2>
-<p>hosts works!</p>
+<h5>Mark Target</h5>
+<p>You place a mark on your target, creating a backdoor in your targets' security that makes further Hacking attempts
+  easier. Until the end of the round, your next Hacking combat check adds <span class="glyph boost" title="Boost">j</span>. You can use this maneuver multiple times
+  per round, adding <span class="glyph boost" title="Boost">j</span> each time.</p>
+
+<h5>Slot / Unslot / Change Cyberprogram</h5>
+<p>You slot, unslot, or change a cyberprogram from or to your commlink, cyberdeck or RCC.</p>
+
+<h5>Switch Interface Mode</h5>
+<p>You leave your body behind to fully dive into Virtual Reality, or you return to your body. Your character switches
+  from AR to VR or vice versa.</p>
+
+<h5>Zoom Into Target</h5>
+<p>While in VR, as a single maneuver, regardless of range, you can move into Short range to a target within Long range
+  of your physical location.</p>
+
+<h4>List of Matrix Actions</h4>
+<p>[...]</p>
+<p>All hacking actions outside of these are usually the domain of either talents or cyberprograms. A decker wanting to
+  do something specific outside of these without such means (such as Encrypting / Descrypting data, setting data bombs,
+  link-locking a target etc.) suffers the same penalties as not having the right tool.</p>
+
+<h5>Access System</h5>
+<p><b>Roll: </b>Hacking vs. var.</p>
+<p class="mb-1">
+  <b>System: </b>You attempt to gain access to a system that is actively protected against unauthorized access, like a
+  host or another persons device. Make a Hacking skill check against a target within Short range, where the difficulty
+  is set by the Gamemaster based on the system in question.
+</p>
+<div class="table-responsive mt-1">
+  <table class="table table-hover">
+    <caption>Example Systems And Difficulties</caption>
+    <thead>
+    <tr>
+      <th>Example System</th>
+      <th>Difficulty</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>Traffic cams, SamSamurai action figure, your grandparent's commlink</td>
+      <td>Simple (-)</td>
+    </tr>
+    <tr>
+      <td>Personal commlink with default settings, police security cameras, Seattle sewer system lock</td>
+      <td>Easy (<span class="glyph difficulty" title="Difficulty">k</span>)</td>
+    </tr>
+    <tr>
+      <td>Average corporate drone commlink, middle-class maglock, local corporate host, delivery drone control system,
+        StufferShack customer complaints agent
+      </td>
+      <td>Average (<span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span>)</td>
+    </tr>
+    <tr>
+      <td>Private security drone control, average megacorporate security host</td>
+      <td>Hard (<span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span>)</td>
+    </tr>
+    <tr>
+      <td>High-security megacorp hosts, commlinks of government workers, mil-tech</td>
+      <td>Daunting (<span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span>)</td>
+    </tr>
+    <tr>
+      <td>AAA-Corp black-site hosts</td>
+      <td>Formidable (<span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span>)</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<h5>Edit File</h5>
+<p><b>Roll: </b>Computers vs. var.</p>
+<p>
+  <b>System: </b>
+</p>
+
+<h5>Data Spike</h5>
+<p><b>Roll: </b>Hacking combat check</p>
+<p>
+  <b>System: </b>You attack a target persona, icon or device within Long range with malicious code. Make a Hacking
+  combat check against the target. On a success, the target suffers an amount of System Strain equal to your character's
+  Intellect rating, plus any uncancelled <span class="glyph" title="Success">s</span>. If the target does not have a System Strain monitor, it instead gets
+  damaged by one step, plus an additional step for every uncancelled <span class="glyph" title="Success">s</span><span class="glyph" title="Success">s</span>, which can potentially break a device in one
+  go.<br/>
+  If a Data Spike targets a vehicle, drone, or causes Biofeedback, <span class="glyph" title="Triumph">t</span> generated on the check can be used to inflict a
+  Critical Injury on the target.
+</p>
+
+<h5>Take Over</h5>
+<p><b>Roll: </b>Hacking combat check</p>
+<p>
+  <b>System: </b>You temporarily hijack a device. Make a Hacking combat check. On a success, you may use the device as
+  if you were it's owner until the beginning of your next turn, plus an additional turn for each uncancelled <span class="glyph" title="Success">s</span><span class="glyph" title="Success">s</span>. If
+  the target device is a vehicle or drone, it acts immediately after you end your turn. As part of the Take Over matrix
+  action, you can issue a simple command as if you were using the Issue Command matrix maneuver.
+</p>
+
+<h5>Jam</h5>
+<p><b>Roll: </b>Hacking combat check</p>
+<p>
+  <b>System: </b>You overload a target persona with overwhelming background noise, making attempts at communication
+  harder. Make a Hacking combat check against the target. On a success, until the beginning of your next turn plus one
+  additional turn for each uncancelled <span class="glyph" title="Success">s</span><span class="glyph" title="Success">s</span>, the target cannot send or receive any messages through the Matrix, unless
+  the succeed a Hard (<span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span>) Computers check first. <span class="glyph" title="Advantage">a</span><span class="glyph" title="Advantage">a</span> generated on the check may be spent to target an additional
+  device within range.
+</p>
+
+<h5>Hide</h5>
+<p><b>Roll: </b>Opposed Hacking vs. Computers</p>
+<p>
+  <b>System: </b>You try to hide icons or their persona from Matrix perception. Make an opposed Hacking skill check
+  against an adversaries Computers skill. On a success, all adversaries lose track of your persona and your icons, and
+  must take an Opposed Seek matrix action to find you again.
+</p>
+
+<h5>Seek</h5>
+<p><b>Roll: </b>Easy (<span class="glyph difficulty" title="Difficulty">k</span>) Computers check or Opposed Computers vs. Hacking</p>
+<p>
+  <b>System: </b>You attempt to search for hidden icons and personas. Make a Computers check. On a success, you find and
+  trace a single icon or persona you were looking for, or the most dangerous or interesting icon or persona in the
+  designated area. <span class="glyph" title="Advantage">a</span><span class="glyph" title="Advantage">a</span> generated on the check may be spent to find an additional icon or persona within range. If the
+  targeted icon or persona is actively hiding from you, the check becomes an opposed skill check against the targets
+  Hacking skill.
+</p>
 
 <h2 id=matrix/technomancers>Technomancers</h2>
+Technomancer specialities:
+- Sourcerors: Use Complex Forms to get better at using Hacking actions (and the skill), replicate the effects of Cyberprograms and Cyberdeck modifications
+- Cyberadept: Mitigate the negative effects of bodytech on your Resonance, replicate the effects of certain cybertech & cybernetic modifications, overcharge cybertech & tech weapons
+- Technoshaman: Use Social skills instead of technical skills when interacting with machines
+- Living processor: Know everything
+-
+
 <p>technomancers works!</p>
 
 <h2>Complex Forms</h2>
@@ -186,20 +410,72 @@
     <h5>Open Sesame</h5>
     <p>
       <b>Tier: </b>1<br/>
-      <b>Activation: </b>Passive<br/>
-      <b>Ranked: </b>No
+      <b>Activation: </b>Passive
     </p>
-    <p>You may suffer 2 strain and commit <span class="glyph proficiency" title="Proficiency">l</span>; until the end of the encounter or
-      scene, you may use the Charm skill instead of Hacking when your character attempts to control devices such as
-      drones, weapons or </p>
+    <p>You can use the Charm skill when using the Take Over hacking action. Additionally, you can use the Tap into
+      Resonance maneuver to add <span class="glyph power" title="Power">l</span> to such Charm checks.</p>
+  </div>
+  <div>
+    <h5>Skinlink</h5>
+    <p>
+      <b>Tier: </b>1<br/>
+      <b>Activation: </b>Passive
+    </p>
+    <p>As a maneuver, you can touch a device you are Engaged with to upgrade the ability of your next Hacking skill
+      check once. If the device is held by an adversary, or is able to defend itself against being touched,
+      you make a Brawl combat check against the target as part of the Skinlink maneuver.
+    </p>
+  </div>
+  <div>
+    <h5>Resonance Spike</h5>
+    <p>
+      <b>Tier: </b>1<br/>
+      <b>Activation: </b>Active (Maneuver)
+    </p>
+    <p>Commit <span class="glyph proficiency" title="Proficiency">l</span> from your Resonance dice pool; until the end of the encounter, you can use your
+      Willpower characteristic instead of Intellect for determining the dice pool and base damage of your Data
+      Spike matrix actions, and if you do, you can add <span class="glyph power" title="Power">l</span> to those rolls.</p>
+  </div>
+  <div>
+    <h5>Resonatic Cybercompatibility</h5>
+    <p>
+      <b>Tier: </b>1<br/>
+      <b>Activation: </b>Active (Maneuver)
+    </p>
+    <p>You can commit an amount of <span class="glyph proficiency" title="Proficiency">l</span> up to your Willpower from your Resonance dice pool; you may choose an amount of
+      bodytech whose essence loss is lower or equal to the amount of <span class="glyph proficiency" title="Proficiency">l</span> committed, and ignore all penalties towards
+      your Resonance skill checks due to essence loss caused by the chosen implants.
+    </p>
   </div>
 </div>
 
 <h3 id=matrix/technomancers/complex_forms/tier_2>Tier II</h3>
-<p>tier ii works!</p>
+<div class="d-flex flex-wrap talents-list">
+  <div>
+    <h5>Smartlink</h5>
+    <p>
+      <b>Tier: </b>2<br/>
+      <b>Activation: </b>Active (Maneuver)
+    </p>
+    <p>Suffer two strain and commit <span class="glyph proficiency" title="Proficiency">l</span> from your Resonance dice pool; until the end of the encounter, you
+      gain the base benefits of the Smartlink bodytech implant.</p>
+  </div>
+</div>
 
 <h3 id=matrix/technomancers/complex_forms/tier_3>Tier III</h3>
-<p>tier iii works!</p>
+<div class="d-flex flex-wrap talents-list">
+  <div>
+    <h5>Resonatic Cybercompatibility (Improved)</h5>
+    <p>
+      <b>Tier: </b>3<br/>
+      <b>Activation: </b>Passive<br/>
+      <i><b>Prerequisites: </b>Resonatic Cybercompatibility complex form</i>
+    </p>
+    <p>You can ignore up to two additional points of Essence loss due to bodytech when using the Resonatic
+      Cybercompatibility complex form.
+    </p>
+  </div>
+</div>
 
 <h3 id=matrix/technomancers/complex_forms/tier_4>Tier IV</h3>
 <p>tier iv works!</p>
