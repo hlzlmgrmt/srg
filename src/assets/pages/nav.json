@@ -16,8 +16,7 @@
           "elves": "Elves",
           "orks": "Orks",
           "dwarfs": "Dwarfs",
-          "trolls": "Trolls",
-          "pixies": "Pixies"
+          "trolls": "Trolls"
         }
       },
       "archetype": {
@@ -175,16 +174,17 @@
               "foci": "Foci"
             }
           },
-          "hacking": {
-            "display_name": "Hacking Gear",
+          "matrix": {
+            "display_name": "Matrix Gear",
             "children": {
               "cyberdecks": "Cyberdecks",
               "cyberdeck_attachments": "Cyberdeck Modifications",
               "programs": {
                 "display_name": "Cyberprograms",
                 "children": {
-                  "legal": "Legal Cyberprograms",
-                  "hacking": "Hacking Software"
+                  "common": "Common Cyberprograms",
+                  "hacking": "Hacking Software",
+                  "pilot": "Pilots"
                 }
               }
             }
@@ -330,8 +330,16 @@
   "matrix": {
     "display_name": "The Matrix",
     "children": {
-      "hosts": "Hosts",
-      "programs": "Cyberprograms",
+      "basics": {
+        "display_name": "Terms and Basics",
+        "children": {
+          "personas": "Personas",
+          "ar_vr": "AR and VR",
+          "grids": "Grids",
+          "hosts": "Hosts"
+        }
+      },
+      "using": "(Ab)using the Matrix",
       "technomancers": "Technomancers"
     }
   },

@@ -72,7 +72,6 @@ export class WikiComponent {
    */
   protected selectedFragment = signal<string | undefined>(undefined);
 
-  protected title = signal<string>('');
   protected content = signal<SafeHtml | undefined>(undefined);
 
   readonly contentLoading = signal<boolean>(false);
