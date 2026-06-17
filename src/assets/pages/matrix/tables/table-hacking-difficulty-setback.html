@@ -1,42 +1,123 @@
+<p>All matrix checks fall into one of two categories: Matrix combat checks, and Matrix action checks. Matrix combat
+  checks are made when you want to apply brute force against your target. They are come out fast, and essentially throw
+  your malicious code at your adversaries, and are usually best used when drek has already hit the wall. Like the name
+  implies, they are treated as combat checks with a range of Long, and their difficulty is usually equal to normal
+  combat checks, with a targets Firewall rating acting as both Soak and Defense against suffered system strain and
+  hits.</p>
+<p>Matrix actions encompass all other types of checks. They are usually much more stealthy that Matrix combat checks,
+  but usually require you or your persona to be within Short range of your target. When you make a Matrix action against
+  a target - usually because you want to access a device, host or files from within said device or host without proper
+  authorization - you make an Easy ([[d]]) Hacking or Computers skill check, and increase the difficulty by one for each
+  point of Firewall the target has (you do not add [[s]] per point of Firewall like you would with Matrix combat
+  checks).</p>
+<p>The Gamemaster can increase or decrease the difficulty of the check, or add additional [[b]] or [[s]] based on
+  environmental details; the total of these effects are too numerous to list here, but you and your Gamemaster can use
+  the table "Difficulty of Matrix skill checks" to get a rough overview of example difficulties and modifiers.</p>
+
 <div class="table-responsive">
   <table class="table table-hover">
+    <caption>Difficulty of Matrix skill checks</caption>
     <thead>
     <tr>
-      <th>Situation</th>
-      <th>Difficulty</th>
+      <th>Example</th>
+      <th>...within range of your persona</th>
+      <th>...with a Matrix combat check</th>
+      <th>...with a Matrix action check</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>Hacker is within Engaged range to a target in AR</td>
-      <td>[[dd]]</td>
+      <th colspan="4">Base Difficulties</th>
     </tr>
     <tr>
-      <td>Hacker is within Short range to a target in AR</td>
-      <td>[[d]]</td>
-    </tr>
-    <tr>
-      <td>Hacker is within Medium range to a target in AR</td>
-      <td>[[dd]]</td>
-    </tr>
-    <tr>
-      <td>Hacker is within Long range to a target in AR</td>
-      <td>[[ddd]]</td>
-    </tr>
-    <tr>
-      <td>Hacker tries to Hack through dense walls or thick foliage in VR</td>
-      <td>+[[s]]</td>
-    </tr>
-    <tr>
-      <td>Hacker tries to Hack through solid metal walls, entre buildings or into devices within a lake in VR</td>
-      <td>+[[ss]]</td>
-    </tr>
-
-    <tr>
-      <td>Hacker tries to Hack an icon physically protected from Matrix traffic, such as by Matrix-resistant paint,
-        farage cages, or large bodies of salt water.
+      <td>
+        Cheap traffic cams, SamSamurai action figure, your grandparent's commlink<br/>
+        (Firewall 0)
       </td>
+      <td>Short</td>
+      <td>Easy ([[d]]) + [[b]]</td>
+      <td>Simple (-)</td>
+    </tr>
+    <tr>
+      <td>
+        Personal commlink with default settings, StufferShack security cams, Seattle sewer system lock<br/>
+        <= your devices start here<br/>
+        (Firewall 0)
+      </td>
+      <td>Short</td>
+      <td>Easy ([[d]])</td>
+      <td>Easy ([[d]])</td>
+    </tr>
+    <tr>
+      <td>
+        Average corporate drone commlink, middle-class maglock, local corporate host, delivery drone control system,
+        StufferShack customer complaints agent<br/>
+        (Firewall 1)
+      </td>
+      <td>Short</td>
+      <td>Easy ([[d]]) + [[s]]</td>
+      <td>Average ([[dd]])</td>
+    </tr>
+    <tr>
+      <td>
+        Private security drone control, average megacorporate host<br/>
+        (Firewall 2)
+      </td>
+      <td>Short</td>
+      <td>Easy ([[d]]) + [[ss]]</td>
+      <td>Hard ([[ddd]])</td>
+    </tr>
+    <tr>
+      <td>
+        High-security megacorp hosts, commlinks of government workers, mil-tech<br/>
+        (Firewall 3)
+      </td>
+      <td>Short</td>
+      <td>Easy ([[d]]) + [[sss]]</td>
+      <td>Daunting ([[dddd]])</td>
+    </tr>
+    <tr>
+      <td>
+        AAA-Corp black-site hosts<br/>
+        (Firewall 4)
+      </td>
+      <td>Short</td>
+      <td>Easy ([[d]]) + [[ssss]]</td>
+      <td>Formidable ([[ddddd]])</td>
+    </tr>
+    <tr>
+      <th colspan="4">Difficulty Modifiers</th>
+    </tr>
+    <tr>
+      <td rowspan="3" class="align-middle">Alternate range bands between your persona and your target</td>
+      <td>Each range band beyond Short range</td>
+      <td>+[[d]]</td>
+      <td rowspan="2" class="align-middle">No check possible</td>
+    </tr>
+    <tr>
+      <td>Extreme ranges and beyond</td>
       <td>No check possible</td>
+    </tr>
+    <tr>
+      <td>Engaged</td>
+      <td>+[[d]]</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td colspan="2">Dense walls, thick foliage or huge crowds between your physical body and your target</td>
+      <td colspan="2">+[[s]]</td>
+    </tr>
+    <tr>
+      <td colspan="2">Thick, solid metal walls, entire buildings, or large bodies of water between your physical body
+        and your target
+      </td>
+      <td colspan="2">+[[ss]]</td>
+    </tr>
+    <tr>
+      <td colspan="2">Target is physically protected from any Matrix traffic (e.g. by offline storage, Matrix-repelling
+        paint, farage cages or large bodies of salt water)
+      </td>
+      <td colspan="2">No check possible</td>
     </tr>
     </tbody>
   </table>

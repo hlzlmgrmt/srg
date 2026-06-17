@@ -39,6 +39,7 @@ interface NavigatableRoute {
 })
 export class WikiComponent {
   @ViewChild('navigation') navigation!: ElementRef<HTMLDivElement>;
+  @ViewChild('navigationMask') navigationMask!: ElementRef<HTMLDivElement>;
   @ViewChild('navigationToggler') toggler!: ElementRef<HTMLButtonElement>;
   @ViewChild('main') main!: ElementRef<HTMLDivElement>;
   @ViewChild('contentWrapper') contentWrapper!: ElementRef<HTMLDivElement>;
@@ -216,6 +217,8 @@ export class WikiComponent {
     this.navigation.nativeElement.classList.toggle('d-none');
     this.navigation.nativeElement.classList.toggle('d-flex');
     this.toggler.nativeElement.classList.toggle('d-block');
+    this.navigationMask.nativeElement.classList.toggle('d-none');
+    this.navigationMask.nativeElement.classList.toggle('d-block');
     this.main.nativeElement.classList.toggle('disabled');
   }
 

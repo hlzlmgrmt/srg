@@ -30,18 +30,20 @@
     </div>
     <div class="d-flex flex-column">
       <a href="javascript:void(0)" (click)="openInNewWindow('character-sheet')">Character Sheet</a>
-      <a download="srg_cs.pdf" href="assets/resources/srg_cs.pdf">Download Character Sheet</a>
       <!-- TODO TBD -->
       <!--a href="javascript:void(0)" (click)="openInNewWindow('gm-tools')">Gamemasters' Tools</a-->
     </div>
   </div>
 </div>
-<button #navigationToggler class="d-block d-sm-none p-4 navigation-toggler text-start"
+<button #navigationToggler class="d-block d-sm-none border navigation-toggler text-start"
         (click)="toggleNavbar()">
   <span>&#8801;</span>
 </button>
 
 <div class="loading-spinner" [hidden]="!contentLoading()"></div>
+<div #navigationMask class="d-none position-fixed h-100 w-100 z-2 navigation-mask"
+     (click)="!navigation.classList.contains('d-none') ? toggleNavbar() : undefined">
+</div>
 
 <div #main class="d-flex flex-column align-items-center main p-4"
      (click)="!navigation.classList.contains('d-none') ? toggleNavbar() : undefined">
