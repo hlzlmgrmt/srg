@@ -1,4 +1,4 @@
-<p>The Matrix is the term of the worldwise computer network of the Sixth World. It was created after the First Matrix
+<p>The Matrix is the term of the worldwide computer network of the Sixth World. It was created after the First Matrix
   Crash of 2029 and rebuilt as the Wireless Matrix after the Crash 2.0 of 2064. The Matrix consists of countless data
   streams and icons and is accessed either indirectly via Augmented Reality, overlaying and enhancing elements of the
   real world, or through Virtual Reality, where a user can project their minds directly into a physical manifestation of
@@ -7,35 +7,38 @@
   Virtual Reality. Most people interface with the net through their commlinks; small, handheld devices that communicate
   the will of their users with the underlying foundation. Special glasses, gloves and earbuds are cheap and let people
   interact with digital objects in real space, but are steadily replaced by trode networks and almost non-invasive
-  DNIs; these devices directly read the brainwaves of their users, and can directly interface the users brain to
+  datajacks; these devices directly read the brainwaves of their users, and can directly interface the users brain to
   the Matrix. Most people do not even touch their devices these days, only interacting with the Matrix through pop-up
   displays, voice interfaces, and thoughts.</p>
 <p>Since everyone does everything on the net nowadays, deckers are widely feared for their ability to manipulate the
-  data streams of the net to their advantage. Despite the name, deckers do not necessarily need to employ cyberdecks; a
+  data streams to their advantage. Despite the name, deckers do not necessarily need to employ cyberdecks; a
   run-off-the-mill commlink often does the job well enough, and is not nearly as expensive as a professional deck.</p>
-<p>When interacting with the Matrix, a hacker must keep two concepts in mind: <b>Personas</b> and <b>Interaction
-  Modes</b></p>.
 
 <h2 id=matrix/basics>Terms and Basics</h2>
+<p>The following encompasses a few terms that are important to know when interacting with the Matrix. While the detailed
+  systems about <i>how</i> things work might be more interesting for runners interacting with the Matrix on an everyday
+  basis, such as journalists, riggers, and of course deckers, it doesn't hurt a magician to know how their fancy pocket
+  computer works or why it hurts when they get slammed by a digital battleaxe.</p>
 <h3 id=matrix/basics/personas>Personas</h3>
 <p>A persona is the embodiment of a person, inside of the Matrix. Even when a person does not have any devices on
   themselves, they still weirdly enough have a persona (probably due to nanites in the air or something). The persona
   provides the main access of a person to the Matrix, while their commlink (or any similar device) provides an interface
   to direct that persona.</p>
-<p>Usually, the location of a persona overlaps with the physical location of a person in Realspace. Therefore, when
-  attempting to interact with another persona in Realspace, two people need to see each other. Deckers trying to hack
-  another persona or any device in Realspace therefore must have a Line of Sight to their target, which is limited to
-  Long range.</p>
+<p>Usually, the location of a persona overlaps with the physical location of a person in realspace. Therefore, when
+  attempting to interact with another persona in realspace, two people need to be able to see each other. Deckers trying
+  to hack another persona or any device in realspace (while in AR) therefore must have a line of sight to their target,
+  which is limited to Long range.</p>
 
 <h4>Damaging and Repairing a Persona</h4>
-<p>Each persona has a <b>System Strain</b> threshold. If that threshold is reached or exceeded, the persona is
+<p>Each persona has a <b>System Strain</b> threshold. System Strain can can be affliced by malicious code, unfortunate
+  timings, or general strain on the local network. If the System Strain threshold is reached or exceeded, the persona is
   destroyed, and the personas’ owner loses access to the Matrix, being considered <i>offline</i>. Additionally, the
-  device that the personas' owner used to interface with the Matrix is damaged by one step.
-</p>
+  device that the personas' owner used to interface with the Matrix is damaged by one step.</p>
 <p>Repairing a damaged persona takes time and little bit of Mechanical knowledge. When you attempt to repair a Persona,
   make a Mechanics skill check, with a difficulty according to the table below:</p>
 <div class="table-responsive">
   <table class="table table-responsive">
+    <caption>Repairing System Strain in a persona</caption>
     <thead>
     <tr>
       <th>State of Persona</th>
@@ -70,8 +73,7 @@
   loses it's access to the net, one of two things happen. Either if becomes straight-up unusable, like a commlink, or it
   becomes rather risky to use due to malfunctioning software; guns misfire, medkits violently hack into people, and cars
   become uncontrollable without a physical steering wheel (yuck). If this happens, a person attempting to use such a
-  device upgrades all checks made with the offline device twice.</p>
-
+  device upgrades the difficulty of all checks made with the offline device twice.</p>
 
 <h3 id=matrix/basics/ar_vr>AR and VR</h3>
 <p>Since everyone nowadays is equipped with technology that allows them to interact with the Matrix without touching any
@@ -109,61 +111,141 @@
 <p>People interact with the Matrix through their personas, which they control using a device. While a true decker
   prefers to use a cyberdeck, the unfortunate truth (or fortunate, whoever it is who you are asking) is, that a commlink
   is all it takes to wreak havoc in the Matrix; cyberdecks are just better at that.</p>
-<p>Generally speaking, interacting with the Matrix uses one of two skills: Computers and Hacking. Computers is used to
+<p>Generally speaking, interacting with the Matrix uses one of two skills: Computers or Hacking. Computers is used to
   use the Matrix in a safe and legal way: Writing to a blog, searching for information online, writing software and
   similar. Hacking on the other end is used to <i>break stuff</i>. Using it counts as the digital equivalent of shooting
   a gun, and encompasses various methods of breaking and subverting established Matrix security protocols. It's also
-  used by the <i>Good Guys With A Deck</i> to protect systems against adversarial deckers.</p>
+  used by the <i>Good Guys With A Deck</i> to protect systems against hostile deckers.</p>
 
 <h3>Matrix Actions</h3>
+<p></p>
+
 <h4 id=matrix/tables/table-hacking-difficulty-setback>Difficulty of Matrix Actions</h4>
+<p>All matrix checks fall into one of two categories: Matrix combat checks, and Matrix action checks. Matrix combat
+  checks are made when you want to apply brute force against your target. They are come out fast, and essentially throw
+  your malicious code at your adversaries, and are usually best used when drek has already hit the wall. Like the name
+  implies, they are treated as combat checks with a range of Long, and their difficulty is usually equal to normal
+  combat checks, with a targets Firewall rating acting as both Soak and Defense against suffered system strain and
+  hits.</p>
+<p>Matrix actions encompass all other types of checks. They are usually much more stealthy that Matrix combat checks,
+  but usually require you or your persona to be within Short range of your target. When you make a Matrix action against
+  a target - usually because you want to access a device, host or files from within said device or host without proper
+  authorization - you make an Easy (<span class="glyph difficulty" title="Difficulty">k</span>) Hacking or Computers skill check, and increase the difficulty by one for each
+  point of Firewall the target has (you do not add <span class="glyph setback" title="Setback">j</span> per point of Firewall like you would with Matrix combat
+  checks).</p>
+<p>The Gamemaster can increase or decrease the difficulty of the check, or add additional <span class="glyph boost" title="Boost">j</span> or <span class="glyph setback" title="Setback">j</span> based on
+  environmental details; the total of these effects are too numerous to list here, but you and your Gamemaster can use
+  the table "Difficulty of Matrix skill checks" to get a rough overview of example difficulties and modifiers.</p>
+
 <div class="table-responsive">
   <table class="table table-hover">
+    <caption>Difficulty of Matrix skill checks</caption>
     <thead>
     <tr>
-      <th>Situation</th>
-      <th>Difficulty</th>
+      <th>Example</th>
+      <th>...within range of your persona</th>
+      <th>...with a Matrix combat check</th>
+      <th>...with a Matrix action check</th>
     </tr>
     </thead>
     <tbody>
     <tr>
-      <td>Hacker is within Engaged range to a target in AR</td>
-      <td><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span></td>
+      <th colspan="4">Base Difficulties</th>
     </tr>
     <tr>
-      <td>Hacker is within Short range to a target in AR</td>
-      <td><span class="glyph difficulty" title="Difficulty">k</span></td>
-    </tr>
-    <tr>
-      <td>Hacker is within Medium range to a target in AR</td>
-      <td><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span></td>
-    </tr>
-    <tr>
-      <td>Hacker is within Long range to a target in AR</td>
-      <td><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span></td>
-    </tr>
-    <tr>
-      <td>Hacker tries to Hack through dense walls or thick foliage in VR</td>
-      <td>+<span class="glyph setback" title="Setback">j</span></td>
-    </tr>
-    <tr>
-      <td>Hacker tries to Hack through solid metal walls, entre buildings or into devices within a lake in VR</td>
-      <td>+<span class="glyph setback" title="Setback">j</span><span class="glyph setback" title="Setback">j</span></td>
-    </tr>
-
-    <tr>
-      <td>Hacker tries to Hack an icon physically protected from Matrix traffic, such as by Matrix-resistant paint,
-        farage cages, or large bodies of salt water.
+      <td>
+        Cheap traffic cams, SamSamurai action figure, your grandparent's commlink<br/>
+        (Firewall 0)
       </td>
+      <td>Short</td>
+      <td>Easy (<span class="glyph difficulty" title="Difficulty">k</span>) + <span class="glyph boost" title="Boost">j</span></td>
+      <td>Simple (-)</td>
+    </tr>
+    <tr>
+      <td>
+        Personal commlink with default settings, StufferShack security cams, Seattle sewer system lock<br/>
+        <= your devices start here<br/>
+        (Firewall 0)
+      </td>
+      <td>Short</td>
+      <td>Easy (<span class="glyph difficulty" title="Difficulty">k</span>)</td>
+      <td>Easy (<span class="glyph difficulty" title="Difficulty">k</span>)</td>
+    </tr>
+    <tr>
+      <td>
+        Average corporate drone commlink, middle-class maglock, local corporate host, delivery drone control system,
+        StufferShack customer complaints agent<br/>
+        (Firewall 1)
+      </td>
+      <td>Short</td>
+      <td>Easy (<span class="glyph difficulty" title="Difficulty">k</span>) + <span class="glyph setback" title="Setback">j</span></td>
+      <td>Average (<span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span>)</td>
+    </tr>
+    <tr>
+      <td>
+        Private security drone control, average megacorporate host<br/>
+        (Firewall 2)
+      </td>
+      <td>Short</td>
+      <td>Easy (<span class="glyph difficulty" title="Difficulty">k</span>) + <span class="glyph setback" title="Setback">j</span><span class="glyph setback" title="Setback">j</span></td>
+      <td>Hard (<span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span>)</td>
+    </tr>
+    <tr>
+      <td>
+        High-security megacorp hosts, commlinks of government workers, mil-tech<br/>
+        (Firewall 3)
+      </td>
+      <td>Short</td>
+      <td>Easy (<span class="glyph difficulty" title="Difficulty">k</span>) + <span class="glyph setback" title="Setback">j</span><span class="glyph setback" title="Setback">j</span><span class="glyph setback" title="Setback">j</span></td>
+      <td>Daunting (<span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span>)</td>
+    </tr>
+    <tr>
+      <td>
+        AAA-Corp black-site hosts<br/>
+        (Firewall 4)
+      </td>
+      <td>Short</td>
+      <td>Easy (<span class="glyph difficulty" title="Difficulty">k</span>) + <span class="glyph setback" title="Setback">j</span><span class="glyph setback" title="Setback">j</span><span class="glyph setback" title="Setback">j</span><span class="glyph setback" title="Setback">j</span></td>
+      <td>Formidable (<span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span>)</td>
+    </tr>
+    <tr>
+      <th colspan="4">Difficulty Modifiers</th>
+    </tr>
+    <tr>
+      <td rowspan="3" class="align-middle">Alternate range bands between your persona and your target</td>
+      <td>Each range band beyond Short range</td>
+      <td>+<span class="glyph difficulty" title="Difficulty">k</span></td>
+      <td rowspan="2" class="align-middle">No check possible</td>
+    </tr>
+    <tr>
+      <td>Extreme ranges and beyond</td>
       <td>No check possible</td>
+    </tr>
+    <tr>
+      <td>Engaged</td>
+      <td>+<span class="glyph difficulty" title="Difficulty">k</span></td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <td colspan="2">Dense walls, thick foliage or huge crowds between your physical body and your target</td>
+      <td colspan="2">+<span class="glyph setback" title="Setback">j</span></td>
+    </tr>
+    <tr>
+      <td colspan="2">Thick, solid metal walls, entire buildings, or large bodies of water between your physical body
+        and your target
+      </td>
+      <td colspan="2">+<span class="glyph setback" title="Setback">j</span><span class="glyph setback" title="Setback">j</span></td>
+    </tr>
+    <tr>
+      <td colspan="2">Target is physically protected from any Matrix traffic (e.g. by offline storage, Matrix-repelling
+        paint, farage cages or large bodies of salt water)
+      </td>
+      <td colspan="2">No check possible</td>
     </tr>
     </tbody>
   </table>
 </div>
 
-<p>When hacking a target, two things are important: The relative distance between a hackers persona and a target, which
-  determines the base difficulty of the Hacking skill check equal to normal combat checks, and the targets Firewall
-  rating, which serves as Soak and Defense against hacking attempts.</p>
 <h3 id=matrix/tables/table-hacking-spending-advantages-triumphs></h3>
 <div class="table-responsive">
   <table class="table table-hover">
@@ -268,8 +350,8 @@
 
 <h5>Mark Target</h5>
 <p>You place a mark on your target, creating a backdoor in your targets' security that makes further Hacking attempts
-  easier. Until the end of the round, your next Hacking combat check adds <span class="glyph boost" title="Boost">j</span>. You can use this maneuver multiple times
-  per round, adding <span class="glyph boost" title="Boost">j</span> each time.</p>
+  easier. Until the end of the round, your next Hacking combat check adds <span class="glyph boost" title="Boost">j</span>. You can use this maneuver multiple
+  times per round, adding <span class="glyph boost" title="Boost">j</span> each time.</p>
 
 <h5>Slot / Unslot / Change Cyberprogram</h5>
 <p>You slot, unslot, or change a cyberprogram from or to your commlink, cyberdeck or RCC.</p>
@@ -285,60 +367,26 @@
 <h4>List of Matrix Actions</h4>
 <p>[...]</p>
 <p>All hacking actions outside of these are usually the domain of either talents or cyberprograms. A decker wanting to
-  do something specific outside of these without such means (such as Encrypting / Descrypting data, setting data bombs,
-  link-locking a target etc.) suffers the same penalties as not having the right tool.</p>
+  do something specific outside of these without such means (such as setting data bombs, link-locking a target etc.)
+  suffers the same penalties as not having the right tool.</p>
 
 <h5>Access System</h5>
-<p><b>Roll: </b>Hacking vs. var.</p>
-<p class="mb-1">
+<p><b>Roll: </b>Hacking action check</p>
+<p>
   <b>System: </b>You attempt to gain access to a system that is actively protected against unauthorized access, like a
   host or another persons device. Make a Hacking skill check against a target within Short range, where the difficulty
-  is set by the Gamemaster based on the system in question.
+  is set by the Gamemaster based on the system in question (use the Table "Difficulty of Matrix skill checks" as a
+  rough guideline). On a success, until the end of the scene or encounter, you have access to the system in question
+  until you are actively removed by a Sysop (usually through cybercombat) or ICE.
 </p>
-<div class="table-responsive mt-1">
-  <table class="table table-hover">
-    <caption>Example Systems And Difficulties</caption>
-    <thead>
-    <tr>
-      <th>Example System</th>
-      <th>Difficulty</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-      <td>Traffic cams, SamSamurai action figure, your grandparent's commlink</td>
-      <td>Simple (-)</td>
-    </tr>
-    <tr>
-      <td>Personal commlink with default settings, police security cameras, Seattle sewer system lock</td>
-      <td>Easy (<span class="glyph difficulty" title="Difficulty">k</span>)</td>
-    </tr>
-    <tr>
-      <td>Average corporate drone commlink, middle-class maglock, local corporate host, delivery drone control system,
-        StufferShack customer complaints agent
-      </td>
-      <td>Average (<span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span>)</td>
-    </tr>
-    <tr>
-      <td>Private security drone control, average megacorporate security host</td>
-      <td>Hard (<span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span>)</td>
-    </tr>
-    <tr>
-      <td>High-security megacorp hosts, commlinks of government workers, mil-tech</td>
-      <td>Daunting (<span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span>)</td>
-    </tr>
-    <tr>
-      <td>AAA-Corp black-site hosts</td>
-      <td>Formidable (<span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span><span class="glyph difficulty" title="Difficulty">k</span>)</td>
-    </tr>
-    </tbody>
-  </table>
-</div>
 
 <h5>Edit File</h5>
-<p><b>Roll: </b>Computers vs. var.</p>
+<p><b>Roll: </b>Computers action check</p>
 <p>
-  <b>System: </b>
+  <b>System: </b>You attempt to read or write a file that you have access to. If it is a file you own, you do not have
+  to make a check, otherwise the difficulty of the check is set by the Gamemaster, based on the system the file is on or
+  the overall security around the file (use the Table "Difficulty of Matrix skill checks" as a rough guideline). You can
+  also use the Edit File matrix action to use a feature of the device, such as viewing a live camera feed.
 </p>
 
 <h5>Data Spike</h5>
@@ -381,7 +429,7 @@
 </p>
 
 <h5>Seek</h5>
-<p><b>Roll: </b>Easy (<span class="glyph difficulty" title="Difficulty">k</span>) Computers check or Opposed Computers vs. Hacking</p>
+<p><b>Roll: </b>Computers action or Opposed Computers vs. Hacking</p>
 <p>
   <b>System: </b>You attempt to search for hidden icons and personas. Make a Computers check. On a success, you find and
   trace a single icon or persona you were looking for, or the most dangerous or interesting icon or persona in the
