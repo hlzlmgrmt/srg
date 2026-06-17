@@ -144,18 +144,22 @@ const insertPages = function (content, done) {
   })
 
   let remaining = content.size - result.size;
+  let oldRemaining = -1;
   while (remaining > 0) {
-
     let remainingContent = new Map();
     new Map([...content]).forEach(function (v, k) {
       if (!Array.from(result.keys()).includes(k.replaceAll(locale.sep, '/'))) {
         remainingContent.set(k.replaceAll(locale.sep, '/'), v);
       }
     });
-    console.log("Inserting pages:", content.size - remainingContent.size, ' / ', content.size);
-    new Promise(resolve => setTimeout(resolve, 1000));
+    console.log('Inserting pages:', content.size - remainingContent.size, ' / ', content.size);
 
-    // Filter all remaining content with ins tags tat are already in result map
+    if (remaining === oldRemaining) {
+      done('Unable to parse pages: ' + Array.from(remainingContent.keys()).join(','))
+    }
+    oldRemaining = remaining;
+
+    // Filter all remaining content with ins tags that are already in result map
     new Map([...remainingContent].filter(([key, value]) => {
       const insertPaths = value.match(new RegExp(insSelector, 'g')).map((ins) =>
         ins.match(/id="[^"]+"/).map((match) =>

@@ -1,5 +1,6 @@
 :root {
-  --navigation-width: 280px;
+  --navigation-width: 295px;
+  --navigation-background: whitesmoke;
   --talent-padding: 0.4rem;
   --main-header-height: 3rem;
 }
@@ -66,6 +67,7 @@ body {
   margin-left: var(--navigation-width);
   max-height: 100%;
   padding: 1rem;
+  max-width: 950px;
 
   overflow-x: hidden;
   overflow-y: auto;
@@ -252,7 +254,7 @@ body {
 .navigation {
   height: 100dvh;
   width: var(--navigation-width);
-  background: whitesmoke;
+  background: var(--navigation-background);
   z-index: 4;
   position: fixed;
 
@@ -329,14 +331,17 @@ body {
   }
 }
 
+.navigation-mask {
+  background: rgb(128 128 128 / 0.5);
+}
+
 .navigation-toggler {
   position: fixed;
   height: auto;
   aspect-ratio: 1/1;
-  background: none;
-  color: inherit;
-  border: var(--bs-border-color);
-  padding: 0;
+  border: none;
+  margin: 2.25rem 0 0 0;
+  padding: 0 0.5rem 0 0.75rem;
   cursor: pointer;
   outline: inherit;
   z-index: 3;
