@@ -129,6 +129,7 @@ export const MatrixDeviceEntry: Entry = [
     "special": {type: 'text-multiline'}
   }, {
     "special": {type: 'text-multiline'},
+    "program_slots": {caption: 'Slots', type: 'number'},
     "encumbrance": {caption: 'Enc', type: 'number'},
     "hard_points": {caption: 'HP', type: 'number'}
   }
@@ -137,8 +138,6 @@ export const MatrixCyberprogramsEntry: Entry = [
   {
     "equipped": {type: 'checkbox'},
     "name": {type: 'text'}
-  }, {
-    "description": {caption: 'Desc', type: 'text'}
   }
 ]
 export const MagicFormulaeEntry: Entry = [

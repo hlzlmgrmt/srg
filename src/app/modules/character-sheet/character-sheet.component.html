@@ -186,7 +186,7 @@
                        (valueChanged)="setData('matrix_device', $event)"/>
           </srg-section>
           <srg-section [title]="'Cyberprograms'" [depth]="2">
-            @for (i of Array(4); track $index) {
+            @for (i of Array(8); track $index) {
               <srg-entry [data]="getData('matrix_cyberprograms', $index)"
                          [entryFormat]="MatrixCyberprogramsEntry"
                          (valueChanged)="setData('matrix_cyberprograms', $event, $index)"/>
