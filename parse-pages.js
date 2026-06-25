@@ -7,8 +7,10 @@ console.info('Running page content parser');
 
 const fs = require('fs');
 const path = require('path');
+const { parse: domParse } = require('node-html-parser');
+const {elementAt} = require("rxjs");
 
-const { platform } = process;
+const {platform} = process;
 const locale = path[platform == 'win32' ? 'win32' : 'posix']
 
 console.log('Detected platform', platform);
@@ -84,7 +86,7 @@ const walk = function (dir, done) {
 };
 
 /**
- * Recursively parses a file
+ * Parses a file
  *
  * @param content content map to be consumed (key = path, value = content)
  * @param done    callback function (error, result content map)
@@ -93,36 +95,93 @@ const parse = function (content, done) {
   let result = new Map();
   console.log("Parsing", content.size, "pages")
 
-  new Map([...content]).forEach(function(value, key) {
-    const glyphMatches = value.match(new RegExp(glyphSelector, 'g'));
-    if (glyphMatches) {
-      glyphMatches.forEach((glyphMatch) => {
-        let replace = glyphMatch.toString().substring(1, glyphMatch.toString().length - 1);
-        const diceMatches = replace.match(new RegExp(diceSymbolsSelector, 'g'));
-        if (diceMatches) {
-          diceMatches.forEach((diceMatch) => {
-            let innerReplace = diceMatch.toString().substring(1, diceMatch.toString().length - 1);
-            innerReplace = innerReplace.split('').map((char) => diceSymbolsMap.get(char)).join('');
-            replace = replace.replace(diceMatch, innerReplace);
-          })
-        }
+  new Map([...content]).forEach(function (value, key) {
+    value = parseTemplates(value, key);
+    value = parseGlyphs(value);
 
-        const faceMatches = replace.match(new RegExp(faceSymbolsSelector, 'g'));
-        if (faceMatches) {
-          faceMatches.forEach((faceMatch) => {
-            let innerReplace = faceMatch.toString().substring(1, faceMatch.toString().length - 1);
-            innerReplace = innerReplace.split('').map((char) => faceSymbolsMap.get(char)).join('');
-            replace = replace.replace(faceMatch, innerReplace);
-          })
-        }
-
-        value = value.replace(glyphMatch, replace);
-      })
-    }
     result.set(key, value);
   });
 
   return done(null, result);
+}
+
+function parseTemplates(value, key) {
+  domParse(value).getElementsByTagName('template').forEach((template) => {
+    const datasource = template.getAttribute('data-source');
+    if (!datasource) done('Cannot find required attribute data-source', datasource, 'in file', key);
+    console.log('Building template', datasource, key);
+
+    let replace = '';
+    const templateAttributes = template.outerHTML.match(new RegExp("\\${{[^\${}]+}}", 'g'));
+    const sortedByKey = template.getAttribute('data-sortedby');
+    const filteredByKey = template.getAttribute('data-filteredbykey');
+    const filteredByValue = template.getAttribute('data-filteredbyvalue');
+
+    JSON.parse(fs.readFileSync(srcDir + '/' + datasource, {encoding: 'utf-8'}))
+      .sort((a,b) => sortedByKey ? a[sortedByKey].localeCompare(b[sortedByKey]) : -1)
+      .filter((data) => filteredByValue && filteredByValue ? data[filteredByKey] == filteredByValue : true)
+      .forEach((data => {
+        let innerReplace = template.innerHTML;
+        if (templateAttributes && templateAttributes.length > 0) templateAttributes.forEach((attributeTag) => {
+          const attribute = attributeTag.substring(3, attributeTag.indexOf('}')).trim();
+          const nullableElements = template.querySelectorAll('[data-disableonnullkey="' + attribute + '"]');
+          if (nullableElements && !data[attribute]) {
+            nullableElements.forEach((elem) =>
+              innerReplace = innerReplace.replace(new RegExp(escapeRegExp(elem.toString()), 'gm'), ''));
+          }
+
+          if (Array.isArray(data[attribute])) {
+            const containingTags = Array.from(template.querySelectorAll('*'))
+              .filter(el => el.innerText.includes(attributeTag));
+
+            let delimiter = ', ';
+            if (containingTags && containingTags.length > 0) {
+              delimiter = containingTags[0].getAttribute('data-delimiter') ?? delimiter;
+            }
+            innerReplace = innerReplace.replaceAll(attributeTag, data[attribute].join(delimiter));
+          } else {
+            innerReplace = innerReplace.replaceAll(attributeTag, data[attribute]);
+          }
+        })
+        replace = replace + innerReplace;
+      }));
+
+    value = value.replaceAll(new RegExp(escapeRegExp(template.toString()), 'gm'), replace);
+  });
+  return value;
+}
+function parseGlyphs(value) {
+  // Parse glyphs
+  const glyphMatches = value.match(new RegExp(glyphSelector, 'g'));
+  if (glyphMatches) {
+    glyphMatches.forEach((glyphMatch) => {
+      let replace = glyphMatch.toString().substring(1, glyphMatch.toString().length - 1);
+      const diceMatches = replace.match(new RegExp(diceSymbolsSelector, 'g'));
+      if (diceMatches) {
+        diceMatches.forEach((diceMatch) => {
+          let innerReplace = diceMatch.toString().substring(1, diceMatch.toString().length - 1);
+          innerReplace = innerReplace.split('').map((char) => diceSymbolsMap.get(char)).join('');
+          replace = replace.replace(diceMatch, innerReplace);
+        })
+      }
+
+      const faceMatches = replace.match(new RegExp(faceSymbolsSelector, 'g'));
+      if (faceMatches) {
+        faceMatches.forEach((faceMatch) => {
+          let innerReplace = faceMatch.toString().substring(1, faceMatch.toString().length - 1);
+          innerReplace = innerReplace.split('').map((char) => faceSymbolsMap.get(char)).join('');
+          replace = replace.replace(faceMatch, innerReplace);
+        })
+      }
+
+      value = value.replace(glyphMatch, replace);
+    })
+  }
+  return value;
+}
+function escapeRegExp(string) {
+  // Escape all special regex characters with a backslash
+  return string.replace(/[.*+?^${}()|[\]\\\/]/g, '\\$&');
 }
 
 /**
@@ -185,7 +244,6 @@ const insertPages = function (content, done) {
 
   done(null, result);
 }
-
 
 const write = function (dir, content, done) {
   const dstPath = targetDir + locale.sep + dir;

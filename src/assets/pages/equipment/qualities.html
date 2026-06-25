@@ -9,38 +9,7 @@
   different ways, depending on the quality in question.</p>
 <p>Active qualities require [(aa)] to activate unless otherwise stated in their description.</p>
 
-<ins id="equipment/qualities/accurate.html">Accurate (Passive)</ins>
-<ins id="equipment/qualities/blast.html">Blast (Active)</ins>
-<ins id="equipment/qualities/breach.html">Breach (Passive)</ins>
-<ins id="equipment/qualities/burn.html">Burn (Active)</ins>
-<ins id="equipment/qualities/concealable.html">Concealable (Passive)</ins>
-
-<ins id="equipment/qualities/concussive.html">Concussive (Active)</ins>
-<ins id="equipment/qualities/cumbersome.html">Cumbersome (Passive)</ins>
-<ins id="equipment/qualities/defensive.html">Defensive (Passive)</ins>
-<ins id="equipment/qualities/deflective.html">Deflective (Passive)</ins>
-<ins id="equipment/qualities/disorient.html">Disorient (Active)</ins>
-
-<ins id="equipment/qualities/ensnare.html">Ensnare (Active)</ins>
-<ins id="equipment/qualities/full_auto.html">Full-Auto (Active)</ins>
-<ins id="equipment/qualities/guided.html">Guided (Active)</ins>
-<ins id="equipment/qualities/hardened.html">Hardened (Passive)</ins>
-<ins id="equipment/qualities/inaccurate.html">Inaccurate (Passive)</ins>
-
-<ins id="equipment/qualities/inferior.html">Inferior (Passive)</ins>
-<ins id="equipment/qualities/ion.html">Ion (Passive)</ins>
-<ins id="equipment/qualities/knockdown.html">Knockdown (Active)</ins>
-<ins id="equipment/qualities/limited_ammo.html">Limited Ammo (Passive)</ins>
-<ins id="equipment/qualities/linked.html">Linked (Active)</ins>
-
-<ins id="equipment/qualities/nonlethal.html">Nonlethal (Passive)</ins>
-<ins id="equipment/qualities/pierce.html">Pierce (Passive)</ins>
-<ins id="equipment/qualities/prepare.html">Prepare (Passive)</ins>
-<ins id="equipment/qualities/slow_firing.html">Slow-Firing (Passive)</ins>
-<ins id="equipment/qualities/stun.html">Stun (Active)</ins>
-
-<ins id="equipment/qualities/sunder.html">Sunder (Active)</ins>
-<ins id="equipment/qualities/superior.html">Superior (Passive)</ins>
-<ins id="equipment/qualities/throwable.html">Throwable (Passive)</ins>
-<ins id="equipment/qualities/unwieldy.html">Unwieldy (Passive)</ins>
-<ins id="equipment/qualities/vicious.html">Vicious (Passive)</ins>
+<template data-source="equipment/qualities.data.json" data-sortedby="title">
+  <h3 id=equipment/qualities/${{id}}>${{ title }}</h3>
+  <p data-delimiter="</p><p>">${{ desc }}</p>
+</template>

@@ -1,0 +1,1203 @@
+[
+  {
+    "name": "All-Terrain Driver",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "You do not suffer the usual penalties for driving through difficult terrain."
+  },
+  {
+    "name": "Alleycat",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Add one [[b]] per rank of Alleycat to all Stealth and Coordination checks in buildings and urban environments."
+  },
+  {
+    "name": "Armed and Dangerous",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "You may use your Melee skill instead of Brawl when attacking with a non-ranged weapon that is integrated into a cyberlimb."
+  },
+  {
+    "name": "Astral Chameleon",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "prereq": "Awakened trait",
+    "desc": "You can add one [[s]] per rank of Astral Chameleon to all Astral skill checks trying to assense your spells, spirits or adept powers."
+  },
+  {
+    "name": "Backalley Brawler",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "Add [(a)] to all Brawl and Melee combat checks when using improvised weapons."
+  },
+  {
+    "name": "Barrage",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Add one damage per rank of Barrage to a single hot of a successful Ranged (Heavy) or Gunnery combat check when using the Full-Auto quality. You do not need to trigger Full-Auto in order to use this talent."
+  },
+  {
+    "name": "Black Market Contacts",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "Yes",
+    "desc": "When purchasing illegal goods (as determined by the Gamemaster), you may reduce the rarity of the item by 1 per rank of Black Market Contacts, and when you do, you increase it’s cost by 50 percent of its base cost per point of reduced rarity."
+  },
+  {
+    "name": "Bland",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "You can add [(f)] to all checks made to find or identify your character in a crowd. You cannot take this talent if you are a troll, or if you have any other obvious features that make you stand out in a crowd (as determined by your Gamemaster)."
+  },
+  {
+    "name": "Blooded",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "You can add [[b]] per rank of Blooded to all checks to resist or recover from drugs, poisons, venoms, or toxins. Additionally, you reduce the duration of ongoing poisons by 1 round per rank of Blooded."
+  },
+  {
+    "name": "Bought Info",
+    "tier": 1,
+    "act": "Active (Action)",
+    "ranked": "No",
+    "desc": "When you make any Knowledge skill check, instead of making the check, you can spend an amount of money equal to fifty times the difficulty of the check and automatically succeed on the check with one uncanceled [[s]]. You cannot use this talent if the information is particularly sensitive or secretive, or if buying the information doesn’t make narrative sense."
+  },
+  {
+    "name": "Brace",
+    "tier": 1,
+    "act": "Active (Maneuver)",
+    "ranked": "Yes",
+    "desc": "As a maneuver, you can remove one [[s]] per rank of Brace from the next check due to changing environmental conditions, including weather, unstable surfaces, changes in gravity or similar physical obstacles that would make a skill check more difficult."
+  },
+  {
+    "name": "Bullet Necklace",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "Once per session, if you would run out of ammo due to [(h)] or [(d)], you can spend one Edge to not run out of ammo, until the end of the encounter."
+  },
+  {
+    "name": "Bullrush",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "When you make a Brawl or Melee combat check after using a maneuver to engage a target, you may spend [(aaa)] or [(t)] to knock the target prone and move them up to one range band away from your character."
+  },
+  {
+    "name": "Called Shot",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "You do not add [[s]] to combat checks due to the Aim maneuver."
+  },
+  {
+    "name": "Clever Retort",
+    "tier": 1,
+    "act": "Active (Incidental, Out-Of-Turn)",
+    "ranked": "No",
+    "desc": "Once per encounter, you can add an automatic [(hh)] to another character’s social skill check."
+  },
+  {
+    "name": "Combat Meditation",
+    "tier": 1,
+    "act": "Active (Maneuver)",
+    "ranked": "Yes",
+    "desc": "Once per encounter, you may heal an amount of Strain equal to your ranks in Combat Meditation."
+  },
+  {
+    "name": "Command",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Add one [[b]] per rank of Command fo Leadership skill checks when commanding your allies. Affected targets add [[b]] to all Discipline check they make for the next 24 hours."
+  },
+  {
+    "name": "Concealed Holsters",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "Hand-held equipment or weapons with an Encumbrance of 1 or lower that you carry gain the Concealable 1 quality."
+  },
+  {
+    "name": "Confidence",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "You can decrease the difficulty of Discipline checks to avoid fear by one per rank of Confidence (to a minimum of Easy ([[d]])."
+  },
+  {
+    "name": "Conspiracy Theories",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "You can upgrade the ability and difficulty of Knowledge checks you make once."
+  },
+  {
+    "name": "Coordinated Assault",
+    "tier": 1,
+    "act": "Active (Maneuver)",
+    "ranked": "Yes",
+    "desc": "Once per turn, as a maneuver, an amount of allies up to your ranks in Leadership you are Engaged with add an automatic [(a)] to all combat checks they make until the end of your next turn. For each rank of Coordinated Assault, you may increase the range at which allies can benefit from this talent by one range band."
+  },
+  {
+    "name": "Creative Design",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "As part of resolving a successful crafting check, before spending any [(a)] or [(h)], you can apply a result equivalent of spending a number of [(a)] equal to your ranks in Creative Design. Afterwards, you add an equivalent amount of [(h)] to the result."
+  },
+  {
+    "name": "Critter Science",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Add [[b]] per rank of Critter Science to all checks (including knowledge and combat checks) when interacting with non-sapient critters. Additionally, you may add +10 to Critical Injury results against non-sapient critters per rank of Critter Science."
+  },
+  {
+    "name": "Custom Code",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "When you purchase a rank in Custom Code, choose one cyberprogram that you own. When you make a skill check that benefits from that cyberprogram, add [(a)] to the result of that check."
+  },
+  {
+    "name": "Customer Service Experience",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "Yes",
+    "desc": "When you make a Charm check, you may suffer an amount of strain up to your ranks in Customer Service Experience to cancel an equal amount of [(h)] from the check."
+  },
+  {
+    "name": "Defensive Stance",
+    "tier": 1,
+    "act": "Active (Maneuver)",
+    "ranked": "Yes",
+    "desc": "Once per round, as a maneuver, you can suffer an amount of strain up to your ranks of Defensive Stance to upgrade the difficulty of all Brawl and Melee combat checks targeting you by an equivalent amount."
+  },
+  {
+    "name": "Defensive Sysops",
+    "tier": 1,
+    "act": "Active (Maneuver)",
+    "ranked": "Yes",
+    "desc": "Once per round, as a maneuver, you can suffer two strain to increase the difficulty of the next Hacking skill check against you or an ally within Short range of your persona once. For each rank of Defensive Sysops, you may increase the range at which allies can benefit from this talent by one range band."
+  },
+  {
+    "name": "Deflect",
+    "tier": 1,
+    "act": "Active (Incidental, Out-Of-Turn)",
+    "ranked": "Yes",
+    "desc": "When you suffer a hit from a ranged combat check, after damage is calculated but before soak is applied, you may suffer 3 strain to reduce the damage of the hit by two plus your ranks in Deflect. This talent can only be used once per hit, and you need to be wielding a shield deemed appropriate by the Gamemaster."
+  },
+  {
+    "name": "Desperate Recovery",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "Before you heal strain at the end of an encounter, if your strain is more than half of you strain threshold, you heal two additional strain."
+  },
+  {
+    "name": "Disorient",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "When you hit a target with a Brawl or Melee combat check, you may spend [(aa)] to disorient the target for a number of rounds equal to your ranks in Disorient."
+  },
+  {
+    "name": "Duelist",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "Add [[b]] to your Brawl and Melee combat checks while Engaged with a single component. Additionally, you add [[s]] to your Brawn and Melee combat checks while Engaged with three or more opponents."
+  },
+  {
+    "name": "Durable",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "You reduce any Critical Injury result you suffer by 10 per rank of Durable, to a minimum of 1."
+  },
+  {
+    "name": "Fifth World Scholar",
+    "tier": 1,
+    "act": "Active (Action)",
+    "ranked": "No",
+    "desc": "Once per session, you can make a Hard ([[ddd]]) Knowledge check to ascertain information regarding relics, ruins or pieces of history. For you and your allies, until the end of the session, all skill checks which take advantage of this knowledge gain automatic [(sa)]."
+  },
+  {
+    "name": "Fixer",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "You gain 10 percent more money per rank of Fixer when selling goods legally."
+  },
+  {
+    "name": "Focused Concentration",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "prereq": "Awakened trait",
+    "desc": "For each rank in Focused Concentration, you may ignore the penalties for sustaining a single spell or spirit."
+  },
+  {
+    "name": "Friendly Neighborhood Trog",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "prereq": "Trog trait",
+    "desc": "You can remove [[s]] on Social skill checks when interacting with polite society, but add [[s]] to all Social skill checks when interacting with Orks or Trolls without the Friendly Neighborhood Trog talent."
+  },
+  {
+    "name": "Golden Screwdriver",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "You repair one additional system strain per rank of Golden Screwdriver when you make a Mechanics skill check to repair a damaged persona."
+  },
+  {
+    "name": "Good Dog",
+    "tier": 1,
+    "act": "Active (Action)",
+    "ranked": "No",
+    "desc": "Once per encounter, you can make an Average ([[dd]]) Survival check to allow an allied non-sapient critter to recover strain equal to the uncanceled [(s)]."
+  },
+  {
+    "name": "Grit",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Increase your strain threshold by one for each rank of Grit."
+  },
+  {
+    "name": "Hamstring Shot",
+    "tier": 1,
+    "act": "Active (Action)",
+    "ranked": "No",
+    "desc": "Once per round, as an action, you can make a ranged combat check against an organic target within range of your weapon. If the check is successful, halve the damage inflicted by the weapon (before applying any uncanceled [(s)] and reducing the total damage by the target’s soak). The target is immobilized until the end of it’s next turn."
+  },
+  {
+    "name": "Hardcoded",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "When you choose this talent, select a cyberprogram that you own. Your commlink (or cyberdeck, RCC or similar) increase their Program Slot rating by one, and always has your chosen program slotted."
+  },
+  {
+    "name": "Hardened Neurons",
+    "tier": 1,
+    "act": "Active (Incidental, Out-Of-Turn)",
+    "ranked": "Yes",
+    "desc": "When you suffer wounds from biofeedback (including from a jackout, you may suffer 3 strain to reduce the damage dealt by biofeedback by two plus your ranks in Hardened Neurons."
+  },
+  {
+    "name": "High Life",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "Once per scene, when you are in polite company (as determined by the Gamemaster), you may suffer two strain to add an automatic [(ssa)] to a single Charm or Cool check."
+  },
+  {
+    "name": "Home Turf",
+    "tier": 1,
+    "act": "Active (Maneuver)",
+    "ranked": "No",
+    "desc": "Once per session, you can make a Hard ([[ddd]]) Knowledge check to reveal inforation about your local environment, such as specific street names and known shortcuts, interesting natural or supernatural phenomena or similar. For you and your allies, until the end of the session, all skill checks which take advantage of this knowledge gain automatic [(sa)]. You can only use this talent if you have spent some time in the specified location, as determined by the Gamemaster."
+  },
+  {
+    "name": "Hurling Insults",
+    "tier": 1,
+    "act": "Active (Maneuver)",
+    "ranked": "Yes",
+    "desc": "Once per encounter, as a maneuver, you may choose a number of adversaries up to your rank In Hurling Insults within Short range. Until the end of the encounter, or until you are incapacitated, the chosen adversaries add [[b]] to combat checks targeting you and [[ss]] to combat checks targeting your allies."
+  },
+  {
+    "name": "Iajutsu Training",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "The first time during an an encounter, after you have drawn a Melee weapon, you increase the drawn weapon’s base damage by two for the rest o the turn."
+  },
+  {
+    "name": "Inventor",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "Yes",
+    "desc": "You can add one [[b]] per rank of Inventor to all checks made to construct or modify an item. Additionally, you can attempt to reconstruct devices that you have heard described but not sen and do not have any kind of plans or schematics for."
+  },
+  {
+    "name": "Junk Tech",
+    "tier": 1,
+    "act": "Active (Action)",
+    "ranked": "No",
+    "desc": "Once per session, as an action, you can make an Easy ([[d]]) Mechanics check to harvest components from a functioning device to repair a broken one without breaking the first device."
+  },
+  {
+    "name": "Kick in the Nuts",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "Before you make a Brawl or Melee combat check, you can increase the difficulty of the check by one. If the target suffers at least one wound from this combat check, they suffer two strain every time they perform a maneuver, until the end of the encounter."
+  },
+  {
+    "name": "Kip-Up",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "Once per round, during your turn, you can stand up from a prone or seated position as an incidental."
+  },
+  {
+    "name": "Knockout Punch",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "You add the Stun quality to your Brawl combat checks, with a rating equal to two plus your ranks in Coordination. This talent does not stack with other instances of the Stun quality."
+  },
+  {
+    "name": "Know Somebody",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "Yes",
+    "desc": "Once per session, when you attempt to purchase a legally available item or service, you can reduce it’s rarity by one per rank of Know Somebody."
+  },
+  {
+    "name": "Knowledge Specialization",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "When you first purchase this talent, choose one Knowledge skill. When you make a skill check with the chosen skill, you may spend a [(t)] to gain additional [(s)] equal to your ranks in Knowledge Specialization."
+  },
+  {
+    "name": "Let’s Ride",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "Once per round, during your turn, you can mount or dismount from a vehicle or animal or move from one position in a vehicle to another (such as taking control of the driver’s seat from the back seats) as an incidental. Additionally, if you would suffer damage from falling from a vehicle or animal, you can reduce the damage you would suffer by one range band, potentially negating the fall altogether."
+  },
+  {
+    "name": "Mad Driver",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "Yes",
+    "desc": "When you make a Pilot skill check, before making the check, you may add a number of [(h)] up to your ranks in Mad Driver to add an equal amount of [(s)]."
+  },
+  {
+    "name": "Magic Tradition",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "prereq": "Awakened trait",
+    "desc": "When you purchase this talent, choose one of the following characteristics: Brawn, Intellect, Cunning or Presence. When you use a Magical skill (except for Resonance), you can use the chosen characteristic instead of your Willpower when building your dice pool, and if you do, you may reduce the initial strain of using that skill (after applying talents and equipment, but before spending any [(a)] or [(h)]) by half of the chosen characteristic (rounded up). When your chosen characteristic is higher than your Willpower, you cannot use your chosen characteristic to build your dice pool, but you can still reduce the initial strain you would take."
+  },
+  {
+    "name": "Matrix Search",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "Yes",
+    "desc": "Add one [[b]] per rank of Matrix Search to Knowledge skill checks if you have access to the Matrix and at least half an hour of time to conduct research."
+  },
+  {
+    "name": "Monster Hunter",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "You may use your Survival skill instead of Knowledge (Magic) when recalling information magical wildlife."
+  },
+  {
+    "name": "Multilingual",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Every time you purchase a rank in Multilingual, choose an additional language. You do not suffer the usual penalties to Social skill checks you make due to language barriers."
+  },
+  {
+    "name": "On the Enemies Turf",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "You can ignore one [(h)] per rank in On the Enemies Turf on Perception and Vigilance checks to notice, identify, or avoid threats and dangers in hostile environments."
+  },
+  {
+    "name": "One with the Wild",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "You can use your Survival skill instead of Discipline or Cool to recover strain at the end of an encounter when you are in the wilderness."
+  },
+  {
+    "name": "Operator",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Add one [[b]] per rank of Operator when interacting with non-sapient Matrix entities."
+  },
+  {
+    "name": "Overchannel",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "Yes",
+    "prereq": "Awakened trait",
+    "desc": "When you cast a spell or summon a spirit, you can select a number of additional effects with a combined amount of additional [[d]] up to your ranks in Overchannel. Instead of increasing  the difficulty, you add [(hh)] per reduced [[d]] to the roll."
+  },
+  {
+    "name": "Parry",
+    "tier": 1,
+    "act": "Active (Incidental, Out-of-Turn)",
+    "ranked": "Yes",
+    "desc": "When you suffer a hit from a Brawl or Melee combat check, after damage is calculated but before soak is applied, you may suffer 3 strain to reduce the damage of the hit by two plus your ranks in Parry. This talent can only be used once per hit, and you need to be wielding a Melee weapon deemed appropriate by the Gamemaster."
+  },
+  {
+    "name": "Pedal to the Metal",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "Once per round, when you are piloting a vehicle, your vehicle can suffer one system strain to increase or decrease it’s speed by one, to a minimum of zero or a maximum or the vehicles speed rating as an incidental."
+  },
+  {
+    "name": "Physician",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "You heal one additional strain per rank of Physician when you make a Medicine skill check to help a character heal wounds."
+  },
+  {
+    "name": "Precision",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "Once per encounter, as an incidental, after you have used the Aim maneuver on an unaware target, your next Ranged (Heavy) combat skill check deals an additional amount of damage equal to your Cunning characteristic."
+  },
+  {
+    "name": "Professional Hobo",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "Your character removes up to [[ss]] from any skill checks they make to find sustenance or shelter, and you find those in halt the time you would otherwise."
+  },
+  {
+    "name": "Quick Draw",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "Once per round, during your turn, you can draw or holster an easily accessible weapon or item as an incidental. Additionally, your weapons reduce their Prepare rating by one, to a minimum of zero."
+  },
+  {
+    "name": "Quick Strike",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Add one [[b]] per rank of Quick Strike to all Combat checks against targets that have not yet taken a turn in the current encounter."
+  },
+  {
+    "name": "Rapid Reaction",
+    "tier": 1,
+    "act": "Active (Incidental, Out-of-Turn)",
+    "ranked": "Yes",
+    "desc": "You can suffer two strain to add one [(s)] per rank of Rapid Reaction you all skill checks to determine Initiative order."
+  },
+  {
+    "name": "Shield Slam",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "When you use a shield to attack a non-nemesis adversary, you can spend [(aaa)] or [(t)] to stagger the target until the end of it’s next turn."
+  },
+  {
+    "name": "Shortcut",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Add one [[b]] per rank of Shortcut to all checks made to catch or escape an opponent on foot."
+  },
+  {
+    "name": "Side Step",
+    "tier": 1,
+    "act": "Active (Maneuver)",
+    "ranked": "Yes",
+    "desc": "Once per round, as a maneuver, you can suffer an amount of strain up to your ranks of Side Step to upgrade the difficulty of all ranged combat checks targeting you by an equivalent amount."
+  },
+  {
+    "name": "Signature Vehicle",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "When you purchase this talent, choose a vehicle with a silhouette of 3 or lower that you own and that you can pilot. Upgrade the ability of all Mechanics checks made to work on the vehicle once. If your Signature Vehicle is ever lost or destroyed, you may use the downtime between two runs to apply Signature Vehicle to a new vehicle that meets the requirements."
+  },
+  {
+    "name": "Smooth Talker",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "Yes",
+    "desc": "When you first purchase this talent, choose one of the following skills: Charm, Coercion, Deception, or Negotiation. When you make a skill check with the chosen skill, you may spend [(t)] to gain additional [(s)] equal to your ranks of Smooth Talker."
+  },
+  {
+    "name": "Smuggler",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "You gain the Hidden Storage vehicle attackment on all your vehicles, without spending any Hard Points. Vehicles with Hidden Storage that you are using can hold two additional Encumbrance per rank of Smuggler."
+  },
+  {
+    "name": "Solid Repairs",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "You repair an additional hull trauma per rank of Solid repairs when you repair a vehicle. When you repair a drone (or a similar device that does not have a hull trauma threshold), you repair two additional wounds instead."
+  },
+  {
+    "name": "Street Fighter",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "When you disorient or knock a target prone with a Brawl combat check, your target suffer additional wounds equal to your ranks in Skulduggery."
+  },
+  {
+    "name": "Street Slang",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "Once per scene, when you are in criminal or dubious company (as determined by the Gamemaster), you may suffer two strain to add an automatic [(ssa)] to a single Coercion or Cool check."
+  },
+  {
+    "name": "Surgeon",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "You heal one additional wound per rank of Surgeon when you make a Medicine skill check to help a character heal wounds."
+  },
+  {
+    "name": "Swift",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "You do not need to spend an extra maneuver to move through difficult terrain."
+  },
+  {
+    "name": "Tinkerer",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "You can add one additional Hard Point to a number of items up to your ranks in Tinkerer. You can only add one Hard Point per item in this way."
+  },
+  {
+    "name": "Toughened",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Increase your wound threshold by two for each rank of Toughened."
+  },
+  {
+    "name": "Tumble Through",
+    "tier": 1,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "Once per round, as an incidental during your turn, when you are Engaged by three or more adversaries, you may suffer two strain to disengage from all Engaged adversaries."
+  },
+  {
+    "name": "Bad Cop",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "Yes",
+    "desc": "You can spend [(aa)] from a Coercion or Deception skill check to upgrade the ability of a single allies’ subsequent social skill check a number of times equal to your ranks in Bad Cop. The check must target the same character as your initial check, and it must take place during the same encounter or scene. Only one character may affect a target with Bad Cop at the same time."
+  },
+  {
+    "name": "Berserk",
+    "tier": 2,
+    "act": "Active (Maneuver)",
+    "ranked": "No",
+    "desc": "Once per encounter, until the end of the encounter, or until you are incapacitated, you add [(saa)] to all Brawl and Melee combat checks you make, and [(s)] to all combat checks your opponents make against you. While you use Berserk, you cannot make ranged combat checks. At the end of the encounter, or when you become incapacitated, you suffer 6 strain."
+  },
+  {
+    "name": "Big Guns",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "For each rank in Big Guns, you reduce the Cumbersome quality and Encumbrance rating of your weapons by one, to a minimum of 3."
+  },
+  {
+    "name": "Bike Fu",
+    "tier": 2,
+    "act": "Active (Action)",
+    "ranked": "No",
+    "desc": "When you are Engaged with an adversary in personal combat while driving or operating a motorcycle (or similar) with a Silhouette of 2, as an action, you can make a Hard ([[ddd]]) Pilot or Operating skill check to attack the adversary; on a success, the attack deals 10 damage, plus one per uncancelled [(s)], can inflict a Critical Injury by spending [(aaa)] or [(t)], and does not damage you or your vehicle like a normal deliberate car crash. This talent counts as a Melee attack (meaning that Melee defense and talents apply)."
+  },
+  {
+    "name": "Blaster Master",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "Yes",
+    "desc": "When you make a ranged combat check with a weapon with the Blast quality, you can spend [(a)] to exclude one target per rank of Blaster Master that would be affected by the blast."
+  },
+  {
+    "name": "Bulwark",
+    "tier": 2,
+    "act": "Active (Incidental, Out-of-Turn)",
+    "ranked": "No",
+    "prereq": "Parry talent",
+    "desc": "When an ally you are Engaged with suffers a hit from a Brawl or Melee combat check, you may use the Parry talent to reduce the damage dealt to the ally."
+  },
+  {
+    "name": "Burly",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Your Encumbrance threshold becomes 10 plus your Brawn characteristic."
+  },
+  {
+    "name": "Certified Healing Magician",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "prereq": "Awakened trait",
+    "desc": "You heal one additional wound per rank in Medicine when you attempt to mend an injury with a Heal spell."
+  },
+  {
+    "name": "Chaos Casting",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "prereq": "Awakened trait",
+    "desc": "Once per session, you can spend an Edge to cast a spell or summon a spirit that is not in your repertoire."
+  },
+  {
+    "name": "Codeslinger",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "Once per encounter, as a maneuver, you can reduce your Firewall rating by one to increase the Program Slot rating in your commlink (or cyberdeck, RCC or similar) by one."
+  },
+  {
+    "name": "Combat Medicine",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "Yes",
+    "desc": "When you make a Medicine skill check to heal wounds of a character, you can add one [(s)] up to your ranks of Combat Medicine to the result of the roll, but deal an equal amount of strain to your target."
+  },
+  {
+    "name": "Counteroffer",
+    "tier": 2,
+    "act": "Active (Action)",
+    "ranked": "No",
+    "desc": "Once per session, as an action, you can target one non-nemesis target within Medium range and make an Opposed Negotiation vs. Discipline skill check. On a success, the target becomes staggered until the end of their next turn. At your Gamemasters discretion, you may spend [(t)] to have the target become a temporary ally until the end of the encounter. However, the duration of this talent may be shortened or extended depending on whether the Gamemaster feels your offer is appealing to the target and whether you follow through on your offer."
+  },
+  {
+    "name": "Cutting Questions",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "Once per encounter or scene, you can use your Deception skill instead of Coercion."
+  },
+  {
+    "name": "Danger Sense",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "You and allies within Short range add [[b]] to Perception and Vigilance skill checks. In an ally within Short range also possesses the Danger Sense talent, you and the ally add [[bb]] instead."
+  },
+  {
+    "name": "Defensive Sysops (Improved)",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "prereq": "Defensive Sysops talent",
+    "desc": "When you use the Defensive Sysops talent to add [[d]] to a Hacking skill check, after the roll was made but before it is resolved, you can change one [[d]] to a face displaying [(ff)], [(fh)] or [(hh)]."
+  },
+  {
+    "name": "Deflect (Improved)",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "prereq": "Deflect talent",
+    "desc": "When you suffer a hit from a ranged combat check and use the Deflect taent to reduce the damage from that hit, after the damage is calculated, but before additional effects are applied, you may add [(h)] equal to the Deflect rating of your shield to the result of the attack roll."
+  },
+  {
+    "name": "Determined Driver",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "You can spend an Edge to heal an amount system strain of a vehicle you are currently controlling equal to your ranks in Pilot or Operating (whichever skill applies)."
+  },
+  {
+    "name": "Distracting Behavior",
+    "tier": 2,
+    "act": "Active (Maneuver)",
+    "ranked": "Yes",
+    "desc": "Once per round, as a maneuver, you can suffer strain up to your Cunning characteristic. Until the beginning of your next turn, a number of targets equal to your suffered strain within Short range add [(h)] to all checks they make. For each rank of Distracting Behavior, you may increase the range at which targets can be affected by this talent by one range band."
+  },
+  {
+    "name": "Dual Wielder",
+    "tier": 2,
+    "act": "Active (Maneuver)",
+    "ranked": "No",
+    "desc": "As a maneuver, you can decrease the difficulty of the next combat check you make with two weapons during the same turn by one."
+  },
+  {
+    "name": "Escape Artist",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "Add [[b]] equal to your ranks in Skulduggery to checks made to escape from restraints. Additionally, you may spend [(t)] from these checks to immediately free all allies within Short range."
+  },
+  {
+    "name": "Fan The Hammer",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "Once per encounter, before you make a ranged combat check with a pistol, you can add the Full-Auto quality to the weapon, and when you do, the weapon runs out of ammo after the check."
+  },
+  {
+    "name": "Fearsome",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "When you Engage (or are engaged by) an adversary, you can spend two strain and force them to make an Opposed Fear check against your Coercion skill, and if you do, you add one [[s]] per rank of Fearsome."
+  },
+  {
+    "name": "Fighting Dirty",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "After you inflict a Critical Injury on an adversary, you can upgrade the difficulty of that adversaries next skill or combat check."
+  },
+  {
+    "name": "Finesse",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "When you make a Brawl or Melee combat check with a weapon without the Cumbersome rating and with an Encumbrance rating of one or lower, you can use your Reflexes characteristic instead of Brawn when building the dice pool for the combat check."
+  },
+  {
+    "name": "First Impressions",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "You can upgrade the ability of the first social skill check against a previously unknown character once."
+  },
+  {
+    "name": "Flash of Insight",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "When your character generated [(t)] on a Knowledge skill check, you can roll an additional [[bb]] and add the results to the check, in addition to spending [(t)] as usual."
+  },
+  {
+    "name": "Good Cop",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "Yes",
+    "desc": "You can spend [(aa)] from a Charm or Negitationo upgrade the ability of a single allies’ subsequent social skill check a number of times equal to your ranks in Bad Cop. The cGoodust target the same character as your initial check, and it must take place during the same encounter or scene. Only one character may affect a target with Good Cop at the same time."
+  },
+  {
+    "name": "Grapple",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "After you have made a successful Brawl or Melee combat check, you can suffer two strain; until the start of you next turn, enemies must spend an additional maneuver to disengage from your character."
+  },
+  {
+    "name": "Gun Fu",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "When you are targeted by an adversary with a Brawl or Melee combat check after you have previously attacked them with a ranged combat skill check using pistols, they do not add [[b]] to the check."
+  },
+  {
+    "name": "Hard Headed",
+    "tier": 2,
+    "act": "Active (Action)",
+    "ranked": "Yes",
+    "desc": "When you are staggered or disoriented, you can make a Daunting ([[dddd]]) Discipline check to remove the status. For each rank of Hard Headed beyond the first, you can reduce the difficulty of the check by one, to a minimum of Easy ([[d]])."
+  },
+  {
+    "name": "Haughty Demeanor",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "You can add [(h)] to social skill checks targeting you."
+  },
+  {
+    "name": "Headbutt",
+    "tier": 2,
+    "act": "Active (Maneuver)",
+    "ranked": "No",
+    "desc": "Once per encounter, as a maneuver, you can suffer two wounds and make an unarmed Brawl combat check against an organic target with a Silhouette up to one larger than your Silhouette rating. On a success, the target is knocked prone and disoriented until the end of the turn."
+  },
+  {
+    "name": "Hit The Dirt",
+    "tier": 2,
+    "act": "Active (Incidental, Out-of-Turn)",
+    "ranked": "No",
+    "desc": "You can spend one Edge to move into cover or out of radius of a weapon with the Blast quality."
+  },
+  {
+    "name": "Hold It Together",
+    "tier": 2,
+    "act": "Active (Incidental, Out-of-Turn)",
+    "ranked": "No",
+    "desc": "Once per encounter, when a vehicle you are currently controlling suffers a hit, after calculating damage, but before applying Armor, you may spend one Edge to turn the received damage into System Strain."
+  },
+  {
+    "name": "Hunter’s Quarry",
+    "tier": 2,
+    "act": "Active (Action)",
+    "ranked": "No",
+    "desc": "As an action, you can make a Hard ([[ddd]]) Survival skill check to upgrade the ability of all ranged combat checks you make against a target within long range until the end of your next turn."
+  },
+  {
+    "name": "Improvised Tool",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "Once per session, when you attempt a skill check without having the right tool for the job, you can choose an item Encumbrance of 1 or greater that you posess. When you use this talent, with the Gamemasters discretion you count as having the Right Tool for the Job, but the item is damaged by one step afterwards."
+  },
+  {
+    "name": "Inspiring Rhetoric",
+    "tier": 2,
+    "act": "Active (Action)",
+    "ranked": "No",
+    "desc": "Once per encounter or scene, you can make an Average ([[dd]]) Leadership skill check. For each [(s)] generated on the check, one ally withng Short range heals one strain. For each [(a)] generated on the check, one ally benefitting from Inspirational Rhetoric heals one additional strain."
+  },
+  {
+    "name": "Knockdown",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "After you have successfuly hit a target with a Brawl or Melee combat check, you may spend [(t)] to knock a target prone."
+  },
+  {
+    "name": "Knockout Strike",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "After you have made a successful combat check with a Melee weapon, you can add the Nonlethal quality to the weapon."
+  },
+  {
+    "name": "Know Your Enemy",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "At the Gamemasters discretion, you can use an appropriate Knowledge skill instead of Cool to determine initiative when you start an encounter against an adversary you have reseqrched about beforehand."
+  },
+  {
+    "name": "Known Floor Plan",
+    "tier": 2,
+    "act": "Active (Maneuver)",
+    "ranked": "No",
+    "desc": "Once per session, as an action, you can make a Hard ([[ddd]]) Knowledge skill check to gain familarity with the interior and exterior of a building."
+  },
+  {
+    "name": "Menacing Side Eye",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "When an ally you are Engaged with makes a successful Char, Deception or Negotiation skill check, they add [(a)] equal to your ranks in Coercion to the result of the check."
+  },
+  {
+    "name": "Magic Initiate",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "Yes",
+    "prereq": "Magic Tradition talent",
+    "desc": "Each time you purchase a rank in this talent, you gain an additional <a href=magic#magic/traditions_metamagics>Metamagic</a>."
+  },
+  {
+    "name": "Neijia Training",
+    "tier": 2,
+    "act": "Active (Maneuver)",
+    "ranked": "Yes",
+    "desc": "Once per turn, as a maneuver, before you make a Brawl or Melee combat check against a spirit in the same turn, you can suffer strain up to your ranks in Neijia Training to remove an equivalent amount of [[s]] from the check due to their resistance against non-magical attacks."
+  },
+  {
+    "name": "Nethunter",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "When you destroy an adversaries persona with a Matrix combat check, you immediately assess the physical location of it’s user."
+  },
+  {
+    "name": "One Against All",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "Add [[b]] to your Brawl, Melee and ranged combat checks with one-handed guns when Engaged by three or more opponents (including minion groups)."
+  },
+  {
+    "name": "Parkour!",
+    "tier": 2,
+    "act": "Active (Maneuver)",
+    "ranked": "No",
+    "desc": "Once per round, you may suffer one strain and move to any location within Short range. This includes locations that are vertically distannt or have no easy access route, but there must be an object or clear path to move along."
+  },
+  {
+    "name": "Living Polygraph",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Add [[b]] per rank of Living Polygraph to checks made to detect lies."
+  },
+  {
+    "name": "Probing Question",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "When you deal strain against an opponent whose fears, flaws or burdens you know, you deal 3 additional strain."
+  },
+  {
+    "name": "Professional Athlete",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Add [[b]] to Athletics and Resilience skill checks when you climb, run, swim, or resist exhaustion."
+  },
+  {
+    "name": "Puncturing Shot",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "When you hit a vehicle or drone with a ranged combat check, you may spend [(aa)] or [(t)] to reduce your target’s maximum speed by one until the end of the next turn. This can be applied multiple times (spending [(aa)] or [(t)] each time), to a minimum of zero."
+  },
+  {
+    "name": "Quick Draw (Improved)",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "prereq": "Quick Draw talent",
+    "desc": "You can use the Quick Draw talent an additional time per round. Additionally, you reduce the Prepare rating of your weapons by one (in addition to the reduction granted by the Quick Draw talent), to a minimum of one."
+  },
+  {
+    "name": "Quick Fix",
+    "tier": 2,
+    "act": "Active (Maneuver)",
+    "ranked": "No",
+    "desc": "You can spend an Edge to temporarily repair a damaged item in you possesion or your vicinity. For a number of rounds equal to your ranks in Mechanics, you can use the item without its usual penalties for being damaged, even if it is otherwise unusable. After the effect has ended, the item is further damaged by one step; if this would cause the item to exceed major damage, is is permanently destroyed and cannot be repaired."
+  },
+  {
+    "name": "Close Quarters Caster",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "prereq": "Awakened trait",
+    "desc": "When you add the Close Combat additional effect to an Attack spell, you can add you ranks in Brawl to the base damage of the spell."
+  },
+  {
+    "name": "Reckless Charge",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "When you use a maneuver to Engage with an adversary, you can suffer two strain and add [(sshh)] to your next Brawl or Melee combat check you make this turn."
+  },
+  {
+    "name": "Reconstructing The Scene",
+    "tier": 2,
+    "act": "Active (Action)",
+    "ranked": "No",
+    "desc": "Once per session, you can make a Hard ([[ddd]]) Perception skill check to identify distinctive physical characteristics of a person that was present at the current scene within the last 24 hours."
+  },
+  {
+    "name": "Resist Disarm",
+    "tier": 2,
+    "act": "Active (Incidental, Out-of-Turn)",
+    "ranked": "No",
+    "desc": "You can suffer two strain to avoid being disarmed."
+  },
+  {
+    "name": "Scathing Tirade",
+    "tier": 2,
+    "act": "Active (Action)",
+    "ranked": "No",
+    "desc": "Once per encounter or scene, you can make an Average ([[dd]]) Coercion skill check. For each [(s)] generated on the check, one target within Short range suffers one strain. For each [(a)] generated on the check, one target affected by Scathing Tirade suffers one additional strain."
+  },
+  {
+    "name": "Signature Spell",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "prereq": "Awakened trait",
+    "desc": "When you purchase this talent, choose a spell. You can redurce the difficulty of the spell by one, to a minimum of Simple (-)."
+  },
+  {
+    "name": "Smuggler (Improved)",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "prereq": "Smuggler talent",
+    "desc": "You gain a storage container within your body, similar to the Smuggling Compartment cyberlimb attachment, without suffering any additional Essence Loss or costing any additional Hard Points."
+  },
+  {
+    "name": "Strong Arm",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "You can increase the range of all thrown weapons by one additional range band, to a maximum of Long range."
+  },
+  {
+    "name": "Suppressing Fire",
+    "tier": 2,
+    "act": "Active (Incidental, Out-Of-Turn)",
+    "ranked": "Yes",
+    "desc": ""
+  },
+  {
+    "name": "Taunt",
+    "tier": 2,
+    "act": "Active (Action)",
+    "ranked": "No",
+    "desc": "Once per session, as an action, you can make an Opposed Deception vs. Vigilance skill check. On a success, until the end of your next turn, an adversary must spend a Story Point to attack any character except yours."
+  },
+  {
+    "name": "Shapeshifter",
+    "tier": 1,
+    "act": "Passive",
+    "ranked": "No",
+    "prereq": "Awakened trait",
+    "desc": ""
+  },
+  {
+    "name": "Shapeshifter (Improved)",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "prereq": "Shapeshifter talent",
+    "desc": ""
+  },
+  {
+    "name": "Trigger Discipline",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "When you perform a Ranged (Heavy combat check, if you have not readies or stowed a weapon during this turn, you add [(a)] to the result of the check."
+  },
+  {
+    "name": "Twenty-Finger Notation",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "When you make a Computer skill check to search for or create somethin in the Matrix, you may spend [(ss)] from the check to halve the time spent on the task (this may be taken multiple times, spending [(ss)] each time."
+  },
+  {
+    "name": "Thumbs-Forward-Grip",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "When you perform a Ranged (Light) combat check with a pistol or similar weapon, if you do not have anything in your other hand, you add [(a)] to the results."
+  },
+  {
+    "name": "Unarmed Parry",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "prereq": "Parry talent",
+    "desc": "You can use the Parry talent while unarmed."
+  },
+  {
+    "name": "Undercity Contacts",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "desc": "Once per session, you can spend an Edge to let your character know the general location of a character of your choice. At the Gamemasters discretion, the information might take up to an hour before coming back to you."
+  },
+  {
+    "name": "Unstoppable",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "You do not suffer from Critical Injuries with a result of one (this includes Critical Injury results that have been reduced to one)."
+  },
+  {
+    "name": "Well Read",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Each time you purchase a rank in Well Read, you gain a new Knowledge skill as an archetype skill."
+  },
+  {
+    "name": "Witness My Hate",
+    "tier": 2,
+    "act": "Active (Incidental)",
+    "ranked": "No",
+    "prereq": "Awakened trait",
+    "desc": "Once per round, when you cast an Attack spell, you can suffer strain up to your ranks in Discipline to increase you spells’ base damage by an equal amount. Additionally, if the spell would inflict a Critical Injury, you add 10 per suffered point of strain to the result."
+  },
+  {
+    "name": "Signature Vehicle (Improved)",
+    "tier": 2,
+    "act": "Passive",
+    "ranked": "No",
+    "prereq": "Signature Vehicle talent",
+    "desc": "Upgrade all Charm, Deception and Negotiation skill checks made in the presence of your Signature Vehicle once."
+  },
+  {
+    "name": "Magic Tradition (Improved)",
+    "tier": 3,
+    "act": "Passive",
+    "ranked": "No",
+    "prereq": "Magic Tradition talent",
+    "desc": "When you choose this talent, choose a non-combat and non-magical skill that has a characteristic that matches the characteristic you chose for the Magical Tradition talent. When you build your dice pool with your chosen characteristic, and choose an additional effect that adds your ranks in a magical skill to a resulting effect, you may use your ranks of your chosen skill instead, and if you do, you may add your ranks of your chosen characteristic to the effect. When your ranks in your chosen skill is higher than your ranks in the replaced magical skill, you cannot use an amount of ranks equal to your replaced magical skill."
+  },
+  {
+    "name": "More Machine than Man",
+    "tier": 3,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Increase your Essence loss threshold by one per rank of More Machine Than Man."
+  },
+  {
+    "name": "Parry (Improved)",
+    "tier": 3,
+    "act": "Active (Incidental, Out-of-Turn)",
+    "ranked": "No",
+    "prereq": "Parry talent",
+    "desc": "When your character suffers a hit from a melee combat check and uses Parry to reduce the damage from that hit, after the attack is resolved, you may spend [(d)] or [(hhh)] to automatically hit the attacker once with a Brawl or Melee weapon your character is wielding. The hit deals the weapon’s base damage, plus any damage from applicable talents or abilities. Your character use this talent if the original hit incapacitates them."
+  },
+  {
+    "name": "Deflect (Supreme)",
+    "tier": 4,
+    "act": "Passive",
+    "ranked": "No",
+    "prereq": "Deflect (Improved) talent",
+    "desc": "If you did not make a combat check during your previous turn, you suffer only one strain instead of three when you use the Deflect talent."
+  },
+  {
+    "name": "Expanded Aspect",
+    "tier": 3,
+    "act": "Passive",
+    "ranked": "Yes",
+    "prereq": "Awakened trait",
+    "desc": "Each time your purchase a rank in Expanded Aspect, you gain an additional magical skill (except Resonance) as an archetype skill."
+  },
+  {
+    "name": "Parry (Supreme)",
+    "tier": 4,
+    "act": "Passive",
+    "ranked": "No",
+    "prereq": "Parry (Improved) talent",
+    "desc": "If you did not make a combat check during your previous turn, you suffer only one strain instead of three when you use the Parry talent."
+  },
+  {
+    "name": "Dedication",
+    "tier": 5,
+    "act": "Passive",
+    "ranked": "Yes",
+    "desc": "Each rank permanently increases a single characteristic of your choice by one point. This cannot bring a characteristic above six. You can increase the same characteristic multiple times, but not twice in a row."
+  },
+  {
+    "name": "Latent Awakening",
+    "tier": 5,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "You gain the Awakened trait. Additionally, choose a magical skill (except Resonance); you gain the chosen skill as an archetype skill. You cannot take this talent if you already have the Awakened trait, and already have a magical archetype skill (except Resonance), or if your current Essence loss is equal or higher than your Willpower characteristic. If you have the Emergent trait, you replace it with the Awakened trait, and you remove Resonance from your archetype skills."
+  },
+  {
+    "name": "Latent Emergence",
+    "tier": 5,
+    "act": "Passive",
+    "ranked": "No",
+    "desc": "You gain the Emergent trait. Additionally, you add Resonance to your archetype skills. You cannot take this talent if you have the Awakened trait, or if your Essence loss is equal or higher than your Willpower characteristic."
+  }
+]
