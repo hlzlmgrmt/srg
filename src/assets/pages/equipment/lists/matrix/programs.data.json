@@ -1,0 +1,208 @@
+[
+  {
+    "name": "Browser",
+    "category": "common",
+    "system": "While this program is slotted, you gain one rank in the Matrix Search talent."
+  },
+  {
+    "name": "Configurator",
+    "category": "common",
+    "system": "After you have slotted the Configurator program, you can slot, unslot or change all Cyberprograms you have currently slotted, except for the Configurator program, with an Incidental instead of a maneuver."
+  },
+  {
+    "name": "Editor",
+    "category": "common",
+    "desc": "This program makes editing easier with a smart interface that learns your style.",
+    "system": "While this program is active, you can remove [[s]] from Computers checks when taking the Edit File matrix action."
+  },
+  {
+    "name": "Encryption",
+    "category": "common",
+    "desc": "This program reinforces the encryption of your firmware, making unauthorized access onto your device substantially harder.",
+    "system": "While this program is active, you increase the difficulty of Access System matrix actions once."
+  },
+  {
+    "name": "Evaluate",
+    "category": "common",
+    "desc": "With constant updates from a series of Black BBS that specialize in monitoring paydata auctions, this program calculates how much a certain amount of paydata might be worth, in order to allow the decker to only take an amount that would limit the amount of heat they would generate in stealing a little extra while on the job.",
+    "system": "While this program is active, you can reduce the difficulty of Streetwise skill checks to evaluate the worth of paydata by [[dd]]. Additionally, you can upgrade all checks to sell paydata once."
+  },
+  {
+    "name": "Hitchhiker",
+    "category": "common",
+    "desc": "There are some special parts of the Matrix where you can take others with you--and where you definitely don’t want to be alone.",
+    "system": "When you and an ally within Short range of your persona have the Hitchhiker cyberprogram slotted, you can Aid each other in all Computers and Hacking skill checks."
+  },
+  {
+    "name": "Search",
+    "category": "common",
+    "desc": "When loaded, this cyberprogram tailors the cyberdeck’s search algorithms to match the specific iconography of the host, making the decker’s Matrix Search results more likely to contain the paydata he’s looking for. This is quite popular with Mr. Johnsons, who often provide copies with pre-loaded search requirements that are programmed to self-destruct after use, so that they can only be run once.",
+    "system": "Choose a Knowledge skill when purchasing this program. While this program is slotted, you gain [(sa)] to all checks made with the chosen Knowledge skill."
+  },
+  {
+    "name": "Shredder",
+    "category": "common",
+    "desc": "This program is designed to assist in erasing files and all their redundant back-up options that might be around inside a host and grid that the host inhabits. It functions by entering a large amount of random junk data into designated files, overwriting them repeatedly to help deter attempts at recovering them. A nice security option that is legal for users to use, but highly illegal for unauthorized deletions, let alone corporate sabotage.",
+    "system": [
+      "While you have access to a device, host, or grid you can make an Edit File matrix action. On a success, you delete the file, as well as all backup copies that are inside the same device, host or grid. Backups kept on offline storages or separate grids are not affected by Shredders, and the Gamemaster can increase the difficulty of the check based on how distributed the file in question is. If this would cause the total difficulty to be higher than Formidable ([[ddddd]]), Shredder does nothing.",
+      "<div class=\"table-responsive mt-1\"><table class=\"table table-hover\"><caption>Difficulty Modifiers for Shredder programs</caption><thead><tr><th>Example</th><th>Difficulty Mod.</th></tr></thead><tbody><tr><td>Unique file without backups</td><td>+-</td></tr><tr><td>Private gallery shared amongst a small friend group</td><td>+[[d]]</td></tr><tr><td>Average government legal documents</td><td>+[[dd]]</td></tr><tr><td>Corporate time & attendance system</td><td>+[[ddd]]</td></tr><tr><td>Intentionally distributed and self-repairing information</td><td>+[[dddd]]</td></tr></tbody></table></div><p>"
+    ]
+  },
+  {
+    "name": "Signal Scrub",
+    "category": "common",
+    "desc": "This program can analyze the background noise and incoming signals to optimize incoming and outgoing matrix traffic.",
+    "system": "After you make a Computers check in order to interact with the Matrix, but before the roll is resolved, you can remove [(f)] from the roll."
+  },
+  {
+    "name": "Toolbox",
+    "category": "common",
+    "system": "When you purchase this program, choose a specific task. While this program is slotted, it acts as the right tool for the chosen task."
+  },
+  {
+    "name": "Tracker",
+    "category": "common",
+    "system": "While this program is active, you can reduce the amount of a required to assess the physical location of a persona by one. Additionally, you can upgrade all Computers skill checks when you use the Seek matrix action to search for the physical location of a persona."
+  },
+  {
+    "name": "Virtual Machine",
+    "category": "common",
+    "desc": "This program creates a virtual memory space in your device, giving you increased program capacity at the cost of system stability.",
+    "system": "You can two additional program slots on your device (net one with the Virtual Machine program slotted). While the Virtual Machine is slotted, whenever you suffer system stain, you suffer an additional system strain."
+  },
+  {
+    "name": "Wrapper",
+    "category": "common",
+    "desc": "Similar to digital fashion, this little program resprays and textures a persona’s icon, making it easier to keep appearances while inside a host. It also allows you to thwart attempts of Matrix security to spot you again after losing sight of you."
+  },
+  {
+    "name": "Armor",
+    "category": "hacking",
+    "system": "While this program is active, you increase the difficulty of all Computers and Hacking checks you make once, but you increase your Firewall by one."
+  },
+  {
+    "name": "Baby Monitor",
+    "category": "hacking",
+    "desc": "The Baby Monitor program uses algorithms stolen from the Grid Overwatch Division and keeps track of movements in the Matrix.",
+    "system": "While the Baby Monitor is slotted, you are informed when someone is actively looking for you or your allies in the Matrix. Additionally, you upgrade all Computers checks when you use the Seek matrix action to search for adversaries that are actively hiding while having unauthorized access to a device or host that you own or are protecting."
+  },
+  {
+    "name": "Biofeedback",
+    "category": "hacking",
+    "desc": "This program laces all of the attacks you make against other icons with especially dangerous biofeedback signals, the sort of drek that Black IC and G-men use.",
+    "system": "When your Data Spike would cause biofeedback, you can spend [(aa)] to inflict a Critical Injury on the target."
+  },
+  {
+    "name": "Blackout",
+    "category": "hacking",
+    "desc": "This is a kinder version of the Biofeedback cyberprogram, designed to incapacitate a target than outright kill them.",
+    "system": "When your Data Spike would cause biofeedback, it deals strain instead of wounds."
+  },
+  {
+    "name": "Bootstrap",
+    "category": "hacking",
+    "desc": "An IT expert’s tool of choice when working with boot code of a device. Corrupted by many hackers, Bootstrap allows for hidden commands to be input into the device after the next reboot. Popular options include announcing the location of the device when it connects to the Matrix, adjusting the processing of the device so that the default device attributes are the choice of the user, annoying the user with constant demands for ownership permissions, and making a record of every action on the device.",
+    "system": "While you have access to a device, you can make an Edit File matrix action. On a success, until the\n  end of the encounter or scene, you can set a single permission or configuration of the target device as if you were\n  it's owner. Uncancelled [(s)] generated on the check increase the it's duration by an additional six hours, while\n  [(aa)] can be used to set an additional permission or setting of the target device (this can be taken multiple times,\n  requiring [(aa)] each)."
+  },
+  {
+    "name": "Cat's Paw",
+    "category": "hacking",
+    "desc": "A low-offensive attack program that distracts the user instead of damaging the device he is using, Cat’s Paw is\n  useful to prevent a user from performing Matrix actions while not bricking the device they may be using. This program\n  fills the AR display or VR experience with annoying errors, spam pop-ups and pop-unders, or other distracting\n  garbage that may not be directy attributed to a hacking attempt.",
+    "system": "As an action, you can make a Hacking combat check against a target persona. On a success, until the\n  beginning of your next round, they are Disoriented."
+  },
+  {
+    "name": "Crash",
+    "category": "hacking",
+    "desc": "One thing deckers have learned about the new Matrix protocols is that the ability to force devices to reboot can be\n  very beneficial. Crash is there to help deckers who want to do this. When running, it attempts to fill a targeted\n  device with an exceptional amount of reboot-worthy errors, causing it to crash and reboot.",
+    "system": "As an action, you can make a Hard ([ddd]) Hacking skill check against a target that you have access\n  to. On a success, the target crashes without breaking, and cannot be used for the rest of the encounter."
+  },
+  {
+    "name": "Data Bomb",
+    "category": "hacking",
+    "system": "As an action, make a Hacking skill check against a target icon that you have access to. On a success,\n  it becomes protected by a Data Bomb. When someone else than you or unauthorized by you attempts to interact with the\n  Data Bomb, they must succeed an Opposed Computers vs. Hacking skill check or suffer an amount of System Strain equal\n  to your Intellect characteristic, plus any uncancelled [(s)] on the original check. If they succeed the Computers\n  check, they do not trigger the bomb, and can take an Opposed Computers vs. Hacking skill check to disarm the bomb.\n  When you set the bomb, you can decide if it should destroy the icon that it is protecting or not."
+  },
+  {
+    "name": "Decryption",
+    "category": "hacking",
+    "system": "While this program is active, you upgrade all Hacking skill checks when you use the Access System\n  matrix action once."
+  },
+  {
+    "name": "Defuse",
+    "category": "hacking",
+    "desc": "This program creates predictive barriers between you and a Data Bomb, making it easier and safer to disassemble.",
+    "system": "While this program is active, you upgrade all Computers checks when interacting with a Data Bomb."
+  },
+  {
+    "name": "Exploit",
+    "category": "hacking",
+    "system": "When you add [[b]] to your next Hacking skill check due to the Mark matrix maneuver, you can add\n  [(sa)] to the result of the check instead."
+  },
+  {
+    "name": "Fly on the Wall",
+    "category": "hacking",
+    "desc": "Haven’t you always wanted to be the fly on a wall, in order to see the look on the faces of people when the final\n  tally of their lives comes up? Well, GOD tends to prevent long-term surveillance by unauthorized personnel, but this\n  program helps rebalance the scales.",
+    "system": "As an action, you can designate an area roughly the size of a big room within Short range of your\n  persona and place a small, hidden icon within it. While the Fly on the Wall is slotted and active, you are informed\n  about all activity inside of the pool that can leave a digital trail, such as personas, devices and other icons of\n  interest. Spotting the Fly takes a Seek matrix action, any you may make Seek action as if you were at the position of\n  the Fly while the program is active."
+  },
+  {
+    "name": "Fork",
+    "category": "hacking",
+    "system": "While this program is active, you can increase the difficulty of a Computers or Hacking check by one\n  in order to target an additional target within range. Use the higher of the target's difficulty and Firewall ratings\n  to determine the total dice pool. On a success, the decker may spend [(aa)] to target an additional target."
+  },
+  {
+    "name": "Guard",
+    "category": "hacking",
+    "desc": "This program keeps an eye out for weaknesses the same way an attacker would, making it harder for hostile deckers\n  to place a mark on you.",
+    "system": "While this program is active, as an Out-of-Turn incidental, you can suffer 2 strain and remove a mark\n  that has been placed by the Mark matrix maneuver on you or an ally within Short range of your persona. Until the\n  beginning of your next turn, no Mark matrix maneuvers can be taken against your protected target."
+  },
+  {
+    "name": "Hammer",
+    "category": "hacking",
+    "system": "While this program is active, you can increase the damage of your Data Spikes by two. If the target\n  does not have a System Strain monitor, you can decrease the amount of [(s)] needed to damage the target by one step\n  once (to a minimum of [(s)])."
+  },
+  {
+    "name": "Link-Lock",
+    "category": "hacking",
+    "system": "Make a Hard ([ddd]) Hacking combat check against a target persona in VR within Short range of your\n  persona. On a success, the target cannot use the Switch Interface Mode matrix maneuver to voluntarily return to AR.\n  While the Link-Lock is active, a target can only be freed by by unslotting your Link-Lock cyberprogram, destroying\n  your persona, or being violently jacked-out from the Matrix. Additionally, while Link-Locked, a target must succeed an\n  Opposed Computers vs. Hacking skill check in order to communicate through the Matrix."
+  },
+  {
+    "name": "Mugger",
+    "category": "hacking",
+    "system": "When your character uses the Mark matrix action to attack an unaware target with a Data Spike, they\n  deal an additional two system strain to their target."
+  },
+  {
+    "name": "Paintjob",
+    "category": "hacking",
+    "desc": "This program makes overlays your marks with AROs, marking not only their personas but also outlining them in\n  realspace.",
+    "system": "While this program is active, until the beginning of your next turn, after you have used the Mark\n  matrix maneuver but have not used and Hacking combat or skill check against the marked target, you allies add [[b]] to\n  their next Perception or combat check against the marked target."
+  },
+  {
+    "name": "Shell",
+    "category": "hacking",
+    "system": "While this program is active, you add [[ss]] to all Computers and Hacking skill checks you make, but\n  reduce the amount of wounds and strain you would take through biofeedback by one. Additionally, if biofeedback or a\n  jack-out would cause you to suffer a Critical Injury, you can subtract 30 from the roll to determine the injury."
+  },
+  {
+    "name": "Smoke-and-Mirrors",
+    "category": "hacking",
+    "desc": "This program adds significant amounts of misleading location information in order to keep the decker from being\n  located.",
+    "system": "While this program is active, you upgrade all Hacking skill checks when you use the Hide matrix action\n  once, but increase the difficulty of all other Computers and Hacking checks once. When you unslot this program, anyone\n  actively looking for you with the Seek matrix action immediately becomes aware of you."
+  },
+  {
+    "name": "Sneak",
+    "category": "hacking",
+    "system": "While this program is active, a decker must spend an additional [(a)] in order to assess your physical\n  location."
+  },
+  {
+    "name": "Swerve",
+    "category": "hacking"
+  },
+  {
+    "name": "Tantrum",
+    "category": "hacking",
+    "system": "As an action, you can make a Hacking combat check against a target persona. On a success, your target\n  must immediately succeed a Hard ([[ddd]]) Resilience check or suffer from severe nausea, dealing two strain plus any\n  uncancelled [(f)] generated by the check, as well as Disorienting them until the end of their next turn. Additionally,\n  any [(h)] generated by the check can be spend to force the target to give up their free maneuver during their next\n  turn, and [(hhh)] may be spent to stagger the target during their next turn. This does not only work on personas in\n  VR, but also on anyone with at least two Essence Loss worth of bodytech."
+  },
+  {
+    "name": "Tarball",
+    "category": "hacking",
+    "system": "While this program is active, you can make a Hacking combat check against a target persona. If\n  successful, you can forcibly unslot a cyberprogram they have slotted, and which cannot be re-slotted until the end of\n  the encounter or scene."
+  }
+]

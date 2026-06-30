@@ -7,14 +7,16 @@ console.info('Running page content parser');
 
 const fs = require('fs');
 const path = require('path');
-const { parse: domParse } = require('node-html-parser');
+const {parse: domParse} = require('node-html-parser');
 const {elementAt} = require("rxjs");
 
 const {platform} = process;
 const locale = path[platform == 'win32' ? 'win32' : 'posix']
 
 console.log('Detected platform', platform);
-const srcDir = __dirname + '/src/assets/pages'
+const srcDir = __dirname + '/src/assets';
+const pagesSrcDir = srcDir + '/pages';
+const templatesSrcDir = srcDir + '/templates';
 const targetDir = __dirname + '/target/assets/pages';
 
 // Regex for determining content <ins></ins>-Tags
@@ -76,7 +78,7 @@ const walk = function (dir, done) {
           });
         } else {
           if (file.endsWith('.html')) {
-            results.set(file.substring(srcDir.length + 1, file.length), fs.readFileSync(file, {encoding: 'utf-8'}));
+            results.set(file.substring(pagesSrcDir.length + 1, file.length), fs.readFileSync(file, {encoding: 'utf-8'}));
           }
           if (!--pending) done(null, results);
         }
@@ -106,50 +108,84 @@ const parse = function (content, done) {
 }
 
 function parseTemplates(value, key) {
-  domParse(value).getElementsByTagName('template').forEach((template) => {
-    const datasource = template.getAttribute('data-source');
-    if (!datasource) done('Cannot find required attribute data-source', datasource, 'in file', key);
-    console.log('Building template', datasource, key);
+  // Parse root templates first
+  domParse(value).getElementsByTagName('template').forEach((templateElement) => {
+    const id = templateElement.getAttribute('id');
+    if (id) {
+      const templateAttributes = getAttributes(templateElement);
+      let innerTemplate = fs.readFileSync(templatesSrcDir + '/' + id, {encoding: 'utf-8'});
 
+      domParse(innerTemplate).getElementsByTagName('template').forEach((innerTemplateElement) => {
+        const innerTemplateOrig = innerTemplateElement.toString();
+        setAttributes(innerTemplateElement, templateAttributes);
+        innerTemplate = innerTemplate.replaceAll(new RegExp(escapeRegExp(innerTemplateOrig), 'gm'), innerTemplateElement.toString());
+      })
+      value = value.replaceAll(new RegExp(escapeRegExp(templateElement.toString()), 'gm'), innerTemplate);
+    }
+  });
+
+  domParse(value).getElementsByTagName('template').forEach((templateElement) => {
     let replace = '';
-    const templateAttributes = template.outerHTML.match(new RegExp("\\${{[^\${}]+}}", 'g'));
-    const sortedByKey = template.getAttribute('data-sortedby');
-    const filteredByKey = template.getAttribute('data-filteredbykey');
-    const filteredByValue = template.getAttribute('data-filteredbyvalue');
+    const templateValues = templateElement.outerHTML.match(new RegExp("\\${{[^\${}]+}}", 'g'));
+    const templateAttributes = getAttributes(templateElement);
+    if (!templateAttributes.dataSource) done('Cannot find required attribute data-source',
+      templateAttributes.dataSource, 'in file', key);
+    console.log('Building template', templateAttributes.dataSource, 'in', key);
 
-    JSON.parse(fs.readFileSync(srcDir + '/' + datasource, {encoding: 'utf-8'}))
-      .sort((a,b) => sortedByKey ? a[sortedByKey].localeCompare(b[sortedByKey]) : -1)
-      .filter((data) => filteredByValue && filteredByValue ? data[filteredByKey] == filteredByValue : true)
+    JSON.parse(fs.readFileSync(pagesSrcDir + '/' + templateAttributes.dataSource, {encoding: 'utf-8'}))
+      .sort((a, b) => templateAttributes.sortedBy ? a[templateAttributes.sortedBy].localeCompare(b[templateAttributes.sortedBy]) : 1)
+      .filter((data) => templateAttributes.filteredByKey && templateAttributes.filteredByValue
+        ? data[templateAttributes.filteredByKey] == templateAttributes.filteredByValue : true)
       .forEach((data => {
-        let innerReplace = template.innerHTML;
-        if (templateAttributes && templateAttributes.length > 0) templateAttributes.forEach((attributeTag) => {
-          const attribute = attributeTag.substring(3, attributeTag.indexOf('}')).trim();
-          const nullableElements = template.querySelectorAll('[data-disableonnullkey="' + attribute + '"]');
-          if (nullableElements && !data[attribute]) {
-            nullableElements.forEach((elem) =>
+        let innerReplace = templateElement.innerHTML;
+        if (templateValues && templateValues.length > 0) templateValues.forEach((valueTag) => {
+          const templateValue = valueTag.substring(3, valueTag.indexOf('}')).trim();
+          if (templateValue == 'key' && !data['key']) {
+            data['key'] = data['name'].toString().toLowerCase().replace(/[.*+?^\-$&{}()|[\]\\\/\s]+/g, '_');
+          }
+
+          const hiddenElementsOnNullValue = templateElement.querySelectorAll('[data-hideonnullvalueforkey="' + templateValue + '"]');
+          if (hiddenElementsOnNullValue && !data[templateValue]) {
+            hiddenElementsOnNullValue.forEach((elem) =>
               innerReplace = innerReplace.replace(new RegExp(escapeRegExp(elem.toString()), 'gm'), ''));
           }
 
-          if (Array.isArray(data[attribute])) {
-            const containingTags = Array.from(template.querySelectorAll('*'))
-              .filter(el => el.innerText.includes(attributeTag));
+          if (Array.isArray(data[templateValue])) {
+            const containingTags = Array.from(templateElement.querySelectorAll('*'))
+              .filter(el => el.innerText.includes(valueTag));
 
             let delimiter = ', ';
             if (containingTags && containingTags.length > 0) {
               delimiter = containingTags[0].getAttribute('data-delimiter') ?? delimiter;
             }
-            innerReplace = innerReplace.replaceAll(attributeTag, data[attribute].join(delimiter));
+            innerReplace = innerReplace.replaceAll(valueTag, data[templateValue].join(delimiter));
           } else {
-            innerReplace = innerReplace.replaceAll(attributeTag, data[attribute]);
+            innerReplace = innerReplace.replaceAll(valueTag, data[templateValue]);
           }
         })
         replace = replace + innerReplace;
       }));
 
-    value = value.replaceAll(new RegExp(escapeRegExp(template.toString()), 'gm'), replace);
+    value = value.replaceAll(new RegExp(escapeRegExp(templateElement.toString()), 'gm'), replace);
   });
   return value;
 }
+
+function getAttributes(template) {
+  return {
+    dataSource: template.getAttribute('data-source'),
+    sortedBy: template.getAttribute('data-sortedby'),
+    filteredByKey: template.getAttribute('data-filteredbykey'),
+    filteredByValue: template.getAttribute('data-filteredbyvalue')
+  }
+}
+function setAttributes(template, attributes) {
+  if (attributes.dataSource) template.setAttribute('data-source', attributes.dataSource)
+  if (attributes.sortedBy) template.setAttribute('data-sortedby', attributes.sortedBy)
+  if (attributes.filteredByKey) template.setAttribute('data-filteredbykey', attributes.filteredByKey)
+  if (attributes.filteredByValue) template.setAttribute('data-filteredbyvalue', attributes.filteredByValue)
+}
+
 function parseGlyphs(value) {
   // Parse glyphs
   const glyphMatches = value.match(new RegExp(glyphSelector, 'g'));
@@ -179,6 +215,7 @@ function parseGlyphs(value) {
   }
   return value;
 }
+
 function escapeRegExp(string) {
   // Escape all special regex characters with a backslash
   return string.replace(/[.*+?^${}()|[\]\\\/]/g, '\\$&');
@@ -260,7 +297,7 @@ const write = function (dir, content, done) {
 }
 
 // --------------------------------------------------
-walk(srcDir, function (err, results) {
+walk(pagesSrcDir, function (err, results) {
   if (err) throw err;
   parse(results, function (err, results) {
     if (err) throw err;

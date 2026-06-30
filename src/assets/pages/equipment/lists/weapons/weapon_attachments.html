@@ -1,0 +1,32 @@
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>HP Req.</th>
+      <th>Price</th>
+      <th>Rarity</th>
+      <th>Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <template data-source="equipment/lists/weapons/weapon_attachments.data.json"
+              data-sortedBy="name">
+      <tr>
+        <th>${{ name }}</th>
+        <td>${{ hp }}</td>
+        <td>${{ pr }}</td>
+        <td>${{ rar }}</td>
+        <td>${{ sum }}</td>
+      </tr>
+    </template>
+    </tbody>
+  </table>
+</div>
+<template data-source="equipment/lists/weapons/weapon_attachments.data.json"
+          data-sortedBy="name">
+  <h5 id="equipment/lists/weapons/weapon_attachments/${{key}}">${{ name }}</h5>
+  <p data-delimiter="</p><p>">${{ desc }}</p>
+  <p data-delimiter="</p><p>"><b>Base Modifier:&nbsp;</b>${{ system }}</p>
+  <p data-hideonnullvalueforkey="mods" data-delimiter="&nbsp;Mod,&nbsp;"><b>Modification Options:&nbsp;</b><i>${{ mods }}&nbsp;Mod</i></p>
+</template>

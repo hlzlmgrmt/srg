@@ -1,5 +1,83 @@
 <p>matrix gear works!</p>
 
-<ins id="equipment/lists/matrix/cyberdecks.html">Cyberdecks</ins>
-<ins id="equipment/lists/matrix/cyberdeck_attachments.html">Cyberdeck Modifications</ins>
-<ins id="equipment/lists/matrix/programs.html">Cyberprograms</ins>
+<h4 id="equipment/lists/matrix/cyberdecks">Cyberdecks</h4>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Slots</th>
+      <th>HP</th>
+      <th>Pr.</th>
+      <th>Rar.</th>
+      <th>Special</th>
+    </tr>
+    </thead>
+    <tbody>
+    <template data-source="equipment/lists/matrix/cyberdecks.data.json">
+      <tr>
+        <th>${{ name }}</th>
+        <td>${{ slots }}</td>
+        <td>${{ hp }}</td>
+        <td>&yen;&nbsp;${{ pr }}</td>
+        <td>${{ rar }}</td>
+        <td><span data-hideonnullvalueforkey="special">${{ special }}</span></td>
+      </tr>
+    </template>
+    </tbody>
+  </table>
+</div>
+
+<h4 id="equipment/lists/matrix/cyberdeck_attachments">Cyberdeck Modifications</h4>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>HP req.</th>
+      <th>Pr.</th>
+      <th>Rar.</th>
+      <th>Summary</th>
+    </tr>
+    </thead>
+    <tbody>
+    <template data-source="equipment/lists/matrix/cyberdeck_attachments.data.json" data-sortedby="name">
+      <tr>
+        <th>${{ name }}</th>
+        <td>${{ hp }}</td>
+        <td>&yen;&nbsp;${{ pr }}</td>
+        <td>${{ rar }}</td>
+        <td>${{ summ }}</td>
+      </tr>
+    </template>
+    </tbody>
+  </table>
+</div>
+<template data-source="equipment/lists/matrix/cyberdeck_attachments.data.json" data-sortedby="name">
+  <h5 id="equipment/lists/matrix/cyberdeck_attachments/${{key}}">${{ name }}</h5>
+  <p data-delimiter="</p><p>">${{ desc }}</p>
+  <p data-hideonnullvalueforkey="mods" data-delimiter="&nbsp;Mod,&nbsp;"><b>Modification
+    Options:&nbsp;</b><i>${{ mods }}&nbsp;Mod</i></p>
+</template>
+
+<h4 id="equipment/lists/matrix/programs">Cyberprograms</h4>
+<p>Cyberprograms are divided into three basic categories: <b>Common Cyberprograms</b> are toolkits, that are completely
+  legal to possess and use. These programs usually do not aid in hacking, but can be useful for information gathering,
+  technology management, or general matrix usage. <b>Hacking Software</b> are tools that are mainly used in cybercombat,
+  or digital breaking-and-entering, such as Hammer programs, stealth tools or similar. Hacking Programs are not
+  necessarily illegal, but most administration with working matrix laws require you to have a licence in order to
+  possess or use these. <b>Pilots</b> are used in order to control drones, vehicles, and swarms, and are usually
+  deployed by riggers, drivers, or military drone commanders, and usually used with a commlink or an RCC.</p>
+
+<h5 id="equipment/lists/matrix/programs/common">Common Cyberprograms</h5>
+<template id="equipment/programs.template.html" data-source="equipment/lists/matrix/programs.data.json"
+          data-sortedby="name" data-filteredbykey="category" data-filteredbyvalue="common"></template>
+
+<h5 id="equipment/lists/matrix/programs/hacking">Hacking Software</h5>
+<template id="equipment/programs.template.html" data-source="equipment/lists/matrix/programs.data.json"
+          data-sortedby="name" data-filteredbykey="category" data-filteredbyvalue="hacking"></template>
+
+<!--h5 id="equipment/lists/matrix/programs/pilot">Pilots</h5>
+<template id="equipment/programs.template.html" data-source="equipment/lists/matrix/programs.data.json"
+          data-sortedby="name" data-filteredbykey="category" data-filteredbyvalue="pilots"></template>
+

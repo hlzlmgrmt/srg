@@ -136,13 +136,14 @@
               "heavy_ranged_weapons": "Heavy Ranged Weapons",
               "grenades": "Grenades",
               "launchers": "Launchers",
-              "attachments": "Weapon Attachments"
+              "missiles": "Missiles",
+              "weapon_attachments": "Weapon Attachments"
             }
           },
           "armor": {
             "display_name": "Armor",
             "children": {
-              "attachments": "Armor Attachments"
+              "armor_attachments": "Armor Attachments"
             }
           },
           "gear": {
@@ -183,8 +184,7 @@
                 "display_name": "Cyberprograms",
                 "children": {
                   "common": "Common Cyberprograms",
-                  "hacking": "Hacking Software",
-                  "pilot": "Pilots"
+                  "hacking": "Hacking Software"
                 }
               }
             }

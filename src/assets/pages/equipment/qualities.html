@@ -9,7 +9,7 @@
   different ways, depending on the quality in question.</p>
 <p>Active qualities require [(aa)] to activate unless otherwise stated in their description.</p>
 
-<template data-source="equipment/qualities.data.json" data-sortedby="title">
-  <h3 id=equipment/qualities/${{id}}>${{ title }}</h3>
+<template data-source="equipment/qualities.data.json" data-sortedby="name">
+  <h3 id=equipment/qualities/${{key}}>${{ name }} (${{ act }})</h3>
   <p data-delimiter="</p><p>">${{ desc }}</p>
 </template>

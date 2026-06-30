@@ -117,14 +117,14 @@
     "tier": 1,
     "act": "Passive",
     "ranked": "Yes",
-    "desc": "Add one [[b]] per rank of Command fo Leadership skill checks when commanding your allies. Affected targets add [[b]] to all Discipline check they make for the next 24 hours."
+    "desc": "Add one [[b]] per rank of Command to Leadership skill checks when commanding your allies. Affected targets add [[b]] to all Discipline check they make for the next 24 hours."
   },
   {
-    "name": "Concealed Holsters",
+    "name": "Hidden Pockets",
     "tier": 1,
     "act": "Passive",
-    "ranked": "No",
-    "desc": "Hand-held equipment or weapons with an Encumbrance of 1 or lower that you carry gain the Concealable 1 quality."
+    "ranked": "Yes",
+    "desc": "Hand-held equipment or weapons with an Encumbrance of 1 or lower that you carry gain the Concealable quality with a rating equal to your ranks of Hidden Pockets."
   },
   {
     "name": "Confidence",
