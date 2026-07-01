@@ -8,8 +8,8 @@
       <th>Range</th>
       <th>Enc.</th>
       <th>HP</th>
-      <th>Price</th>
-      <th>Rarity</th>
+      <th>Pr.</th>
+      <th>Rar.</th>
       <th>Special</th>
     </tr>
     </thead>
@@ -31,7 +31,7 @@
   </table>
 </div>
 <template>
-  <h5>${{ name }}</h5>
+  <h5 id="equipment/lists/weapons/${{key}}">${{ name }}</h5>
   <p data-delimiter="</p><p>">${{ desc }}</p>
   <p data-hideonnullvalueforkey="models" data-delimiter=",&nbsp;"><b>Models Include:&nbsp;</b><i>${{ models }}</i></p>
 </template>
