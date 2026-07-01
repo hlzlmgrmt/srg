@@ -174,16 +174,16 @@ function parseTemplates(value, key) {
 function getAttributes(template) {
   return {
     dataSource: template.getAttribute('data-source'),
-    sortedBy: template.getAttribute('data-sortedby'),
-    filteredByKey: template.getAttribute('data-filteredbykey'),
-    filteredByValue: template.getAttribute('data-filteredbyvalue')
+    sortedBy: template.getAttribute('data-sortby'),
+    filteredByKey: template.getAttribute('data-filterbykey'),
+    filteredByValue: template.getAttribute('data-filterbyvalue')
   }
 }
 function setAttributes(template, attributes) {
   if (attributes.dataSource) template.setAttribute('data-source', attributes.dataSource)
-  if (attributes.sortedBy) template.setAttribute('data-sortedby', attributes.sortedBy)
-  if (attributes.filteredByKey) template.setAttribute('data-filteredbykey', attributes.filteredByKey)
-  if (attributes.filteredByValue) template.setAttribute('data-filteredbyvalue', attributes.filteredByValue)
+  if (attributes.sortedBy) template.setAttribute('data-sortby', attributes.sortedBy)
+  if (attributes.filteredByKey) template.setAttribute('data-filterbykey', attributes.filteredByKey)
+  if (attributes.filteredByValue) template.setAttribute('data-filterbyvalue', attributes.filteredByValue)
 }
 
 function parseGlyphs(value) {

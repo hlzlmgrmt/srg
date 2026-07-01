@@ -41,7 +41,7 @@
     </tr>
     </thead>
     <tbody>
-    <template data-source="equipment/lists/matrix/cyberdeck_attachments.data.json" data-sortedby="name">
+    <template data-source="equipment/lists/matrix/cyberdeck_attachments.data.json" data-sortby="name">
       <tr>
         <th>${{ name }}</th>
         <td>${{ hp }}</td>
@@ -53,7 +53,7 @@
     </tbody>
   </table>
 </div>
-<template data-source="equipment/lists/matrix/cyberdeck_attachments.data.json" data-sortedby="name">
+<template data-source="equipment/lists/matrix/cyberdeck_attachments.data.json" data-sortby="name">
   <h5 id="equipment/lists/matrix/cyberdeck_attachments/${{key}}">${{ name }}</h5>
   <p data-delimiter="</p><p>">${{ desc }}</p>
   <p data-hideonnullvalueforkey="mods" data-delimiter="&nbsp;Mod,&nbsp;"><b>Modification
@@ -70,14 +70,14 @@
   deployed by riggers, drivers, or military drone commanders, and usually used with a commlink or an RCC.</p>
 
 <h5 id="equipment/lists/matrix/programs/common">Common Cyberprograms</h5>
-<template id="equipment/programs.template.html" data-source="equipment/lists/matrix/programs.data.json"
-          data-sortedby="name" data-filteredbykey="category" data-filteredbyvalue="common"></template>
+<template id="programs.template.html" data-source="equipment/lists/matrix/programs.data.json"
+          data-sortby="name" data-filterbykey="category" data-filterbyvalue="common"></template>
 
 <h5 id="equipment/lists/matrix/programs/hacking">Hacking Software</h5>
-<template id="equipment/programs.template.html" data-source="equipment/lists/matrix/programs.data.json"
-          data-sortedby="name" data-filteredbykey="category" data-filteredbyvalue="hacking"></template>
+<template id="programs.template.html" data-source="equipment/lists/matrix/programs.data.json"
+          data-sortby="name" data-filterbykey="category" data-filterbyvalue="hacking"></template>
 
 <!--h5 id="equipment/lists/matrix/programs/pilot">Pilots</h5>
-<template id="equipment/programs.template.html" data-source="equipment/lists/matrix/programs.data.json"
-          data-sortedby="name" data-filteredbykey="category" data-filteredbyvalue="pilots"></template>
+<template id="programs.template.html" data-source="equipment/lists/matrix/programs.data.json"
+          data-sortby="name" data-filterbykey="category" data-filterbyvalue="pilots"></template>
 
