@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Cybernetic Limb",
+    "category": "limb",
+    "ess": 1,
+    "pr": 1000,
+    "rar": 4
+  },
+  {
+    "name": "Limb Replacement",
+    "category": "limb",
+    "ess": 0,
+    "pr": 2500,
+    "rar": 6
+  }
+]
