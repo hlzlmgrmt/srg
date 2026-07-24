@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Open Sesame",
+    "tier": 1,
+    "act": "Passive",
+    "desc": "You can use the Charm skill when using the Take Over hacking action. Additionally, you can use the Tap into Resonance maneuver to add [[w]] to such Charm checks."
+  },
+  {
+    "name": "Skinlink",
+    "tier": 1,
+    "act": "Active (Maneuver)",
+    "desc": "As a maneuver, you can touch a device you are Engaged with to upgrade the ability of your next Hacking skill check once. If the device is held by an adversary, or is able to defend itself against being touched, you make a Brawl combat check against the target as part of the Skinlink maneuver."
+  },
+  {
+    "name": "Resonance Spike",
+    "tier": 1,
+    "act": "Active (Maneuver)",
+    "desc": "Commit [[p]] from your Resonance dice pool; until the end of the encounter, you can use your Willpower characteristic instead of Intellect for determining the dice pool and base damage of your Data Spike matrix actions, and if you do, you can add [[w]] to those rolls."
+  },
+  {
+    "name": "Resonatic Cybercompatibility",
+    "tier": 1,
+    "act": "Active (Maneuver)",
+    "desc": "As a maneuver, you can commit an amount of [[p]] up to your Willpower from your Resonance dice pool; you may choose an amount of bodytech whose essence loss is lower or equal to the amount of [[p]] committed, and ignore all penalties towards your Resonance skill checks due to essence loss caused by the chosen implants."
+  },
+  {
+    "name": "Smartlink",
+    "tier": 2,
+    "act": "Active (Maneuver)",
+    "desc": "You can suffer two strain and commit [[p]] from your Resonance dice pool; until the end of the encounter, you gain the base benefits of the Smartlink bodytech implant."
+  },
+  {
+    "name": "Resonatic Cybercompatibility (Improved)",
+    "tier": 3,
+    "act": "Passive",
+    "prereq": "Resonatic Cybercompatibility complex form",
+    "desc": "You can ignore up to two additional points of Essence loss due to bodytech when using the Resonatic Cybercompatibility complex form."
+  },
+
+  {
+    "name": "Compile Sprite",
+    "tier": 2,
+    "act": "Active (Action)",
+    "desc:": "As an action, until the end of the encounter or until the commanded task is completed, you can suffer two strain and make an Easy ([[d]]) Resonance skill check. On a success, you can commit [[w]] to  create a sprite - a sentient piece of code that you can command to interact with the Matrix. The sprite counts as a minion with an Intellect, Cunning, Willpower and Presence characteristic of 2, a System Strain threshold of 8, and can only use the Computers, Hacking and Operating skills. You can command a sprite like a spirit, and as part of the Compile Sprite action, you can issue a single, simple command."
+  }
+]

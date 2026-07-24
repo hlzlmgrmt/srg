@@ -1,0 +1,108 @@
+[
+  {
+    "name": "Armored Clothing",
+    "soak": 1,
+    "def": "0",
+    "enc": "1",
+    "hp": 0,
+    "pr": 50,
+    "rar": 0,
+    "desc": "A bulletproof vest worn under a buttoned-up shirt, a kevlar-reinforced christmas sweater, or a very thick synth-leather jacket are all equally terrible at protecting you in a real gunfight, but they might be able to stop the occasional stray bullet down the block. Most city-dwellers wear these as everyday wear."
+  },
+  {
+    "name": "Armored Vest",
+    "soak": 1,
+    "def": 0,
+    "enc": 2,
+    "hp": 0,
+    "pr": 500,
+    "rar": 1,
+    "desc": "Corporate police forces and battle-ready street scum wear these thick kevlar vests in an attempt to keep alive in the mean streets of the Sixth World."
+  },
+  {
+    "name": "Armored Jacket",
+    "soak": 1,
+    "def": 1,
+    "enc": 3,
+    "hp": 1,
+    "pr": 1000,
+    "rar": 6,
+    "special": "Determining that the jacket is armored required an Average ([[dd]]) Perception skill check"
+  },
+  {
+    "name": "Full-Body Armor",
+    "soak": 1,
+    "def": 0,
+    "enc": 4,
+    "hp": 3,
+    "pr": 2500,
+    "rar": 5,
+    "special": "Can be sealed"
+  },
+  {
+    "name": "Heavy Combat Armor",
+    "soak": 1,
+    "def": 1,
+    "enc": 6,
+    "hp": 4,
+    "pr": 5000,
+    "rar": "7(R)",
+    "special": "Can be sealed"
+  },
+  {
+    "name": "Multifunctional Workwear",
+    "soak": 1,
+    "def": 0,
+    "enc": 3,
+    "hp": 3,
+    "pr": 550,
+    "rar": 3,
+    "special": "Counts as toolkit and utility belt"
+  },
+  {
+    "name": "Heavy Trenchcoat",
+    "soak": 1,
+    "def": 0,
+    "enc": 3,
+    "hp": 0,
+    "pr": 150,
+    "rar": 2,
+    "special": "Gain one rank of <a href=\"/talents#talents/hidden_pockets\">Hidden Pockets</a>"
+  },
+  {
+    "name": "Chameleon Suit",
+    "soak": 1,
+    "def": 0,
+    "enc": 1,
+    "hp": 0,
+    "pr": 2500,
+    "rar": "8(R)",
+    "special": "As a maneuver, add [[bb]] to Stealth skill checks"
+  },
+  {
+    "name": "Survival Suit",
+    "soak": 1,
+    "def": 0,
+    "enc": 2,
+    "hp": 1,
+    "special": "Remove [[s]] from all checks imposed by chosen hostile environment"
+  },
+  {
+    "name": "Hazardous Environment Suit",
+    "soak": 2,
+    "def": 0,
+    "enc": 5,
+    "hp": 1,
+    "pr": 750,
+    "rar": 4,
+    "special": "Gain Resilience 2 (or add one rank) when resisting the prolonged effects of hostile environments, and add [[s]] to all Reflexes, Perception and Vigilance skill checks"
+  },
+  {
+    "name": "Diving Suit",
+    "soak": 0,
+    "def": 0,
+    "enc": 2,
+    "hp": 1,
+    "special": "Can be sealed, holds air for 8 hours"
+  }
+]

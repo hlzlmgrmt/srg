@@ -1,0 +1,111 @@
+[
+  {
+    "name": "Advanced Safety Systems",
+    "appl": "This attachment can be applied to all melee and ranged weapons (including grenades) that require a Matrix connection.",
+    "system": "The weapon cannot be turned on or fired unless the persona of the current weapon's owner is authorized by the owner of the weapon.",
+    "mods": "1x Self-Destruction (if an unauthorized user tries to fire the weapon, it detonates, dealing one Critical Injury, and is then destroyed)"
+  },
+  {
+    "name": "Attachable Stock",
+    "appl": "This attachment can be applied to all guns and crossbows without the Cumbersome quality, except Holdout Pistols and Tasers.",
+    "system": "As a maneuver, the stock can be attached or detached from the weapon. When attached to a one-handed ranged weapon, the weapon can be fired with the Ranged (Heavy) skill, and increases their Encumbrance rating by 2. When detached from a two-handed ranged weapon, the weapon gains the Inaccurate 2 quality, but decreases its Encumbrance rating by 2. The stock itself has an Encumbrance rating of 2 while detached. Two-handed ranged weapons replace their pre-built stock with this, and do not increase their Encumbrance rating due to this attachment.",
+    "mods": [
+      "1x Folding Stock (Attach or Detach stock as an Incidental)",
+      "1x Decrease Encumbrance by one",
+      "1x Increase Hard Points by one",
+      "1x Quality (Accurate +1)"
+    ]
+  },
+  {
+    "name": "Automatic Crossbow Re-Cocker"
+  },
+  {
+    "name": "Composite Materials"
+  },
+  {
+    "name": "Custom Grip"
+  },
+  {
+    "name": "Double-Barrel"
+  },
+  {
+    "name": "Easy Disassemble"
+  },
+  {
+    "name": "Extreme Environment Modification"
+  },
+  {
+    "name": "Laser Sight"
+  },
+  {
+    "name": "Long Barrel"
+  },
+  {
+    "name": "Melee Hardening"
+  },
+  {
+    "name": "Monomolecular Edge"
+  },
+  {
+    "name": "Offline"
+  },
+  {
+    "name": "Optic Sight"
+  },
+  {
+    "name": "Pistol Grip"
+  },
+  {
+    "name": "Removed Safety Features"
+  },
+  {
+    "name": "Retrofitted Cyclic Feeding Mechanism"
+  },
+  {
+    "name": "Revolver Barrel"
+  },
+  {
+    "name": "Serrated Edge"
+  },
+  {
+    "name": "Shock Pad"
+  },
+  {
+    "name": "Smartgun System"
+  },
+  {
+    "name": "Stripped Down"
+  },
+  {
+    "name": "Superior Weapon Customization"
+  },
+  {
+    "name": "Suppressor",
+    "appl": "This attachment can be applied to pistols, submachine guns, assault rifles, precision rifles and sniper rifles.",
+    "desc": [
+      "As the classic assassin’s accessory, suppressors allow a user to keep unwanted attention from themselves by\n  suppressing noise. Unlike the silencers often found in mainstream action trideos, suppressors do not make a gun\n  magically imperceptible; If a suppressed weapon is fired inside a small enclosed room, people will notice the gunfire.\n  Rather, a suppressor will distort the sound of gunfire to a point that people will not perceive it as such, especially\n  when the sound comes from behind a bunch of walls. This additionally hinders witnesses of an assassination in locating\n  the shooter in time.",
+      "Due to this, after-market attachments of suppressors are generally illegal, but more often than not, corporate\n  security – especially those within arcologies – carry suppressed weapons to deal with criminals without enticing mass\n  panic within the closed environment. Guns sold with integrated suppressors are therefore known and registered, and –\n  with the right licenses of course – legal to buy and carry.",
+      "Suppressors come in two variants: Attached and integrated. Attached suppressors do not cost Hard Points, but are\n  rather big and clunky, and therefor add one point of Encumbrance to the weapon while attached. Attaching a suppressor\n  uses a maneuver, and getting caught with one is generally a bad idea. Integrated suppressors are built into the gun\n  barrel itself. They cost a single Hard Point, but do not add to the weapons bulk. Spotting an inbuilt suppressor\n  requires a Hard ([[ddd]]) Perception or Mechanics check."
+    ],
+    "system": "Adds [[ss]] to all Perception or Vigilance checks made to\n  locate a concealed shooter. Inbuild suppressors require a Hard ([[ddd]]) Perception\n  or Mechanics check to be spotted.",
+    "mods": "2x Improvement (add additional [[s]] to Perception and Vigilance skill checks to spot shooter)"
+  },
+  {
+    "name": "Tripod Mount"
+  },
+  {
+    "name": "Underbarrel Attachment"
+  },
+  {
+    "name": "Unique Paintjob"
+  },
+  {
+    "name": "Weapon Sling"
+  },
+  {
+    "name": "Weighted Head"
+  },
+  {
+    "name": "Wrist-Mount"
+  }
+]

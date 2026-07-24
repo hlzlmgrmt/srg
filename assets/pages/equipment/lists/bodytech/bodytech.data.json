@@ -1,0 +1,45 @@
+[
+  {
+    "name": "Subdermal Plating",
+    "ess": 1,
+    "pr": 500,
+    "system": "You gain one point of soak."
+  },
+  {
+    "name": "Wired Reflexes",
+    "ess": 1,
+    "pr": 1000,
+    "system": "You gain one rank of the Rapid Reflexes talent."
+  },
+  {
+    "name": "Direct Neural Interface",
+    "ess": 1,
+    "pr": 500,
+    "system": "As a maneuver, you can directly jack into an unsupervised device that you are physically Engaged with to upgrade all Access Device matrix actions you make against the device once."
+  },
+  {
+    "name": "Cybernetic Perception",
+    "ess": 1,
+    "system": "You gain one rank in the Perception skill."
+  },
+  {
+    "name": "Synthetic Circulatory System",
+    "ess": 1,
+    "system": "You gain one rank in the Blooded talent"
+  },
+  {
+    "name": "Bone Lacing",
+    "ess": 1,
+    "system": "Your unarmed attacks gain one damage, they reduce their Critical rating to 3, and they lose the Nonlethal quality."
+  },
+  {
+    "name": "Smartlink",
+    "ess": 1,
+    "system": "You can use the <a href=\"equipment#equipment/lists/weapons/weapon_attachments/smartgun_system\">Smartgun System weapon attachment</a>."
+  },
+  {
+    "name": "Carbon-fibre Muscles",
+    "ess": 1,
+    "system": "You can increase the damage of your Brawl and Melee weapon attacks by one, and reduce their critical rating by one (to a minimum of 2)."
+  }
+]
