@@ -35,5 +35,12 @@
     "act": "Passive",
     "prereq": "Resonatic Cybercompatibility complex form",
     "desc": "You can ignore up to two additional points of Essence loss due to bodytech when using the Resonatic Cybercompatibility complex form."
+  },
+
+  {
+    "name": "Compile Sprite",
+    "tier": 2,
+    "act": "Active (Action)",
+    "desc:": "As an action, until the end of the encounter or until the commanded task is completed, you can suffer two strain and make an Easy ([[d]]) Resonance skill check. On a success, you can commit [[w]] to  create a sprite - a sentient piece of code that you can command to interact with the Matrix. The sprite counts as a minion with an Intellect, Cunning, Willpower and Presence characteristic of 2, a System Strain threshold of 8, and can only use the Computers, Hacking and Operating skills. You can command a sprite like a spirit, and as part of the Compile Sprite action, you can issue a single, simple command."
   }
 ]
