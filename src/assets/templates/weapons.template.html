@@ -1,11 +1,11 @@
-<p>armor works!</p>
 <div class="table-responsive">
   <table class="table table-hover">
     <thead>
     <tr>
       <th>Name</th>
-      <th>Soak</th>
-      <th>Def.</th>
+      <th>Dam.</th>
+      <th>Crit.</th>
+      <th>Range</th>
       <th>Enc.</th>
       <th>HP</th>
       <th>Pr.</th>
@@ -14,11 +14,12 @@
     </tr>
     </thead>
     <tbody>
-    <template data-source="equipment/lists/armor/armor.data.json">
+    <template>
       <tr>
         <th>${{ name }}</th>
-        <td>${{ soak }}</td>
-        <td>${{ def }}</td>
+        <td>${{ damage }}</td>
+        <td>${{ crit }}</td>
+        <td>${{ range }}</td>
         <td>${{ enc }}</td>
         <td>${{ hp }}</td>
         <td>&yen;&nbsp;${{ pr }}</td>
@@ -29,9 +30,8 @@
     </tbody>
   </table>
 </div>
-<template data-source="equipment/lists/armor/armor.data.json">
-  <h5 id="equipment/lists/armor/${{key}}">${{ name }}</h5>
+<template>
+  <h5 id="equipment/lists/weapons/${{key}}">${{ name }}</h5>
   <p data-delimiter="</p><p>">${{ desc }}</p>
+  <p data-hideonnullvalueforkey="models" data-delimiter=",&nbsp;"><b>Models Include:&nbsp;</b><i>${{ models }}</i></p>
 </template>
-
-<ins id="equipment/lists/armor/armor_attachments.html">Armor Attachments</ins>

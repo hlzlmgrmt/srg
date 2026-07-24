@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Replacement Commlink",
+    "slots": 1,
+    "hp": 0,
+    "pr": 100,
+    "rar": 1
+  },
+  {
+    "name": "Cyberdeck",
+    "slots": 3,
+    "hp": 4,
+    "pr": 1500,
+    "rar": 5,
+    "special": "Add [[b]] to all Hacking skill checks"
+  },
+  {
+    "name": "RCC",
+    "slots": 4,
+    "hp": 3,
+    "special": "Add [[b]] to all Operating skill checks"
+  }
+]

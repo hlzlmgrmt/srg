@@ -7,12 +7,16 @@ console.info('Running page content parser');
 
 const fs = require('fs');
 const path = require('path');
+const {parse: domParse} = require('node-html-parser');
+const {elementAt} = require("rxjs");
 
-const { platform } = process;
+const {platform} = process;
 const locale = path[platform == 'win32' ? 'win32' : 'posix']
 
 console.log('Detected platform', platform);
-const srcDir = __dirname + '/src/assets/pages'
+const srcDir = __dirname + '/src/assets';
+const pagesSrcDir = srcDir + '/pages';
+const templatesSrcDir = srcDir + '/templates';
 const targetDir = __dirname + '/target/assets/pages';
 
 // Regex for determining content <ins></ins>-Tags
@@ -74,7 +78,7 @@ const walk = function (dir, done) {
           });
         } else {
           if (file.endsWith('.html')) {
-            results.set(file.substring(srcDir.length + 1, file.length), fs.readFileSync(file, {encoding: 'utf-8'}));
+            results.set(file.substring(pagesSrcDir.length + 1, file.length), fs.readFileSync(file, {encoding: 'utf-8'}));
           }
           if (!--pending) done(null, results);
         }
@@ -84,7 +88,7 @@ const walk = function (dir, done) {
 };
 
 /**
- * Recursively parses a file
+ * Parses a file
  *
  * @param content content map to be consumed (key = path, value = content)
  * @param done    callback function (error, result content map)
@@ -93,36 +97,128 @@ const parse = function (content, done) {
   let result = new Map();
   console.log("Parsing", content.size, "pages")
 
-  new Map([...content]).forEach(function(value, key) {
-    const glyphMatches = value.match(new RegExp(glyphSelector, 'g'));
-    if (glyphMatches) {
-      glyphMatches.forEach((glyphMatch) => {
-        let replace = glyphMatch.toString().substring(1, glyphMatch.toString().length - 1);
-        const diceMatches = replace.match(new RegExp(diceSymbolsSelector, 'g'));
-        if (diceMatches) {
-          diceMatches.forEach((diceMatch) => {
-            let innerReplace = diceMatch.toString().substring(1, diceMatch.toString().length - 1);
-            innerReplace = innerReplace.split('').map((char) => diceSymbolsMap.get(char)).join('');
-            replace = replace.replace(diceMatch, innerReplace);
-          })
-        }
+  new Map([...content]).forEach(function (value, key) {
+    value = parseTemplates(value, key);
+    value = parseGlyphs(value);
 
-        const faceMatches = replace.match(new RegExp(faceSymbolsSelector, 'g'));
-        if (faceMatches) {
-          faceMatches.forEach((faceMatch) => {
-            let innerReplace = faceMatch.toString().substring(1, faceMatch.toString().length - 1);
-            innerReplace = innerReplace.split('').map((char) => faceSymbolsMap.get(char)).join('');
-            replace = replace.replace(faceMatch, innerReplace);
-          })
-        }
-
-        value = value.replace(glyphMatch, replace);
-      })
-    }
     result.set(key, value);
   });
 
   return done(null, result);
+}
+
+function parseTemplates(value, key) {
+  // Parse root templates first
+  domParse(value).getElementsByTagName('template').forEach((templateElement) => {
+    const id = templateElement.getAttribute('id');
+    if (id) {
+      const templateAttributes = getAttributes(templateElement);
+      let innerTemplate = fs.readFileSync(templatesSrcDir + '/' + id, {encoding: 'utf-8'});
+
+      domParse(innerTemplate).getElementsByTagName('template').forEach((innerTemplateElement) => {
+        const innerTemplateOrig = innerTemplateElement.toString();
+        setAttributes(innerTemplateElement, templateAttributes);
+        innerTemplate = innerTemplate.replaceAll(new RegExp(escapeRegExp(innerTemplateOrig), 'gm'), innerTemplateElement.toString());
+      })
+      value = value.replaceAll(new RegExp(escapeRegExp(templateElement.toString()), 'gm'), innerTemplate);
+    }
+  });
+
+  domParse(value).getElementsByTagName('template').forEach((templateElement) => {
+    let replace = '';
+    const templateValues = templateElement.outerHTML.match(new RegExp("\\${{[^\${}]+}}", 'g'));
+    const templateAttributes = getAttributes(templateElement);
+    if (!templateAttributes.dataSource) done('Cannot find required attribute data-source',
+      templateAttributes.dataSource, 'in file', key);
+    console.log('Building template', templateAttributes.dataSource, 'in', key);
+
+    JSON.parse(fs.readFileSync(pagesSrcDir + '/' + templateAttributes.dataSource, {encoding: 'utf-8'}))
+      .sort((a, b) => templateAttributes.sortedBy ? a[templateAttributes.sortedBy].localeCompare(b[templateAttributes.sortedBy]) : 1)
+      .filter((data) => templateAttributes.filteredByKey && templateAttributes.filteredByValue
+        ? data[templateAttributes.filteredByKey] == templateAttributes.filteredByValue : true)
+      .forEach((data => {
+        let innerReplace = templateElement.innerHTML;
+        if (templateValues && templateValues.length > 0) templateValues.forEach((valueTag) => {
+          const templateValue = valueTag.substring(3, valueTag.indexOf('}')).trim();
+          if (templateValue == 'key' && !data['key']) {
+            data['key'] = data['name'].toString().toLowerCase().replace(/[.*+?^\-$&{}()|[\]\\\/\s]+/g, '_');
+          }
+
+          const hiddenElementsOnNullValue = templateElement.querySelectorAll('[data-hideonnullvalueforkey="' + templateValue + '"]');
+          if (hiddenElementsOnNullValue && !data[templateValue]) {
+            hiddenElementsOnNullValue.forEach((elem) =>
+              innerReplace = innerReplace.replace(new RegExp(escapeRegExp(elem.toString()), 'gm'), ''));
+          }
+
+          if (Array.isArray(data[templateValue])) {
+            const containingTags = Array.from(templateElement.querySelectorAll('*'))
+              .filter(el => el.innerText.includes(valueTag));
+
+            let delimiter = ', ';
+            if (containingTags && containingTags.length > 0) {
+              delimiter = containingTags[0].getAttribute('data-delimiter') ?? delimiter;
+            }
+            innerReplace = innerReplace.replaceAll(valueTag, data[templateValue].join(delimiter));
+          } else {
+            innerReplace = innerReplace.replaceAll(valueTag, data[templateValue]);
+          }
+        })
+        replace = replace + innerReplace;
+      }));
+
+    value = value.replaceAll(new RegExp(escapeRegExp(templateElement.toString()), 'gm'), replace);
+  });
+  return value;
+}
+
+function getAttributes(template) {
+  return {
+    dataSource: template.getAttribute('data-source'),
+    sortedBy: template.getAttribute('data-sortby'),
+    filteredByKey: template.getAttribute('data-filterbykey'),
+    filteredByValue: template.getAttribute('data-filterbyvalue')
+  }
+}
+function setAttributes(template, attributes) {
+  if (attributes.dataSource) template.setAttribute('data-source', attributes.dataSource)
+  if (attributes.sortedBy) template.setAttribute('data-sortby', attributes.sortedBy)
+  if (attributes.filteredByKey) template.setAttribute('data-filterbykey', attributes.filteredByKey)
+  if (attributes.filteredByValue) template.setAttribute('data-filterbyvalue', attributes.filteredByValue)
+}
+
+function parseGlyphs(value) {
+  // Parse glyphs
+  const glyphMatches = value.match(new RegExp(glyphSelector, 'g'));
+  if (glyphMatches) {
+    glyphMatches.forEach((glyphMatch) => {
+      let replace = glyphMatch.toString().substring(1, glyphMatch.toString().length - 1);
+      const diceMatches = replace.match(new RegExp(diceSymbolsSelector, 'g'));
+      if (diceMatches) {
+        diceMatches.forEach((diceMatch) => {
+          let innerReplace = diceMatch.toString().substring(1, diceMatch.toString().length - 1);
+          innerReplace = innerReplace.split('').map((char) => diceSymbolsMap.get(char)).join('');
+          replace = replace.replace(diceMatch, innerReplace);
+        })
+      }
+
+      const faceMatches = replace.match(new RegExp(faceSymbolsSelector, 'g'));
+      if (faceMatches) {
+        faceMatches.forEach((faceMatch) => {
+          let innerReplace = faceMatch.toString().substring(1, faceMatch.toString().length - 1);
+          innerReplace = innerReplace.split('').map((char) => faceSymbolsMap.get(char)).join('');
+          replace = replace.replace(faceMatch, innerReplace);
+        })
+      }
+
+      value = value.replace(glyphMatch, replace);
+    })
+  }
+  return value;
+}
+
+function escapeRegExp(string) {
+  // Escape all special regex characters with a backslash
+  return string.replace(/[.*+?^${}()|[\]\\\/]/g, '\\$&');
 }
 
 /**
@@ -186,7 +282,6 @@ const insertPages = function (content, done) {
   done(null, result);
 }
 
-
 const write = function (dir, content, done) {
   const dstPath = targetDir + locale.sep + dir;
 
@@ -202,7 +297,7 @@ const write = function (dir, content, done) {
 }
 
 // --------------------------------------------------
-walk(srcDir, function (err, results) {
+walk(pagesSrcDir, function (err, results) {
   if (err) throw err;
   parse(results, function (err, results) {
     if (err) throw err;

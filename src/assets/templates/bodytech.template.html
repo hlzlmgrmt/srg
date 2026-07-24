@@ -1,0 +1,29 @@
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ess.</th>
+      <th>HP</th>
+      <th>Pr.</th>
+      <th>Rar.</th>
+    </tr>
+    </thead>
+    <tbody>
+    <template>
+      <tr>
+        <th>${{ name }}</th>
+        <td>${{ ess }}</td>
+        <td>${{ hp }}</td>
+        <td>&yen;&nbsp;${{ pr }}</td>
+        <td>${{ rar }}</td>
+      </tr>
+    </template>
+    </tbody>
+  </table>
+</div>
+<template>
+  <h5 id="equipment/lists/bodytech/${{key}}">${{ name }}</h5>
+  <p data-delimiter="</p><p>">${{ desc }}</p>
+  <p data-delimiter="</p><p>"><b>System:&nbsp;</b>${{ system }}</p>
+</template>

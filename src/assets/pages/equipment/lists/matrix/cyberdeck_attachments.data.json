@@ -1,0 +1,61 @@
+[
+  {
+    "name": "Biofeedback Filter",
+    "summ": "As a maneuver, add [[ss]] to all Matrix checks, but reduce damage from biofeedback by 2.",
+    "mods": [
+      "2x Improvement (remove [[s]] from all Matrix checks)"
+    ]
+  },
+  {
+    "name": "Codehub",
+    "hp": 1,
+    "pr": 250,
+    "rar": 5,
+    "summ": "Can hardwire an additional cyberprogram",
+    "mods": [
+      "2x Improvement (add an additional cyberprogram)"
+    ]
+  },
+  {
+    "name": "Hardening",
+    "hp": 1,
+    "summ": "Increase System Strain threshold by one",
+    "mods": [
+      "3x Improvement (increase System Strain threshold by an additional point)"
+    ]
+  },
+  {
+    "name": "Hot-SIM Module",
+    "hp": 1,
+    "pr": "1000",
+    "rar": "6(R)",
+    "summ": "As an incidental, suffer 2 strain and use a Matrix maneuver"
+  },
+  {
+    "name": "Multidimensional Coprocessor",
+    "summ": "While in VR, you can use Computers to determine initiative order",
+    "mods": [
+      "3x Innate talent (Rapid Reflexes +1)"
+    ]
+  },
+  {
+    "name": "Netrecorder",
+    "summ": "Add [[b]] to test to notice icons"
+  },
+  {
+    "name": "Increased Security",
+    "summ": "Increase difficulty of Access Device Matrix actions once"
+  },
+  {
+    "name": "Overwatch Mask",
+    "summ": "Add [[b]] to Hide Matrix actions"
+  },
+  {
+    "name": "Range Upgrade",
+    "summ": "Increase the maximum range to use Matrix actions in VR by one range band"
+  },
+  {
+    "name": "Vectored Signal Filter",
+    "summ": "Reduce the difficulty of Computers and Hacking skill checks to interact with the Matrix due to noise once"
+  }
+]

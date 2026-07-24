@@ -1,0 +1,241 @@
+[
+  {
+    "name": "Analytics",
+    "tier": 1,
+    "act": "Passive",
+    "desc": "You can use the Tap into Qi maneuver to add [[w]] to all skill checks made to analyze, detect, recognize, and solve ciphers, patterns and puzzles."
+  },
+  {
+    "name": "Authority",
+    "tier": 1,
+    "act": "Passive",
+    "desc": "You can use the Tap into Qi maneuver to add [[w]] to your Coercion skill checks."
+  },
+  {
+    "name": "Danger Sense",
+    "tier": 1,
+    "act": "Passive",
+    "desc": "You can use the Tap into Qi maneuver to add [[w]] to all checks in order to avoid traps, hazards and dangerous situations."
+  },
+  {
+    "name": "Direction Sense",
+    "tier": 1,
+    "act": "",
+    "prereq": "Passive",
+    "desc": "You can use the Tap into Qi maneuver to add [[w]] to all Navigation checks to orient yourself in the (urban) wilderness."
+  },
+  {
+    "name": "Killing Hands",
+    "tier": 1,
+    "act": "Active (Maneuver)",
+    "desc": "You can suffer two strain and commit [[p]] from your Qi-Magic dice pool; until the end of the encounter, you can increase the damage of your unarmed attacks by one, and set their Critical rating to 3. Additionally, you can choose to ignore the Nonlethal quality when attacking with your bare hands, and attacks made with them become magical."
+  },
+  {
+    "name": "Mystic Armor",
+    "tier": 1,
+    "act": "Active (Maneuver)",
+    "desc": "You can suffer two strain and commit [[p]] from your Qi-Magic dice pool; until the end of the scene or encounter, you gain one soak."
+  },
+  {
+    "name": "Nightvision",
+    "tier": 1,
+    "act": "Active (Maneuver)",
+    "desc": "You can suffer two strain and commit [[p]] from your Qi-Magic dice pool; until the end of the scene or encounter, you remove [[s]] from checks due to dim lights."
+  },
+  {
+    "name": "Pain Resistance",
+    "tier": 1,
+    "act": "Active (Incidental, Out-Of-Turn)",
+    "desc": "You can suffer two strain and commit [[p]] from your Qi-Magic dice pool; until the end of the scene or encounter, you can reduce the difficulty of all Resilience and Discipline checks to resist pain or physical coercion by one."
+  },
+  {
+    "name": "Purity",
+    "tier": 1,
+    "act": "Active (Incidental, Out-Of-Turn)",
+    "desc": "You can suffer two strain and commit [[p]] from your Qi-Magic dice pool; until the end of the scene or encounter, you can reduce the difficulty of all Resilience checks to resist poisons, toxins, diseases or pollution by one."
+  },
+  {
+    "name": "Rapid Healing",
+    "tier": 1,
+    "act": "Passive",
+    "desc": "You can use the Tap Into Qi maneuver for all Medicine checks made to recover from wounds or strain, or to heal your Critical Injuries. This also applies to Medicine checks made by allies tending to you."
+  },
+  {
+    "name": "Uncanny Reflexes",
+    "tier": 1,
+    "act": "Passive",
+    "desc": "When you make a skill check in order to determine initiative, you can use the Tap into Qi maneuver as an incidental to add [[w]] to the roll."
+  },
+  {
+    "name": "Wall Running",
+    "tier": 1,
+    "act": "Passive",
+    "desc": "You can use the Tap into Qi maneuver to add [[w]] to all Athletic checks in order to run, jump and climb. Additionally, while you use Wall Running, you count as having a climbing tool for up to Medium range in any direction."
+  },
+  {
+    "name": "Astral Fist",
+    "tier": 2,
+    "act": "Active (Maneuver)",
+    "prereq": "Astral career skill",
+    "desc": "When you use the Astral skill to percieve into Astral Space, you can commit [[p]]; while this power is active, you can use your Brawl skill instead of your Astral skill when targeting an adversary in Astral combat."
+  },
+  {
+    "name": "Critical Strike",
+    "tier": 2,
+    "act": "Active (Maneuver)",
+    "desc": "You can suffer two strain and commit [[p]] from your Qi-Magic dice pool; until the end of the encounter, you can increase the damage of your Melee weapon attacks by one, and reduce their Critical rating by one (to a minimum of 2)."
+  },
+  {
+    "name": "Darkvision",
+    "tier": 2,
+    "act": "Active (Maneuver)",
+    "prereq": "Nightvision adept power or Low-Light vision trait",
+    "desc": "You can suffer two strain and commit [[p]] from your Qi-Magic dice pool; until the end of the scene or encounter, you remove [[ss]] from checks due to dim light or total darkness."
+  },
+  {
+    "name": "Enhanced Accuracy",
+    "tier": 2,
+    "act": "Active (Maneuver)",
+    "desc": "You can suffer two strain and commit [[p]] from your Qi-Magic dice pool; until the end of the encounter, your ranged weapons without the Cumbersome quality gain the Accurate 1 quality (or increase their Accurate quality rating by one, to a maximum of 4)."
+  },
+  {
+    "name": "Kinesics",
+    "tier": 2,
+    "act": "Active (Maneuver)",
+    "desc": "You can suffer two strain and commit [[p]] from your Qi-Magic dice pool; while the Kinesics power is active, all checks against you in order to read your emotions, judge your intentions or assense your aura increase their difficulty by one."
+  },
+  {
+    "name": "Light Body",
+    "tier": 2,
+    "act": "Active (Maneuver)",
+    "desc": "You may suffer two strain and commit [[p]] to reduce the difficulty of Athletics checks made to jump or climb by one. Additionally, you can reduce the damage taken by falls by one range band."
+  },
+  {
+    "name": "Mastery over the Self",
+    "tier": 2,
+    "act": "Passive",
+    "desc": "When you use the Tap into Qi maneuver in order to add [[w]] to a dice pool, you can suffer two additional strain and commit a second [[p]] in order to add an additional [[w]] to the chosen dice pool."
+  },
+  {
+    "name": "Mystic Armor (Improved)",
+    "tier": 2,
+    "act": "Passive",
+    "prereq": "Mystic Armor adept power",
+    "desc": "When you use the Mystic Armor adept power, before committing and [[p]], you can make a Hard ([[ddd]]) Qi-Magic check, and gain one additional soak for each uncancelled [(ss)] generated on the check, plus one."
+  },
+  {
+    "name": "Qi-Blast",
+    "tier": 2,
+    "act": "Active (Action)",
+    "desc": "You can suffer two strain and make a magical ranged attack using the Qi-Magic skill; This attack can target any target within Short range, and deals damage equal to you Willpower, plus any uncancelled [(s)]. This attack does not have a Critical rating, and can only inflict a Critical Injury when spending [(t)]."
+  },
+  {
+    "name": "Rapid Healing (Improved)",
+    "tier": 2,
+    "act": "Active (Action)",
+    "prereq": "Rapid Healing adept power",
+    "desc": "While you use the Rapid Healing adept power, you can suffer two strain and make a Qi-Magic check to recover wounds equal to 2 plus any uncancelled [(s)]. You can apply [[w]] from Rapid Healing to the skill check."
+  },
+  {
+    "name": "Reflect",
+    "tier": 2,
+    "act": "Passive",
+    "prereq": "Deflect talent",
+    "desc": "When your character suffers a hit from a ranged combat check while wielding a Brawl or Melee weapon, they can commit [[p]] to use the Deflect incidental without a shield. If your character has taken the Unarmed Parry talent, they can use the Reflect adept power with their bare hands."
+  },
+  {
+    "name": "Spell Resistance",
+    "tier": 2,
+    "act": "Active (Incidental, Out-Of-Turn)",
+    "desc": "You can suffer two strain and commit [[p]] from your Qi-Magic dice pool; until the end of the scene or encounter, you add [[s]] to all magical checks targeting you."
+  },
+  {
+    "name": "Traceless Walk",
+    "tier": 2,
+    "act": "Passive",
+    "desc": "You can use the Tap into Qi maneuver to add [[w]] to all Stealth checks you make. Additionally, you do not leave behind footsteps or forensic evidence while you use the Traceless Walk adept power."
+  },
+  {
+    "name": "Uncanny Senses",
+    "tier": 2,
+    "act": "Passive",
+    "desc": "You can use the Tap into Qi maneuver to add [[w]] to all Perception checks."
+  },
+  {
+    "name": "Voice Control",
+    "tier": 2,
+    "act": "Passive",
+    "desc": "You can use the Tap into Qi maneuver to add [[w]] to all Charme checks, or to Deception checks made to impersonate voices or fool voice controls."
+  },
+  {
+    "name": "Combat Sense",
+    "tier": 3,
+    "act": "Active (Maneuver)",
+    "desc": "You may suffer two strain and commit [[p]]; while you use the Combat Sense power, you gain one defense. Additionally, while Combat Sense is active, you may add [[w]] to all checks to spot adversaries that are actively hiding or trying to ambush you."
+  },
+  {
+    "name": "Killing Hands (Improved)",
+    "tier": 3,
+    "act": "Passive",
+    "prereq": "Killing Hands adept power",
+    "desc": "You can activate the Killing Hands adept power as an Incidental. Additionally, while you use the Killing Hands adept power, you may use the Tap Into Qi maneuver to add [[w]] to all Brawl checks."
+  },
+  {
+    "name": "Kinesics (Improved)",
+    "tier": 3,
+    "act": "Passive",
+    "prereq": "Kinesics adept power",
+    "desc": "While you use the Kinesics adept power, you can communicate with other people using incredibly subtle body language. While other people cannot directly answer to your communication, other adepts with the Kinesics (Improved) adept power can hold a conversation with you. Onlookers must succeed an opposed Vigilance check against your Qi-Magic dice pool in order to notice that you are using this power."
+  },
+  {
+    "name": "Reflect (Improved)",
+    "tier": 3,
+    "act": "Active (Incidental, Out-Of-Turn)",
+    "prereq": "Reflect adept power",
+    "desc": [
+      "When your character suffers a hit from a ranged combat check and uses Deflect to reduce the damage from that hit, after the attack is resolved, you may spend [(d)] or [(hhh)] to automatically hit one adversary within short range. The hit deals the same damage as the initial ranged attack.",
+      "The initial ranged attack's hit must be one that can be reflected and redirected (generally only bullets, knifes, grenades or similar). This talent may not be used if the original attack incapacitates the character."
+    ]
+  },
+  {
+    "name": "Uncanny Reflexes (Improved)",
+    "tier": 3,
+    "act": "Active (Incidental)",
+    "prereq": "Uncanny Reflexes adept power",
+    "desc": "When you use the Tap into Qi maneuver in order to add [[w]] to you initiative, you can suffer two stain and commit [[pp]]; until the end of the encounter, you gain an additional, free maneuver. Additionally, once per turn, you may suffer two strain to gain a third maneuver. You can activate this power after you have already rolled for initiative; doing so takes an action instead of an incidental, and you cannot use your free maneuver in the same turn this power was activated as an action."
+  },
+  {
+    "name": "Mastery over the Self (Improved)",
+    "tier": 4,
+    "act": "Passive",
+    "prereq": "Mastery over the Self adept power",
+    "desc": "When you use the Tap into Qi maneuver in order to add [[ww]] to a dice pool, you can suffer two additional strain and commit a third [[p]] from your Qi-Magic dice pool in order to add an additional [[w]] to the chosen dice pool."
+  },
+  {
+    "name": "Mystic Armor (Supreme)",
+    "tier": 4,
+    "act": "Passive",
+    "prereq": "Mystic Armor (Improved) adept power",
+    "desc": "You gain the Hardened quality when using the Mystic Armor power. Additionally, reduce the difficulty of all checks made when activating the Mystic Armor adept power by one (to a difficulty of [[d]])."
+  },
+  {
+    "name": "Attribute Boost",
+    "tier": 5,
+    "act": "Active (Maneuver)",
+    "desc": "When you activate this power, you can choose a characteristic (except for Willpower), suffer strain equal to your chosen characteristic, plus one, and commit [[p]] equal your chosen characteristic, plus one, then halved, rounded up, from your Qi-Magic pool ([[p]] when your chosen characteristic is 1, [[pp]] when it's 2 or 3, [[ppp]] when it's 4 or 5, or [[pppp]] when it's 6). Until the end of the encounter or scene, you increase your chosen characteristic by one. You cannot increase your chosen characteristic above 7 by using the Attribute Boost power, and you do not change your wound and strain thresholds by using this talent. Other derived attributes, such as soak or melee weapon damage, are effected by this talent."
+  },
+  {
+    "name": "Reflect (Supreme)",
+    "tier": 5,
+    "act": "Passive",
+    "prereq": "Reflect (Improved) adept power",
+    "desc": "If the character did not make a combat check during their previous turn, they suffer 1 strain when taking the Reflect incidental, instead of 3."
+  },
+  {
+    "name": "Uncanny Reflexes (Supreme)",
+    "tier": 5,
+    "act": "Active (Incidental)",
+    "prereq": "Uncanny Reflexes (Improved) adept power",
+    "desc": "When you use the Tap into Qi maneuver in order to add [[w]] to you initiative, you can commit [[ppp]] from your Qi-Magic dice pool; until the end of the encounter, as an incidental at the end of a round, you can suffer three strain to use an additional action."
+  }
+]
