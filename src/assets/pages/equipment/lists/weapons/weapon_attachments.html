@@ -4,6 +4,7 @@
     <tr>
       <th>Name</th>
       <th>HP Req.</th>
+      <th>Enc.</th>
       <th>Pr.</th>
       <th>Rar.</th>
       <th>Description</th>
@@ -15,7 +16,8 @@
       <tr>
         <th>${{ name }}</th>
         <td>${{ hp }}</td>
-        <td>${{ pr }}</td>
+        <td>${{ enc }}</td>
+        <td>&yen;&nbsp;${{ pr }}</td>
         <td>${{ rar }}</td>
         <td>${{ sum }}</td>
       </tr>
@@ -26,7 +28,8 @@
 <template data-source="equipment/lists/weapons/weapon_attachments.data.json"
           data-sortby="name">
   <h5 id="equipment/lists/weapons/weapon_attachments/${{key}}">${{ name }}</h5>
-  <p data-delimiter="</p><p>">${{ desc }}</p>
+  <p data-hideonnullvalueforkey="desc" data-delimiter="</p><p>">${{ desc }}</p>
+  <p>${{ appl }}</p>
   <p data-delimiter="</p><p>"><b>Base Modifier:&nbsp;</b>${{ system }}</p>
   <p data-hideonnullvalueforkey="mods" data-delimiter="&nbsp;Mod,&nbsp;"><b>Modification Options:&nbsp;</b><i>${{ mods }}&nbsp;Mod</i></p>
 </template>

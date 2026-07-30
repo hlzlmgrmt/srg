@@ -2,11 +2,12 @@
   {
     "name": "Brass Knuckles",
     "skill": "Brawl",
-    "category": "Brawl",
+    "cat": "brawl",
     "damage": "+1",
     "crit": 4,
     "range": "Engaged",
     "enc": 0,
+    "hp": "-",
     "pr": 25,
     "rar": 1,
     "special": "Concealable 1, Disorient 3"
@@ -14,32 +15,39 @@
   {
     "name": "Shock Gloves",
     "skill": "Brawl",
-    "category": "Brawl",
+    "cat": "brawl",
     "damage": "+0",
     "crit": 6,
     "range": "Engaged",
     "enc": 1,
+    "hp": 0,
+    "pr": 100,
+    "rar": 3,
     "special": "Nonlethal, Stun 3"
   },
   {
     "name": "Knife",
     "skill": "Melee",
-    "category": "Melee",
+    "cat": "melee",
     "damage": "+1",
     "crit": 3,
     "range": "Engaged",
     "enc": 1,
+    "hp": 1,
+    "pr": 50,
+    "rar": 1,
     "special": "Concealable 1, Throwable",
     "desc": "From simple pocket knifes and switchblades to tempered KA-BAR-style fighting knifes, these practical little blades are as much street-weapons as they are weapons for close-quarters-combat in real warzones. They are often highly concealable, extremely lightweight, practical and come in an unfathomable amount of different styles. In a pinch - or for some even as a primary style - they can even be thrown, making them extremely versatile tool in combat."
   },
   {
     "name": "Baton",
     "skill": "Melee",
-    "category": "Melee",
+    "cat": "melee",
     "damage": "+2",
     "crit": 5,
     "range": "Engaged",
     "enc": 2,
+    "hp": 1,
     "pr": 15,
     "rar": 0,
     "special": "Disorient 2",
@@ -48,24 +56,27 @@
   {
     "name": "Stun Baton",
     "skill": "Melee",
-    "category": "Melee",
+    "cat": "melee",
     "damage": "+2",
-    "crit": 6,
+    "crit": 5,
     "range": "Engaged",
     "enc": 3,
+    "hp": 0,
+    "pr": 150,
+    "rar": 4,
     "special": "Disorient 2, Nonlethal, Stun 3",
     "desc": "Stun Batons are standard riot-control weapons, often viewed as a symbol of corporate-government controlled police oppression, but still pragmatically useful to Shadowrunners. Stun Batons consist of a battery in the head of the weapon that discharges heavy electric shocks to anyone unfortunate enough to be hit with it. Usually, Stun Batons charge through induction and inform their users about their charge level."
   },
   {
     "name": "Sword",
     "skill": "Melee",
-    "category": "Melee",
+    "cat": "melee",
     "damage": "+2",
     "crit": 3,
     "range": "Engaged",
     "enc": 2,
     "hp": 2,
-    "pr": 300,
+    "pr": 150,
     "rar": 3,
     "special": "Defensive 1",
     "desc": "This is a sharp, heavy piece of metal designed to cut their targets wide open. Available in a wide variety of styles (wakizashi, seax, scimitar, jian, machete, and so on and so forth), these one-handed blades are not as formidable as a katana in the hands of trained street samurais, but substantially easier to hide."
@@ -73,35 +84,41 @@
   {
     "name": "Tomahawk",
     "skill": "Melee",
-    "category": "Melee",
+    "cat": "melee",
     "damage": "+2",
     "crit": 3,
     "range": "Engaged",
     "enc": 2,
+    "hp": 2,
+    "pr": 125,
+    "rar": 4,
     "special": "Throwable, Vicious 1",
     "desc": "These modern takes on classic Native American weapons give as much respect to their predecessors as they can while moving into the 21st century. Made from modern composites, balanced for throwing and optimized for maiming, these handy little things are popular among the urban tribal street gangs; especially the First Nations in Seattle, the Salish Rangers and the Sioux Wildcats are often very fond of these finely crafted killing tools."
   },
   {
     "name": "Staff",
     "skill": "Melee",
-    "category": "Melee",
+    "cat": "melee",
     "damage": "+2",
     "crit": 4,
     "range": "Engaged",
     "enc": 3,
-    "special": "Defensive 1",
-    "desc": "These large, heavy sticks are popular with magicians and monk-styled adepts going for the traditional look. Available in composite, hardwood, high-carbon steel and other materials."
+    "hp": 2,
+    "pr": 100,
+    "rar": 1,
+    "special": "Defensive 1, Disorient 2",
+    "desc": "These large, heavy sticks are popular with magicians and adepts going for the traditional look. Available in composite, hardwood, high-carbon steel, rubber and other materials."
   },
   {
     "name": "Katana",
     "skill": "Melee",
-    "category": "Melee",
+    "cat": "melee",
     "damage": "+2",
     "crit": 2,
     "range": "Engaged",
     "enc": 3,
     "hp": 3,
-    "pr": 750,
+    "pr": 450,
     "rar": 5,
     "special": "Defensive 1, Pierce 2, Vicious 1",
     "desc": [
@@ -112,56 +129,74 @@
   {
     "name": "Polearm",
     "skill": "Melee",
-    "category": "Melee",
+    "cat": "melee",
     "damage": "+2",
     "crit": 4,
     "range": "Engaged",
     "enc": 4,
-    "special": "Defensive 1, Throwable",
-    "desc": "Polearms include all weapons that are, at their very essence, blades at the end of a very long stick. A polearm usually features an axe-head, a glaive, a spear point or a similar maiming implement. Due to their length, polearms are almost impossible to conceal, but usually provide an edge against other melee weapons, making them a popular choice against trolls or other large critters if firearms aren't an option."
+    "hp": 3,
+    "pr": 275,
+    "rar": 4,
+    "special": "Cumbersome 3, Defensive 1, Pierce 1, Special (see description)",
+    "desc": [
+      "Polearms include all weapons that are, at their very essence, blades at the end of a very long stick. A polearm usually features an axe-head, a glaive, a spear point or a similar maiming implement. Due to their length, polearms are almost impossible to conceal, but usually provide an edge against other melee weapons, making them a popular choice against trolls or other large critters if firearms aren't an option.",
+      "After a character wielding a polearm is attacked by an unsuccessful Melee or Brawl combat check, until the end of the attacked characters next turn, the next Melee combat check with the polearm adds [[b]]. This only applies if the attacker does not use a weapon that is outside the range of the polearm, such as another polearm, or a Monofilament Whip (at the Gamemasters discretion)."
+    ]
   },
   {
     "name": "Combat Axe",
     "skill": "Melee",
-    "category": "Melee",
+    "cat": "melee",
     "damage": "+3",
     "crit": 2,
     "range": "Engaged",
     "enc": 4,
-    "special": "Cumbersome 3, Pierce 3, Sunder, Vicious 2",
+    "hp": 4,
+    "pr": 750,
+    "rar": 6,
+    "special": "Cumbersome 4, Pierce 3, Sunder, Vicious 2",
     "desc": "This barbaric, two-handed tungsten-alloy monster may appear primitive, but can be even deadlier than a firearm in the hands of the heavily augmented cyber-monsters of the late 21st century. Available in single- or double-bladed styles. Go ahead, go medieval."
   },
   {
     "name": "Ballistic Shield",
     "skill": "Melee",
-    "category": "Melee",
+    "cat": "melee",
     "damage": "+0",
     "crit": 6,
     "range": "Engaged",
     "enc": 5,
+    "hp": 4,
+    "pr": 225,
+    "rar": 5,
     "special": "Cumbersome 3, Defensive 2, Deflective 2, Disorient 1"
   },
   {
     "name": "Monofilament Whip",
     "skill": "Melee",
-    "category": "Melee",
+    "cat": "melee",
     "damage": 10,
     "crit": 1,
     "range": "Short",
     "enc": 1,
     "hp": 0,
-    "special": "Breach 1, Sunder, Unwieldy 4, Vicious 2, Special (see description)"
+    "pr": 5500,
+    "rar": "9 (R)",
+    "special": "Breach 1, Sunder, Unwieldy 4, Vicious 3, Special (see description)",
+    "desc": [
+      "Few weapons are more feared on the streets than this iconic and terrifying weapon. The monofilament line can cut through bone, metal and armor like hot butter, and can extend out of the handle to up to two meters. The whip is weighted at the tip to allow for better fine control of the weapon, but can prove quite dangerous for its' wielder if they are not dexterous enough.",
+      "If an attack with the Monofilament Whip generates [(hhh)], the weapon snags onto a nearby obstacle; untangling the weapon requires an action. If an attack generates [(d)], then the attacker hits themselves with the weapon, suffering the weapons base damage as wounds (after reducing soak due to the whips' Breach quality)."
+    ]
   },
   {
     "name": "Light Pistol",
     "skill": "Ranged (Light)",
-    "category": "One-Handed Ranged",
+    "cat": "ranged-one-handed",
     "damage": 5,
     "crit": 4,
     "range": "Medium",
     "enc": 1,
     "hp": 2,
-    "pr": 350,
+    "pr": 250,
     "rar": 4,
     "desc": "Commonly seen in the pockets of city-dwellers, light pistols cover about any civilian-issued handgun.",
     "models": [
@@ -174,7 +209,7 @@
   {
     "name": "Heavy Pistol",
     "skill": "Ranged (Light)",
-    "category": "One-Handed Ranged",
+    "cat": "ranged-one-handed",
     "damage": 6,
     "crit": 3,
     "range": "Medium",
@@ -190,15 +225,35 @@
     ]
   },
   {
+    "name": "Machine Pistol",
+    "skill": "Ranged (Light)",
+    "cat": "ranged-one-handed",
+    "damage": 5,
+    "crit": 3,
+    "range": "Medium",
+    "enc": 2,
+    "hp": 3,
+    "pr": 650,
+    "rar": 6,
+    "special": "Linked 1, Wasteful 3",
+    "desc": "Machine pistols offer a high rate of fire in a compact package in exchange for some firepower. While most machine pistols are meant to shoot in bursts, some manufacturers even allow them to be shot fully automatic.",
+    "models": [
+      "Ares Crusader II",
+      "Ceska Black Scorpion",
+      "Steyr TMP",
+      "Fianchetti Military 100"
+    ]
+  },
+  {
     "name": "Holdout Pistol",
     "skill": "Ranged (Light)",
-    "category": "One-Handed Ranged",
+    "cat": "ranged-one-handed",
     "damage": 4,
     "crit": 4,
     "range": "Short",
     "enc": 1,
     "hp": 1,
-    "pr": 200,
+    "pr": 150,
     "rar": 3,
     "special": "Concealable 1",
     "desc": "Hold-out pistols are very cheap and concealable, making them perfect for sneaking into a meet or wearing as a back-up piece. Street-scum often carry these as a self-defense weapon. They don’t have much else going for them.",
@@ -210,13 +265,13 @@
   {
     "name": "Taser",
     "skill": "Ranged (Light)",
-    "category": "One-Handed Ranged",
+    "cat": "ranged-one-handed",
     "damage": 4,
     "crit": 6,
     "range": "Short",
     "enc": 1,
     "hp": 1,
-    "pr": 250,
+    "pr": 150,
     "rar": 4,
     "special": "Nonlethal, Prepare 1, Stun 3",
     "desc": "This pacifists' weapon of choice fires small needles, that deliver a large electric shock through the attached wires into the unfortunate victim. Security forces, civilians and runners alike tend to carry these in order to non-lethally incapacitate their targets. Generally speaking, tasers are completely legal in almost all jurisdictions and surprisingly effective against armored targets, but require the re-cocking of the weapon after every shot. Some versions even come with inbuilt monitoring software to ensure that you do not accidentally kill your target, and get sued by their loved ones in the process. Just don’t expect gangers to carry these.",
@@ -229,7 +284,7 @@
   {
     "name": "Mini-Crossbow",
     "skill": "Ranged (Light)",
-    "category": "One-Handed Ranged",
+    "cat": "ranged-one-handed",
     "damage": 5,
     "crit": 3,
     "range": "Medium",
@@ -250,7 +305,7 @@
   {
     "name": "Dart Pistol",
     "skill": "Ranged (Light)",
-    "category": "One-Handed Ranged",
+    "cat": "ranged-one-handed",
     "damage": 1,
     "crit": "-",
     "range": "Medium",
@@ -261,13 +316,13 @@
     "special": "Special (see description)",
     "desc": [
       "Parashield and Narcoject have released a series of weapons that defined the industry standard for non-lethal dart pistols. Usually carried as a specialized sidearm of special forces teams in hostage situations, dart pistols shoot injection darts that deliver their payload on successful impact. Usually, that payload consists of a strong narcotic agent, but these darts can be filled with all kinds of toxins and drugs, if one so desires.",
-      "Dart pistols can never deal more than one wound, and do never case any Critical Injuries by themselves; instead, when a successful ranged combat check with the dart pistol delivers a wound to the target, the dart administers its’ payload. The target then makes a Resilience check with a difficulty equal to the severity of the administered narcotic. By default, the darts inject narcoject or a similar nerve agent, but when a character is using a custom payload, use the table “Effects, Severity & Scarcity” to determine the relevant statistics for the specific narcotic."
+      "Dart pistols can never deal more than one wound, and do never case any Critical Injuries by themselves; instead, when a successful ranged combat check with the dart pistol causes a wound to the target (after applying soak), the dart administers its’ payload. The target then makes a Resilience check with a difficulty equal to the severity of the administered narcotic. By default, the darts inject narcoject or a similar nerve agent, but when a character is using a custom payload, use the table “Effects, Severity & Scarcity” to determine the relevant statistics for the specific narcotic."
     ]
   },
   {
     "name": "Submachine Gun",
     "skill": "Ranged (Heavy)",
-    "category": "Two-Handed Ranged",
+    "cat": "ranged-two-handed",
     "damage": 5,
     "crit": 3,
     "range": "Medium",
@@ -280,7 +335,7 @@
   {
     "name": "Shotgun",
     "skill": "Ranged (Heavy)",
-    "category": "Two-Handed Ranged",
+    "cat": "ranged-two-handed",
     "damage": 8,
     "crit": 3,
     "range": "Short",
@@ -293,7 +348,7 @@
   {
     "name": "Assault Rifle",
     "skill": "Ranged (Heavy)",
-    "category": "Two-Handed Ranged",
+    "cat": "ranged-two-handed",
     "damage": 8,
     "crit": 3,
     "range": "Long",
@@ -305,7 +360,7 @@
   {
     "name": "Precision Rifle",
     "skill": "Ranged (Heavy)",
-    "category": "Two-Handed Ranged",
+    "cat": "ranged-two-handed",
     "damage": 8,
     "crit": 3,
     "range": "Long",
@@ -317,7 +372,7 @@
   {
     "name": "Sniper Rifle",
     "skill": "Ranged (Heavy)",
-    "category": "Two-Handed Ranged",
+    "cat": "ranged-two-handed",
     "damage": 9,
     "crit": 2,
     "range": "Extreme",
@@ -329,7 +384,7 @@
   {
     "name": "Bow",
     "skill": "Ranged (Heavy)",
-    "category": "Two-Handed Ranged",
+    "cat": "ranged-two-handed",
     "damage": "+3",
     "crit": 3,
     "range": "Long",
@@ -340,7 +395,7 @@
   {
     "name": "Crossbow",
     "skill": "Ranged (Heavy)",
-    "category": "Two-Handed Ranged",
+    "cat": "ranged-two-handed",
     "damage": 6,
     "crit": 3,
     "range": "Long",
@@ -350,7 +405,7 @@
   {
     "name": "Dart Rifle",
     "skill": "Ranged (Heavy)",
-    "category": "Two-Handed Ranged",
+    "cat": "ranged-two-handed",
     "damage": 1,
     "crit": "-",
     "range": "Long",
@@ -359,7 +414,7 @@
   {
     "name": "Light Machine Gun",
     "skill": "Gunnery",
-    "category": "Heavy",
+    "cat": "ranged-heavy",
     "damage": 11,
     "crit": 3,
     "range": "Long",
@@ -369,7 +424,7 @@
   {
     "name": "Heavy Machine Gun",
     "skill": "Gunnery",
-    "category": "Heavy",
+    "cat": "ranged-heavy",
     "damage": 12,
     "crit": 2,
     "range": "Long",
@@ -379,7 +434,7 @@
   {
     "name": "Assault Cannon",
     "skill": "Gunnery",
-    "category": "Heavy",
+    "cat": "ranged-heavy",
     "damage": 15,
     "crit": 2,
     "range": "Long",
@@ -390,7 +445,7 @@
   {
     "name": "Grenade Launcher",
     "skill": "Gunnery",
-    "category": "Launcher",
+    "cat": "ranged-launcher",
     "damage": "-",
     "crit": "-",
     "range": "Long",
@@ -400,7 +455,7 @@
   {
     "name": "Missile Launcher",
     "skill": "Gunnery",
-    "category": "Launcher",
+    "cat": "ranged-launcher",
     "damage": "-",
     "crit": "-",
     "range": "-",
@@ -411,7 +466,7 @@
   {
     "name": "Shock Grenade",
     "skill": "Ranged (Light)",
-    "category": "Grenade",
+    "cat": "grenade",
     "damage": 8,
     "crit": "-",
     "range": "Short",
@@ -425,7 +480,7 @@
   {
     "name": "Fragmentation Grenade",
     "skill": "Ranged (Light)",
-    "category": "Grenade",
+    "cat": "grenade",
     "damage": 8,
     "crit": 4,
     "range": "Short",
@@ -439,7 +494,7 @@
   {
     "name": "High-Explosive Grenade",
     "skill": "Ranged (Light)",
-    "category": "Grenade",
+    "cat": "grenade",
     "damage": 6,
     "crit": 3,
     "range": "Short",
@@ -453,7 +508,7 @@
   {
     "name": "Incendiary Grenade",
     "skill": "Ranged (Light)",
-    "category": "Grenade",
+    "cat": "grenade",
     "damage": 8,
     "crit": 3,
     "range": "Short",
@@ -466,7 +521,7 @@
   {
     "name": "Molotov Cocktail",
     "skill": "Ranged (Light)",
-    "category": "Grenade",
+    "cat": "grenade",
     "damage": 6,
     "crit": 4,
     "range": "Short",
@@ -477,7 +532,7 @@
   {
     "name": "EMP Grenade",
     "skill": "Ranged (Light)",
-    "category": "Grenade",
+    "cat": "grenade",
     "damage": 10,
     "crit": 5,
     "range": "Short",
@@ -491,7 +546,7 @@
   {
     "name": "Smoke Grenade",
     "skill": "Ranged (Light)",
-    "category": "Grenade",
+    "cat": "grenade",
     "damage": "-",
     "crit": "-",
     "range": "Short",
@@ -506,7 +561,7 @@
   {
     "name": "Gas Grenade",
     "skill": "Ranged (Light)",
-    "category": "Grenade",
+    "cat": "grenade",
     "damage": "-",
     "crit": "-",
     "range": "Short",
@@ -522,7 +577,7 @@
   {
     "name": "Flash-Pak",
     "skill": "Ranged (Light)",
-    "category": "Grenade",
+    "cat": "grenade",
     "damage": "-",
     "crit": "-",
     "range": "Short",
@@ -533,7 +588,7 @@
   {
     "name": "Fragmentation Missile",
     "skill": "Gunnery",
-    "category": "Missile",
+    "cat": "missile",
     "damage": 12,
     "crit": 3,
     "range": "Extreme",
@@ -546,7 +601,7 @@
   {
     "name": "High-Explosive Missile",
     "skill": "Gunnery",
-    "category": "Missile",
+    "cat": "missile",
     "damage": 20,
     "crit": 2,
     "range": "Extreme",
@@ -559,7 +614,7 @@
   {
     "name": "Anti-Vehicle Missile",
     "skill": "Gunnery",
-    "category": "Missile",
+    "cat": "missile",
     "damage": 19,
     "crit": 3,
     "range": "Long",

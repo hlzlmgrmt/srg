@@ -19,8 +19,45 @@
 <template id="gear.template.html" data-source="equipment/lists/gear/gear.data.json"
           data-sortby="name" data-filterbykey="category" data-filterbyvalue="medical"></template>
 
-<h4 id="equipment/lists/gear/drugs">Drugs & Toxins</h4>
+<h4 id="equipment/lists/gear/drugs">Drugs</h4>
 <template id="gear.template.html" data-source="equipment/lists/gear/gear.data.json"
           data-sortby="name" data-filterbykey="category" data-filterbyvalue="drug"></template>
-<template id="gear.template.html" data-source="equipment/lists/gear/gear.data.json"
-          data-sortby="name" data-filterbykey="category" data-filterbyvalue="toxin"></template>
+<h4 id="equipment/lists/gear/toxins">Toxins</h4>
+<p>...</p>
+<p>Additionally to the information listed on normal gear entries, toxins provide two additional pieces of
+  information:</p>
+<p><b>Vector:&nbsp;</b>Each toxin has an entry vector to be effective. Some venoms have to be injected, while some have
+  to be inhaled, consumed or similar.</p>
+<p><b>Difficulty:&nbsp;</b>Poisons and Toxins always require a skill check to be resisted by the victim (usually
+  Resilience). The difficulty of the check is represented by this table shorthand, and usually poisons that require a
+  more difficult check to resist are more effective to the victim.</p>
+<div class="table-responsive">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Vector</th>
+      <th>Difficulty</th>
+      <th>Pr.</th>
+      <th>Rar.</th>
+    </tr>
+    </thead>
+    <tbody>
+    <template data-source="equipment/lists/gear/toxins.data.json"
+              data-sortby="name">
+      <tr>
+        <th>${{ name }}</th>
+        <td>${{ vectors }}</td>
+        <td>${{ diff }}</td>
+        <td>${{ pr }}</td>
+        <td>${{ rar }}</td>
+      </tr>
+    </template>
+    </tbody>
+  </table>
+</div>
+<template data-source="equipment/lists/gear/toxins.data.json"
+          data-sortby="name">
+</template>
+
+

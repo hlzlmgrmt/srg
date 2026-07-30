@@ -1,0 +1,33 @@
+[
+  {
+    "name": "Simple Projectile Weapon",
+    "cat": "ranged",
+    "pr": 10,
+    "rar": 0,
+    "skill": "Ranged (Light)",
+    "dam": 4,
+    "crit": 5,
+    "range": "Short",
+    "enc": 3,
+    "hp": 0,
+    "special": "Limited Ammo 1",
+    "check": "Average ([[dd]]) Mechanics or Survival check",
+    "time": "4 hours",
+    "examples": "bow, sling, blowgun"
+  },
+  {
+    "name": "One-Handed Guns",
+    "cat": "ranged",
+    "pr": 150,
+    "rar": 3,
+    "skill": "Ranged (Light)",
+    "dam": 5,
+    "crit": 4,
+    "range": "Medium",
+    "enc": 1,
+    "hp": 3,
+    "check": "Hard ([[ddd]]) Mechanics check",
+    "time": "12 hours",
+    "examples": "Pistols, Tasers, Hold-Outs"
+  }
+]

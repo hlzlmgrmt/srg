@@ -7,8 +7,10 @@
   },
   {
     "name": "Attachable Stock",
+    "hp": 1,
+    "enc": 1,
     "appl": "This attachment can be applied to all guns and crossbows without the Cumbersome quality, except Holdout Pistols and Tasers.",
-    "system": "As a maneuver, the stock can be attached or detached from the weapon. When attached to a one-handed ranged weapon, the weapon can be fired with the Ranged (Heavy) skill, and increases their Encumbrance rating by 2. When detached from a two-handed ranged weapon, the weapon gains the Inaccurate 2 quality, but decreases its Encumbrance rating by 2. The stock itself has an Encumbrance rating of 2 while detached. Two-handed ranged weapons replace their pre-built stock with this, and do not increase their Encumbrance rating due to this attachment.",
+    "system": "As a maneuver, the stock can be attached or detached from the weapon. When attached to a one-handed ranged weapon, the weapon can be fired with the Ranged (Heavy) skill. When detached from a two-handed ranged weapon, the weapon gains the Inaccurate 2 quality, but reduces their Encumbrance rating by one. Two-handed ranged weapons replace their pre-built stock with this, and do not increase their Encumbrance rating due to this attachment.",
     "mods": [
       "1x Folding Stock (Attach or Detach stock as an Incidental)",
       "1x Decrease Encumbrance by one",
@@ -20,28 +22,96 @@
     "name": "Automatic Crossbow Re-Cocker"
   },
   {
-    "name": "Composite Materials"
+    "name": "Collapsible",
+    "hp": 1,
+    "appl": "This attachment can be applied to all Melee weapons.",
+    "system": "The weapon can be collapsed, reducing it's Encumbrance rating by one to a minimum of 1). While the weapon is collapsed, it cannot be used; after you have drawn the weapon, you can ready it by using an additional maneuver and increasing it's Encumbrance rating by one.",
+    "mods": [
+      "1x Innate Talent (Quick Draw)",
+      "2x Improvement (Reduce Encumbrance by one while collapsed, to a minimum of one)",
+      "1x Improvement (After drawing, ready weapon as an Incidental)",
+      "1x Quality (Concealable +1)"
+    ]
   },
   {
-    "name": "Custom Grip"
+    "name": "Composite Materials",
+    "hp": 1,
+    "pr": 150,
+    "rar": 4,
+    "appl": "This attachment can be applied to all weapons.",
+    "desc": "By removing some of the redundant parts and changing them with cheap, MAD-resistant materials such as plastic and ceramic, weapons retrofitted with composite materials are harder to spot on scanners.",
+    "system": "When a scanner tries to find the weapon, you can increase the difficulty of the check by one.",
+    "mods": [
+      "2x Improvement (Increase difficulty to scan weapon by one)",
+      "1x Quality (Concealable +1)"
+    ]
   },
   {
-    "name": "Double-Barrel"
+    "name": "Choke Barrel",
+    "appl": "This attachment can be applied to shotguns, and similar ranged weapons with the Blast quality.",
+    "system": "As a maneuver, you can halve your weapons' Blast rating (rounded up) and increase the weapons' range by one range band (to a maximum of Medium)."
+  },
+  {
+    "name": "Custom Grip",
+    "hp": 1,
+    "pr": 500,
+    "rar": 6,
+    "appl": "This attachment can be applied to all weapons with handles.",
+    "system": "Remove [[s]] from all combat checks you make when using this weapon. Anyone other than you adds [[ss]] to all combat checks they make when using this weapon.",
+    "mods": [
+      "1x Gecko Grip (Triggering the Disarm quality requires an additional [(a)] to disarm this weapon)",
+      "1x Quality (Accurate +1)"
+    ]
+  },
+  {
+    "name": "Double-Barrel",
+    "appl": "This attachment can be applied to all guns without the Full-Auto quality, except tasers.",
+    "system": "The weapon gains the Linked 1 and Limited Ammo 1 qualities."
   },
   {
     "name": "Easy Disassemble"
   },
   {
+    "name": "Extended Mag",
+    "hp": 1,
+    "pr": 200,
+    "appl": "This attachment can be applied to all guns and crossbows that can have a magazine.",
+    "system": "The weapon increases their Limited Ammo quality rating by one (it it has one). Additionally, this weapon requires an additional [(h)] to run out of ammo."
+  },
+  {
     "name": "Extreme Environment Modification"
   },
   {
-    "name": "Laser Sight"
+    "name": "Laser Sight",
+    "hp": 1,
+    "pr": 500,
+    "appl": "This attachment can be applied to all ranged weapons without the Blast quality.",
+    "system": "You gain automatic [(a)] on a successful ranged combat check with this weapon.",
+    "mods": "None"
+  },
+  {
+    "name": "Larger Caliber",
+    "hp": 1,
+    "pr": 500,
+    "rar": 5,
+    "appl": "This attachment can be applied to all Ranged (Heavy) weapons without the Full-Auto quality, or to ranged weapons with the Revolver Barrel weapon attachment.",
+    "system": "As a maneuver, you can add automatic [(hh)] to your next ranged combat check to increase your weapons base damage by one. When your weapon has the Limited Ammo or Prepare qualities, or has run out of ammo, you can use this maneuver as part of your reloading maneuver.",
+    "mods": [
+      "2x Increase Damage by one and add one additional [(h)] to check",
+      "1x Crit -1 quality",
+      "1x Pierce +1 quality",
+      "2x Improvement (Remove one [(h)] from roll before your next combat check)",
+      "1x Improvement (Use attachment as an Incidental)"
+    ]
   },
   {
     "name": "Long Barrel"
   },
   {
-    "name": "Melee Hardening"
+    "name": "Melee Hardening",
+    "hp": 1,
+    "appl": "This attachment can be applied to all ranged weapons without the Cumbersome qualities, except grenades.",
+    "system": "As a maneuver, you can use the weapon as a Melee weapon without the usual penalties for improvised weapon. This weapon shares the same statistics as a baton, and can take Melee weapon attachments."
   },
   {
     "name": "Monomolecular Edge"
@@ -59,10 +129,21 @@
     "name": "Removed Safety Features"
   },
   {
-    "name": "Retrofitted Cyclic Feeding Mechanism"
+    "name": "Retrofitted Cyclic Feeding Mechanism",
+    "hp": 1,
+    "pr": 1150,
+    "rar": "7(R)",
+    "appl": "This attachment can be applied to all guns without the Cumbersome, Limited Ammo, or Prepare qualities, except Tasers and Holdout pistols.",
+    "system": "Your weapon gains the Accurate 1 and Wasteful 3 qualities.",
+    "mods": "1x Full-Auto (Your weapon gains the Full-Auto quality. If you use the Full-Auto quality to increase the difficulty of your next combat check, this weapon gains the Wasteful 2 quality.)"
   },
   {
-    "name": "Revolver Barrel"
+    "name": "Revolver Barrel",
+    "appl": "This attachment can be applied to all guns without the Blast, Cumbersome or Full-Auto qualities, except tasers.",
+    "system": "Increase the weapon's base damage by one point, and add the Limited Ammo 2 quality to the weapon.",
+    "mods": [
+      "1x Quality (Limited Ammo +1)"
+    ]
   },
   {
     "name": "Serrated Edge"
@@ -71,10 +152,16 @@
     "name": "Shock Pad"
   },
   {
-    "name": "Smartgun System"
-  },
-  {
-    "name": "Stripped Down"
+    "name": "Smartgun System",
+    "hp": 0,
+    "pr": 1000,
+    "rar": 6,
+    "appl": "This attachment can be applied to all ranged weapons, except grenades.",
+    "system": "While you have the Smartlink cybertech implant, the weapon adds automatic [(a)] to all successful ranged combat checks. Additionally, while you have the Smartlink cybertech implant, you can use the Operating skill to use the weapon when you are not holding it physically.",
+    "mods": [
+      "1x Quality (Accurate +1)",
+      "2x Quality (Guided 2 / +1)"
+    ]
   },
   {
     "name": "Superior Weapon Customization"
@@ -83,12 +170,12 @@
     "name": "Suppressor",
     "appl": "This attachment can be applied to pistols, submachine guns, assault rifles, precision rifles and sniper rifles.",
     "desc": [
-      "As the classic assassin’s accessory, suppressors allow a user to keep unwanted attention from themselves by\n  suppressing noise. Unlike the silencers often found in mainstream action trideos, suppressors do not make a gun\n  magically imperceptible; If a suppressed weapon is fired inside a small enclosed room, people will notice the gunfire.\n  Rather, a suppressor will distort the sound of gunfire to a point that people will not perceive it as such, especially\n  when the sound comes from behind a bunch of walls. This additionally hinders witnesses of an assassination in locating\n  the shooter in time.",
-      "Due to this, after-market attachments of suppressors are generally illegal, but more often than not, corporate\n  security – especially those within arcologies – carry suppressed weapons to deal with criminals without enticing mass\n  panic within the closed environment. Guns sold with integrated suppressors are therefore known and registered, and –\n  with the right licenses of course – legal to buy and carry.",
-      "Suppressors come in two variants: Attached and integrated. Attached suppressors do not cost Hard Points, but are\n  rather big and clunky, and therefor add one point of Encumbrance to the weapon while attached. Attaching a suppressor\n  uses a maneuver, and getting caught with one is generally a bad idea. Integrated suppressors are built into the gun\n  barrel itself. They cost a single Hard Point, but do not add to the weapons bulk. Spotting an inbuilt suppressor\n  requires a Hard ([[ddd]]) Perception or Mechanics check."
+      "As the classic assassin’s accessory, suppressors allow a user to keep unwanted attention from themselves by suppressing noise. Unlike the silencers often found in mainstream action trideos, suppressors do not make a gun magically imperceptible; If a suppressed weapon is fired inside a small enclosed room, people will notice the gunfire. Rather, a suppressor will distort the sound of gunfire to a point that people will not perceive it as such, especially when the sound comes from behind a bunch of walls. This additionally hinders witnesses of an assassination in locating the shooter in time.",
+      "Due to this, after-market attachments of suppressors are generally illegal, but more often than not, corporate security – especially those within arcologies – carry suppressed weapons to deal with criminals without enticing mass panic within the closed environment. Guns sold with integrated suppressors are therefore known and registered, and – with the right licenses of course – legal to buy and carry.",
+      "Suppressors come in two variants: Attached and integrated. Attached suppressors do not cost Hard Points, but are rather big and clunky, and therefor add one point of Encumbrance to the weapon while attached. Attaching a suppressor uses a maneuver, and getting caught with one is generally a bad idea. Integrated suppressors are built into the gun barrel itself. They cost a single Hard Point, but do not add to the weapons bulk. Spotting an inbuilt suppressor requires a Hard ([[ddd]]) Perception or Mechanics check."
     ],
-    "system": "Adds [[ss]] to all Perception or Vigilance checks made to\n  locate a concealed shooter. Inbuild suppressors require a Hard ([[ddd]]) Perception\n  or Mechanics check to be spotted.",
-    "mods": "2x Improvement (add additional [[s]] to Perception and Vigilance skill checks to spot shooter)"
+    "system": "Adds [[ss]] to all Perception or Vigilance checks made to locate a concealed shooter. Inbuild suppressors require a Hard ([[ddd]]) Perception or Mechanics check to be spotted.",
+    "mods": "2x Improvement (add additional [[s]] to checks to spot shooter)"
   },
   {
     "name": "Tripod Mount"
