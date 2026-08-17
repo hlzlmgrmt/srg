@@ -74,12 +74,32 @@
   {
     "name": "Extended Mag",
     "hp": 1,
+    "enc": 1,
     "pr": 200,
     "appl": "This attachment can be applied to all guns and crossbows that can have a magazine.",
-    "system": "The weapon increases their Limited Ammo quality rating by one (it it has one). Additionally, this weapon requires an additional [(h)] to run out of ammo."
+    "system": "The weapon increases their Limited Ammo and Wasteful quality ratings by one (if it has one).",
+    "mods": [
+      "1x Innate Talent (Extra Ammo)",
+      "1x Quality (Limited Ammo +1)",
+      "2x Quality (Wasteful +1)"
+    ]
   },
   {
     "name": "Extreme Environment Modification"
+  },
+  {
+    "name": "Gas-Vent System",
+    "hp": 2,
+    "appl": "This attachment can be applied to all guns with the Full-Auto quality.",
+    "desc": "Gas-vent recoil compensation systems are barrel-mounted accessories that vent a weapon’s barrel gases at a specific vector to counter muzzle climb.",
+    "system": "When you increase the difficulty of the next combat check by one due to the Full-Auto quality, after rolling, but before resolving the check, you can remove [(t)] from the result.",
+    "mods": [
+      "1x Decrease Encumbrance by 1 (to a minimum of 1)",
+      "1x Improvement (Remove an additional [(t)] from the check result)",
+      "1x Quality (Accurate +1)",
+      "1x Quality (Cumbersome -1)",
+      "2x Quality (Wasteful +1)"
+    ]
   },
   {
     "name": "Laser Sight",

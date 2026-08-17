@@ -78,7 +78,7 @@
     "desc": "As a maneuver, you can remove one [[s]] per rank of Brace from the next check due to changing environmental conditions, including weather, unstable surfaces, changes in gravity or similar physical obstacles that would make a skill check more difficult."
   },
   {
-    "name": "Bullet Necklace",
+    "name": "Extra Ammo",
     "tier": 1,
     "act": "Passive",
     "ranked": "No",

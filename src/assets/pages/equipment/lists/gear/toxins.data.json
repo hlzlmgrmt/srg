@@ -2,13 +2,14 @@
   {
     "name": "Narcoject",
     "vector": "Injection",
-    "diff":
+    "difficulty": "Hard ([[ddd]]) Resilience check",
+    "system": ""
   },
   {
-    "name": "Nausea Gas"
-  },
-  {
-    "name": "Tear Gas"
+    "name": "Tear Gas",
+    "vector": "Contact, Inhalation",
+    "difficulty": "Hard ([[ddd]]) Resilience check",
+    "system": "After the gas is deployed, each target must succeed an immediate Hard ([[ddd]]) Resilience check or suffer 2 strain plus one for every uncancelled [(f)] of the check. Additionally, the victims of the gas are Disoriented for as long as they remain in the gas. After the victims have left the deployment zone of the gas (or after the gas has cleared at the end of the encounter), they still suffer the effects of the Disorient 3 quality."
   },
   {
     "name": "Seven-7"
